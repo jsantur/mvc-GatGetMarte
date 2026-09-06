@@ -72,6 +72,7 @@ class OptimizedModel:
         self.IMG_FOLDER = "IMG"
         self.LINK_WIALON = "https://hosting.wialon.us/?lang=es"
         self.LINK_SIPCOP = "https://seguridadciudadana.mininter.gob.pe/sipcop-m/reportes/mapa-recorrido-vehiculo"
+        self.LINK_VISOR_TACTICO = "https://visor-tacticos.vercel.app/"
         
         # Configurar locale para fechas
         self._setup_locale()
@@ -518,18 +519,31 @@ class OptimizedModel:
         else:
             turnos = []
         
-        # Jurisdicción
-        jurisdiccion = clean_value(unit_raw.get('jurisdiccion', 'SECTORIAL'))
-        if not jurisdiccion:
-            jurisdiccion = 'SECTORIAL'
+        # Jurisdicción y Zona
+        jurisdiccion = clean_value(unit_raw.get('jurisdiccion', ''))
+        zona = clean_value(unit_raw.get('zona', ''))
         
+        # Sincronizar zona y jurisdiccion si una viene vacía
+        if not zona and jurisdiccion:
+            if jurisdiccion.upper() in ['NORTE', 'CENTRO', 'SUR', 'ENACE']:
+                zona = jurisdiccion.upper()
+            elif jurisdiccion.upper() == 'T.ALTA':
+                zona = 'SUR'
+            elif jurisdiccion.upper() == 'SECTORIAL':
+                zona = 'CENTRO'
+            else:
+                zona = jurisdiccion
+        elif not jurisdiccion and zona:
+            jurisdiccion = zona
+            
         return {
             'alias': alias,
             'km': km,
             'ap': ap,
             'po': po,
             'turnos_seleccionados': turnos,
-            'jurisdiccion': jurisdiccion
+            'jurisdiccion': jurisdiccion or zona,
+            'zona': zona or jurisdiccion
         }
     
     def _save_to_json(self, units_data: List[Dict], turno: str, filtro_activo: str = "TODAS") -> bool:
@@ -607,8 +621,8 @@ class OptimizedModel:
                 worksheet.cell(row=next_row, column=5, value=unit['ap'])
                 worksheet.cell(row=next_row, column=6, value=unit['po'])
                 worksheet.cell(row=next_row, column=7, value=', '.join(unit.get('turnos_seleccionados', [])))
-                worksheet.cell(row=next_row, column=8, value=unit.get('jurisdiccion', 'SECTORIAL'))
-                worksheet.cell(row=next_row, column=9, value=unit.get('zona', ''))
+                worksheet.cell(row=next_row, column=8, value=unit.get('jurisdiccion', unit.get('zona', '')))
+                worksheet.cell(row=next_row, column=9, value=unit.get('zona', unit.get('jurisdiccion', '')))
                 worksheet.cell(row=next_row, column=10, value=observaciones_final)
                 
                 next_row += 1
@@ -639,8 +653,8 @@ class OptimizedModel:
                         str(unit['ap']),
                         str(unit['po']),
                         ', '.join(unit.get('turnos_seleccionados', [])),
-                        unit.get('jurisdiccion', 'SECTORIAL'),
-                        unit.get('zona', ''),
+                        unit.get('jurisdiccion', unit.get('zona', '')),
+                        unit.get('zona', unit.get('jurisdiccion', '')),
                         unit.get('observaciones', '')
                     ))
                 conn.commit()
@@ -866,7 +880,8 @@ class OptimizedModel:
                     'ap': get_cell_value('AP'),
                     'po': get_cell_value('PO'),
                     'turnos_seleccionados': get_cell_value('TURNO'),
-                    'jurisdiccion': get_cell_value('JURISDICCION') or 'SECTORIAL'
+                    'jurisdiccion': get_cell_value('JURISDICCION') or get_cell_value('ZONA'),
+                    'zona': get_cell_value('ZONA') or get_cell_value('JURISDICCION')
                 }
                 
                 # Normalizar usando la función auxiliar
@@ -961,14 +976,17 @@ class OptimizedModel:
                 rows = cursor.fetchall()
                 units_data = []
                 for r in rows:
-                    # Normalizar usando la función auxiliar
+                    r_keys = r.keys() if hasattr(r, 'keys') else []
+                    juris_val = r['jurisdiccion'] if 'jurisdiccion' in r_keys else ''
+                    zona_val = r['zona'] if 'zona' in r_keys and r['zona'] else juris_val
                     unit_raw = {
                         'alias': r['unidad'],
                         'km': r['km'],
                         'ap': r['ap'],
                         'po': r['po'],
                         'turnos_seleccionados': r['turno'] if r['turno'] else '',
-                        'jurisdiccion': r['jurisdiccion']
+                        'jurisdiccion': juris_val,
+                        'zona': zona_val
                     }
                     normalized = self._normalize_unit_data(unit_raw)
                     if normalized['alias']:  # Solo agregar si tiene alias válido
@@ -1286,7 +1304,8 @@ Observaciones:
                     x_pos += col_widths[4]
                     
                     # JURISDICCION (ahora en índice 5)
-                    jurisdiccion = data.get('jurisdiccion', 'SECTORIAL')
+                    zona_val = data.get('zona', data.get('jurisdiccion', ''))
+                    jurisdiccion = 'T.ALTA' if zona_val in ('SUR', 'ENACE') else 'SECTORIAL'
                     draw.text((x_pos + col_widths[5]//2, y_position+45), jurisdiccion, 
                              fill=(0, 0, 0), font=font_table_content, anchor="mm")
                     draw.line([(x_pos+col_widths[5], y_position), (x_pos+col_widths[5], y_position+90)], 
@@ -1399,7 +1418,8 @@ Observaciones:
                     x_pos += col_widths[4]
                     
                     # JURISDICCION (ahora en índice 5)
-                    jurisdiccion = data.get('jurisdiccion', 'SECTORIAL')
+                    zona_val = data.get('zona', data.get('jurisdiccion', ''))
+                    jurisdiccion = 'T.ALTA' if zona_val in ('SUR', 'ENACE') else 'SECTORIAL'
                     draw.text((x_pos + col_widths[5]//2, y_position+45), jurisdiccion, 
                              fill=(0, 0, 0), font=font_table_content, anchor="mm")
                     draw.line([(x_pos+col_widths[5], y_position), (x_pos+col_widths[5], y_position+90)], 

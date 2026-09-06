@@ -865,11 +865,16 @@ class OptimizedController:
                         var.set(turno_name in turnos_seleccionados)
                     
                     # Set jurisdiction / zona if available
+                    zona_val = unit.get('zona') or unit.get('jurisdiccion', '')
+                    if str(zona_val).upper() == "T.ALTA":
+                        zona_val = "SUR"
+                    elif str(zona_val).upper() == "SECTORIAL":
+                        zona_val = "CENTRO"
+
+                    if 'var_zona' in fila_data:
+                        fila_data['var_zona'].set(str(zona_val).upper() if zona_val else "")
                     if 'var_jurisdiccion' in fila_data:
-                        jurisdiccion = unit.get('jurisdiccion', 'SECTORIAL')
-                        fila_data['var_jurisdiccion'].set(jurisdiccion)
-                    if 'var_zona' in fila_data and 'zona' in unit:
-                        fila_data['var_zona'].set(unit['zona'])
+                        fila_data['var_jurisdiccion'].set(unit.get('jurisdiccion', zona_val))
                     
                     # Ensure the checkbox is checked
                     fila_data['var_chk'].set(True)
@@ -1139,8 +1144,30 @@ class OptimizedController:
             self.view.show_message("Error", f"Error abriendo megáfono: {str(e)}", "error")
 
     def open_wialon(self):
-        """Abre el diálogo de opciones de Wialon."""
-        self.view.mostrar_opciones_wialon()
+        """Abre directamente la URL de Wialon Hosting."""
+        def open_link():
+            try:
+                url = self.model.WIALON_CONFIG.get("url_monitor", "https://hosting.wialon.us/?lang=es")
+                webbrowser.open(url)
+                self.view.root.after(0, lambda: self.view.update_status("🌍 Wialon abierto", "green"))
+            except Exception as e:
+                self.view.root.after(0, lambda: self.view.show_message(
+                    "Error", f"No se pudo abrir Wialon: {str(e)}", "error"))
+        
+        self.thread_pool.submit(open_link)
+
+    def open_visor_tactico(self):
+        """Abre la URL del Visor Táctico."""
+        def open_link():
+            try:
+                url = getattr(self.model, "LINK_VISOR_TACTICO", "https://visor-tacticos.vercel.app/")
+                webbrowser.open(url)
+                self.view.root.after(0, lambda: self.view.update_status("🛰️ Visor Táctico abierto", "green"))
+            except Exception as e:
+                self.view.root.after(0, lambda: self.view.show_message(
+                    "Error", f"No se pudo abrir Visor Táctico: {str(e)}", "error"))
+        
+        self.thread_pool.submit(open_link)
 
     def abrir_url_wialon(self):
         """Abre la URL de monitoreo de Wialon."""

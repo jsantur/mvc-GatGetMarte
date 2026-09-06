@@ -19155,3 +19155,76 @@
 2026-09-06 02:54:25,987 - __main__ - INFO - 🔧 Ejecutándose en modo desarrollo con __file__: D:\mvc
 2026-09-06 02:54:25,994 - __main__ - INFO - 🧹 Archivos temporales limpiados
 2026-09-06 02:54:26,114 - __main__ - INFO - ✅ Limpieza completada exitosamente
+2026-09-06 04:07:38,900 - report_ocurrencias - INFO - LanguageTool no disponible, usando pyspellchecker como corrector local
+2026-09-06 04:07:38,955 - __main__ - INFO - 🚀 Iniciando Sistema de Monitoreo SERENAZGO v2.0
+2026-09-06 04:07:38,956 - __main__ - INFO - ✅ Verificación de instancia única completada
+2026-09-06 04:07:38,956 - __main__ - INFO - 📁 Directorios de trabajo creados/verificados
+2026-09-06 04:07:38,956 - __main__ - INFO - 🖼️ Logo ya existe en la carpeta REPORT
+2026-09-06 04:07:38,956 - __main__ - INFO - 🔧 Ejecutándose en modo desarrollo con __file__: D:\mvc
+2026-09-06 04:07:38,956 - __main__ - INFO - 📊 Verificando archivo Excel: D:\mvc\unidades_registro.xlsx
+2026-09-06 04:07:38,956 - __main__ - INFO - ✅ Archivo Excel encontrado
+2026-09-06 04:07:38,957 - __main__ - INFO - ✅ Archivo Excel tiene permisos de escritura
+2026-09-06 04:07:38,957 - __main__ - INFO - 📏 Tamaño: 6001 bytes
+2026-09-06 04:07:38,957 - __main__ - INFO - 🕰️ Última modificación: 2026-09-06 02:52:41.546661
+2026-09-06 04:07:38,965 - cache - INFO - Thread de limpieza automática iniciado (intervalo: 900s)
+2026-09-06 04:07:38,965 - cache - INFO - CacheManager inicializado con config: {'max_memory_size': 2000, 'max_memory_mb': 400, 'max_disk_mb': 2000, 'compression_threshold': 512, 'cleanup_interval': 900, 'max_threads': 6, 'enable_compression': True, 'enable_metrics': True, 'cache_version': '2.0'}
+2026-09-06 04:07:38,966 - __main__ - INFO - 💾 Sistema de caché inicializado con configuración optimizada
+2026-09-06 04:07:38,966 - __main__ - INFO - 🧹 Sistema de limpieza automática registrado
+2026-09-06 04:07:39,081 - __main__ - INFO - 🖥️ Ventana configurada en pantalla completa
+2026-09-06 04:07:39,082 - __main__ - INFO - 🏗️ Inicializando componentes...
+2026-09-06 04:07:39,112 - __main__ - INFO - 📊 Modelo inicializado
+2026-09-06 04:07:39,143 - __main__ - INFO - 🖥️ Vista inicializada
+2026-09-06 04:07:39,280 - __main__ - INFO - 🎮 Controlador inicializado
+2026-09-06 04:07:40,068 - __main__ - INFO - 🔗 Componentes conectados
+2026-09-06 04:07:40,069 - SistemaNotificaciones - INFO - Sistema de notificaciones inicializado
+2026-09-06 04:07:40,082 - SistemaNotificaciones - INFO - Iniciando sistema de notificaciones
+2026-09-06 04:07:40,083 - SistemaNotificaciones - INFO - Iniciando verificación periódica de hora
+2026-09-06 04:07:40,083 - SistemaNotificaciones - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 04:07:40,084 - __main__ - INFO - ✅ Aplicación iniciada exitosamente
+2026-09-06 04:07:40,084 - __main__ - INFO - 🖥️ Interfaz en pantalla completa disponible
+2026-09-06 04:07:40,085 - __main__ - INFO - ⌨️ Presione F1 para ver atajos de teclado
+2026-09-06 04:07:40,388 - __main__ - INFO - ⏰ Inicialización retardada completada
+2026-09-06 04:09:16,657 - model - INFO - ☁️ Iniciando sincronización a: https://script.google.com/macros/s/AKfyc...
+2026-09-06 04:09:20,048 - model - INFO - ✅ [CLOUD] Sincronización con Google Sheets exitosa
+2026-09-06 04:09:32,403 - model - INFO - Loaded from cloud
+2026-09-06 04:10:54,864 - __main__ - INFO - 🔚 Cerrando Sistema de Monitoreo SERENAZGO
+2026-09-06 04:10:54,870 - __main__ - INFO - 🧹 Iniciando limpieza al cerrar...
+2026-09-06 04:10:54,870 - __main__ - INFO - 🔧 Ejecutándose en modo desarrollo con __file__: D:\mvc
+2026-09-06 04:10:54,871 - __main__ - INFO - 🧹 Archivos temporales limpiados
+2026-09-06 04:10:54,985 - __main__ - INFO - ✅ Limpieza completada exitosamente
+2026-09-06 04:13:09,163 - report_ocurrencias - INFO - LanguageTool no disponible, usando pyspellchecker como corrector local
+2026-09-06 04:13:09,204 - __main__ - INFO - 🚀 Iniciando Sistema de Monitoreo SERENAZGO v2.0
+2026-09-06 04:13:09,204 - __main__ - INFO - ✅ Verificación de instancia única completada
+2026-09-06 04:13:09,205 - __main__ - INFO - 📁 Directorios de trabajo creados/verificados
+2026-09-06 04:13:09,205 - __main__ - INFO - 🖼️ Logo ya existe en la carpeta REPORT
+2026-09-06 04:13:09,205 - __main__ - INFO - 🔧 Ejecutándose en modo desarrollo con __file__: D:\mvc
+2026-09-06 04:13:09,205 - __main__ - INFO - 📊 Verificando archivo Excel: D:\mvc\unidades_registro.xlsx
+2026-09-06 04:13:09,205 - __main__ - INFO - ✅ Archivo Excel encontrado
+2026-09-06 04:13:09,205 - __main__ - INFO - ✅ Archivo Excel tiene permisos de escritura
+2026-09-06 04:13:09,205 - __main__ - INFO - 📏 Tamaño: 5562 bytes
+2026-09-06 04:13:09,206 - __main__ - INFO - 🕰️ Última modificación: 2026-09-06 04:09:16.656524
+2026-09-06 04:13:09,213 - cache - INFO - Thread de limpieza automática iniciado (intervalo: 900s)
+2026-09-06 04:13:09,213 - cache - INFO - CacheManager inicializado con config: {'max_memory_size': 2000, 'max_memory_mb': 400, 'max_disk_mb': 2000, 'compression_threshold': 512, 'cleanup_interval': 900, 'max_threads': 6, 'enable_compression': True, 'enable_metrics': True, 'cache_version': '2.0'}
+2026-09-06 04:13:09,214 - __main__ - INFO - 💾 Sistema de caché inicializado con configuración optimizada
+2026-09-06 04:13:09,214 - __main__ - INFO - 🧹 Sistema de limpieza automática registrado
+2026-09-06 04:13:09,324 - __main__ - INFO - 🖥️ Ventana configurada en pantalla completa
+2026-09-06 04:13:09,324 - __main__ - INFO - 🏗️ Inicializando componentes...
+2026-09-06 04:13:09,349 - __main__ - INFO - 📊 Modelo inicializado
+2026-09-06 04:13:09,437 - __main__ - INFO - 🖥️ Vista inicializada
+2026-09-06 04:13:09,467 - __main__ - INFO - 🎮 Controlador inicializado
+2026-09-06 04:13:10,251 - __main__ - INFO - 🔗 Componentes conectados
+2026-09-06 04:13:10,252 - SistemaNotificaciones - INFO - Sistema de notificaciones inicializado
+2026-09-06 04:13:10,264 - SistemaNotificaciones - INFO - Iniciando sistema de notificaciones
+2026-09-06 04:13:10,265 - SistemaNotificaciones - INFO - Iniciando verificación periódica de hora
+2026-09-06 04:13:10,265 - SistemaNotificaciones - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 04:13:10,266 - __main__ - INFO - ✅ Aplicación iniciada exitosamente
+2026-09-06 04:13:10,266 - __main__ - INFO - 🖥️ Interfaz en pantalla completa disponible
+2026-09-06 04:13:10,266 - __main__ - INFO - ⌨️ Presione F1 para ver atajos de teclado
+2026-09-06 04:13:10,545 - __main__ - INFO - ⏰ Inicialización retardada completada
+2026-09-06 04:13:22,345 - model - INFO - Loaded from cloud
+2026-09-06 04:13:30,755 - model - INFO - Loaded from cloud
+2026-09-06 04:15:20,450 - __main__ - INFO - 🔚 Cerrando Sistema de Monitoreo SERENAZGO
+2026-09-06 04:15:20,455 - __main__ - INFO - 🧹 Iniciando limpieza al cerrar...
+2026-09-06 04:15:20,455 - __main__ - INFO - 🔧 Ejecutándose en modo desarrollo con __file__: D:\mvc
+2026-09-06 04:15:20,456 - __main__ - INFO - 🧹 Archivos temporales limpiados
+2026-09-06 04:15:20,571 - __main__ - INFO - ✅ Limpieza completada exitosamente

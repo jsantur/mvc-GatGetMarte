@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-09-06T04:09:16.554165",
+  "turno": "NOCHE",
+  "units": [
+    {
+      "alias": "🚙 1 EUI-621",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "NORTE",
+      "zona": "NORTE",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚙 2 EUI-682",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "CENTRO",
+      "zona": "CENTRO",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚙 8 EUI-680",
+      "km": "45",
+      "ap": "180",
+      "po": "2",
+      "turnos_seleccionados": [
+        "TARDE"
+      ],
+      "jurisdiccion": "SUR",
+      "zona": "SUR",
+      "observaciones": "FALTA 45 KM, FALTA 50 MIN (2T), FALTAN 1 P.O."
+    },
+    {
+      "alias": "🚘 9 EUI-645",
+      "km": "50",
+      "ap": "100",
+      "po": "1",
+      "turnos_seleccionados": [
+        "NOCHE"
+      ],
+      "jurisdiccion": "ENACE",
+      "zona": "ENACE",
+      "observaciones": "FALTA 40 KM, FALTA 130 MIN (5T), FALTAN 2 P.O."
+    },
+    {
+      "alias": "🚘 10 EUI-647",
+      "km": "30",
+      "ap": "150",
+      "po": "3",
+      "turnos_seleccionados": [
+        "TARDE"
+      ],
+      "jurisdiccion": "NORTE",
+      "zona": "NORTE",
+      "observaciones": "FALTA 60 KM, FALTA 80 MIN (3T), COMPLETO (3 P.O.)"
+    }
+  ],
+  "filtro_activo": "MANUAL",
+  "metadata": {
+    "version": "2.0",
+    "total_units": 5
+  }
+}

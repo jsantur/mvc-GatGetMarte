@@ -328,6 +328,8 @@ class View:
                         self.controller.capturar_pantalla_completa()
                 elif key_lower == 'g':
                     self.controller.open_wialon()
+                elif key_lower == 'v':
+                    self.controller.open_visor_tactico()
                 elif key_lower == 'r':
                     self.controller.force_time_update()
                 elif key_lower == 'b':
@@ -641,6 +643,12 @@ Manual actualizado al 05 de Abril de 2026."""
             label="🗺️ SIPCOP-M", 
             command=self.controller.open_sipcop,
             accelerator="Ctrl+Shift+M"
+        )
+
+        menu_enlaces.add_command(
+            label="🛰️ Visor Táctico", 
+            command=self.controller.open_visor_tactico,
+            accelerator="Ctrl+Shift+V"
         )
 
         # MENÚ DE AYUDA
@@ -1303,15 +1311,21 @@ Manual actualizado al 05 de Abril de 2026."""
         
         btn_geo = ttk.Button(links_frame, text="🌍 Wialon",
                             command=self.controller.open_wialon,
-                            style='Success.TButton')
+                            style='Wialon.TButton')
         btn_geo.pack(side=tk.LEFT, padx=3)
         self.create_tooltip(btn_geo, "📍 hosting.wialon.us")
         
         btn_sipcop = ttk.Button(links_frame, text="🗺️ SIPCOP-M",
                             command=self.controller.open_sipcop,
-                            style='Success.TButton')
+                            style='Sipcop.TButton')
         btn_sipcop.pack(side=tk.LEFT, padx=3)
         self.create_tooltip(btn_sipcop, "🇵🇪 seguridadciudadana.mininter.gob.pe")
+
+        btn_visor = ttk.Button(links_frame, text="🛰️ Visor Táctico",
+                            command=self.controller.open_visor_tactico,
+                            style='Visor.TButton')
+        btn_visor.pack(side=tk.LEFT, padx=3)
+        self.create_tooltip(btn_visor, "🌐 visor-tacticos.vercel.app")
         
         # Información de tiempo y turno mejorada
         time_frame = tk.Frame(right_frame, bg=self.COLOR_FONDO, relief=tk.SOLID, bd=1, padx=10, pady=5)
@@ -1482,6 +1496,36 @@ Manual actualizado al 05 de Abril de 2026."""
                        relief='flat')
         style.map('Success.TButton',
                  background=[('active', '#229954'), ('pressed', '#1e8449')])
+
+        # Botón Wialon (Naranja)
+        style.configure('Wialon.TButton',
+                       font=self.font_boton,
+                       padding=(10, 8),
+                       foreground='white',
+                       background='#e67e22',
+                       relief='flat')
+        style.map('Wialon.TButton',
+                 background=[('active', '#d35400'), ('pressed', '#ba4a00')])
+
+        # Botón SIPCOP-M (Verde)
+        style.configure('Sipcop.TButton',
+                       font=self.font_boton,
+                       padding=(10, 8),
+                       foreground='white',
+                       background='#27ae60',
+                       relief='flat')
+        style.map('Sipcop.TButton',
+                 background=[('active', '#229954'), ('pressed', '#1e8449')])
+
+        # Botón Visor Táctico (Púrpura)
+        style.configure('Visor.TButton',
+                       font=self.font_boton,
+                       padding=(10, 8),
+                       foreground='white',
+                       background='#8e44ad',
+                       relief='flat')
+        style.map('Visor.TButton',
+                 background=[('active', '#7d3c98'), ('pressed', '#6c3483')])
         
         # Botones de peligro
         style.configure('Danger.TButton',
@@ -1839,8 +1883,8 @@ Manual actualizado al 05 de Abril de 2026."""
                 ap = fila_data['entry_ap'].get()
                 po = fila_data['entry_po'].get()
                 turnos = [t for t, var in fila_data['check_vars_turnos'].items() if var.get()]
-                zona = fila_data['var_zona'].get()
-                jurisdiccion = "T.ALTA" if zona in ["SUR", "ENACE"] else "SECTORIAL"
+                zona = fila_data['var_zona'].get().strip().upper()
+                jurisdiccion = zona if zona in ["NORTE", "CENTRO", "SUR", "ENACE"] else (zona or "")
                 selected_units_data.append({
                     'alias': fila_data['alias'],
                     'km': km,
@@ -1848,7 +1892,7 @@ Manual actualizado al 05 de Abril de 2026."""
                     'po': po,
                     'turnos_seleccionados': turnos,
                     'jurisdiccion': jurisdiccion,
-                    'zona': zona
+                    'zona': zona or jurisdiccion
                 })
         return selected_units_data
 
