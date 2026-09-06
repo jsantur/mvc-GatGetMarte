@@ -45,7 +45,9 @@ hiddenimports = [
     'psutil',
     'google.generativeai',
     'tkinter',
+    'tkinter.ttk',
     'tkinter.messagebox',
+    'tkinter.scrolledtext',
     'webbrowser',
     'atexit',
     'ctypes',
@@ -63,7 +65,26 @@ hiddenimports = [
     'win32con',
     'win32clipboard',
     'wialon_api',
-    're'
+    're',
+    'unicodedata',
+    'sqlite3',
+    # Módulos del proyecto
+    'model',
+    'view',
+    'controller',
+    'utils',
+    'units_manager',
+    'cache',
+    'constants',
+    'modern_widgets',
+    'notificacion',
+    'excel_persistence',
+    'report_unidades',
+    'report_ocurrencias',
+    'megafonos_dialog',
+    'daily_report_dialog',
+    'gestion_unidades',
+    'megafonos'
 ]
 
 # Recopilar todo lo relacionado con requests y google-generativeai

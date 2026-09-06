@@ -1,0 +1,64 @@
+{
+  "timestamp": "2025-06-23T20:17:45.467201",
+  "turno": "TARDE",
+  "units": [
+    {
+      "alias": "H9 / EUI-645",
+      "km": "230",
+      "ap": "300",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA",
+        "TARDE"
+      ]
+    },
+    {
+      "alias": "H10 / EUI-647",
+      "km": "230",
+      "ap": "300",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA",
+        "TARDE"
+      ]
+    },
+    {
+      "alias": "H11 / EUI-668",
+      "km": "50",
+      "ap": "50",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA",
+        "TARDE"
+      ]
+    },
+    {
+      "alias": "H12 / EUI-670",
+      "km": "50",
+      "ap": "50",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA",
+        "TARDE"
+      ]
+    },
+    {
+      "alias": "H13 / EUI-671",
+      "km": "1",
+      "ap": "1",
+      "po": "1",
+      "turnos_seleccionados": [
+        "NOCHE"
+      ]
+    }
+  ],
+  "filtro_activo": "AUTOS",
+  "metadata": {
+    "version": "2.0",
+    "total_units": 5
+  }
+}

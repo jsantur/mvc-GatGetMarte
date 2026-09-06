@@ -1,0 +1,20 @@
+[
+  {
+    "fecha": "2025-07-31",
+    "hora": "17:52",
+    "turno": "TARDE",
+    "camara": "Troncos",
+    "ocurrencia": "OBSERVADO SUJETO MICCIONANDO.",
+    "usuario": "OPERADOR02",
+    "reporte": "CÁMARA: Troncos\nFECHA  : 2025-07-31\nHORA   : 17:52\n\nOCURRENCIA:\nOBSERVADO SUJETO MICCIONANDO.\n"
+  },
+  {
+    "fecha": "2025-07-31",
+    "hora": "17:52",
+    "turno": "TARDE",
+    "camara": "Caja Piura",
+    "ocurrencia": "OBSERVADO INDIVIDUO PARTICIPANDO EN ACTIVIDAD SEXUAL.",
+    "usuario": "OPERADOR02",
+    "reporte": "CÁMARA: Caja Piura\nFECHA  : 2025-07-31\nHORA   : 17:52\n\nOCURRENCIA:\nOBSERVADO INDIVIDUO PARTICIPANDO EN ACTIVIDAD SEXUAL.\n"
+  }
+]

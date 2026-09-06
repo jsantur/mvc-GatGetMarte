@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-04-05T08:51:23.449568",
+  "turno": "DÍA",
+  "units": [
+    {
+      "alias": "🚙 8 EUI-680",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚘 9 EUI-645",
+      "km": "45",
+      "ap": "150",
+      "po": "2",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "observaciones": "FALTA 45 KM, FALTA 80 MIN (3T), FALTAN 1 P.O."
+    }
+  ],
+  "filtro_activo": "MANUAL",
+  "metadata": {
+    "version": "2.0",
+    "total_units": 2
+  }
+}

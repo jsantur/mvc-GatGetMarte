@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-04-07T18:27:43.513120",
+  "turno": "TARDE",
+  "units": [
+    {
+      "alias": "🚙 1 EUI-621",
+      "km": "26",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "observaciones": "FALTA 64 KM, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚙 2 EUI-682",
+      "km": "54",
+      "ap": "120",
+      "po": "2",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "observaciones": "FALTA 36 KM, FALTA 110 MIN (4T), FALTAN 1 P.O."
+    },
+    {
+      "alias": "🚘 11 EUI-668",
+      "km": "56",
+      "ap": "150",
+      "po": "2",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "observaciones": "FALTA 34 KM, FALTA 80 MIN (3T), FALTAN 1 P.O."
+    }
+  ],
+  "filtro_activo": "MANUAL",
+  "metadata": {
+    "version": "2.0",
+    "total_units": 3
+  }
+}

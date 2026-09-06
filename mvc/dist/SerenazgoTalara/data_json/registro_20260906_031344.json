@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-09-06T03:13:44.046199",
+  "turno": "NOCHE",
+  "units": [
+    {
+      "alias": "🚙 1 EUI-621",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA",
+        "TARDE"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "zona": "NORTE",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚙 2 EUI-682",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "DÍA",
+        "TARDE"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "zona": "CENTRO",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚙 3 EUI-683",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "TARDE"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "zona": "SUR",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚙 7 EUI-679",
+      "km": "45",
+      "ap": "210",
+      "po": "2",
+      "turnos_seleccionados": [
+        "DÍA"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "zona": "ENACE",
+      "observaciones": "FALTA 45 KM, FALTA 20 MIN (1T), FALTAN 1 P.O."
+    },
+    {
+      "alias": "🚘 9 EUI-645",
+      "km": "45",
+      "ap": "200",
+      "po": "1",
+      "turnos_seleccionados": [
+        "TARDE"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "zona": "ENACE",
+      "observaciones": "FALTA 45 KM, FALTA 30 MIN (1T), FALTAN 2 P.O."
+    },
+    {
+      "alias": "🚘 10 EUI-647",
+      "km": "90",
+      "ap": "205",
+      "po": "5",
+      "turnos_seleccionados": [
+        "NOCHE"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "zona": "NORTE",
+      "observaciones": "COMPLETO, FALTA 25 MIN (1T), COMPLETO (5 P.O.)"
+    },
+    {
+      "alias": "🚘 11 EUI-668",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "DÍA",
+        "TARDE"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "zona": "SUR",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    }
+  ],
+  "filtro_activo": "MANUAL",
+  "metadata": {
+    "version": "2.0",
+    "total_units": 7
+  }
+}

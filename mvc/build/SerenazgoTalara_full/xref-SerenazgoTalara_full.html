@@ -129,9 +129,11 @@ imports:
  &#8226;   <a href="#certifi">certifi</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#constants">constants</a>
  &#8226;   <a href="#controller">controller</a>
  &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#ctypes">ctypes</a>
+ &#8226;   <a href="#daily_report_dialog">daily_report_dialog</a>
  &#8226;   <a href="#datetime">datetime</a>
  &#8226;   <a href="#encodings">encodings</a>
  &#8226;   <a href="#encodings.aliases">encodings.aliases</a>
@@ -256,8 +258,10 @@ imports:
  &#8226;   <a href="#encodings.uu_codec">encodings.uu_codec</a>
  &#8226;   <a href="#encodings.zlib_codec">encodings.zlib_codec</a>
  &#8226;   <a href="#enum">enum</a>
+ &#8226;   <a href="#excel_persistence">excel_persistence</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#genericpath">genericpath</a>
+ &#8226;   <a href="#gestion_unidades">gestion_unidades</a>
  &#8226;   <a href="#google.generativeai">google.generativeai</a>
  &#8226;   <a href="#google.generativeai.answer">google.generativeai.answer</a>
  &#8226;   <a href="#google.generativeai.audio_models">google.generativeai.audio_models</a>
@@ -335,7 +339,10 @@ imports:
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#megafonos">megafonos</a>
+ &#8226;   <a href="#megafonos_dialog">megafonos_dialog</a>
  &#8226;   <a href="#model">model</a>
+ &#8226;   <a href="#modern_widgets">modern_widgets</a>
  &#8226;   <a href="#mysql.connector">mysql.connector</a>
  &#8226;   <a href="#notificacion">notificacion</a>
  &#8226;   <a href="#ntpath">ntpath</a>
@@ -552,6 +559,8 @@ imports:
  &#8226;   <a href="#re._compiler">re._compiler</a>
  &#8226;   <a href="#re._constants">re._constants</a>
  &#8226;   <a href="#re._parser">re._parser</a>
+ &#8226;   <a href="#report_ocurrencias">report_ocurrencias</a>
+ &#8226;   <a href="#report_unidades">report_unidades</a>
  &#8226;   <a href="#reprlib">reprlib</a>
  &#8226;   <a href="#requests">requests</a>
  &#8226;   <a href="#requests.__version__">requests.__version__</a>
@@ -572,6 +581,7 @@ imports:
  &#8226;   <a href="#requests.structures">requests.structures</a>
  &#8226;   <a href="#requests.utils">requests.utils</a>
  &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#sqlite3">sqlite3</a>
  &#8226;   <a href="#sre_compile">sre_compile</a>
  &#8226;   <a href="#sre_constants">sre_constants</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
@@ -581,8 +591,13 @@ imports:
  &#8226;   <a href="#time">time</a>
  &#8226;   <a href="#tkinter">tkinter</a>
  &#8226;   <a href="#tkinter.messagebox">tkinter.messagebox</a>
+ &#8226;   <a href="#tkinter.scrolledtext">tkinter.scrolledtext</a>
+ &#8226;   <a href="#tkinter.ttk">tkinter.ttk</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#unicodedata">unicodedata</a>
+ &#8226;   <a href="#units_manager">units_manager</a>
+ &#8226;   <a href="#utils">utils</a>
  &#8226;   <a href="#view">view</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#weakref">weakref</a>
@@ -4995,7 +5010,9 @@ imported by:
  &#8226;   <a href="#PyQt6.QtOpenGL">PyQt6.QtOpenGL</a>
  &#8226;   <a href="#PyQt6.QtOpenGLWidgets">PyQt6.QtOpenGLWidgets</a>
  &#8226;   <a href="#PyQt6.QtWidgets">PyQt6.QtWidgets</a>
+ &#8226;   <a href="#daily_report_dialog">daily_report_dialog</a>
  &#8226;   <a href="#matplotlib.backends.qt_compat">matplotlib.backends.qt_compat</a>
+ &#8226;   <a href="#megafonos_dialog">megafonos_dialog</a>
  &#8226;   <a href="#qtpy">qtpy</a>
  &#8226;   <a href="#qtpy.QtCore">qtpy.QtCore</a>
 
@@ -5023,7 +5040,10 @@ imported by:
     <a href="#PyQt6.QtOpenGL">PyQt6.QtOpenGL</a>
  &#8226;   <a href="#PyQt6.QtOpenGLWidgets">PyQt6.QtOpenGLWidgets</a>
  &#8226;   <a href="#PyQt6.QtWidgets">PyQt6.QtWidgets</a>
+ &#8226;   <a href="#daily_report_dialog">daily_report_dialog</a>
  &#8226;   <a href="#matplotlib.backends.qt_compat">matplotlib.backends.qt_compat</a>
+ &#8226;   <a href="#megafonos_dialog">megafonos_dialog</a>
+ &#8226;   <a href="#modern_widgets">modern_widgets</a>
  &#8226;   <a href="#qtpy.QtCore">qtpy.QtCore</a>
  &#8226;   <a href="#qtpy.QtGui">qtpy.QtGui</a>
  &#8226;   <a href="#qtpy.QtWidgets">qtpy.QtWidgets</a>
@@ -5103,7 +5123,10 @@ imports:
 imported by:
     <a href="#PyQt6">PyQt6</a>
  &#8226;   <a href="#PyQt6.QtOpenGLWidgets">PyQt6.QtOpenGLWidgets</a>
+ &#8226;   <a href="#daily_report_dialog">daily_report_dialog</a>
  &#8226;   <a href="#matplotlib.backends.qt_compat">matplotlib.backends.qt_compat</a>
+ &#8226;   <a href="#megafonos_dialog">megafonos_dialog</a>
+ &#8226;   <a href="#modern_widgets">modern_widgets</a>
  &#8226;   <a href="#qtpy.QtWidgets">qtpy.QtWidgets</a>
 
   </div>
@@ -11806,6 +11829,8 @@ imported by:
  &#8226;   <a href="#_pytest.pathlib">_pytest.pathlib</a>
  &#8226;   <a href="#certifi.core">certifi.core</a>
  &#8226;   <a href="#colorama.initialise">colorama.initialise</a>
+ &#8226;   <a href="#language_tool_python.config_file">language_tool_python.config_file</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
@@ -14303,6 +14328,7 @@ imported by:
  &#8226;   <a href="#jinja2.sandbox">jinja2.sandbox</a>
  &#8226;   <a href="#jinja2.tests">jinja2.tests</a>
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
+ &#8226;   <a href="#language_tool_python.match">language_tool_python.match</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
  &#8226;   <a href="#matplotlib._afm">matplotlib._afm</a>
@@ -14817,6 +14843,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#distribucion">distribucion</a>
+ &#8226;   <a href="#main.py">main.py</a>
 
   </div>
 
@@ -15263,6 +15290,7 @@ imports:
  &#8226;   <a href="#tkinter">tkinter</a>
  &#8226;   <a href="#tkinter.messagebox">tkinter.messagebox</a>
  &#8226;   <a href="#tkinter.ttk">tkinter.ttk</a>
+ &#8226;   <a href="#unicodedata">unicodedata</a>
  &#8226;   <a href="#utils">utils</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
@@ -15772,6 +15800,26 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="daily_report_dialog"></a>
+  <a target="code" href="///D:/mvc/daily_report_dialog.py" type="text/plain"><tt>daily_report_dialog</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt6.QtCore">PyQt6.QtCore</a>
+ &#8226;   <a href="#PyQt6.QtGui">PyQt6.QtGui</a>
+ &#8226;   <a href="#PyQt6.QtWidgets">PyQt6.QtWidgets</a>
+ &#8226;   <a href="#modern_widgets">modern_widgets</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="dataclasses"></a>
   <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/dataclasses.py" type="text/plain"><tt>dataclasses</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -15934,6 +15982,7 @@ imported by:
  &#8226;   <a href="#dateutil.tz.win">dateutil.tz.win</a>
  &#8226;   <a href="#distribucion">distribucion</a>
  &#8226;   <a href="#email.utils">email.utils</a>
+ &#8226;   <a href="#excel_persistence">excel_persistence</a>
  &#8226;   <a href="#google.api_core.datetime_helpers">google.api_core.datetime_helpers</a>
  &#8226;   <a href="#google.api_core.timeout">google.api_core.timeout</a>
  &#8226;   <a href="#google.auth._helpers">google.auth._helpers</a>
@@ -15960,6 +16009,7 @@ imported by:
  &#8226;   <a href="#grpc._simple_stubs">grpc._simple_stubs</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#http.server">http.server</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib.axis">matplotlib.axis</a>
  &#8226;   <a href="#matplotlib.backends.backend_webagg_core">matplotlib.backends.backend_webagg_core</a>
@@ -20487,6 +20537,28 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="excel_persistence"></a>
+  <a target="code" href="///D:/mvc/excel_persistence.py" type="text/plain"><tt>excel_persistence</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#datetime">datetime</a>
+ &#8226;   <a href="#openpyxl.styles">openpyxl.styles</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pandas">pandas</a>
+ &#8226;   <a href="#pathlib">pathlib</a>
+ &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="exceptiongroup"></a>
   <a target="code" href="" type="text/plain"><tt>exceptiongroup</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -20753,6 +20825,8 @@ imported by:
  &#8226;   <a href="#jinja2.environment">jinja2.environment</a>
  &#8226;   <a href="#jinja2.runtime">jinja2.runtime</a>
  &#8226;   <a href="#jinja2.sandbox">jinja2.sandbox</a>
+ &#8226;   <a href="#language_tool_python.language_tag">language_tool_python.language_tag</a>
+ &#8226;   <a href="#language_tool_python.match">language_tool_python.match</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
@@ -21047,6 +21121,27 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="gestion_unidades"></a>
+  <a target="code" href="///D:/mvc/gestion_unidades.py" type="text/plain"><tt>gestion_unidades</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#time">time</a>
+ &#8226;   <a href="#tkinter">tkinter</a>
+ &#8226;   <a href="#tkinter.messagebox">tkinter.messagebox</a>
+ &#8226;   <a href="#tkinter.simpledialog">tkinter.simpledialog</a>
+ &#8226;   <a href="#tkinter.ttk">tkinter.ttk</a>
+ &#8226;   <a href="#uuid">uuid</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="getopt"></a>
   <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/getopt.py" type="text/plain"><tt>getopt</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -21155,6 +21250,7 @@ imports:
 imported by:
     <a href="#_pytest._argcomplete">_pytest._argcomplete</a>
  &#8226;   <a href="#_pytest.config">_pytest.config</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
  &#8226;   <a href="#model">model</a>
  &#8226;   <a href="#pathlib._abc">pathlib._abc</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
@@ -34668,6 +34764,7 @@ imported by:
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#httplib2">httplib2</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#urllib3.connection">urllib3.connection</a>
  &#8226;   <a href="#urllib3.contrib.emscripten.connection">urllib3.contrib.emscripten.connection</a>
@@ -37253,6 +37350,7 @@ imported by:
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib.backends.backend_webagg">matplotlib.backends.backend_webagg</a>
  &#8226;   <a href="#matplotlib.backends.backend_webagg_core">matplotlib.backends.backend_webagg_core</a>
@@ -37440,6 +37538,187 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="language_tool_python"></a>
+  <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/site-packages/language_tool_python/__init__.py" type="text/plain"><tt>language_tool_python</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#language_tool_python.language_tag">language_tool_python.language_tag</a>
+ &#8226;   <a href="#language_tool_python.match">language_tool_python.match</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#language_tool_python.config_file">language_tool_python.config_file</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.language_tag">language_tool_python.language_tag</a>
+ &#8226;   <a href="#language_tool_python.match">language_tool_python.match</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
+ &#8226;   <a href="#report_ocurrencias">report_ocurrencias</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="language_tool_python.config_file"></a>
+  <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/site-packages/language_tool_python/config_file.py" type="text/plain"><tt>language_tool_python.config_file</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#atexit">atexit</a>
+ &#8226;   <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="language_tool_python.download_lt"></a>
+  <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/site-packages/language_tool_python/download_lt.py" type="text/plain"><tt>language_tool_python.download_lt</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#datetime">datetime</a>
+ &#8226;   <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#requests">requests</a>
+ &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#tqdm">tqdm</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+ &#8226;   <a href="#zipfile">zipfile</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#language_tool_python.server">language_tool_python.server</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="language_tool_python.language_tag"></a>
+  <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/site-packages/language_tool_python/language_tag.py" type="text/plain"><tt>language_tool_python.language_tag</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#functools">functools</a>
+ &#8226;   <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="language_tool_python.match"></a>
+  <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/site-packages/language_tool_python/match.py" type="text/plain"><tt>language_tool_python.match</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unicodedata">unicodedata</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="language_tool_python.server"></a>
+  <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/site-packages/language_tool_python/server.py" type="text/plain"><tt>language_tool_python.server</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#atexit">atexit</a>
+ &#8226;   <a href="#http.client">http.client</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#language_tool_python.config_file">language_tool_python.config_file</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.language_tag">language_tool_python.language_tag</a>
+ &#8226;   <a href="#language_tool_python.match">language_tool_python.match</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#psutil">psutil</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#requests">requests</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#language_tool_python">language_tool_python</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="language_tool_python.utils"></a>
+  <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/site-packages/language_tool_python/utils.py" type="text/plain"><tt>language_tool_python.utils</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#glob">glob</a>
+ &#8226;   <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#language_tool_python.config_file">language_tool_python.config_file</a>
+ &#8226;   <a href="#language_tool_python.match">language_tool_python.match</a>
+ &#8226;   <a href="#locale">locale</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#psutil">psutil</a>
+ &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+ &#8226;   <a href="#urllib.request">urllib.request</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#language_tool_python">language_tool_python</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="linecache"></a>
   <a target="code" href="///C:/Users/USUARIO/AppData/Local/Programs/Python/Python313/Lib/linecache.py" type="text/plain"><tt>linecache</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -37491,6 +37770,7 @@ imported by:
  &#8226;   <a href="#_strptime">_strptime</a>
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#gettext">gettext</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
  &#8226;   <a href="#matplotlib.ticker">matplotlib.ticker</a>
@@ -37632,6 +37912,7 @@ imported by:
  &#8226;   <a href="#hashlib">hashlib</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#jinja2.runtime">jinja2.runtime</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
  &#8226;   <a href="#matplotlib._afm">matplotlib._afm</a>
@@ -41488,6 +41769,28 @@ imports:
   <div class="import">
 imported by:
     <a href="#controller">controller</a>
+ &#8226;   <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="megafonos_dialog"></a>
+  <a target="code" href="///D:/mvc/megafonos_dialog.py" type="text/plain"><tt>megafonos_dialog</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt6.QtCore">PyQt6.QtCore</a>
+ &#8226;   <a href="#PyQt6.QtGui">PyQt6.QtGui</a>
+ &#8226;   <a href="#PyQt6.QtWidgets">PyQt6.QtWidgets</a>
+ &#8226;   <a href="#modern_widgets">modern_widgets</a>
+ &#8226;   <a href="#platform">platform</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
 
   </div>
 
@@ -41584,6 +41887,25 @@ imports:
   <div class="import">
 imported by:
     <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="modern_widgets"></a>
+  <a target="code" href="///D:/mvc/modern_widgets.py" type="text/plain"><tt>modern_widgets</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt6.QtGui">PyQt6.QtGui</a>
+ &#8226;   <a href="#PyQt6.QtWidgets">PyQt6.QtWidgets</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#daily_report_dialog">daily_report_dialog</a>
+ &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#megafonos_dialog">megafonos_dialog</a>
 
   </div>
 
@@ -54758,7 +55080,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#main.py">main.py</a>
+    <a href="#excel_persistence">excel_persistence</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#model">model</a>
  &#8226;   <a href="#openpyxl.cell.cell">openpyxl.cell.cell</a>
  &#8226;   <a href="#openpyxl.cell.read_only">openpyxl.cell.read_only</a>
@@ -57106,6 +57429,7 @@ imported by:
  &#8226;   <a href="#doctest">doctest</a>
  &#8226;   <a href="#dotenv.main">dotenv.main</a>
  &#8226;   <a href="#email.utils">email.utils</a>
+ &#8226;   <a href="#excel_persistence">excel_persistence</a>
  &#8226;   <a href="#fileinput">fileinput</a>
  &#8226;   <a href="#fnmatch">fnmatch</a>
  &#8226;   <a href="#genericpath">genericpath</a>
@@ -57162,6 +57486,10 @@ imported by:
  &#8226;   <a href="#jinja2.environment">jinja2.environment</a>
  &#8226;   <a href="#jinja2.loaders">jinja2.loaders</a>
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
+ &#8226;   <a href="#language_tool_python.config_file">language_tool_python.config_file</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
@@ -57999,7 +58327,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#google.generativeai.notebook.compare_cmd">google.generativeai.notebook.compare_cmd</a>
+    <a href="#excel_persistence">excel_persistence</a>
+ &#8226;   <a href="#google.generativeai.notebook.compare_cmd">google.generativeai.notebook.compare_cmd</a>
  &#8226;   <a href="#google.generativeai.notebook.eval_cmd">google.generativeai.notebook.eval_cmd</a>
  &#8226;   <a href="#google.generativeai.notebook.lib.llmfn_outputs">google.generativeai.notebook.lib.llmfn_outputs</a>
  &#8226;   <a href="#google.generativeai.notebook.run_cmd">google.generativeai.notebook.run_cmd</a>
@@ -70815,6 +71144,7 @@ imported by:
  &#8226;   <a href="#_pytest.tmpdir">_pytest.tmpdir</a>
  &#8226;   <a href="#cache">cache</a>
  &#8226;   <a href="#dotenv.main">dotenv.main</a>
+ &#8226;   <a href="#excel_persistence">excel_persistence</a>
  &#8226;   <a href="#google.generativeai.client">google.generativeai.client</a>
  &#8226;   <a href="#google.generativeai.files">google.generativeai.files</a>
  &#8226;   <a href="#google.generativeai.types.content_types">google.generativeai.types.content_types</a>
@@ -71250,6 +71580,7 @@ imported by:
  &#8226;   <a href="#googleapiclient.model">googleapiclient.model</a>
  &#8226;   <a href="#matplotlib.backends.qt_compat">matplotlib.backends.qt_compat</a>
  &#8226;   <a href="#megafonos">megafonos</a>
+ &#8226;   <a href="#megafonos_dialog">megafonos_dialog</a>
  &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
  &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
  &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
@@ -73043,7 +73374,9 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#main.py">main.py</a>
+    <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
  &#8226;   <a href="#psutil">psutil</a>
  &#8226;   <a href="#psutil._common">psutil._common</a>
@@ -87240,6 +87573,9 @@ imported by:
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.language_tag">language_tool_python.language_tag</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#main.py">main.py</a>
@@ -87764,6 +88100,7 @@ imports:
  &#8226;   <a href="#datetime">datetime</a>
  &#8226;   <a href="#google.generativeai">google.generativeai</a>
  &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#language_tool_python">language_tool_python</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#platform">platform</a>
@@ -87783,7 +88120,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#notificacion">notificacion</a>
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#notificacion">notificacion</a>
  &#8226;   <a href="#view">view</a>
 
   </div>
@@ -87815,12 +88153,14 @@ imports:
  &#8226;   <a href="#tkinter.ttk">tkinter.ttk</a>
  &#8226;   <a href="#typing">typing</a>
  &#8226;   <a href="#utils">utils</a>
+ &#8226;   <a href="#webbrowser">webbrowser</a>
  &#8226;   <a href="#wialon_api">wialon_api</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#view">view</a>
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#view">view</a>
 
   </div>
 
@@ -87896,6 +88236,8 @@ imported by:
  &#8226;   <a href="#google.api_core.operations_v1.transports.rest">google.api_core.operations_v1.transports.rest</a>
  &#8226;   <a href="#google.api_core.rest_streaming">google.api_core.rest_streaming</a>
  &#8226;   <a href="#google.auth.transport.requests">google.auth.transport.requests</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#model">model</a>
  &#8226;   <a href="#requests">requests</a>
@@ -93234,7 +93576,10 @@ imported by:
  &#8226;   <a href="#controller">controller</a>
  &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#dotenv.main">dotenv.main</a>
+ &#8226;   <a href="#excel_persistence">excel_persistence</a>
  &#8226;   <a href="#http.server">http.server</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
  &#8226;   <a href="#model">model</a>
@@ -93510,6 +93855,7 @@ imported by:
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#httplib2">httplib2</a>
  &#8226;   <a href="#httplib2.socks">httplib2.socks</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
  &#8226;   <a href="#matplotlib.backend_bases">matplotlib.backend_bases</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
@@ -101701,6 +102047,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#cache">cache</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#model">model</a>
  &#8226;   <a href="#pandas.io.sql">pandas.io.sql</a>
  &#8226;   <a href="#sqlalchemy.dialects.sqlite.pysqlite">sqlalchemy.dialects.sqlite.pysqlite</a>
@@ -102150,6 +102497,9 @@ imported by:
  &#8226;   <a href="#google.auth.transport._mtls_helper">google.auth.transport._mtls_helper</a>
  &#8226;   <a href="#google.oauth2.webauthn_handler">google.oauth2.webauthn_handler</a>
  &#8226;   <a href="#http.server">http.server</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
  &#8226;   <a href="#matplotlib.cbook">matplotlib.cbook</a>
  &#8226;   <a href="#matplotlib.dviread">matplotlib.dviread</a>
@@ -102312,6 +102662,7 @@ imported by:
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
  &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#curses">curses</a>
+ &#8226;   <a href="#daily_report_dialog">daily_report_dialog</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#dateutil">dateutil</a>
  &#8226;   <a href="#dateutil.rrule">dateutil.rrule</a>
@@ -102331,6 +102682,7 @@ imported by:
  &#8226;   <a href="#encodings.utf_16">encodings.utf_16</a>
  &#8226;   <a href="#encodings.utf_32">encodings.utf_32</a>
  &#8226;   <a href="#enum">enum</a>
+ &#8226;   <a href="#excel_persistence">excel_persistence</a>
  &#8226;   <a href="#fileinput">fileinput</a>
  &#8226;   <a href="#fractions">fractions</a>
  &#8226;   <a href="#ftplib">ftplib</a>
@@ -102396,6 +102748,7 @@ imported by:
  &#8226;   <a href="#matplotlib.pyplot">matplotlib.pyplot</a>
  &#8226;   <a href="#matplotlib.tri._triangulation">matplotlib.tri._triangulation</a>
  &#8226;   <a href="#megafonos">megafonos</a>
+ &#8226;   <a href="#megafonos_dialog">megafonos_dialog</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
  &#8226;   <a href="#model">model</a>
  &#8226;   <a href="#multiprocessing">multiprocessing</a>
@@ -102825,6 +103178,8 @@ imported by:
  &#8226;   <a href="#googleapiclient.discovery_cache.file_cache">googleapiclient.discovery_cache.file_cache</a>
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
  &#8226;   <a href="#jinja2.bccache">jinja2.bccache</a>
+ &#8226;   <a href="#language_tool_python.config_file">language_tool_python.config_file</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
  &#8226;   <a href="#matplotlib.texmanager">matplotlib.texmanager</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
@@ -103019,6 +103374,7 @@ imported by:
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib.backends.backend_webagg">matplotlib.backends.backend_webagg</a>
@@ -103129,6 +103485,7 @@ imported by:
  &#8226;   <a href="#email.generator">email.generator</a>
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#gc">gc</a>
+ &#8226;   <a href="#gestion_unidades">gestion_unidades</a>
  &#8226;   <a href="#google.api_core.retry.retry_base">google.api_core.retry.retry_base</a>
  &#8226;   <a href="#google.api_core.retry.retry_streaming">google.api_core.retry.retry_streaming</a>
  &#8226;   <a href="#google.api_core.retry.retry_streaming_async">google.api_core.retry.retry_streaming_async</a>
@@ -103246,6 +103603,7 @@ imports:
 imported by:
     <a href="#controller">controller</a>
  &#8226;   <a href="#distribucion">distribucion</a>
+ &#8226;   <a href="#gestion_unidades">gestion_unidades</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#megafonos">megafonos</a>
  &#8226;   <a href="#model">model</a>
@@ -103352,6 +103710,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#controller">controller</a>
+ &#8226;   <a href="#gestion_unidades">gestion_unidades</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#notificacion">notificacion</a>
  &#8226;   <a href="#report_unidades">report_unidades</a>
@@ -103375,7 +103734,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#report_ocurrencias">report_ocurrencias</a>
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#report_ocurrencias">report_ocurrencias</a>
  &#8226;   <a href="#tkinter">tkinter</a>
 
   </div>
@@ -103393,7 +103753,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#tkinter.filedialog">tkinter.filedialog</a>
+    <a href="#gestion_unidades">gestion_unidades</a>
+ &#8226;   <a href="#tkinter.filedialog">tkinter.filedialog</a>
 
   </div>
 
@@ -103411,6 +103772,8 @@ imports:
 imported by:
     <a href="#controller">controller</a>
  &#8226;   <a href="#distribucion">distribucion</a>
+ &#8226;   <a href="#gestion_unidades">gestion_unidades</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#megafonos">megafonos</a>
  &#8226;   <a href="#report_ocurrencias">report_ocurrencias</a>
  &#8226;   <a href="#report_unidades">report_unidades</a>
@@ -103697,7 +104060,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#tqdm._dist_ver">tqdm._dist_ver</a>
+    <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#tqdm._dist_ver">tqdm._dist_ver</a>
  &#8226;   <a href="#tqdm._monitor">tqdm._monitor</a>
  &#8226;   <a href="#tqdm._tqdm_pandas">tqdm._tqdm_pandas</a>
  &#8226;   <a href="#tqdm.asyncio">tqdm.asyncio</a>
@@ -104787,6 +105151,12 @@ imported by:
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
  &#8226;   <a href="#jinja2.visitor">jinja2.visitor</a>
  &#8226;   <a href="#kiwisolver._cext">kiwisolver._cext</a>
+ &#8226;   <a href="#language_tool_python.config_file">language_tool_python.config_file</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.language_tag">language_tool_python.language_tag</a>
+ &#8226;   <a href="#language_tool_python.match">language_tool_python.match</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
  &#8226;   <a href="#markupsafe">markupsafe</a>
  &#8226;   <a href="#matplotlib._mathtext">matplotlib._mathtext</a>
  &#8226;   <a href="#matplotlib._mathtext_data">matplotlib._mathtext_data</a>
@@ -106174,8 +106544,11 @@ imported by:
  &#8226;   <a href="#_pytest._io.wcwidth">_pytest._io.wcwidth</a>
  &#8226;   <a href="#_pytest.assertion.util">_pytest.assertion.util</a>
  &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
+ &#8226;   <a href="#controller">controller</a>
  &#8226;   <a href="#encodings.idna">encodings.idna</a>
  &#8226;   <a href="#idna.core">idna.core</a>
+ &#8226;   <a href="#language_tool_python.match">language_tool_python.match</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib._mathtext">matplotlib._mathtext</a>
  &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
  &#8226;   <a href="#pandas.core.arrays.arrow.array">pandas.core.arrays.arrow.array</a>
@@ -106210,7 +106583,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#model">model</a>
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#model">model</a>
 
   </div>
 
@@ -106706,6 +107080,9 @@ imported by:
  &#8226;   <a href="#httplib2">httplib2</a>
  &#8226;   <a href="#httplib2.iri2uri">httplib2.iri2uri</a>
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
+ &#8226;   <a href="#language_tool_python.server">language_tool_python.server</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
  &#8226;   <a href="#matplotlib.image">matplotlib.image</a>
  &#8226;   <a href="#matplotlib.textpath">matplotlib.textpath</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
@@ -106774,6 +107151,7 @@ imported by:
     <a href="#_pytest.pastebin">_pytest.pastebin</a>
  &#8226;   <a href="#google.generativeai.types.model_types">google.generativeai.types.model_types</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#language_tool_python.utils">language_tool_python.utils</a>
  &#8226;   <a href="#matplotlib">matplotlib</a>
  &#8226;   <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
  &#8226;   <a href="#pandas.io.common">pandas.io.common</a>
@@ -107939,6 +108317,7 @@ imports:
 imported by:
     <a href="#constants">constants</a>
  &#8226;   <a href="#controller">controller</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#megafonos">megafonos</a>
  &#8226;   <a href="#model">model</a>
  &#8226;   <a href="#notificacion">notificacion</a>
@@ -107974,6 +108353,7 @@ imports:
 imported by:
     <a href="#_pytest._py.path">_pytest._py.path</a>
  &#8226;   <a href="#_pytest.pathlib">_pytest.pathlib</a>
+ &#8226;   <a href="#gestion_unidades">gestion_unidades</a>
  &#8226;   <a href="#googleapiclient.http">googleapiclient.http</a>
  &#8226;   <a href="#matplotlib.backend_tools">matplotlib.backend_tools</a>
  &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
@@ -108657,6 +109037,7 @@ imported by:
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#matplotlib.backends.backend_webagg">matplotlib.backends.backend_webagg</a>
  &#8226;   <a href="#pydoc">pydoc</a>
+ &#8226;   <a href="#report_unidades">report_unidades</a>
  &#8226;   <a href="#view">view</a>
 
   </div>
@@ -110336,6 +110717,7 @@ imported by:
     <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#jinja2.environment">jinja2.environment</a>
+ &#8226;   <a href="#language_tool_python.download_lt">language_tool_python.download_lt</a>
  &#8226;   <a href="#numpy.lib._npyio_impl">numpy.lib._npyio_impl</a>
  &#8226;   <a href="#openpyxl.reader.excel">openpyxl.reader.excel</a>
  &#8226;   <a href="#openpyxl.writer.excel">openpyxl.writer.excel</a>

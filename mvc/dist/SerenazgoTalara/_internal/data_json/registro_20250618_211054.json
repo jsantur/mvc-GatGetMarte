@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-06-18T21:10:54.334757",
+  "turno": "TARDE",
+  "units": [
+    {
+      "alias": "H9 / EUI-645",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "total_units": 1
+  }
+}

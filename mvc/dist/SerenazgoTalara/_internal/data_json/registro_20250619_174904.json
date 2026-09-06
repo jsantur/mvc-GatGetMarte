@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-06-19T17:49:04.275070",
+  "turno": "TARDE",
+  "units": [
+    {
+      "alias": "H9 / EUI-645",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE"
+      ]
+    },
+    {
+      "alias": "H10 / EUI-647",
+      "km": "45",
+      "ap": "120",
+      "po": "2",
+      "turnos_seleccionados": [
+        "NOCHE"
+      ]
+    },
+    {
+      "alias": "H11 / EUI-668",
+      "km": "100",
+      "ap": "200",
+      "po": "2",
+      "turnos_seleccionados": [
+        "NOCHE"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "total_units": 3
+  }
+}
