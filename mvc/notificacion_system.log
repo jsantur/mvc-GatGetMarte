@@ -1,0 +1,1217 @@
+2025-06-27 00:11:56,733 - INFO - Iniciando sistema de notificaciones
+2025-06-27 00:11:56,744 - INFO - Notificación inicial mostrada
+2025-06-27 00:11:56,744 - INFO - Iniciando verificación periódica de hora
+2025-06-27 00:11:56,744 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:41:28,142 - INFO - Sistema de notificaciones inicializado
+2025-06-27 01:41:28,142 - INFO - Iniciando sistema de notificaciones
+2025-06-27 01:41:28,297 - INFO - Notificación inicial mostrada (Toast)
+2025-06-27 01:41:28,298 - INFO - Iniciando verificación periódica de hora
+2025-06-27 01:41:28,298 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:42:23,395 - INFO - Sistema de notificaciones inicializado
+2025-06-27 01:42:23,395 - INFO - Iniciando sistema de notificaciones
+2025-06-27 01:42:23,396 - INFO - Iniciando verificación periódica de hora
+2025-06-27 01:42:23,396 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:46:06,874 - INFO - Sistema de notificaciones inicializado
+2025-06-27 01:46:06,874 - INFO - Iniciando sistema de notificaciones
+2025-06-27 01:46:06,874 - INFO - Iniciando verificación periódica de hora
+2025-06-27 01:46:06,874 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:48:31,632 - INFO - Sistema de notificaciones inicializado
+2025-06-27 01:48:31,632 - INFO - Iniciando sistema de notificaciones
+2025-06-27 01:48:31,632 - INFO - Iniciando verificación periódica de hora
+2025-06-27 01:48:31,632 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:48:31,633 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:48
+2025-06-27 01:48:37,349 - INFO - Usuario seleccionó NO o no respondió
+2025-06-27 01:49:00,350 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:49
+2025-06-27 01:49:02,576 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-27 01:49:02,582 - INFO - report_unidades.py ejecutado
+2025-06-27 01:52:10,410 - INFO - Sistema de notificaciones inicializado
+2025-06-27 01:52:10,410 - INFO - Iniciando sistema de notificaciones
+2025-06-27 01:52:10,410 - INFO - Iniciando verificación periódica de hora
+2025-06-27 01:52:10,410 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:53:00,872 - INFO - Sistema de notificaciones inicializado
+2025-06-27 01:53:00,872 - INFO - Iniciando sistema de notificaciones
+2025-06-27 01:53:00,873 - INFO - Iniciando verificación periódica de hora
+2025-06-27 01:53:00,873 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:53:22,082 - INFO - Sistema de notificaciones inicializado
+2025-06-27 01:53:22,082 - INFO - Iniciando sistema de notificaciones
+2025-06-27 01:53:22,083 - INFO - Iniciando verificación periódica de hora
+2025-06-27 01:53:22,083 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:57:37,665 - INFO - Sistema de notificaciones inicializado
+2025-06-27 01:57:37,666 - INFO - Iniciando sistema de notificaciones
+2025-06-27 01:57:37,666 - INFO - Iniciando verificación periódica de hora
+2025-06-27 01:57:37,666 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 01:57:37,666 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:57
+2025-06-27 01:57:41,784 - INFO - Usuario seleccionó NO o no respondió
+2025-06-27 01:58:00,785 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:58
+2025-06-27 01:58:05,516 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-27 01:58:05,522 - INFO - report_unidades.py ejecutado desde notificación (popup SÍ)
+2025-06-27 01:59:00,524 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:59
+2025-06-27 01:59:30,543 - INFO - Usuario seleccionó NO o no respondió
+2025-06-27 02:00:00,545 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:00
+2025-06-27 02:00:03,172 - INFO - Usuario seleccionó NO o no respondió
+2025-06-27 02:02:48,837 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:02:48,837 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:02:48,837 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:02:48,837 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:02:48,837 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:02
+2025-06-27 02:02:51,741 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-27 02:02:52,092 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-06-27 02:03:00,093 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:03
+2025-06-27 02:03:01,023 - INFO - Usuario seleccionó NO o no respondió
+2025-06-27 02:06:29,513 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:06:29,513 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:06:29,668 - INFO - Notificación inicial mostrada (Toast)
+2025-06-27 02:06:29,669 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:06:29,669 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:12:53,983 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:12:53,983 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:12:53,983 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:12:53,983 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:15:35,654 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:15:35,654 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:15:35,654 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:15:35,654 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:00:27,245 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:00:27,245 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:00:27,246 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:00:27,246 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:18:32,044 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:18:32,044 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:18:32,044 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:18:32,044 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:23:27,499 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:23:27,499 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:23:27,499 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:23:27,499 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:28:11,401 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:28:11,402 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:28:11,405 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:28:11,405 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:29:00,410 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:29
+2025-06-27 02:29:04,175 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-27 02:29:04,526 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-06-27 02:29:43,695 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:29:43,695 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:29:43,695 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:29:43,695 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:29:43,696 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:29
+2025-06-27 02:29:50,047 - INFO - Usuario seleccionó NO o no respondió
+2025-06-27 02:30:00,048 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2025-06-27 02:30:01,615 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-27 02:30:01,848 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-06-27 02:31:11,146 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:31:11,146 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:31:11,147 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:31:11,147 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:32:00,148 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:32
+2025-06-27 02:32:05,423 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-27 02:32:05,713 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-06-27 02:32:58,647 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:32:58,648 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:32:58,648 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:32:58,648 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-27 02:33:00,649 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:33
+2025-06-27 02:33:02,679 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-27 02:33:02,904 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-06-27 02:34:00,905 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:34
+2025-06-27 02:34:01,850 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-27 02:34:01,874 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-06-27 02:41:45,930 - INFO - Sistema de notificaciones inicializado
+2025-06-27 02:41:45,930 - INFO - Iniciando sistema de notificaciones
+2025-06-27 02:41:45,930 - INFO - Iniciando verificación periódica de hora
+2025-06-27 02:41:45,930 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 01:19:56,317 - INFO - Sistema de notificaciones inicializado
+2025-06-28 01:19:56,317 - INFO - Iniciando sistema de notificaciones
+2025-06-28 01:19:56,318 - INFO - Iniciando verificación periódica de hora
+2025-06-28 01:19:56,318 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 01:30:00,339 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2025-06-28 01:30:30,937 - INFO - Usuario seleccionó NO o no respondió
+2025-06-28 01:42:14,314 - INFO - Sistema de notificaciones inicializado
+2025-06-28 01:42:14,314 - INFO - Iniciando sistema de notificaciones
+2025-06-28 01:42:14,315 - INFO - Iniciando verificación periódica de hora
+2025-06-28 01:42:14,315 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 01:52:06,251 - INFO - Sistema de notificaciones inicializado
+2025-06-28 01:52:06,251 - INFO - Iniciando sistema de notificaciones
+2025-06-28 01:52:06,252 - INFO - Iniciando verificación periódica de hora
+2025-06-28 01:52:06,252 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:00:00,260 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:00
+2025-06-28 02:00:02,367 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-28 02:00:02,399 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-06-28 02:03:17,084 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:03:17,085 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:03:17,087 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:03:17,087 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:13:04,139 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:13:04,139 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:13:04,139 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:13:04,139 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:19:59,403 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:19:59,403 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:19:59,404 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:19:59,404 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:30:00,415 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2025-06-28 02:30:30,779 - INFO - Usuario seleccionó NO o no respondió
+2025-06-28 02:31:43,463 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:31:43,463 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:31:43,463 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:31:43,464 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:35:44,209 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:35:44,209 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:35:44,210 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:35:44,210 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:42:25,355 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:42:25,355 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:42:25,355 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:42:25,355 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:43:06,346 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:43:06,347 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:43:06,349 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:43:06,349 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:47:53,954 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:47:53,954 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:47:53,955 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:47:53,955 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:50:28,133 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:50:28,133 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:50:28,134 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:50:28,134 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:51:30,471 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:51:30,473 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:51:30,476 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:51:30,477 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 02:51:50,667 - INFO - Sistema de notificaciones inicializado
+2025-06-28 02:51:50,667 - INFO - Iniciando sistema de notificaciones
+2025-06-28 02:51:50,667 - INFO - Iniciando verificación periódica de hora
+2025-06-28 02:51:50,667 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 03:00:00,684 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:00
+2025-06-28 03:00:31,227 - INFO - Usuario seleccionó NO o no respondió
+2025-06-28 03:06:14,064 - INFO - Sistema de notificaciones inicializado
+2025-06-28 03:06:14,064 - INFO - Iniciando sistema de notificaciones
+2025-06-28 03:06:14,064 - INFO - Iniciando verificación periódica de hora
+2025-06-28 03:06:14,064 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 03:25:48,906 - INFO - Sistema de notificaciones inicializado
+2025-06-28 03:25:48,906 - INFO - Iniciando sistema de notificaciones
+2025-06-28 03:25:48,906 - INFO - Iniciando verificación periódica de hora
+2025-06-28 03:25:48,906 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 03:34:02,151 - INFO - Sistema de notificaciones inicializado
+2025-06-28 03:34:02,151 - INFO - Iniciando sistema de notificaciones
+2025-06-28 03:34:02,152 - INFO - Iniciando verificación periódica de hora
+2025-06-28 03:34:02,152 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 03:39:03,406 - INFO - Sistema de notificaciones inicializado
+2025-06-28 03:39:03,406 - INFO - Iniciando sistema de notificaciones
+2025-06-28 03:39:03,406 - INFO - Iniciando verificación periódica de hora
+2025-06-28 03:39:03,406 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 03:41:57,517 - INFO - Sistema de notificaciones inicializado
+2025-06-28 03:41:57,517 - INFO - Iniciando sistema de notificaciones
+2025-06-28 03:41:57,517 - INFO - Iniciando verificación periódica de hora
+2025-06-28 03:41:57,517 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 03:47:14,085 - INFO - Sistema de notificaciones inicializado
+2025-06-28 03:47:14,086 - INFO - Iniciando sistema de notificaciones
+2025-06-28 03:47:14,087 - INFO - Iniciando verificación periódica de hora
+2025-06-28 03:47:14,087 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 04:03:17,542 - INFO - Sistema de notificaciones inicializado
+2025-06-28 04:03:17,542 - INFO - Iniciando sistema de notificaciones
+2025-06-28 04:03:17,543 - INFO - Iniciando verificación periódica de hora
+2025-06-28 04:03:17,543 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 04:13:11,832 - INFO - Sistema de notificaciones inicializado
+2025-06-28 04:13:11,832 - INFO - Iniciando sistema de notificaciones
+2025-06-28 04:13:11,832 - INFO - Iniciando verificación periódica de hora
+2025-06-28 04:13:11,832 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 04:15:39,486 - INFO - Sistema de notificaciones inicializado
+2025-06-28 04:15:39,486 - INFO - Iniciando sistema de notificaciones
+2025-06-28 04:15:39,487 - INFO - Iniciando verificación periódica de hora
+2025-06-28 04:15:39,487 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 04:20:43,339 - INFO - Sistema de notificaciones inicializado
+2025-06-28 04:20:43,339 - INFO - Iniciando sistema de notificaciones
+2025-06-28 04:20:43,340 - INFO - Iniciando verificación periódica de hora
+2025-06-28 04:20:43,340 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 04:21:22,151 - INFO - Sistema de notificaciones inicializado
+2025-06-28 04:21:22,151 - INFO - Iniciando sistema de notificaciones
+2025-06-28 04:21:22,152 - INFO - Iniciando verificación periódica de hora
+2025-06-28 04:21:22,152 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 04:22:40,362 - INFO - Sistema de notificaciones inicializado
+2025-06-28 04:22:40,362 - INFO - Iniciando sistema de notificaciones
+2025-06-28 04:22:40,364 - INFO - Iniciando verificación periódica de hora
+2025-06-28 04:22:40,364 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 04:25:27,487 - INFO - Sistema de notificaciones inicializado
+2025-06-28 04:25:27,487 - INFO - Iniciando sistema de notificaciones
+2025-06-28 04:25:27,488 - INFO - Iniciando verificación periódica de hora
+2025-06-28 04:25:27,488 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 04:30:00,493 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:30
+2025-06-28 04:30:21,294 - INFO - Usuario seleccionó NO o no respondió
+2025-06-28 22:14:36,911 - INFO - Sistema de notificaciones inicializado
+2025-06-28 22:14:36,911 - INFO - Iniciando sistema de notificaciones
+2025-06-28 22:14:36,911 - INFO - Iniciando verificación periódica de hora
+2025-06-28 22:14:36,911 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 22:16:35,298 - INFO - Sistema de notificaciones inicializado
+2025-06-28 22:16:35,298 - INFO - Iniciando sistema de notificaciones
+2025-06-28 22:16:35,298 - INFO - Iniciando verificación periódica de hora
+2025-06-28 22:16:35,298 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 22:45:05,530 - INFO - Sistema de notificaciones inicializado
+2025-06-28 22:45:05,530 - INFO - Iniciando sistema de notificaciones
+2025-06-28 22:45:05,531 - INFO - Iniciando verificación periódica de hora
+2025-06-28 22:45:05,531 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 22:48:14,060 - INFO - Sistema de notificaciones inicializado
+2025-06-28 22:48:14,060 - INFO - Iniciando sistema de notificaciones
+2025-06-28 22:48:14,060 - INFO - Iniciando verificación periódica de hora
+2025-06-28 22:48:14,060 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 22:53:30,245 - INFO - Sistema de notificaciones inicializado
+2025-06-28 22:53:30,245 - INFO - Iniciando sistema de notificaciones
+2025-06-28 22:53:30,246 - INFO - Iniciando verificación periódica de hora
+2025-06-28 22:53:30,246 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 23:04:08,886 - INFO - Sistema de notificaciones inicializado
+2025-06-28 23:04:08,893 - INFO - Iniciando sistema de notificaciones
+2025-06-28 23:04:08,894 - INFO - Iniciando verificación periódica de hora
+2025-06-28 23:04:08,894 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-28 23:22:10,283 - INFO - Sistema de notificaciones inicializado
+2025-06-28 23:22:10,283 - INFO - Iniciando sistema de notificaciones
+2025-06-28 23:22:10,284 - INFO - Iniciando verificación periódica de hora
+2025-06-28 23:22:10,284 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:12:16,242 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:12:16,242 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:12:16,243 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:12:16,243 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:19:29,167 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:19:29,167 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:19:29,168 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:19:29,168 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:20:03,781 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:20:03,781 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:20:03,781 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:20:03,781 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:24:08,993 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:24:08,993 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:24:08,994 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:24:08,994 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:27:33,889 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:27:33,890 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:27:33,890 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:27:33,890 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:29:18,378 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:29:18,378 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:29:18,379 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:29:18,379 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:30:14,379 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:30:14,379 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:30:14,379 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:30:14,380 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:30:14,380 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2025-06-29 01:30:22,595 - INFO - Usuario seleccionó NO o no respondió
+2025-06-29 01:30:46,709 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:30:46,709 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:30:46,710 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:30:46,710 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:30:46,711 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2025-06-29 01:30:48,372 - INFO - Usuario seleccionó NO o no respondió
+2025-06-29 01:35:10,134 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:35:10,134 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:35:10,134 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:35:10,134 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:37:12,993 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:37:12,993 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:37:12,994 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:37:12,994 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:40:21,926 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:40:21,927 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:40:21,927 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:40:21,927 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:46:53,888 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:46:53,888 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:46:53,889 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:46:53,889 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 01:51:11,262 - INFO - Sistema de notificaciones inicializado
+2025-06-29 01:51:11,262 - INFO - Iniciando sistema de notificaciones
+2025-06-29 01:51:11,263 - INFO - Iniciando verificación periódica de hora
+2025-06-29 01:51:11,263 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:00:00,282 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:00
+2025-06-29 02:00:03,528 - INFO - Usuario seleccionó NO o no respondió
+2025-06-29 02:05:05,201 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:05:05,202 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:05:05,203 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:05:05,203 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:16:40,322 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:16:40,322 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:16:40,323 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:16:40,323 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:21:37,814 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:21:37,814 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:21:37,815 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:21:37,815 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:23:32,750 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:23:32,750 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:23:32,750 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:23:32,751 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:26:25,411 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:26:25,411 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:26:25,413 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:26:25,413 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:29:46,493 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:29:46,493 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:29:46,494 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:29:46,494 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:30:00,495 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2025-06-29 02:30:04,510 - INFO - Usuario seleccionó NO o no respondió
+2025-06-29 02:33:12,644 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:33:12,644 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:33:12,645 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:33:12,645 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:35:41,534 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:35:41,535 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:35:41,537 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:35:41,537 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:45:16,585 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:45:16,585 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:45:16,586 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:45:16,586 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:45:59,873 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:45:59,873 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:45:59,874 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:45:59,874 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:53:32,682 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:53:32,682 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:53:32,682 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:53:32,683 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 02:56:06,857 - INFO - Sistema de notificaciones inicializado
+2025-06-29 02:56:06,857 - INFO - Iniciando sistema de notificaciones
+2025-06-29 02:56:06,858 - INFO - Iniciando verificación periódica de hora
+2025-06-29 02:56:06,858 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 03:00:00,864 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:00
+2025-06-29 03:00:06,435 - INFO - Usuario seleccionó NO o no respondió
+2025-06-29 03:04:59,324 - INFO - Sistema de notificaciones inicializado
+2025-06-29 03:04:59,325 - INFO - Iniciando sistema de notificaciones
+2025-06-29 03:04:59,325 - INFO - Iniciando verificación periódica de hora
+2025-06-29 03:04:59,325 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 03:15:23,202 - INFO - Sistema de notificaciones inicializado
+2025-06-29 03:15:23,202 - INFO - Iniciando sistema de notificaciones
+2025-06-29 03:15:23,202 - INFO - Iniciando verificación periódica de hora
+2025-06-29 03:15:23,202 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 03:19:12,679 - INFO - Sistema de notificaciones inicializado
+2025-06-29 03:19:12,679 - INFO - Iniciando sistema de notificaciones
+2025-06-29 03:19:12,680 - INFO - Iniciando verificación periódica de hora
+2025-06-29 03:19:12,680 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 03:20:37,753 - INFO - Sistema de notificaciones inicializado
+2025-06-29 03:20:37,753 - INFO - Iniciando sistema de notificaciones
+2025-06-29 03:20:37,754 - INFO - Iniciando verificación periódica de hora
+2025-06-29 03:20:37,754 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 03:26:52,054 - INFO - Sistema de notificaciones inicializado
+2025-06-29 03:26:52,054 - INFO - Iniciando sistema de notificaciones
+2025-06-29 03:26:52,054 - INFO - Iniciando verificación periódica de hora
+2025-06-29 03:26:52,054 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 03:29:09,072 - INFO - Sistema de notificaciones inicializado
+2025-06-29 03:29:09,072 - INFO - Iniciando sistema de notificaciones
+2025-06-29 03:29:09,073 - INFO - Iniciando verificación periódica de hora
+2025-06-29 03:29:09,073 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 03:30:00,074 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:30
+2025-06-29 03:30:01,923 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-06-29 03:30:02,718 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-06-29 03:32:07,861 - INFO - Sistema de notificaciones inicializado
+2025-06-29 03:32:07,862 - INFO - Iniciando sistema de notificaciones
+2025-06-29 03:32:07,862 - INFO - Iniciando verificación periódica de hora
+2025-06-29 03:32:07,862 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 03:56:41,118 - INFO - Sistema de notificaciones inicializado
+2025-06-29 03:56:41,119 - INFO - Iniciando sistema de notificaciones
+2025-06-29 03:56:41,119 - INFO - Iniciando verificación periódica de hora
+2025-06-29 03:56:41,119 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:00:00,122 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:00
+2025-06-29 04:00:30,479 - INFO - Usuario seleccionó NO o no respondió
+2025-06-29 04:00:47,399 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:00:47,399 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:00:47,400 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:00:47,400 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:00:47,400 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:00
+2025-06-29 04:00:49,237 - INFO - Usuario seleccionó NO o no respondió
+2025-06-29 04:03:23,076 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:03:23,076 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:03:23,076 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:03:23,076 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:05:07,782 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:05:07,783 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:05:07,784 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:05:07,784 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:11:15,965 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:11:15,965 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:11:15,966 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:11:15,966 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:13:16,034 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:13:16,034 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:13:16,035 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:13:16,035 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:14:48,754 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:14:48,754 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:14:48,754 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:14:48,754 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:17:37,950 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:17:37,950 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:17:37,951 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:17:37,951 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:18:10,428 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:18:10,429 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:18:10,429 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:18:10,429 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:19:31,152 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:19:31,152 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:19:31,152 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:19:31,152 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 04:19:44,013 - INFO - Sistema de notificaciones inicializado
+2025-06-29 04:19:44,014 - INFO - Iniciando sistema de notificaciones
+2025-06-29 04:19:44,014 - INFO - Iniciando verificación periódica de hora
+2025-06-29 04:19:44,014 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-29 22:12:40,252 - INFO - Sistema de notificaciones inicializado
+2025-06-29 22:12:40,252 - INFO - Iniciando sistema de notificaciones
+2025-06-29 22:12:40,253 - INFO - Iniciando verificación periódica de hora
+2025-06-29 22:12:40,253 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 01:25:00,682 - INFO - Sistema de notificaciones inicializado
+2025-06-30 01:25:00,682 - INFO - Iniciando sistema de notificaciones
+2025-06-30 01:25:00,682 - INFO - Iniciando verificación periódica de hora
+2025-06-30 01:25:00,682 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 01:30:00,696 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2025-06-30 01:30:04,206 - INFO - Usuario seleccionó NO o no respondió
+2025-06-30 01:41:38,130 - INFO - Sistema de notificaciones inicializado
+2025-06-30 01:41:38,130 - INFO - Iniciando sistema de notificaciones
+2025-06-30 01:41:38,130 - INFO - Iniciando verificación periódica de hora
+2025-06-30 01:41:38,130 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 01:51:29,694 - INFO - Sistema de notificaciones inicializado
+2025-06-30 01:51:29,694 - INFO - Iniciando sistema de notificaciones
+2025-06-30 01:51:29,694 - INFO - Iniciando verificación periódica de hora
+2025-06-30 01:51:29,694 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 02:06:08,343 - INFO - Sistema de notificaciones inicializado
+2025-06-30 02:06:08,344 - INFO - Iniciando sistema de notificaciones
+2025-06-30 02:06:08,344 - INFO - Iniciando verificación periódica de hora
+2025-06-30 02:06:08,344 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 02:08:53,984 - INFO - Sistema de notificaciones inicializado
+2025-06-30 02:08:53,985 - INFO - Iniciando sistema de notificaciones
+2025-06-30 02:08:53,985 - INFO - Iniciando verificación periódica de hora
+2025-06-30 02:08:53,985 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 02:12:44,982 - INFO - Sistema de notificaciones inicializado
+2025-06-30 02:12:44,982 - INFO - Iniciando sistema de notificaciones
+2025-06-30 02:12:44,982 - INFO - Iniciando verificación periódica de hora
+2025-06-30 02:12:44,982 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 02:14:12,463 - INFO - Sistema de notificaciones inicializado
+2025-06-30 02:14:12,464 - INFO - Iniciando sistema de notificaciones
+2025-06-30 02:14:12,464 - INFO - Iniciando verificación periódica de hora
+2025-06-30 02:14:12,464 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 02:21:18,047 - INFO - Sistema de notificaciones inicializado
+2025-06-30 02:21:18,047 - INFO - Iniciando sistema de notificaciones
+2025-06-30 02:21:18,047 - INFO - Iniciando verificación periódica de hora
+2025-06-30 02:21:18,047 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 02:30:00,062 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2025-06-30 02:30:09,080 - INFO - Usuario seleccionó NO o no respondió
+2025-06-30 02:34:21,784 - INFO - Sistema de notificaciones inicializado
+2025-06-30 02:34:21,784 - INFO - Iniciando sistema de notificaciones
+2025-06-30 02:34:21,785 - INFO - Iniciando verificación periódica de hora
+2025-06-30 02:34:21,785 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 02:44:38,283 - INFO - Sistema de notificaciones inicializado
+2025-06-30 02:44:38,284 - INFO - Iniciando sistema de notificaciones
+2025-06-30 02:44:38,285 - INFO - Iniciando verificación periódica de hora
+2025-06-30 02:44:38,285 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 02:56:21,848 - INFO - Sistema de notificaciones inicializado
+2025-06-30 02:56:21,848 - INFO - Iniciando sistema de notificaciones
+2025-06-30 02:56:21,848 - INFO - Iniciando verificación periódica de hora
+2025-06-30 02:56:21,848 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 03:13:26,320 - INFO - Sistema de notificaciones inicializado
+2025-06-30 03:13:26,323 - INFO - Iniciando sistema de notificaciones
+2025-06-30 03:13:26,324 - INFO - Iniciando verificación periódica de hora
+2025-06-30 03:13:26,324 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 03:14:47,114 - INFO - Sistema de notificaciones inicializado
+2025-06-30 03:14:47,114 - INFO - Iniciando sistema de notificaciones
+2025-06-30 03:14:47,114 - INFO - Iniciando verificación periódica de hora
+2025-06-30 03:14:47,114 - INFO - Sistema de notificaciones iniciado correctamente
+2025-06-30 03:16:09,718 - INFO - Sistema de notificaciones inicializado
+2025-06-30 03:16:09,719 - INFO - Iniciando sistema de notificaciones
+2025-06-30 03:16:09,720 - INFO - Iniciando verificación periódica de hora
+2025-06-30 03:16:09,720 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 14:50:13,055 - INFO - Sistema de notificaciones inicializado
+2025-07-31 14:50:13,055 - INFO - Iniciando sistema de notificaciones
+2025-07-31 14:50:13,055 - INFO - Iniciando verificación periódica de hora
+2025-07-31 14:50:13,055 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 14:59:47,968 - INFO - Sistema de notificaciones inicializado
+2025-07-31 14:59:47,969 - INFO - Iniciando sistema de notificaciones
+2025-07-31 14:59:47,969 - INFO - Iniciando verificación periódica de hora
+2025-07-31 14:59:47,969 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:03:09,750 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:03:09,750 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:03:09,751 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:03:09,751 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:06:49,038 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:06:49,038 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:06:49,039 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:06:49,039 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:13:54,571 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:13:54,572 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:13:54,573 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:13:54,574 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:15:27,877 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:15:27,877 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:15:27,877 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:15:27,877 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:30:03,876 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:30:03,876 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:30:03,877 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:30:03,877 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:33:31,291 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:33:31,292 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:33:31,292 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:33:31,292 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:34:15,677 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:34:15,677 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:34:15,678 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:34:15,678 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:37:26,368 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:37:26,368 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:37:26,368 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:37:26,368 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:38:27,514 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:38:27,515 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:38:27,515 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:38:27,515 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:38:44,498 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:38:44,498 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:38:44,498 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:38:44,498 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:39:25,979 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:39:25,979 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:39:25,979 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:39:25,979 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:43:08,647 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:43:08,647 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:43:08,647 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:43:08,647 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:45:11,141 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:45:11,141 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:45:11,142 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:45:11,142 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:48:49,017 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:48:49,017 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:48:49,018 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:48:49,018 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:51:42,069 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:51:42,069 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:51:42,069 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:51:42,070 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 15:53:10,588 - INFO - Sistema de notificaciones inicializado
+2025-07-31 15:53:10,588 - INFO - Iniciando sistema de notificaciones
+2025-07-31 15:53:10,589 - INFO - Iniciando verificación periódica de hora
+2025-07-31 15:53:10,589 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:13:39,366 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:13:39,377 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:13:39,377 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:13:39,377 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:19:31,410 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:19:31,410 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:19:31,410 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:19:31,410 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:40:41,098 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:40:41,098 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:40:41,099 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:40:41,099 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:41:22,538 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:41:22,539 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:41:22,539 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:41:22,539 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:43:57,992 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:43:57,992 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:43:57,992 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:43:57,992 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:44:32,101 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:44:32,101 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:44:32,101 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:44:32,101 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:47:00,339 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:47:00,339 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:47:00,340 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:47:00,340 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:50:23,245 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:50:23,246 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:50:23,246 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:50:23,246 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:54:29,217 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:54:29,217 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:54:29,218 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:54:29,218 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 16:57:02,924 - INFO - Sistema de notificaciones inicializado
+2025-07-31 16:57:02,924 - INFO - Iniciando sistema de notificaciones
+2025-07-31 16:57:02,925 - INFO - Iniciando verificación periódica de hora
+2025-07-31 16:57:02,925 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 18:00:05,155 - INFO - Sistema de notificaciones inicializado
+2025-07-31 18:00:05,156 - INFO - Iniciando sistema de notificaciones
+2025-07-31 18:00:05,157 - INFO - Iniciando verificación periódica de hora
+2025-07-31 18:00:05,157 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 18:00:05,157 - INFO - Mostrando notificación de reporte para turno TARDE a las 18:00
+2025-07-31 18:00:10,264 - INFO - Usuario seleccionó SÍ - Activando ventana principal
+2025-07-31 18:00:10,713 - INFO - Reporte de unidades abierto desde notificación (popup SÍ) usando la vista principal.
+2025-07-31 17:59:30,977 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:59:30,978 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:59:30,979 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:59:30,980 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 18:00:00,981 - INFO - Mostrando notificación de reporte para turno TARDE a las 18:00
+2025-07-31 18:00:29,337 - INFO - Usuario seleccionó NO o no respondió
+2025-07-31 17:59:48,797 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:59:48,797 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:59:48,797 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:59:48,797 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 18:00:00,800 - INFO - Mostrando notificación de reporte para turno TARDE a las 18:00
+2025-07-31 18:00:30,879 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2025-07-31 18:00:30,887 - INFO - Usuario seleccionó NO o no respondió
+2025-07-31 17:34:39,536 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:34:39,537 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:34:39,537 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:34:39,537 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 17:40:57,752 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:40:57,753 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:40:57,753 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:40:57,753 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 17:43:51,227 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:43:51,228 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:43:51,228 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:43:51,228 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 17:50:56,824 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:50:56,833 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:50:56,833 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:50:56,833 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 17:52:20,724 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:52:20,724 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:52:20,725 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:52:20,725 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 17:55:01,471 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:55:01,471 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:55:01,471 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:55:01,472 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 17:58:29,550 - INFO - Sistema de notificaciones inicializado
+2025-07-31 17:58:29,550 - INFO - Iniciando sistema de notificaciones
+2025-07-31 17:58:29,551 - INFO - Iniciando verificación periódica de hora
+2025-07-31 17:58:29,551 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 18:01:34,528 - INFO - Sistema de notificaciones inicializado
+2025-07-31 18:01:34,528 - INFO - Iniciando sistema de notificaciones
+2025-07-31 18:01:34,529 - INFO - Iniciando verificación periódica de hora
+2025-07-31 18:01:34,529 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 18:05:19,896 - INFO - Sistema de notificaciones inicializado
+2025-07-31 18:05:19,897 - INFO - Iniciando sistema de notificaciones
+2025-07-31 18:05:19,909 - INFO - Iniciando verificación periódica de hora
+2025-07-31 18:05:19,909 - INFO - Sistema de notificaciones iniciado correctamente
+2025-07-31 18:07:25,795 - INFO - Sistema de notificaciones inicializado
+2025-07-31 18:07:25,795 - INFO - Iniciando sistema de notificaciones
+2025-07-31 18:07:25,795 - INFO - Iniciando verificación periódica de hora
+2025-07-31 18:07:25,795 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:01:37,186 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:01:37,186 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:01:37,188 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:01:37,188 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:04:43,104 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:04:43,105 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:04:43,105 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:04:43,105 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:06:39,653 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:06:39,653 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:06:39,655 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:06:39,655 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:08:45,421 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:08:45,422 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:08:45,423 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:08:45,424 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:14:10,110 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:14:10,110 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:14:10,111 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:14:10,111 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:30:03,570 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:30:03,570 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:30:03,571 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:30:03,571 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:31:12,225 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:31:12,225 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:31:12,227 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:31:12,227 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:41:42,881 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:41:42,881 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:41:42,882 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:41:42,882 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:42:23,506 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:42:23,506 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:42:23,507 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:42:23,507 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:48:05,693 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:48:05,694 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:48:05,694 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:48:05,694 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:54:54,966 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:54:54,967 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:54:54,968 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:54:54,968 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 18:59:23,145 - INFO - Sistema de notificaciones inicializado
+2026-04-02 18:59:23,145 - INFO - Iniciando sistema de notificaciones
+2026-04-02 18:59:23,146 - INFO - Iniciando verificación periódica de hora
+2026-04-02 18:59:23,147 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 19:00:00,148 - INFO - Mostrando notificación de reporte para turno TARDE a las 19:00
+2026-04-02 19:00:09,441 - INFO - Usuario seleccionó NO en la notificación
+2026-04-02 19:00:09,463 - INFO - Usuario seleccionó NO o no respondió
+2026-04-02 19:15:33,367 - INFO - Sistema de notificaciones inicializado
+2026-04-02 19:15:33,368 - INFO - Iniciando sistema de notificaciones
+2026-04-02 19:15:33,369 - INFO - Iniciando verificación periódica de hora
+2026-04-02 19:15:33,369 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 19:18:38,908 - INFO - Sistema de notificaciones inicializado
+2026-04-02 19:18:38,909 - INFO - Iniciando sistema de notificaciones
+2026-04-02 19:18:38,910 - INFO - Iniciando verificación periódica de hora
+2026-04-02 19:18:38,910 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 19:24:37,803 - INFO - Sistema de notificaciones inicializado
+2026-04-02 19:24:37,803 - INFO - Iniciando sistema de notificaciones
+2026-04-02 19:24:37,805 - INFO - Iniciando verificación periódica de hora
+2026-04-02 19:24:37,805 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 19:29:27,860 - INFO - Sistema de notificaciones inicializado
+2026-04-02 19:29:27,860 - INFO - Iniciando sistema de notificaciones
+2026-04-02 19:29:27,861 - INFO - Iniciando verificación periódica de hora
+2026-04-02 19:29:27,861 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 19:34:34,413 - INFO - Sistema de notificaciones inicializado
+2026-04-02 19:34:34,413 - INFO - Iniciando sistema de notificaciones
+2026-04-02 19:34:34,414 - INFO - Iniciando verificación periódica de hora
+2026-04-02 19:34:34,414 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 19:40:55,194 - INFO - Sistema de notificaciones inicializado
+2026-04-02 19:40:55,195 - INFO - Iniciando sistema de notificaciones
+2026-04-02 19:40:55,195 - INFO - Iniciando verificación periódica de hora
+2026-04-02 19:40:55,196 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 20:01:31,617 - INFO - Sistema de notificaciones inicializado
+2026-04-02 20:01:31,617 - INFO - Iniciando sistema de notificaciones
+2026-04-02 20:01:31,618 - INFO - Iniciando verificación periódica de hora
+2026-04-02 20:01:31,618 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 20:08:33,558 - INFO - Sistema de notificaciones inicializado
+2026-04-02 20:08:33,558 - INFO - Iniciando sistema de notificaciones
+2026-04-02 20:08:33,560 - INFO - Iniciando verificación periódica de hora
+2026-04-02 20:08:33,560 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 20:13:56,787 - INFO - Sistema de notificaciones inicializado
+2026-04-02 20:13:56,787 - INFO - Iniciando sistema de notificaciones
+2026-04-02 20:13:56,789 - INFO - Iniciando verificación periódica de hora
+2026-04-02 20:13:56,789 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 20:21:08,439 - INFO - Sistema de notificaciones inicializado
+2026-04-02 20:21:08,440 - INFO - Iniciando sistema de notificaciones
+2026-04-02 20:21:08,441 - INFO - Iniciando verificación periódica de hora
+2026-04-02 20:21:08,441 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 20:35:14,933 - INFO - Sistema de notificaciones inicializado
+2026-04-02 20:35:14,934 - INFO - Iniciando sistema de notificaciones
+2026-04-02 20:35:14,935 - INFO - Iniciando verificación periódica de hora
+2026-04-02 20:35:14,935 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-02 20:39:51,835 - INFO - Sistema de notificaciones inicializado
+2026-04-02 20:39:51,835 - INFO - Iniciando sistema de notificaciones
+2026-04-02 20:39:51,836 - INFO - Iniciando verificación periódica de hora
+2026-04-02 20:39:51,837 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-04 06:23:54,785 - INFO - Sistema de notificaciones inicializado
+2026-04-04 06:23:54,786 - INFO - Iniciando sistema de notificaciones
+2026-04-04 06:23:54,786 - INFO - Iniciando verificación periódica de hora
+2026-04-04 06:23:54,786 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-04 06:28:37,818 - INFO - Sistema de notificaciones inicializado
+2026-04-04 06:28:37,818 - INFO - Iniciando sistema de notificaciones
+2026-04-04 06:28:37,819 - INFO - Iniciando verificación periódica de hora
+2026-04-04 06:28:37,819 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-04 10:53:28,655 - INFO - Sistema de notificaciones inicializado
+2026-04-04 10:53:28,655 - INFO - Iniciando sistema de notificaciones
+2026-04-04 10:53:28,656 - INFO - Iniciando verificación periódica de hora
+2026-04-04 10:53:28,656 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 06:08:16,544 - INFO - Sistema de notificaciones inicializado
+2026-04-05 06:08:16,553 - INFO - Iniciando sistema de notificaciones
+2026-04-05 06:08:16,553 - INFO - Iniciando verificación periódica de hora
+2026-04-05 06:08:16,553 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 06:09:32,319 - INFO - Sistema de notificaciones inicializado
+2026-04-05 06:09:32,319 - INFO - Iniciando sistema de notificaciones
+2026-04-05 06:09:32,319 - INFO - Iniciando verificación periódica de hora
+2026-04-05 06:09:32,319 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 06:39:38,833 - INFO - Sistema de notificaciones inicializado
+2026-04-05 06:39:38,834 - INFO - Iniciando sistema de notificaciones
+2026-04-05 06:39:38,834 - INFO - Iniciando verificación periódica de hora
+2026-04-05 06:39:38,835 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 06:46:00,724 - INFO - Sistema de notificaciones inicializado
+2026-04-05 06:46:00,725 - INFO - Iniciando sistema de notificaciones
+2026-04-05 06:46:00,727 - INFO - Iniciando verificación periódica de hora
+2026-04-05 06:46:00,727 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 06:58:11,777 - INFO - Sistema de notificaciones inicializado
+2026-04-05 06:58:11,777 - INFO - Iniciando sistema de notificaciones
+2026-04-05 06:58:11,779 - INFO - Iniciando verificación periódica de hora
+2026-04-05 06:58:11,779 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 07:11:36,064 - INFO - Sistema de notificaciones inicializado
+2026-04-05 07:11:36,066 - INFO - Iniciando sistema de notificaciones
+2026-04-05 07:11:36,067 - INFO - Iniciando verificación periódica de hora
+2026-04-05 07:11:36,067 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 07:21:11,664 - INFO - Sistema de notificaciones inicializado
+2026-04-05 07:21:11,676 - INFO - Iniciando sistema de notificaciones
+2026-04-05 07:21:11,678 - INFO - Iniciando verificación periódica de hora
+2026-04-05 07:21:11,678 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 08:13:10,484 - INFO - Sistema de notificaciones inicializado
+2026-04-05 08:13:10,489 - INFO - Iniciando sistema de notificaciones
+2026-04-05 08:13:10,490 - INFO - Iniciando verificación periódica de hora
+2026-04-05 08:13:10,490 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 08:16:48,307 - INFO - Sistema de notificaciones inicializado
+2026-04-05 08:16:48,307 - INFO - Iniciando sistema de notificaciones
+2026-04-05 08:16:48,308 - INFO - Iniciando verificación periódica de hora
+2026-04-05 08:16:48,308 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 08:22:56,043 - INFO - Sistema de notificaciones inicializado
+2026-04-05 08:22:56,044 - INFO - Iniciando sistema de notificaciones
+2026-04-05 08:22:56,044 - INFO - Iniciando verificación periódica de hora
+2026-04-05 08:22:56,044 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 08:37:25,126 - INFO - Sistema de notificaciones inicializado
+2026-04-05 08:37:25,126 - INFO - Iniciando sistema de notificaciones
+2026-04-05 08:37:25,127 - INFO - Iniciando verificación periódica de hora
+2026-04-05 08:37:25,127 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 08:50:49,955 - INFO - Sistema de notificaciones inicializado
+2026-04-05 08:50:49,955 - INFO - Iniciando sistema de notificaciones
+2026-04-05 08:50:49,958 - INFO - Iniciando verificación periódica de hora
+2026-04-05 08:50:49,958 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 08:53:38,777 - INFO - Sistema de notificaciones inicializado
+2026-04-05 08:53:38,777 - INFO - Iniciando sistema de notificaciones
+2026-04-05 08:53:38,783 - INFO - Iniciando verificación periódica de hora
+2026-04-05 08:53:38,783 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 09:55:40,942 - INFO - Sistema de notificaciones inicializado
+2026-04-05 09:55:40,942 - INFO - Iniciando sistema de notificaciones
+2026-04-05 09:55:40,942 - INFO - Iniciando verificación periódica de hora
+2026-04-05 09:55:40,943 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 10:03:19,477 - INFO - Sistema de notificaciones inicializado
+2026-04-05 10:03:19,478 - INFO - Iniciando sistema de notificaciones
+2026-04-05 10:03:19,478 - INFO - Iniciando verificación periódica de hora
+2026-04-05 10:03:19,479 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 10:29:53,992 - INFO - Sistema de notificaciones inicializado
+2026-04-05 10:29:53,992 - INFO - Iniciando sistema de notificaciones
+2026-04-05 10:29:53,992 - INFO - Iniciando verificación periódica de hora
+2026-04-05 10:29:53,992 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 10:35:46,686 - INFO - Sistema de notificaciones inicializado
+2026-04-05 10:35:46,692 - INFO - Iniciando sistema de notificaciones
+2026-04-05 10:35:46,693 - INFO - Iniciando verificación periódica de hora
+2026-04-05 10:35:46,693 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 10:38:08,477 - INFO - Sistema de notificaciones inicializado
+2026-04-05 10:38:08,477 - INFO - Iniciando sistema de notificaciones
+2026-04-05 10:38:08,478 - INFO - Iniciando verificación periódica de hora
+2026-04-05 10:38:08,478 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 10:51:54,469 - INFO - Sistema de notificaciones inicializado
+2026-04-05 10:51:54,470 - INFO - Iniciando sistema de notificaciones
+2026-04-05 10:51:54,470 - INFO - Iniciando verificación periódica de hora
+2026-04-05 10:51:54,470 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 11:00:37,271 - INFO - Sistema de notificaciones inicializado
+2026-04-05 11:00:37,271 - INFO - Iniciando sistema de notificaciones
+2026-04-05 11:00:37,274 - INFO - Iniciando verificación periódica de hora
+2026-04-05 11:00:37,274 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 11:00:37,274 - INFO - Mostrando notificación de reporte para turno DÍA a las 11:00
+2026-04-05 11:00:38,588 - INFO - Usuario seleccionó NO en la notificación
+2026-04-05 11:00:38,598 - INFO - Usuario seleccionó NO o no respondió
+2026-04-05 11:04:03,055 - INFO - Sistema de notificaciones inicializado
+2026-04-05 11:04:03,058 - INFO - Iniciando sistema de notificaciones
+2026-04-05 11:04:03,064 - INFO - Iniciando verificación periódica de hora
+2026-04-05 11:04:03,064 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 11:23:31,478 - INFO - Sistema de notificaciones inicializado
+2026-04-05 11:23:31,490 - INFO - Iniciando sistema de notificaciones
+2026-04-05 11:23:31,491 - INFO - Iniciando verificación periódica de hora
+2026-04-05 11:23:31,491 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 11:32:24,610 - INFO - Sistema de notificaciones inicializado
+2026-04-05 11:32:24,618 - INFO - Iniciando sistema de notificaciones
+2026-04-05 11:32:24,618 - INFO - Iniciando verificación periódica de hora
+2026-04-05 11:32:24,618 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-05 11:35:24,208 - INFO - Sistema de notificaciones inicializado
+2026-04-05 11:35:24,208 - INFO - Iniciando sistema de notificaciones
+2026-04-05 11:35:24,209 - INFO - Iniciando verificación periódica de hora
+2026-04-05 11:35:24,209 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:02:34,169 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:02:34,176 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:02:34,176 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:02:34,177 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:07:12,361 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:07:12,361 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:07:12,362 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:07:12,362 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:08:50,239 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:08:50,239 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:08:50,239 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:08:50,239 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:21:58,960 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:21:58,969 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:21:58,970 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:21:58,970 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:25:12,561 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:25:12,561 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:25:12,562 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:25:12,562 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:27:20,874 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:27:20,874 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:27:20,875 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:27:20,875 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:29:32,437 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:29:32,438 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:29:32,438 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:29:32,438 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:35:31,379 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:35:31,380 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:35:31,380 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:35:31,380 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:37:24,715 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:37:24,716 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:37:24,716 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:37:24,716 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:39:22,581 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:39:22,582 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:39:22,583 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:39:22,583 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:52:13,141 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:52:13,141 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:52:13,141 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:52:13,141 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 16:56:42,206 - INFO - Sistema de notificaciones inicializado
+2026-04-07 16:56:42,206 - INFO - Iniciando sistema de notificaciones
+2026-04-07 16:56:42,207 - INFO - Iniciando verificación periódica de hora
+2026-04-07 16:56:42,207 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 17:00:37,912 - INFO - Sistema de notificaciones inicializado
+2026-04-07 17:00:37,913 - INFO - Iniciando sistema de notificaciones
+2026-04-07 17:00:37,913 - INFO - Iniciando verificación periódica de hora
+2026-04-07 17:00:37,913 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 17:00:37,914 - INFO - Mostrando notificación de reporte para turno TARDE a las 17:00
+2026-04-07 17:00:41,235 - INFO - Usuario seleccionó NO en la notificación
+2026-04-07 17:00:41,241 - INFO - Usuario seleccionó NO o no respondió
+2026-04-07 17:02:46,087 - INFO - Sistema de notificaciones inicializado
+2026-04-07 17:02:46,087 - INFO - Iniciando sistema de notificaciones
+2026-04-07 17:02:46,087 - INFO - Iniciando verificación periódica de hora
+2026-04-07 17:02:46,087 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 17:09:29,383 - INFO - Sistema de notificaciones inicializado
+2026-04-07 17:09:29,384 - INFO - Iniciando sistema de notificaciones
+2026-04-07 17:09:29,385 - INFO - Iniciando verificación periódica de hora
+2026-04-07 17:09:29,385 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 17:24:47,117 - INFO - Sistema de notificaciones inicializado
+2026-04-07 17:24:47,121 - INFO - Iniciando sistema de notificaciones
+2026-04-07 17:24:47,121 - INFO - Iniciando verificación periódica de hora
+2026-04-07 17:24:47,121 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 17:33:20,086 - INFO - Sistema de notificaciones inicializado
+2026-04-07 17:33:20,091 - INFO - Iniciando sistema de notificaciones
+2026-04-07 17:33:20,091 - INFO - Iniciando verificación periódica de hora
+2026-04-07 17:33:20,091 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 17:39:51,740 - INFO - Sistema de notificaciones inicializado
+2026-04-07 17:39:51,741 - INFO - Iniciando sistema de notificaciones
+2026-04-07 17:39:51,741 - INFO - Iniciando verificación periódica de hora
+2026-04-07 17:39:51,741 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 17:42:37,889 - INFO - Sistema de notificaciones inicializado
+2026-04-07 17:42:37,889 - INFO - Iniciando sistema de notificaciones
+2026-04-07 17:42:37,889 - INFO - Iniciando verificación periódica de hora
+2026-04-07 17:42:37,889 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 17:49:23,072 - INFO - Sistema de notificaciones inicializado
+2026-04-07 17:49:23,072 - INFO - Iniciando sistema de notificaciones
+2026-04-07 17:49:23,073 - INFO - Iniciando verificación periódica de hora
+2026-04-07 17:49:23,073 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 18:27:09,540 - INFO - Sistema de notificaciones inicializado
+2026-04-07 18:27:09,544 - INFO - Iniciando sistema de notificaciones
+2026-04-07 18:27:09,544 - INFO - Iniciando verificación periódica de hora
+2026-04-07 18:27:09,544 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 18:49:55,065 - INFO - Sistema de notificaciones inicializado
+2026-04-07 18:49:55,066 - INFO - Iniciando sistema de notificaciones
+2026-04-07 18:49:55,066 - INFO - Iniciando verificación periódica de hora
+2026-04-07 18:49:55,067 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 19:45:09,588 - INFO - Sistema de notificaciones inicializado
+2026-04-07 19:45:09,588 - INFO - Iniciando sistema de notificaciones
+2026-04-07 19:45:09,590 - INFO - Iniciando verificación periódica de hora
+2026-04-07 19:45:09,590 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 19:47:58,144 - INFO - Sistema de notificaciones inicializado
+2026-04-07 19:47:58,145 - INFO - Iniciando sistema de notificaciones
+2026-04-07 19:47:58,146 - INFO - Iniciando verificación periódica de hora
+2026-04-07 19:47:58,146 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-07 19:58:03,323 - INFO - Sistema de notificaciones inicializado
+2026-04-07 19:58:03,329 - INFO - Iniciando sistema de notificaciones
+2026-04-07 19:58:03,329 - INFO - Iniciando verificación periódica de hora
+2026-04-07 19:58:03,330 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-09 16:11:56,354 - INFO - Sistema de notificaciones inicializado
+2026-04-09 16:11:56,354 - INFO - Iniciando sistema de notificaciones
+2026-04-09 16:11:56,355 - INFO - Iniciando verificación periódica de hora
+2026-04-09 16:11:56,355 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-09 16:21:13,772 - INFO - Sistema de notificaciones inicializado
+2026-04-09 16:21:13,784 - INFO - Iniciando sistema de notificaciones
+2026-04-09 16:21:13,784 - INFO - Iniciando verificación periódica de hora
+2026-04-09 16:21:13,784 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-09 16:45:32,550 - INFO - Sistema de notificaciones inicializado
+2026-04-09 16:45:32,554 - INFO - Iniciando sistema de notificaciones
+2026-04-09 16:45:32,554 - INFO - Iniciando verificación periódica de hora
+2026-04-09 16:45:32,554 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-09 16:47:25,386 - INFO - Sistema de notificaciones inicializado
+2026-04-09 16:47:25,386 - INFO - Iniciando sistema de notificaciones
+2026-04-09 16:47:25,386 - INFO - Iniciando verificación periódica de hora
+2026-04-09 16:47:25,386 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-09 16:50:33,749 - INFO - Sistema de notificaciones inicializado
+2026-04-09 16:50:33,749 - INFO - Iniciando sistema de notificaciones
+2026-04-09 16:50:33,750 - INFO - Iniciando verificación periódica de hora
+2026-04-09 16:50:33,750 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-09 16:52:25,267 - INFO - Sistema de notificaciones inicializado
+2026-04-09 16:52:25,268 - INFO - Iniciando sistema de notificaciones
+2026-04-09 16:52:25,268 - INFO - Iniciando verificación periódica de hora
+2026-04-09 16:52:25,268 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-10 14:36:31,676 - INFO - Sistema de notificaciones inicializado
+2026-04-10 14:36:31,680 - INFO - Iniciando sistema de notificaciones
+2026-04-10 14:36:31,680 - INFO - Iniciando verificación periódica de hora
+2026-04-10 14:36:31,680 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-10 14:44:28,254 - INFO - Sistema de notificaciones inicializado
+2026-04-10 14:44:28,254 - INFO - Iniciando sistema de notificaciones
+2026-04-10 14:44:28,255 - INFO - Iniciando verificación periódica de hora
+2026-04-10 14:44:28,255 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:06:02,883 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:06:02,883 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:06:02,884 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:06:02,884 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:12:50,049 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:12:50,049 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:12:50,051 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:12:50,051 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:14:49,283 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:14:49,283 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:14:49,284 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:14:49,284 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:18:12,533 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:18:12,533 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:18:12,533 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:18:12,533 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:20:47,944 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:20:47,945 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:20:47,945 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:20:47,945 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:31:48,893 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:31:48,900 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:31:48,900 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:31:48,900 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:34:32,554 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:34:32,554 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:34:32,571 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:34:32,571 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:39:43,439 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:39:43,439 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:39:43,440 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:39:43,440 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:44:32,316 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:44:32,316 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:44:32,317 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:44:32,317 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:46:02,855 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:46:02,855 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:46:02,856 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:46:02,856 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:48:37,979 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:48:37,984 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:48:37,985 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:48:37,985 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:54:16,134 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:54:16,134 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:54:16,134 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:54:16,134 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:57:42,902 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:57:42,903 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:57:42,904 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:57:42,904 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 15:59:13,540 - INFO - Sistema de notificaciones inicializado
+2026-04-11 15:59:13,540 - INFO - Iniciando sistema de notificaciones
+2026-04-11 15:59:13,541 - INFO - Iniciando verificación periódica de hora
+2026-04-11 15:59:13,541 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:00:00,542 - INFO - Mostrando notificación de reporte para turno TARDE a las 16:00
+2026-04-11 16:00:02,090 - INFO - Usuario seleccionó NO en la notificación
+2026-04-11 16:00:02,099 - INFO - Usuario seleccionó NO o no respondió
+2026-04-11 16:04:35,686 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:04:35,687 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:04:35,687 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:04:35,687 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:05:34,994 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:05:34,995 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:05:34,995 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:05:34,995 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:07:52,862 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:07:52,862 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:07:52,863 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:07:52,863 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:11:13,049 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:11:13,049 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:11:13,050 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:11:13,050 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:14:58,517 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:14:58,517 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:14:58,518 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:14:58,518 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:18:00,643 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:18:00,644 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:18:00,644 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:18:00,644 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:28:04,815 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:28:04,821 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:28:04,822 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:28:04,822 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:42:35,058 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:42:35,058 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:42:35,059 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:42:35,060 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:44:37,973 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:44:37,973 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:44:37,973 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:44:37,973 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:47:07,479 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:47:07,480 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:47:07,480 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:47:07,480 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:48:40,108 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:48:40,108 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:48:40,109 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:48:40,109 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:52:04,568 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:52:04,568 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:52:04,569 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:52:04,569 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 16:59:17,247 - INFO - Sistema de notificaciones inicializado
+2026-04-11 16:59:17,247 - INFO - Iniciando sistema de notificaciones
+2026-04-11 16:59:17,247 - INFO - Iniciando verificación periódica de hora
+2026-04-11 16:59:17,248 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 17:00:00,249 - INFO - Mostrando notificación de reporte para turno TARDE a las 17:00
+2026-04-11 17:00:04,187 - INFO - Usuario seleccionó NO en la notificación
+2026-04-11 17:00:04,194 - INFO - Usuario seleccionó NO o no respondió
+2026-04-11 17:27:34,206 - INFO - Sistema de notificaciones inicializado
+2026-04-11 17:27:34,206 - INFO - Iniciando sistema de notificaciones
+2026-04-11 17:27:34,207 - INFO - Iniciando verificación periódica de hora
+2026-04-11 17:27:34,207 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 17:30:36,157 - INFO - Sistema de notificaciones inicializado
+2026-04-11 17:30:36,157 - INFO - Iniciando sistema de notificaciones
+2026-04-11 17:30:36,157 - INFO - Iniciando verificación periódica de hora
+2026-04-11 17:30:36,157 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 18:16:39,481 - INFO - Sistema de notificaciones inicializado
+2026-04-11 18:16:39,487 - INFO - Iniciando sistema de notificaciones
+2026-04-11 18:16:39,487 - INFO - Iniciando verificación periódica de hora
+2026-04-11 18:16:39,487 - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 18:20:02,816 - INFO - Sistema de notificaciones inicializado
+2026-04-11 18:20:02,816 - INFO - Iniciando sistema de notificaciones
+2026-04-11 18:20:02,817 - INFO - Iniciando verificación periódica de hora
+2026-04-11 18:20:02,817 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 01:04:37,821 - INFO - Sistema de notificaciones inicializado
+2026-09-06 01:04:37,834 - INFO - Iniciando sistema de notificaciones
+2026-09-06 01:04:37,835 - INFO - Iniciando verificación periódica de hora
+2026-09-06 01:04:37,835 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 01:17:22,095 - INFO - Sistema de notificaciones inicializado
+2026-09-06 01:17:22,108 - INFO - Iniciando sistema de notificaciones
+2026-09-06 01:17:22,109 - INFO - Iniciando verificación periódica de hora
+2026-09-06 01:17:22,109 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 01:43:00,727 - INFO - Sistema de notificaciones inicializado
+2026-09-06 01:43:00,734 - INFO - Iniciando sistema de notificaciones
+2026-09-06 01:43:00,735 - INFO - Iniciando verificación periódica de hora
+2026-09-06 01:43:00,735 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 01:45:39,152 - INFO - Sistema de notificaciones inicializado
+2026-09-06 01:45:39,153 - INFO - Iniciando sistema de notificaciones
+2026-09-06 01:45:39,153 - INFO - Iniciando verificación periódica de hora
+2026-09-06 01:45:39,153 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 01:52:27,911 - INFO - Sistema de notificaciones inicializado
+2026-09-06 01:52:27,912 - INFO - Iniciando sistema de notificaciones
+2026-09-06 01:52:27,912 - INFO - Iniciando verificación periódica de hora
+2026-09-06 01:52:27,912 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 02:13:33,789 - INFO - Sistema de notificaciones inicializado
+2026-09-06 02:13:33,789 - INFO - Iniciando sistema de notificaciones
+2026-09-06 02:13:33,789 - INFO - Iniciando verificación periódica de hora
+2026-09-06 02:13:33,789 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 02:21:59,131 - INFO - Sistema de notificaciones inicializado
+2026-09-06 02:21:59,131 - INFO - Iniciando sistema de notificaciones
+2026-09-06 02:21:59,132 - INFO - Iniciando verificación periódica de hora
+2026-09-06 02:21:59,132 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 02:24:25,732 - INFO - Sistema de notificaciones inicializado
+2026-09-06 02:24:25,732 - INFO - Iniciando sistema de notificaciones
+2026-09-06 02:24:25,733 - INFO - Iniciando verificación periódica de hora
+2026-09-06 02:24:25,733 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 02:27:54,395 - INFO - Sistema de notificaciones inicializado
+2026-09-06 02:27:54,395 - INFO - Iniciando sistema de notificaciones
+2026-09-06 02:27:54,395 - INFO - Iniciando verificación periódica de hora
+2026-09-06 02:27:54,395 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 02:43:01,884 - INFO - Sistema de notificaciones inicializado
+2026-09-06 02:43:01,888 - INFO - Iniciando sistema de notificaciones
+2026-09-06 02:43:01,889 - INFO - Iniciando verificación periódica de hora
+2026-09-06 02:43:01,889 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 02:45:12,223 - INFO - Sistema de notificaciones inicializado
+2026-09-06 02:45:12,223 - INFO - Iniciando sistema de notificaciones
+2026-09-06 02:45:12,224 - INFO - Iniciando verificación periódica de hora
+2026-09-06 02:45:12,224 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-06 02:48:26,814 - INFO - Sistema de notificaciones inicializado
+2026-09-06 02:48:26,822 - INFO - Iniciando sistema de notificaciones
+2026-09-06 02:48:26,822 - INFO - Iniciando verificación periódica de hora
+2026-09-06 02:48:26,823 - INFO - Sistema de notificaciones iniciado correctamente

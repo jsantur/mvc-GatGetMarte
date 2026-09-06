@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-09-06T02:52:41.388350",
+  "turno": "NOCHE",
+  "units": [
+    {
+      "alias": "🚙 1 EUI-621",
+      "km": "90",
+      "ap": "220",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA",
+        "TARDE"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "zona": "ENACE",
+      "observaciones": "COMPLETO, FALTA 10 MIN (1T), COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚙 2 EUI-682",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "zona": "CENTRO",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚙 3 EUI-683",
+      "km": "45",
+      "ap": "180",
+      "po": "2",
+      "turnos_seleccionados": [
+        "DÍA",
+        "TARDE"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "zona": "NORTE",
+      "observaciones": "FALTA 45 KM, FALTA 50 MIN (2T), FALTAN 1 P.O."
+    },
+    {
+      "alias": "🚙 4 EUI-646",
+      "km": "100",
+      "ap": "200",
+      "po": "1",
+      "turnos_seleccionados": [
+        "NOCHE"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "zona": "ENACE",
+      "observaciones": "COMPLETO, FALTA 30 MIN (1T), FALTAN 2 P.O."
+    },
+    {
+      "alias": "🚘 9 EUI-645",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "DÍA"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "zona": "SUR",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚘 10 EUI-647",
+      "km": "180",
+      "ap": "250",
+      "po": "4",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "TARDE"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "zona": "CENTRO",
+      "observaciones": "COMPLETO (+80 KM), COMPLETO, COMPLETO (4 P.O.)"
+    },
+    {
+      "alias": "🚘 11 EUI-668",
+      "km": "45",
+      "ap": "100",
+      "po": "2",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "TARDE"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "zona": "NORTE",
+      "observaciones": "FALTA 45 KM, FALTA 130 MIN (5T), FALTAN 1 P.O."
+    }
+  ],
+  "filtro_activo": "MANUAL",
+  "metadata": {
+    "version": "2.0",
+    "total_units": 7
+  }
+}

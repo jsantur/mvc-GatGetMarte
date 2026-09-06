@@ -1,0 +1,20 @@
+[
+  {
+    "fecha": "2025-06-28",
+    "hora": "04:13",
+    "turno": "NOCHE",
+    "camara": "Troncos",
+    "ocurrencia": "SUJETO DISUADIDO",
+    "usuario": "OPERADOR02",
+    "reporte": "CÁMARA: Troncos\nFECHA  : 2025-06-28\nHORA   : 04:13\n\nOCURRENCIA:\nSUJETO DISUADIDO\n"
+  },
+  {
+    "fecha": "2025-06-28",
+    "hora": "04:13",
+    "turno": "NOCHE",
+    "camara": "Montero",
+    "ocurrencia": "INCIDENTE: INDIVIDUO ORINANDO EN LUGAR NO AUTORIZADO",
+    "usuario": "OPERADOR02",
+    "reporte": "CÁMARA: Montero\nFECHA  : 2025-06-28\nHORA   : 04:13\n\nOCURRENCIA:\nINCIDENTE: INDIVIDUO ORINANDO EN LUGAR NO AUTORIZADO\n"
+  }
+]

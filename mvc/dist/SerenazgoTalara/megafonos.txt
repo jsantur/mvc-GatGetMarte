@@ -1,0 +1,88 @@
+NOMBRE<tab>MEGAFONO
+Ignacio Merino<tab>236
+Ovalo Punta Arenas<tab>235
+Av. G<tab>234
+Av. H Colegios<tab>233
+Clínica Tresa<tab>213
+Niño Héroe<tab>237
+La Parada<tab>232
+Intercom la Parada<tab>MARCAR EL 3
+MORGUE<tab>221
+Montero<tab>222
+Palacio Municipal<tab>220
+Pipos<tab>219
+Mavila Apra<tab>217
+Iglesia la Inmaculada<tab>218
+Zona de Bancos<tab>216
+Curacao<tab>215
+Caja Piura<tab>214
+Parque 16<tab>227
+Parque 17 y 14<tab>223
+Parque 10<tab>224
+Grifo San Martin<tab>238
+SENATI<tab>239
+Toyota<tab>240
+Intercom. Toyota<tab>MARCAR EL 8
+Poste 08 Toyota<tab>***
+PTZ Poste Inmaculada<tab>***
+Intercom. Inmaculada<tab>MARCAR EL 2
+Poste 04 Mavila Centro Cívico<tab>***
+Intercom. Mavila<tab>MARCAR EL 4
+LRP Punta Arenas<tab>***
+Troncos<tab>245
+Salida a Lobitos<tab>200
+Puente Yale<tab>228
+Puente Víctor Raúl<tab>***
+PTZ Poste 10 Plazuela Pescador<tab>***
+Posta Cono Norte<tab>202
+Pollería Maruja<tab>225
+Politécnico<tab>207
+Plazuela Pescador<tab>204
+Plazuela Cáceres<tab>230
+Pecata<tab>226
+Parque 16<tab>227
+Parcela 25<tab>201
+Muelle Uno<tab>212
+Mercado Acapulco<tab>210
+Max Cornejo Pacora<tab>205
+Malecón San Pedro<tab>206
+Intercom Primax<tab>MARCAR EL 5
+Intercom Plazuela Pescador<tab>MARCAR EL 10
+Grifo Primax<tab>229
+Grifo Acapulco<tab>209
+Estadio Campeonísimo<tab>231
+Es Salud<tab>208
+Cocobongo<tab>211
+Camara PTZ Poste Primax<tab>***
+Base Cono Norte<tab>203
+FONAVI<tab>241
+Coliseo los Pinos<tab>243
+María Reina de la Paz<tab>242
+Ovalo Urba<tab>246
+Iglesia Señor de los Milagros<tab>247
+Calle 01 Talara Alta<tab>248
+SAPISA<tab>249
+Parque 28 Julio<tab>250
+Tanque Víctor Raúl<tab>252
+Posta Quiñones<tab>254
+Plazuela Quiñones<tab>256
+Colegio Señor de los Milagros<tab>257
+Escuela de San Sebastián<tab>258
+Paradero 20<tab>253
+Colegio 13<tab>255
+Cola de Gato<tab>263
+Cuadrado del Agua<tab>260
+Gruta Jorge Chávez<tab>259
+Pilar Nores<tab>261
+Chatarreros<tab>262
+Mario Aguirre<tab>264
+CORPAC<tab>244
+07 de Junio<tab>251
+PTZ Poste Ovalo de la Urba<tab>***
+Intercom Óvalo Urba<tab>MARCAR EL 1
+Poste 06 Gruta Jorge Chávez<tab>***
+Intercom Gruta Jorge Chávez<tab>MARCAR EL 6
+Poste 07 Aeropuerto<tab>***
+Intercom Aeropuerto<tab>MARCAR EL 7
+Poste 09 Víctor Raúl<tab>***
+Intercom Víctor Raúl<tab>MARCAR EL 9

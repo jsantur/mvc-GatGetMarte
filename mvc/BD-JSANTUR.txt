@@ -1,0 +1,120 @@
+-- Crear la base de datos
+CREATE DATABASE serenazgo_db;
+USE serenazgo_db;
+
+
+---------USUARIOS (LOGIN)--------
+
+-- Tabla para registrar los usuarios del sistema (serenazgos, administradores, invitados, etc.)
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,  -- Identificador único para cada usuario.
+    id_serenazgo INT,  -- Relación con el serenazgo que tiene el usuario (opcional, para asociar al serenazgo correspondiente).
+    id_rol INT NOT NULL,  -- Relación con el rol del usuario.
+    nombre_usuario VARCHAR(50) UNIQUE NOT NULL,  -- Nombre de usuario para ingresar al sistema.
+    clave_encriptada VARCHAR(255) NOT NULL,  -- Contraseña cifrada del usuario.
+    estado ENUM('activo', 'inactivo') DEFAULT 'activo',  -- Estado del usuario (activo o inactivo).
+    FOREIGN KEY (id_rol) REFERENCES roles(id),  -- Relaciona el usuario con su rol.
+    FOREIGN KEY (id_serenazgo) REFERENCES serenazgo(id)  -- Relaciona el usuario con un serenazgo específico, si es necesario.
+);
+
+-- Tabla para definir los diferentes turnos de trabajo
+
+CREATE TABLE Turnos (
+    ID_Turno INT PRIMARY KEY AUTO_INCREMENT, -- Identificador único para cada turno
+    Nombre_Turno VARCHAR(50) NOT NULL UNIQUE, -- Nombre del turno (ej., 'Día', 'Tarde', 'Noche', 'Madrugada')
+    Hora_Inicio TIME NOT NULL,             -- Hora de inicio del turno
+    Hora_Fin TIME NOT NULL,                -- Hora de fin del turno
+    Descripcion TEXT,                       -- Descripción opcional del turno
+    Fecha_Creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Fecha y hora de creación del turno
+);
+
+---------SERENAZGO--------
+
+-- Tabla para almacenar la información de los serenazgos
+CREATE TABLE serenazgo (
+    id INT AUTO_INCREMENT PRIMARY KEY,  -- Identificador único para cada serenazgo. Se autoincrementa con cada nuevo registro.
+    nombres VARCHAR(100) NOT NULL,      -- Nombre(s) del serenazgo. Es importante para identificar a la persona.
+    apellido_paterno VARCHAR(100) NOT NULL,  -- Apellido paterno del serenazgo. Necesario para identificación formal.
+    apellido_materno VARCHAR(100) NOT NULL,  -- Apellido materno del serenazgo. Complementa la identificación formal.
+    fecha_nacimiento DATE,  -- Fecha de nacimiento. Es útil para calcular la edad y verificar la elegibilidad para el cargo.
+    foto VARCHAR(255),  -- Ruta o nombre de archivo de la imagen. Permite almacenar una foto para identificación visual.
+    celular VARCHAR(15),  -- Número de celular del serenazgo. Útil para contacto rápido en caso de emergencia o comunicación urgente.
+    dni VARCHAR(8) UNIQUE NOT NULL,  -- Documento Nacional de Identidad (DNI). Es único para cada persona y se usa para verificar su identidad.
+    estado_empleo ENUM('activo', 'inactivo', 'licencia', 'suspendido') DEFAULT 'activo',  -- Estado del empleo del serenazgo.
+    cargo VARCHAR(100),  -- Cargo que ocupa el serenazgo, como 'OPERADOR', 'CONDUCTOR', etc.
+    fecha_ingreso DATE,  -- Fecha de ingreso al equipo. Permite llevar un control sobre la antigüedad y desempeño.
+    CONSTRAINT chk_dni_length CHECK (LENGTH(dni) = 8)  -- Asegura que el DNI tenga una longitud exacta de 8 caracteres.
+);
+
+---------ROLES--------
+
+-- Tabla para definir los roles disponibles
+CREATE TABLE roles (
+    id INT AUTO_INCREMENT PRIMARY KEY,  -- Identificador único para cada rol.
+    nombre_rol VARCHAR(50) NOT NULL,  -- Nombre del rol (e.g., 'OPERADOR', 'CONDUCTOR', 'CAMARAS').
+    descripcion TEXT,  -- Descripción del rol. Facilita entender las responsabilidades asociadas con cada rol.
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Fecha en que el rol fue creado. Útil para auditorías.
+);
+
+-----------UNIDADES--------
+
+-- Tabla para registrar la información de las unidades de serenazgo
+CREATE TABLE Unidades (
+    ID_Unidad INT PRIMARY KEY AUTO_INCREMENT,  -- Identificador único para cada unidad.
+    Numero_Placa VARCHAR(10) UNIQUE NOT NULL,  -- Número de placa de la unidad, debe ser único.
+    Modelo VARCHAR(50),  -- Modelo de la unidad. Puede añadirse información sobre la marca o características adicionales.
+    Marca VARCHAR(50),  -- Marca de la unidad. Esto puede ser útil para identificar rápidamente la unidad.
+    Estado ENUM('operativa', 'mantenimiento', 'fuera de servicio') DEFAULT 'operativa',  -- Estado actual de la unidad.
+    Fecha_Creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Fecha y hora de creación de la unidad.
+);
+
+-----------REPORTES--------
+
+-- Tabla para registrar los reportes de las unidades
+CREATE TABLE Reportes (
+    ID_Reporte INT PRIMARY KEY AUTO_INCREMENT,  -- Identificador único para cada reporte.
+    ID_Unidad INT NOT NULL,  -- Referencia a la unidad que realizó el reporte.
+    Fecha_Hora_Reporte DATETIME NOT NULL,  -- Fecha y hora exacta en la que se realizó el reporte.
+    Estado VARCHAR(20) NOT NULL,  -- Estado de la unidad en el reporte (Ej: 'Patrullando', 'Táctico').
+    Turno VARCHAR(10) NOT NULL,  -- Turno de la unidad (Ej: 'Día', 'Tarde', 'Noche').
+    Descripcion TEXT,  -- Descripción adicional sobre el reporte (por ejemplo, detalles del incidente).
+    FOREIGN KEY (ID_Unidad) REFERENCES Unidades(ID_Unidad) ON DELETE CASCADE  -- Relaciona el reporte con una unidad específica. Si se elimina una unidad, se eliminan sus reportes asociados.
+);
+
+-----------INTERVALOS DE REPORTE--------
+
+-- Tabla para definir las reglas de frecuencia de los reportes según el turno
+CREATE TABLE IntervalosReporte (
+    ID_Intervalo INT PRIMARY KEY AUTO_INCREMENT,  -- Identificador único para el intervalo.
+    ID_Turno INT NOT NULL,  -- Referencia al turno asociado con este intervalo.
+    Hora_Inicio_Reporte TIME NOT NULL,  -- Hora de inicio dentro del turno para el intervalo de reporte.
+    Hora_Fin_Reporte TIME NOT NULL,  -- Hora de fin dentro del turno para el intervalo de reporte.
+    Frecuencia_Minutos INT NOT NULL,  -- Frecuencia en minutos con la que deben realizarse los reportes durante este intervalo.
+    FOREIGN KEY (ID_Turno) REFERENCES Turnos(ID_Turno) ON DELETE CASCADE  -- Relaciona el intervalo con la tabla de turnos.
+);
+
+-----------OCURRENCIA--------
+
+-- Tabla para registrar las ocurrencias que pueden suceder durante los turnos
+CREATE TABLE Ocurrencias (
+    ID_Ocurrencia INT PRIMARY KEY AUTO_INCREMENT,  -- Identificador único para cada ocurrencia.
+    Fecha_Hora_Ocurrencia DATETIME NOT NULL,  -- Fecha y hora exacta de la ocurrencia.
+    Descripcion TEXT NOT NULL,  -- Descripción de la ocurrencia (por ejemplo, un incidente o suceso relevante).
+    Ubicacion VARCHAR(255),  -- Ubicación donde ocurrió el evento. Puede incluir coordenadas o dirección.
+    Fecha_Creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Fecha en la que se registró la ocurrencia.
+);
+
+-----------KILOMETRAJE--------
+
+-- Tabla para llevar el registro del kilometraje de las unidades
+CREATE TABLE KilometrajeUnidades (
+    ID_Registro INT PRIMARY KEY AUTO_INCREMENT,  -- Identificador único para cada registro de kilometraje.
+    ID_Unidad INT NOT NULL,  -- Relaciona el registro de kilometraje con la unidad correspondiente.
+    Fecha_Registro DATE NOT NULL DEFAULT (CURRENT_DATE),  -- Fecha en que se registra el kilometraje de la unidad.
+    KM DECIMAL(10, 2) NOT NULL,  -- Kilometraje de la unidad (hasta 10 dígitos con 2 decimales).
+    A_P VARCHAR(255),  -- A.P. (puede ser texto que se refiere a observaciones adicionales, mantenimiento, etc.).
+    P_O VARCHAR(255),  -- P.O. (puede ser texto relacionado con otro tipo de observaciones).
+    FOREIGN KEY (ID_Unidad) REFERENCES Unidades(ID_Unidad) ON DELETE CASCADE,  -- Relaciona el registro con la unidad correspondiente.
+    UNIQUE (ID_Unidad, Fecha_Registro)  -- Asegura que no haya múltiples registros para la misma unidad en la misma fecha.
+);
+

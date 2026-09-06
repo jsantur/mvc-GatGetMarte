@@ -1,0 +1,45 @@
+2025-06-12 13:17:17,586 - cache - INFO - CacheManager inicializado: test_cache/basic, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 13:17:17,618 - cache - INFO - CacheManager inicializado: test_cache/memory_disk, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 13:17:19,995 - cache - INFO - CacheManager inicializado: test_cache/no_compression, TTL=1:00:00, max_size=500MB, compression=False
+2025-06-12 13:17:19,995 - cache - INFO - CacheManager inicializado: test_cache/with_compression, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 13:17:21,138 - cache - INFO - Todo el caché eliminado
+2025-06-12 13:17:21,139 - cache - INFO - Todo el caché eliminado
+2025-06-12 13:17:21,143 - cache - INFO - CacheManager inicializado: test_cache/concurrent, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 13:17:22,606 - cache - INFO - Todo el caché eliminado
+2025-06-12 13:17:22,612 - cache - INFO - CacheManager inicializado: test_cache/ttl, TTL=0:00:02, max_size=500MB, compression=True
+2025-06-12 13:17:25,613 - cache - INFO - Limpieza completada: {'files_removed': 1, 'bytes_freed': 301, 'expired_removed': 1, 'lru_removed': 0, 'duration_seconds': 0.0002827644348144531, 'final_size_bytes': 300}
+2025-06-12 13:17:25,613 - cache - INFO - Todo el caché eliminado
+2025-06-12 13:17:25,613 - cache - INFO - CacheManager inicializado: test_cache/error_recovery, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 13:17:25,634 - cache - ERROR - Error leyendo caché desde disco 'corrupted_key': Archivo de caché corrupto
+2025-06-12 13:17:25,634 - cache - INFO - Todo el caché eliminado
+2025-06-12 13:17:26,070 - cache - WARNING - No se pudieron guardar métricas: [Errno 2] No such file or directory: 'test_cache/error_recovery/metrics.json'
+2025-06-12 13:17:26,070 - cache - WARNING - No se pudieron guardar métricas: [Errno 2] No such file or directory: 'test_cache/ttl/metrics.json'
+2025-06-12 13:17:26,070 - cache - WARNING - No se pudieron guardar métricas: [Errno 2] No such file or directory: 'test_cache/concurrent/metrics.json'
+2025-06-12 13:17:26,070 - cache - WARNING - No se pudieron guardar métricas: [Errno 2] No such file or directory: 'test_cache/with_compression/metrics.json'
+2025-06-12 13:17:26,071 - cache - WARNING - No se pudieron guardar métricas: [Errno 2] No such file or directory: 'test_cache/no_compression/metrics.json'
+2025-06-12 13:17:26,071 - cache - WARNING - No se pudieron guardar métricas: [Errno 2] No such file or directory: 'test_cache/memory_disk/metrics.json'
+2025-06-12 13:17:26,071 - cache - WARNING - No se pudieron guardar métricas: [Errno 2] No such file or directory: 'test_cache/basic/metrics.json'
+2025-06-12 13:19:09,034 - cache - INFO - CacheManager inicializado: cache_optimized/demo, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 13:19:09,035 - cache - INFO - Todo el caché eliminado
+2025-06-12 13:19:09,036 - cache - INFO - CacheManager inicializado: cache_optimized/advanced, TTL=1:00:00, max_size=100MB, compression=True
+2025-06-12 13:19:09,036 - cache - INFO - CacheManager inicializado: cache_optimized/context, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 13:19:09,037 - cache - INFO - Todo el caché eliminado
+2025-06-12 00:27:38,164 - cache - INFO - CacheManager inicializado: test_migration, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 00:27:38,170 - cache - INFO - Todo el caché eliminado
+2025-06-12 00:28:12,884 - cache - INFO - CacheManager inicializado: cache_optimized\demo, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 00:28:12,886 - cache - INFO - Todo el caché eliminado
+2025-06-12 00:28:12,888 - cache - INFO - CacheManager inicializado: cache_optimized\advanced, TTL=1:00:00, max_size=100MB, compression=True
+2025-06-12 00:28:12,891 - cache - INFO - CacheManager inicializado: cache_optimized\context, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 00:28:12,894 - cache - INFO - Todo el caché eliminado
+2025-06-12 00:28:35,324 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 22:05:54,169 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 22:28:29,926 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 22:28:35,042 - cache - WARNING - Timeout o error guardando en disco 'units_data': 
+2025-06-12 22:35:11,263 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 23:39:56,183 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 23:47:58,352 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 23:52:05,347 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-12 23:56:32,571 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-13 00:10:20,155 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-13 00:42:33,903 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True
+2025-06-13 00:43:50,050 - cache - INFO - CacheManager inicializado: cache, TTL=1:00:00, max_size=500MB, compression=True

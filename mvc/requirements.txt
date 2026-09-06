@@ -1,0 +1,12 @@
+openpyxl>=3.0.0
+pandas>=1.0.0
+pytz
+mysql-connector-python
+pillow
+pyperclip
+google-generativeai
+psutil
+ntplib
+plyer>=2.0.0
+language-tool-python>=2.7.0
+pyspellchecker>=0.7.2

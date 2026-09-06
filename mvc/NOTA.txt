@@ -1,0 +1,29 @@
+/mvc
+├── controllers/
+│   ├── __init__.py
+│   └── controller.py
+├── models/
+│   ├── __init__.py
+│   ├── model.py
+│   └── cache_manager.py
+├── views/
+│   ├── __init__.py
+│   └── view.py
+├── utils/
+│   ├── __init__.py
+│   ├── db_handler.py
+│   └── validators.py
+└── main.py
+******************
+
+/mvc
+├── src/
+│   ├── mvc/
+│   │   ├── __init__.py
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── views/
+│   │   ├── utils/
+│   │   └── main.py
+├── setup.py
+└── pyproject.toml

@@ -1,0 +1,15 @@
+[
+  {"alias": "H1", "placa": "EUI-621", "tipo": "PICKUP"},
+  {"alias": "H2", "placa": "EUI-682", "tipo": "PICKUP"},
+  {"alias": "H3", "placa": "EUI-683", "tipo": "PICKUP"},
+  {"alias": "H4", "placa": "EUI-646", "tipo": "PICKUP"},
+  {"alias": "H5", "placa": "EUI-685", "tipo": "PICKUP"},
+  {"alias": "H6", "placa": "EUI-686", "tipo": "PICKUP"},
+  {"alias": "H7", "placa": "EUI-679", "tipo": "PICKUP"},
+  {"alias": "H8", "placa": "EUI-680", "tipo": "PICKUP"},
+  {"alias": "H9", "placa": "EUI-645", "tipo": "AUTO"},
+  {"alias": "H10", "placa": "EUI-647", "tipo": "AUTO"},
+  {"alias": "H11", "placa": "EUI-668", "tipo": "AUTO"},
+  {"alias": "H12", "placa": "EUI-670", "tipo": "AUTO"},
+  {"alias": "H13", "placa": "EUI-671", "tipo": "AUTO"}
+] 

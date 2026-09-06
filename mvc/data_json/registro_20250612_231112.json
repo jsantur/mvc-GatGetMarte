@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-06-12T23:11:12.838358",
+  "turno": "NOCHE",
+  "units": [
+    {
+      "alias": "H1 / EUI-621",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H2 / EUI-682",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H3 / EUI-683",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H4 / EUI-646",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H5 / EUI-685",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H6 / EUI-686",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H7 / EUI-679",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H8 / EUI-680",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H9 / EUI-645",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H10 / EUI-647",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    },
+    {
+      "alias": "H11 / EUI-668",
+      "km": "",
+      "ap": "",
+      "po": "0",
+      "turnos_seleccionados": []
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "total_units": 11
+  }
+}

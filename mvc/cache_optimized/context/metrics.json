@@ -1,0 +1,10 @@
+{
+  "hits": 2,
+  "misses": 0,
+  "sets": 2,
+  "deletes": 0,
+  "errors": 0,
+  "memory_cache_size": 1,
+  "disk_cache_size": 0,
+  "last_cleanup": null
+}

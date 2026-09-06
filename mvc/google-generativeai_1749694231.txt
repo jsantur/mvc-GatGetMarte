@@ -1,0 +1,222 @@
+⠋ Resolving dependencies...                                                     ⠙ Resolving dependencies...                                                     ⠋ Resolving dependencies...                                                     ⠙ Resolving dependencies...                                                     ⠙ google-generativeai==0.8.5                                                    ⠹ google-generativeai==0.8.5                                                    ⠸ google-generativeai==0.8.5                                                    ⠼ google-generativeai==0.8.5                                                    ⠼ google-ai-generativelanguage==0.6.15                                          ⠴ google-ai-generativelanguage==0.6.15                                          ⠴ google-api-core==2.25.0                                                       ⠴ google-api-core==2.25.0                                                       ⠴ google-api-python-client==2.172.0                                             ⠦ google-api-python-client==2.172.0                                             ⠦ google-auth==2.40.3                                                           ⠦ protobuf==5.29.5                                                              ⠦ pydantic==2.11.5                                                              ⠦ pydantic-core==2.33.2                                                         ⠦ tqdm==4.67.1                                                                  ⠦ typing-extensions==4.14.0                                                     ⠧ typing-extensions==4.14.0                                                     ⠧ proto-plus==1.26.1                                                            ⠧ googleapis-common-protos==1.70.0                                              ⠧ requests==2.32.4                                                              ⠇ requests==2.32.4                                                              ⠋ requests==2.32.4                                                              ⠙ requests==2.32.4                                                              ⠹ requests==2.32.4                                                              ⠸ requests==2.32.4                                                              ⠼ requests==2.32.4                                                              ⠼ grpcio==1.73.0                                                                ⠴ grpcio==1.73.0                                                                ⠴ grpcio==1.73.0                                                                ⠴ grpcio-status==1.73.0                                                         ⠴ grpcio==1.73.0                                                                ⠴ grpcio==1.73.0                                                                ⠴ google-api-python-client==2.172.0                                             ⠴ google-auth==2.40.3                                                           ⠴ protobuf==5.29.5                                                              ⠴ pydantic==2.11.5                                                              ⠴ pydantic-core==2.33.2                                                         ⠴ tqdm==4.67.1                                                                  ⠴ typing-extensions==4.14.0                                                     ⠴ proto-plus==1.26.1                                                            ⠴ googleapis-common-protos==1.70.0                                              ⠴ requests==2.32.4                                                              ⠴ grpcio-status==1.72.1                                                         ⠦ grpcio-status==1.72.1                                                         ⠧ grpcio-status==1.72.1                                                         ⠧ grpcio-status==1.71.0                                                         ⠧ grpcio-status==1.71.0                                                         ⠧ httplib2==0.22.0                                                              ⠧ google-auth-httplib2==0.2.0                                                   ⠧ uritemplate==4.2.0                                                            ⠧ cachetools==5.5.2                                                             ⠧ pyasn1-modules==0.4.2                                                         ⠧ rsa==4.9.1                                                                    ⠧ annotated-types==0.7.0                                                        ⠧ typing-inspection==0.4.1                                                      ⠧ charset-normalizer==3.4.2                                                     ⠧ idna==3.10                                                                    ⠧ urllib3==2.4.0                                                                ⠧ certifi==2025.4.26                                                            Resolved 29 packages in 3.18s
+⠋ Preparing packages... (0/0)                                                   ⠋ Preparing packages... (0/17)                                                  ⠙ Preparing packages... (0/17)                                                  ⠙ Preparing packages... (0/17)
+google-auth-httplib2 ------------------------------     0 B/9.04 KiB            ⠙ Preparing packages... (0/17)
+google-auth-httplib2 ------------------------------ 8.00 KiB/9.04 KiB           ⠙ Preparing packages... (0/17)
+google-auth-httplib2 ------------------------------ 8.00 KiB/9.04 KiB
+grpcio     ------------------------------     0 B/5.73 MiB                      ⠙ Preparing packages... (0/17)
+google-auth-httplib2 ------------------------------ 8.00 KiB/9.04 KiB
+grpcio     ------------------------------ 8.00 KiB/5.73 MiB                     ⠙ Preparing packages... (0/17)
+google-auth-httplib2 ------------------------------ 9.04 KiB/9.04 KiB
+grpcio     ------------------------------ 8.00 KiB/5.73 MiB                     ⠙ Preparing packages... (0/17)
+google-auth-httplib2 ------------------------------ 9.04 KiB/9.04 KiB
+grpcio     ------------------------------ 16.00 KiB/5.73 MiB                    ⠙ Preparing packages... (0/17)
+google-auth-httplib2 ------------------------------ 9.04 KiB/9.04 KiB
+google-ai-generativelanguage ------------------------------     0 B/1.27 MiB
+grpcio     ------------------------------ 16.00 KiB/5.73 MiB                    ⠙ Preparing packages... (0/17)
+google-auth-httplib2 ------------------------------ 9.04 KiB/9.04 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 16.00 KiB/5.73 MiB                    ⠙ Preparing packages... (0/17)
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 16.00 KiB/5.73 MiB                    ⠙ Preparing packages... (0/17)
+google-auth ------------------------------     0 B/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 16.00 KiB/5.73 MiB                    ⠙ Preparing packages... (0/17)
+google-auth ------------------------------ 8.00 KiB/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 16.00 KiB/5.73 MiB                    ⠙ Preparing packages... (0/17)
+google-auth ------------------------------ 8.00 KiB/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 24.00 KiB/5.73 MiB                    ⠙ Preparing packages... (0/17)
+google-auth ------------------------------ 16.00 KiB/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 24.00 KiB/5.73 MiB                    ⠙ Preparing packages... (0/17)
+google-auth ------------------------------ 16.00 KiB/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 24.00 KiB/5.73 MiB
+google-api-python-client ------------------------------     0 B/12.97 MiB       ⠙ Preparing packages... (0/17)
+google-auth ------------------------------ 16.00 KiB/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 24.00 KiB/5.73 MiB
+google-api-python-client ------------------------------ 8.00 KiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+grpcio-status ------------------------------     0 B/14.09 KiB
+google-auth ------------------------------ 16.00 KiB/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 24.00 KiB/5.73 MiB
+google-api-python-client ------------------------------ 8.00 KiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+grpcio-status ------------------------------ 8.00 KiB/14.09 KiB
+google-auth ------------------------------ 16.00 KiB/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 24.00 KiB/5.73 MiB
+google-api-python-client ------------------------------ 8.00 KiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+grpcio-status ------------------------------ 8.00 KiB/14.09 KiB
+google-auth ------------------------------ 24.00 KiB/211.07 KiB
+google-ai-generativelanguage ------------------------------ 8.00 KiB/1.27 MiB
+grpcio     ------------------------------ 24.00 KiB/5.73 MiB
+google-api-python-client ------------------------------ 8.00 KiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+cachetools ------------------------------ 9.84 KiB/9.84 KiB
+uritemplate ------------------------------ 8.00 KiB/11.22 KiB
+rsa        ------------------------------ 8.00 KiB/33.88 KiB
+proto-plus ------------------------------ 24.00 KiB/48.99 KiB
+pyasn1     ------------------------------ 8.00 KiB/81.19 KiB
+httplib2   ------------------------------ 89.86 KiB/94.58 KiB
+google-generativeai ------------------------------ 8.00 KiB/151.78 KiB
+google-api-core ------------------------------ 16.00 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 8.00 KiB/177.01 KiB
+google-auth ------------------------------ 47.26 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 8.00 KiB/287.63 KiB
+protobuf   ------------------------------ 103.24 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 39.24 KiB/1.27 MiB
+grpcio     ------------------------------ 63.22 KiB/5.73 MiB
+google-api-python-client ------------------------------ 47.23 KiB/12.97 MiB     ⠙ Preparing packages... (0/17)
+uritemplate ------------------------------ 11.22 KiB/11.22 KiB
+rsa        ------------------------------ 24.00 KiB/33.88 KiB
+proto-plus ------------------------------ 24.00 KiB/48.99 KiB
+pyasn1     ------------------------------ 24.00 KiB/81.19 KiB
+httplib2   ------------------------------ 94.58 KiB/94.58 KiB
+google-generativeai ------------------------------ 16.00 KiB/151.78 KiB
+google-api-core ------------------------------ 16.00 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 8.00 KiB/177.01 KiB
+google-auth ------------------------------ 55.26 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 16.00 KiB/287.63 KiB
+protobuf   ------------------------------ 103.24 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 47.24 KiB/1.27 MiB
+grpcio     ------------------------------ 767.22 KiB/5.73 MiB
+google-api-python-client ------------------------------ 55.23 KiB/12.97 MiB     ⠙ Preparing packages... (0/17)
+uritemplate ------------------------------ 11.22 KiB/11.22 KiB
+rsa        ------------------------------ 32.00 KiB/33.88 KiB
+proto-plus ------------------------------ 32.00 KiB/48.99 KiB
+pyasn1     ------------------------------ 32.00 KiB/81.19 KiB
+google-generativeai ------------------------------ 31.25 KiB/151.78 KiB
+google-api-core ------------------------------ 39.26 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 24.00 KiB/177.01 KiB
+google-auth ------------------------------ 81.86 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 24.00 KiB/287.63 KiB
+protobuf   ------------------------------ 176.92 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 71.24 KiB/1.27 MiB
+grpcio     ------------------------------ 1.18 MiB/5.73 MiB
+google-api-python-client ------------------------------ 63.23 KiB/12.97 MiB     ⠙ Preparing packages... (0/17)
+rsa        ------------------------------ 32.00 KiB/33.88 KiB
+proto-plus ------------------------------ 32.00 KiB/48.99 KiB
+pyasn1     ------------------------------ 32.00 KiB/81.19 KiB
+google-generativeai ------------------------------ 31.25 KiB/151.78 KiB
+google-api-core ------------------------------ 47.26 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 24.00 KiB/177.01 KiB
+google-auth ------------------------------ 81.86 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 31.24 KiB/287.63 KiB
+protobuf   ------------------------------ 176.92 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 71.24 KiB/1.27 MiB
+grpcio     ------------------------------ 1.34 MiB/5.73 MiB
+google-api-python-client ------------------------------ 63.23 KiB/12.97 MiB     ⠙ Preparing packages... (0/17)
+rsa        ------------------------------ 32.00 KiB/33.88 KiB
+proto-plus ------------------------------ 40.00 KiB/48.99 KiB
+pyasn1     ------------------------------ 40.00 KiB/81.19 KiB
+google-generativeai ------------------------------ 39.25 KiB/151.78 KiB
+google-api-core ------------------------------ 47.26 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 24.00 KiB/177.01 KiB
+google-auth ------------------------------ 89.86 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 31.24 KiB/287.63 KiB
+protobuf   ------------------------------ 176.92 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 89.86 KiB/1.27 MiB
+grpcio     ------------------------------ 1.54 MiB/5.73 MiB
+google-api-python-client ------------------------------ 71.23 KiB/12.97 MiB     ⠙ Preparing packages... (0/17)
+proto-plus ------------------------------ 40.00 KiB/48.99 KiB
+pyasn1     ------------------------------ 40.00 KiB/81.19 KiB
+google-generativeai ------------------------------ 39.25 KiB/151.78 KiB
+google-api-core ------------------------------ 63.26 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 31.25 KiB/177.01 KiB
+google-auth ------------------------------ 95.26 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 39.24 KiB/287.63 KiB
+protobuf   ------------------------------ 199.24 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 95.24 KiB/1.27 MiB
+grpcio     ------------------------------ 1.75 MiB/5.73 MiB
+google-api-python-client ------------------------------ 111.23 KiB/12.97 MiB    ⠙ Preparing packages... (0/17)
+pyasn1     ------------------------------ 64.00 KiB/81.19 KiB
+google-generativeai ------------------------------ 63.25 KiB/151.78 KiB
+google-api-core ------------------------------ 71.26 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 47.25 KiB/177.01 KiB
+google-auth ------------------------------ 111.26 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 55.24 KiB/287.63 KiB
+protobuf   ------------------------------ 247.24 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 111.24 KiB/1.27 MiB
+grpcio     ------------------------------ 2.47 MiB/5.73 MiB
+google-api-python-client ------------------------------ 265.06 KiB/12.97 MiB    ⠙ Preparing packages... (0/17)
+google-generativeai ------------------------------ 71.25 KiB/151.78 KiB
+google-api-core ------------------------------ 89.86 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 55.25 KiB/177.01 KiB
+google-auth ------------------------------ 127.26 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 71.24 KiB/287.63 KiB
+protobuf   ------------------------------ 255.24 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 135.24 KiB/1.27 MiB
+grpcio     ------------------------------ 2.91 MiB/5.73 MiB
+google-api-python-client ------------------------------ 351.23 KiB/12.97 MiB    ⠙ Preparing packages... (0/17)
+google-generativeai ------------------------------ 113.86 KiB/151.78 KiB
+google-api-core ------------------------------ 155.77 KiB/156.90 KiB
+pyasn1-modules ------------------------------ 95.25 KiB/177.01 KiB
+google-auth ------------------------------ 203.70 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 111.24 KiB/287.63 KiB
+protobuf   ------------------------------ 312.44 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 241.07 KiB/1.27 MiB
+grpcio     ------------------------------ 3.42 MiB/5.73 MiB
+google-api-python-client ------------------------------ 1.38 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+google-generativeai ------------------------------ 121.86 KiB/151.78 KiB
+pyasn1-modules ------------------------------ 103.25 KiB/177.01 KiB
+google-auth ------------------------------ 203.70 KiB/211.07 KiB
+googleapis-common-protos ------------------------------ 111.24 KiB/287.63 KiB
+protobuf   ------------------------------ 312.44 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 250.90 KiB/1.27 MiB
+grpcio     ------------------------------ 3.72 MiB/5.73 MiB
+google-api-python-client ------------------------------ 1.47 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+google-generativeai ------------------------------ 121.86 KiB/151.78 KiB
+pyasn1-modules ------------------------------ 103.25 KiB/177.01 KiB
+googleapis-common-protos ------------------------------ 111.24 KiB/287.63 KiB
+protobuf   ------------------------------ 312.44 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 263.24 KiB/1.27 MiB
+grpcio     ------------------------------ 3.84 MiB/5.73 MiB
+google-api-python-client ------------------------------ 1.48 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+pyasn1-modules ------------------------------ 119.25 KiB/177.01 KiB
+googleapis-common-protos ------------------------------ 127.24 KiB/287.63 KiB
+protobuf   ------------------------------ 312.44 KiB/312.44 KiB
+google-ai-generativelanguage ------------------------------ 303.24 KiB/1.27 MiB
+grpcio     ------------------------------ 4.58 MiB/5.73 MiB
+google-api-python-client ------------------------------ 1.62 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+pyasn1-modules ------------------------------ 151.25 KiB/177.01 KiB
+googleapis-common-protos ------------------------------ 167.24 KiB/287.63 KiB
+google-ai-generativelanguage ------------------------------ 406.56 KiB/1.27 MiB
+grpcio     ------------------------------ 5.09 MiB/5.73 MiB
+google-api-python-client ------------------------------ 2.03 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+googleapis-common-protos ------------------------------ 207.24 KiB/287.63 KiB
+google-ai-generativelanguage ------------------------------ 503.24 KiB/1.27 MiB
+grpcio     ------------------------------ 5.68 MiB/5.73 MiB
+google-api-python-client ------------------------------ 2.36 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+googleapis-common-protos ------------------------------ 239.24 KiB/287.63 KiB
+google-ai-generativelanguage ------------------------------ 583.24 KiB/1.27 MiB
+grpcio     ------------------------------ 5.72 MiB/5.73 MiB
+google-api-python-client ------------------------------ 2.78 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+googleapis-common-protos ------------------------------ 239.24 KiB/287.63 KiB
+google-ai-generativelanguage ------------------------------ 607.24 KiB/1.27 MiB
+google-api-python-client ------------------------------ 2.84 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+google-ai-generativelanguage ------------------------------ 671.24 KiB/1.27 MiB
+google-api-python-client ------------------------------ 3.11 MiB/12.97 MiB      ⠙ Preparing packages... (0/17)
+google-ai-generativelanguage ------------------------------ 831.24 KiB/1.27 MiB
+google-api-python-client ------------------------------ 4.77 MiB/12.97 MiB      ⠹ Preparing packages... (15/17)
+google-api-python-client ------------------------------ 7.58 MiB/12.97 MiB      ⠹ Preparing packages... (15/17)
+google-api-python-client ------------------------------ 8.23 MiB/12.97 MiB      ⠹ Preparing packages... (15/17)
+google-api-python-client ------------------------------ 10.16 MiB/12.97 MiB     ⠹ Preparing packages... (15/17)                                                 Prepared 17 packages in 341ms
+░░░░░░░░░░░░░░░░░░░░ [0/0] Installing wheels...                                 ░░░░░░░░░░░░░░░░░░░░ [0/17] Installing wheels...                                ░░░░░░░░░░░░░░░░░░░░ [0/17] google-auth-httplib2==0.2.0                         █░░░░░░░░░░░░░░░░░░░ [1/17] google-auth-httplib2==0.2.0                         █░░░░░░░░░░░░░░░░░░░ [1/17] grpcio-status==1.71.0                               ██░░░░░░░░░░░░░░░░░░ [2/17] grpcio-status==1.71.0                               ██░░░░░░░░░░░░░░░░░░ [2/17] cachetools==5.5.2                                   ███░░░░░░░░░░░░░░░░░ [3/17] cachetools==5.5.2                                   ███░░░░░░░░░░░░░░░░░ [3/17] httplib2==0.22.0                                    ████░░░░░░░░░░░░░░░░ [4/17] httplib2==0.22.0                                    ████░░░░░░░░░░░░░░░░ [4/17] uritemplate==4.2.0                                  █████░░░░░░░░░░░░░░░ [5/17] uritemplate==4.2.0                                  █████░░░░░░░░░░░░░░░ [5/17] rsa==4.9.1                                          ███████░░░░░░░░░░░░░ [6/17] rsa==4.9.1                                          ███████░░░░░░░░░░░░░ [6/17] proto-plus==1.26.1                                  ████████░░░░░░░░░░░░ [7/17] proto-plus==1.26.1                                  ████████░░░░░░░░░░░░ [7/17] pyasn1==0.6.1                                       █████████░░░░░░░░░░░ [8/17] pyasn1==0.6.1                                       █████████░░░░░░░░░░░ [8/17] google-api-core==2.25.0                             ██████████░░░░░░░░░░ [9/17] google-api-core==2.25.0                             Installed 17 packages in 21ms
+ + cachetools==5.5.2
+ + google-ai-generativelanguage==0.6.15
+ + google-api-core==2.25.0
+ + google-api-python-client==2.172.0
+ + google-auth==2.40.3
+ + google-auth-httplib2==0.2.0
+ + google-generativeai==0.8.5
+ + googleapis-common-protos==1.70.0
+ + grpcio==1.73.0
+ + grpcio-status==1.71.0
+ + httplib2==0.22.0
+ + proto-plus==1.26.1
+ + protobuf==5.29.5
+ + pyasn1==0.6.1
+ + pyasn1-modules==0.4.2
+ + rsa==4.9.1
+ + uritemplate==4.2.0

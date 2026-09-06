@@ -1,0 +1,45 @@
+{
+  "unidades_disponibles": [
+    "H1 / EUI-621",
+    "H2 / EUI-682",
+    "H3 / EUI-683",
+    "H4 / EUI-646",
+    "H5 / EUI-685",
+    "H6 / EUI-686",
+    "H7 / EUI-679",
+    "H8 / EUI-680",
+    "H9 / EUI-645",
+    "H10 / EUI-647",
+    "H11 / EUI-668"
+  ],
+  "alias_unidades": {
+    "H1 / EUI-621": "EUI-621",
+    "H2 / EUI-682": "EUI-682",
+    "H3 / EUI-683": "EUI-683",
+    "H4 / EUI-646": "EUI-646",
+    "H5 / EUI-685": "EUI-685",
+    "H6 / EUI-686": "EUI-686",
+    "H7 / EUI-679": "EUI-679",
+    "H8 / EUI-680": "EUI-680",
+    "H9 / EUI-645": "EUI-645",
+    "H10 / EUI-647": "EUI-647",
+    "H11 / EUI-668": "EUI-668"
+  },
+  "camionetas": [
+    "EUI-685",
+    "EUI-621",
+    "EUI-683",
+    "EUI-646",
+    "EUI-682",
+    "EUI-680",
+    "EUI-686",
+    "EUI-679"
+  ],
+  "autos": [
+    "EUI-647",
+    "EUI-668",
+    "EUI-645"
+  ],
+  "filtro_activo": "CAMIONETAS",
+  "unidades_manuales": []
+}

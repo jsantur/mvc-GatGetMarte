@@ -1,0 +1,26 @@
+[
+  {
+    "fecha": "2025-07-31",
+    "hora": "17-51",
+    "turno": "TARDE",
+    "reporte": "📋 REPORTE DE UNIDADES\n==============================\n🕰️ Hora: 17:51\n📅 Fecha: 2025-07-31\n🕵️‍♂️ Turno: TARDE\n\n🚓 UNIDADES SELECCIONADAS\n------------------------------\n🚓 H9 / EUI-645\n   📝 QWER\n\n🚓 H10 / EUI-647\n   📝 WERQ\n\n🚓 H11 / EUI-668\n   📝 WER\n\n🚓 H12 / EUI-670\n   📝 QWER\n\n🚓 H13 / EUI-671\n   📝 QWER\n\n==============================\n👤 Usuario: OPERADOR02"
+  },
+  {
+    "fecha": "2025-07-31",
+    "hora": "18-01",
+    "turno": "TARDE",
+    "reporte": "📋 REPORTE DE UNIDADES\n==============================\n🕰️ Hora: 18:01\n📅 Fecha: 2025-07-31\n🕵️‍♂️ Turno: TARDE\n\n🚓 UNIDADES SELECCIONADAS\n------------------------------\n🚓 H9 / EUI-645\n   📝 ADFS\n\n🚓 H10 / EUI-647\n   📝 ASDFASDF\n\n🚓 H11 / EUI-668\n   📝 ASDF\n\n🚓 H12 / EUI-670\n   📝 AFSD\n\n🚓 H13 / EUI-671\n   📝 ASDF\n\n==============================\n👤 Usuario: OPERADOR02"
+  },
+  {
+    "fecha": "2025-07-31",
+    "hora": "18-05",
+    "turno": "TARDE",
+    "reporte": "📋 REPORTE DE UNIDADES\n==============================\n🕰️ Hora: 18:05\n📅 Fecha: 2025-07-31\n🕵️‍♂️ Turno: TARDE\n\n🚓 UNIDADES SELECCIONADAS\n------------------------------\n🚓 H9 / EUI-645\n   📝 T\n\n🚓 H10 / EUI-647\n   📝 T\n\n🚓 H11 / EUI-668\n   📝 T\n\n🚓 H12 / EUI-670\n   📝 T\n\n🚓 H13 / EUI-671\n   📝 T\n\n==============================\n👤 Usuario: OPERADOR02"
+  },
+  {
+    "fecha": "2025-07-31",
+    "hora": "18-07",
+    "turno": "TARDE",
+    "reporte": "📋 REPORTE DE UNIDADES\n==============================\n🕰️ Hora: 18:07\n📅 Fecha: 2025-07-31\n🕵️‍♂️ Turno: TARDE\n\n🚓 UNIDADES SELECCIONADAS\n------------------------------\n🚓 H9 / EUI-645\n   📝 T\n\n🚓 H10 / EUI-647\n   📝 T\n\n🚓 H11 / EUI-668\n   📝 T\n\n🚓 H12 / EUI-670\n   📝 T\n\n🚓 H13 / EUI-671\n   📝 T\n\n==============================\n👤 Usuario: OPERADOR02"
+  }
+]

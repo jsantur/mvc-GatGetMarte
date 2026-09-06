@@ -1,0 +1,106 @@
+{
+  "1  EUI-621": {
+    "lat": -4.5873516,
+    "lon": -81.2692116,
+    "timestamp": 1775942815,
+    "hora_local": "16:26:55",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "2  EUI-682": {
+    "lat": -4.58737,
+    "lon": -81.2690999,
+    "timestamp": 1775942993,
+    "hora_local": "16:29:53",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "3  EUI-683": {
+    "lat": -4.5873416,
+    "lon": -81.269205,
+    "timestamp": 1775942999,
+    "hora_local": "16:29:59",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "4  EUI-646": {
+    "lat": -4.5956233,
+    "lon": -81.1804383,
+    "timestamp": 1775942987,
+    "hora_local": "16:29:47",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "5  EUI-685": {
+    "lat": -4.5805633,
+    "lon": -81.2685049,
+    "timestamp": 1775943027,
+    "hora_local": "16:30:27",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "6  EUI-686": {
+    "lat": -4.587355,
+    "lon": -81.2692033,
+    "timestamp": 1775942784,
+    "hora_local": "16:26:24",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "7  EUI-679": {
+    "lat": -4.5873666,
+    "lon": -81.2691749,
+    "timestamp": 1775942876,
+    "hora_local": "16:27:56",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "8  EUI-680": {
+    "lat": -4.5924616,
+    "lon": -81.258845,
+    "timestamp": 1775943036,
+    "hora_local": "16:30:36",
+    "speed": 22,
+    "es_reciente": true
+  },
+  "9  EUI-645": {
+    "lat": -4.58046,
+    "lon": -81.2716783,
+    "timestamp": 1775942909,
+    "hora_local": "16:28:29",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "10  EUI-647": {
+    "lat": -4.5888383,
+    "lon": -81.2576366,
+    "timestamp": 1775942823,
+    "hora_local": "16:27:03",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "11  EUI-668": {
+    "lat": -4.5728783,
+    "lon": -81.27248,
+    "timestamp": 1775942957,
+    "hora_local": "16:29:17",
+    "speed": 0,
+    "es_reciente": true
+  },
+  "12  EUI-670": {
+    "lat": -4.5865316,
+    "lon": -81.2666366,
+    "timestamp": 1775943035,
+    "hora_local": "16:30:35",
+    "speed": 31,
+    "es_reciente": true
+  },
+  "13  EUI-671": {
+    "lat": -4.58732,
+    "lon": -81.2689966,
+    "timestamp": 1775514828,
+    "hora_local": "17:33:48",
+    "speed": 0,
+    "es_reciente": false
+  }
+}

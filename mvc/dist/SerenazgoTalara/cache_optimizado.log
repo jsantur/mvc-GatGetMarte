@@ -1,0 +1,35 @@
+2026-04-11 18:34:03,474 - report_ocurrencias - INFO - LanguageTool no disponible, usando pyspellchecker como corrector local
+2026-04-11 18:34:03,832 - __main__ - INFO - 🚀 Iniciando Sistema de Monitoreo SERENAZGO v2.0
+2026-04-11 18:34:03,832 - __main__ - INFO - ✅ Verificación de instancia única completada
+2026-04-11 18:34:03,838 - __main__ - INFO - 📁 Directorios de trabajo creados/verificados
+2026-04-11 18:34:03,838 - __main__ - INFO - 🖼️ Logo ya existe en la carpeta REPORT
+2026-04-11 18:34:03,838 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist\SerenazgoTalara
+2026-04-11 18:34:03,838 - __main__ - INFO - 📊 Verificando archivo Excel: D:\mvc\dist\SerenazgoTalara\unidades_registro.xlsx
+2026-04-11 18:34:03,839 - __main__ - INFO - ✅ Archivo Excel encontrado
+2026-04-11 18:34:03,839 - __main__ - INFO - ✅ Archivo Excel tiene permisos de escritura
+2026-04-11 18:34:03,839 - __main__ - INFO - 📏 Tamaño: 5666 bytes
+2026-04-11 18:34:03,839 - __main__ - INFO - 🕰️ Última modificación: 2026-04-11 15:30:57.462353
+2026-04-11 18:34:03,956 - cache - INFO - Thread de limpieza automática iniciado (intervalo: 900s)
+2026-04-11 18:34:03,956 - cache - INFO - CacheManager inicializado con config: {'max_memory_size': 2000, 'max_memory_mb': 400, 'max_disk_mb': 2000, 'compression_threshold': 512, 'cleanup_interval': 900, 'max_threads': 6, 'enable_compression': True, 'enable_metrics': True, 'cache_version': '2.0'}
+2026-04-11 18:34:03,956 - __main__ - INFO - 💾 Sistema de caché inicializado con configuración optimizada
+2026-04-11 18:34:03,956 - __main__ - INFO - 🧹 Sistema de limpieza automática registrado
+2026-04-11 18:34:04,398 - __main__ - INFO - 🖥️ Ventana configurada en pantalla completa
+2026-04-11 18:34:04,398 - __main__ - INFO - 🏗️ Inicializando componentes...
+2026-04-11 18:34:04,426 - __main__ - INFO - 📊 Modelo inicializado
+2026-04-11 18:34:04,639 - __main__ - INFO - 🖥️ Vista inicializada
+2026-04-11 18:34:04,659 - __main__ - INFO - 🎮 Controlador inicializado
+2026-04-11 18:34:06,599 - __main__ - INFO - 🔗 Componentes conectados
+2026-04-11 18:34:06,599 - SistemaNotificaciones - INFO - Sistema de notificaciones inicializado
+2026-04-11 18:34:06,599 - SistemaNotificaciones - INFO - Iniciando sistema de notificaciones
+2026-04-11 18:34:06,600 - SistemaNotificaciones - INFO - Iniciando verificación periódica de hora
+2026-04-11 18:34:06,600 - SistemaNotificaciones - INFO - Sistema de notificaciones iniciado correctamente
+2026-04-11 18:34:06,600 - __main__ - INFO - ✅ Aplicación iniciada exitosamente
+2026-04-11 18:34:06,600 - __main__ - INFO - 🖥️ Interfaz en pantalla completa disponible
+2026-04-11 18:34:06,600 - __main__ - INFO - ⌨️ Presione F1 para ver atajos de teclado
+2026-04-11 18:34:06,916 - __main__ - INFO - ⏰ Inicialización retardada completada
+2026-04-11 18:36:01,584 - report_ocurrencias - ERROR - Error inicializando SpellChecker: The provided dictionary language (es) does not exist!
+2026-04-11 18:36:10,512 - __main__ - INFO - 🔚 Cerrando Sistema de Monitoreo SERENAZGO
+2026-04-11 18:36:10,513 - __main__ - INFO - 🧹 Iniciando limpieza al cerrar...
+2026-04-11 18:36:10,513 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist\SerenazgoTalara
+2026-04-11 18:36:10,513 - __main__ - INFO - 🧹 Archivos temporales limpiados
+2026-04-11 18:36:10,628 - __main__ - INFO - ✅ Limpieza completada exitosamente

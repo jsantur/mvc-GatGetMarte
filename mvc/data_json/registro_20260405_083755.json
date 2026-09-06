@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-04-05T08:37:55.399889",
+  "turno": "DÍA",
+  "units": [
+    {
+      "alias": "🚙 1 EUI-621",
+      "km": "90",
+      "ap": "230",
+      "po": "3",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "SECTORIAL",
+      "observaciones": "COMPLETO, COMPLETO, COMPLETO (3 P.O.)"
+    },
+    {
+      "alias": "🚘 13 EUI-671",
+      "km": "45",
+      "ap": "120",
+      "po": "2",
+      "turnos_seleccionados": [
+        "NOCHE",
+        "DÍA"
+      ],
+      "jurisdiccion": "T.ALTA",
+      "observaciones": "FALTA 45 KM, FALTA 110 MIN (4T), FALTAN 1 P.O."
+    }
+  ],
+  "filtro_activo": "MANUAL",
+  "metadata": {
+    "version": "2.0",
+    "total_units": 2
+  }
+}

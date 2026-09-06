@@ -1,0 +1,14 @@
+{
+    "db_config": {
+        "host": "localhost",
+        "database": "serenazgo_db",
+        "user": "root",
+        "password": "",
+        "port": "3306"
+    },
+    "cloud_api_url": "https://script.google.com/macros/s/AKfycbw1kkJmueJxyI3nAvEAbThIbZolDhYV8ZHCX78CyjhuELyQnZinZnuFWqXxeMm9CRrMYQ/exec",
+    "wialon_config": {
+        "token": "d9389cba03c48783dab7e0edd075e8716BD05A683D2F4C551757FE232D931CDCBA2B6A49",
+        "url_monitor": "https://hosting.wialon.us/?lang=es"
+    }
+}
