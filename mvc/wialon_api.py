@@ -41,6 +41,7 @@ class WialonAPI:
         self.token = token
         self.sid = None
         self.real_base_url = self.BASE_URL
+        self.session = requests.Session()
         self.logger = logging.getLogger(__name__)
 
     def login(self):
@@ -50,7 +51,7 @@ class WialonAPI:
             "params": json.dumps({"token": self.token})
         }
         try:
-            response = requests.get(self.BASE_URL, params=params, timeout=15)
+            response = self.session.get(self.BASE_URL, params=params, timeout=15)
             data = response.json()
             if "eid" in data:
                 self.sid = data["eid"]
@@ -65,6 +66,20 @@ class WialonAPI:
         except Exception as e:
             self.logger.error(f"Error de conexión Wialon: {e}")
             return False
+
+    def logout(self):
+        """Cierra la sesión activa en Wialon y limpia la conexión."""
+        if self.sid and self.real_base_url:
+            try:
+                params = {"svc": "core/logout", "params": "{}", "sid": self.sid}
+                self.session.get(self.real_base_url, params=params, timeout=5)
+            except Exception:
+                pass
+        self.sid = None
+        try:
+            self.session.close()
+        except Exception:
+            pass
 
     def _get_all_units(self):
         """Obtiene el listado completo de unidades con su ID y nombre."""
@@ -84,7 +99,7 @@ class WialonAPI:
             }),
             "sid": self.sid
         }
-        response = requests.get(self.real_base_url, params=params, timeout=15)
+        response = self.session.get(self.real_base_url, params=params, timeout=15)
         return response.json().get("items", [])
 
     def _load_day_messages(self, unit_id, timezone_offset=None):
@@ -110,7 +125,7 @@ class WialonAPI:
             }),
             "sid": self.sid
         }
-        response = requests.get(self.real_base_url, params=params, timeout=30)
+        response = self.session.get(self.real_base_url, params=params, timeout=30)
         return response.json().get("messages", [])
 
     def _calc_km_from_messages(self, messages):
@@ -166,6 +181,13 @@ class WialonAPI:
         normalize = lambda s: " ".join(s.split()).upper()
         norm_targets = {normalize(n): n for n in wialon_names}
 
+        # Mapeo por placa para tolerancia total (ej. EUI-621)
+        plate_targets = {}
+        for n in wialon_names:
+            m = re.search(r'(EUI-\d+)', n)
+            if m:
+                plate_targets[m.group(1).upper()] = n
+
         debug_info = []
 
         try:
@@ -173,44 +195,62 @@ class WialonAPI:
             debug_info.append(f"URL: {self.real_base_url}")
             debug_info.append(f"Unidades en Wialon: {len(all_units)}")
 
-            mileage_data = {}
-
+            # Emparejar unidades objetivo
+            matched_units = []
             for item in all_units:
                 name = item.get("nm", "")
                 norm_name = normalize(name)
-
-                if norm_name not in norm_targets:
-                    continue
-
-                orig_name = norm_targets[norm_name]
                 unit_id = item.get("id")
 
-                debug_info.append(f"\n--- {name} (ID: {unit_id}) ---")
+                orig_name = None
+                if norm_name in norm_targets:
+                    orig_name = norm_targets[norm_name]
+                else:
+                    m = re.search(r'(EUI-\d+)', name)
+                    if m and m.group(1).upper() in plate_targets:
+                        orig_name = plate_targets[m.group(1).upper()]
 
+                if orig_name and unit_id:
+                    matched_units.append((item, orig_name, unit_id))
+
+            mileage_data = {}
+
+            def _procesar_unidad(unit_data):
+                item, orig_name, unit_id = unit_data
+                name = item.get("nm", "")
+                unit_logs = [f"\n--- {name} (ID: {unit_id}) ---"]
                 try:
                     messages = self._load_day_messages(unit_id, timezone_offset)
-                    debug_info.append(f"  Mensajes GPS hoy: {len(messages)}")
+                    unit_logs.append(f"  Mensajes GPS hoy: {len(messages)}")
 
                     if not messages:
-                        debug_info.append("  ⚠️ Sin mensajes para hoy")
-                        mileage_data[orig_name] = {"km": 0.0, "jurisdiccion": "SECTORIAL"}
-                        continue
+                        unit_logs.append("  ⚠️ Sin mensajes para hoy")
+                        return orig_name, {"km": 0.0, "jurisdiccion": "SECTORIAL"}, unit_logs
 
                     km_hoy = self._calc_km_from_messages(messages)
-                    
+
                     # Obtener última posición para jurisdicción
                     juris = "SECTORIAL"
                     last_valid_msg = next((m for m in reversed(messages) if m.get("pos")), None)
                     if last_valid_msg:
                         pos = last_valid_msg.get("pos")
                         juris = _get_jurisdiction(pos.get("y"), pos.get("x"))
-                        debug_info.append(f"  📍 Última Pos: {pos.get('y')}, {pos.get('x')} -> {juris}")
+                        unit_logs.append(f"  📍 Última Pos: {pos.get('y')}, {pos.get('x')} -> {juris}")
 
-                    mileage_data[orig_name] = {"km": km_hoy, "jurisdiccion": juris}
-                    debug_info.append(f"  ✅ KM hoy: {km_hoy} | Juris: {juris}")
+                    unit_logs.append(f"  ✅ KM hoy: {km_hoy} | Juris: {juris}")
+                    return orig_name, {"km": km_hoy, "jurisdiccion": juris}, unit_logs
 
                 except Exception as e:
-                    debug_info.append(f"  ❌ Error calculando KM: {e}")
+                    unit_logs.append(f"  ❌ Error calculando KM: {e}")
+                    return orig_name, {"km": 0.0, "jurisdiccion": "SECTORIAL"}, unit_logs
+
+            # Procesar unidades en paralelo para respuesta inmediata en tiempo real
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=5) as executor:
+                results = executor.map(_procesar_unidad, matched_units)
+                for orig_name, res_info, unit_logs in results:
+                    mileage_data[orig_name] = res_info
+                    debug_info.extend(unit_logs)
 
             # Guardar log de diagnóstico
             try:
@@ -295,7 +335,112 @@ class WialonAPI:
     # IDs conocidos del recurso y plantilla (descubiertos vía test)
     REPORT_RESOURCE_ID = 402190383       # Recurso "SERENAZGO TALARA"
     REPORT_TEMPLATE_ID = 5              # "INFORME DE PRODUCCION DIARIO"
-    AP_DISCOUNT_MINUTES = 45            # Descuento por unidad
+    AP_DISCOUNT_MINUTES = 0             # ❌ DESCUENTO ELIMINADO (pedido usuario)
+    AP_ROUND_BLOCK_MINUTES = 5          # Redondeo INDIVIDUAL por evento a bloques de 5 min
+    AP_MIN_EVENT_SECONDS = 31           # Solo eventos con duración > 31s se incluyen (≅0.30 min)
+
+    # ==================================================================
+    # GEOCERCAS PERMITIDAS PARA CÁLCULO DE A.P.
+    # 4 rectángulos grandes que cubren NORTE / CENTRO / SUR / ENACE
+    # en Talara. Orden de coordenadas (lat, lon):
+    #   lat más negativa = SUR ; lon más negativa = OESTE
+    # ==================================================================
+    ALLOWED_GEOFENCES = [
+        # ────────────────── ZONA NORTE ──────────────────
+        # Desde límite norte (~-4.550) hasta Av. Bolognesi (~-4.575).
+        # Límite ESTE hasta -81.1970 (frontera oeste de ENACE) para
+        # cubrir sin huecos: Posta Médica, Milla 7, Panamericana N.
+        {"name": "NORTE", "zone": "NORTE", "polygon": [
+            (-4.5500, -81.2950),
+            (-4.5500, -81.1970),
+            (-4.5750, -81.1970),
+            (-4.5750, -81.2950),
+            (-4.5500, -81.2950),
+        ]},
+        # ────────────────── ZONA CENTRO ──────────────────
+        # Entre Av. Bolognesi (~-4.575) y ~-4.588.
+        # Cubre: Plaza Grau, mercado, Av. F, Av. H, Av. G,
+        #        Av. Miguel Grau, Av. Postigo, Av. Castilla,
+        #        Milla 7, Posta Médica (hasta frontera ENACE).
+        {"name": "CENTRO", "zone": "CENTRO", "polygon": [
+            (-4.5750, -81.2900),
+            (-4.5750, -81.1970),
+            (-4.5880, -81.1970),
+            (-4.5880, -81.2900),
+            (-4.5750, -81.2900),
+        ]},
+        # ────────────────── ZONA SUR ──────────────────
+        # Desde ~-4.588 hacia el sur.
+        # Cubre: Negreiros, Nueva Talara, San Sebastián, Villa Talara,
+        #        y franja este hasta límite de ENACE.
+        {"name": "SUR", "zone": "SUR", "polygon": [
+            (-4.5880, -81.2820),
+            (-4.5880, -81.1970),
+            (-4.6050, -81.1970),
+            (-4.6050, -81.2820),
+            (-4.5880, -81.2820),
+        ]},
+        # ────────────────── ZONA ENACE ──────────────────
+        # Talara Alta / Enace / Alan García / Urb. Enace, etc.
+        {"name": "ENACE", "zone": "ENACE", "polygon": [
+            (-4.5750, -81.1970),
+            (-4.5750, -81.1690),
+            (-4.6030, -81.1690),
+            (-4.6030, -81.1970),
+            (-4.5750, -81.1970),
+        ]},
+    ]
+
+    # ──────────────────────────────────────────────────────────────────
+    # ALGORITMO POINT-IN-POLYGON (Ray Casting)
+    # ──────────────────────────────────────────────────────────────────
+    @staticmethod
+    def _point_in_polygon(lat, lon, polygon):
+        """
+        Determina si un punto (lat, lon) está dentro de un polígono
+        usando el algoritmo de Ray-Casting (even-odd rule).
+
+        Args:
+            lat: latitud del punto (y)
+            lon: longitud del punto (x)
+            polygon: lista de tuplas [(lat, lon), ...] cerrada
+
+        Returns:
+            True si el punto está dentro o en el borde.
+        """
+        if lat is None or lon is None or not polygon:
+            return False
+
+        n = len(polygon)
+        inside = False
+
+        j = n - 1
+        for i in range(n):
+            xi, yi = polygon[i][1], polygon[i][0]   # lon = x, lat = y
+            xj, yj = polygon[j][1], polygon[j][0]
+
+            # Comprobar si el borde cruza el rayo horizontal del punto
+            if ((yi > lat) != (yj > lat)):
+                # Calcular intersección x entre el borde y el rayo
+                x_intersect = (xj - xi) * (lat - yi) / (yj - yi) + xi
+                if lon <= x_intersect:
+                    inside = not inside
+            j = i
+
+        return inside
+
+    def _is_inside_allowed_geofence(self, lat, lon):
+        """
+        Verifica si (lat, lon) pertenece a ALGUNA de las geocercas permitidas
+        (NORTE, CENTRO, SUR, ENACE).
+
+        Returns:
+            tuple (esta_dentro: bool, nombre_zona: str|None, nombre_geocerca: str|None)
+        """
+        for gf in self.ALLOWED_GEOFENCES:
+            if self._point_in_polygon(lat, lon, gf["polygon"]):
+                return True, gf["zone"], gf["name"]
+        return False, None, None
 
     def _find_report_template(self, template_name="INFORME DE PRODUCCION DIARIO"):
         """
@@ -375,19 +520,47 @@ class WialonAPI:
             return 0.0
         return 0.0
 
+    @staticmethod
+    def _parse_duration_to_seconds(duration_str):
+        """Convierte duración 'HH:MM:SS' a SEGUNDOS totales (int). Usado para filtro >31s."""
+        if not duration_str or ":" not in str(duration_str):
+            return 0
+        parts = str(duration_str).split(":")
+        try:
+            if len(parts) == 3:
+                h, m, s = int(parts[0]), int(parts[1]), int(parts[2])
+                return h * 3600 + m * 60 + s
+            elif len(parts) == 2:
+                m, s = int(parts[0]), int(parts[1])
+                return m * 60 + s
+        except ValueError:
+            return 0
+        return 0
+
     def _get_parking_minutes_from_report(self, chrono_table_idx, tables):
         """
-        Extrae la duración total de 'Parking' desde la tabla de cronologías.
-        Navega: Nivel1 (día) → Nivel2 (Parking/Stop/Trip) → suma duraciones de Parking.
-        Retorna minutos totales de estacionamiento.
+        Extrae la duración de eventos de ESTACIONAMIENTO desde la tabla de
+        cronologías (soporta inglés "Parking" y español "Estacionamiento").
+
+        Navega: Nivel1 (día) → Nivel2 (Estacionamiento / Detención / Viaje).
+
+        Para CADA evento extrae sus coordenadas iniciales (si están disponibles
+        en la celda) y verifica si están dentro de las geocercas NORTE / CENTRO
+        / SUR / ENACE.
+
+        FALLBACK CRÍTICO: si NO se pueden extraer coordenadas GPS del evento,
+        se INCLUYE el minuto de todos modos (para no perder total). El usuario
+        debe importar los polígonos reales para precisión total.
+
+        Returns:
+            tupla (total_parking_min, eventos, zonas, total_sin_filtro)
         """
         table_info = tables[chrono_table_idx]
         top_rows = table_info.get("rows", 0)
 
         if top_rows == 0:
-            return 0.0
+            return 0.0, [], {}, 0.0
 
-        # Obtener filas nivel 1 (agrupación por día)
         resp = requests.get(self.real_base_url, params={
             "svc": "report/get_result_rows",
             "params": json.dumps({
@@ -400,9 +573,12 @@ class WialonAPI:
         rows_l1 = resp.json()
 
         total_parking_min = 0.0
+        total_sin_filtro = 0.0
+        eventos_detalle = []
+        zonas_acumulado = {}
+        raw_guardado = False
 
         for i, _ in enumerate(rows_l1):
-            # Obtener sub-filas nivel 2 (Parking, Stop, Trip)
             resp2 = requests.get(self.real_base_url, params={
                 "svc": "report/get_result_subrows",
                 "params": json.dumps({
@@ -413,40 +589,192 @@ class WialonAPI:
             }, timeout=15)
             subrows = resp2.json()
 
+            # ── Guardar el primer batch de subrows para DEBUG (1 sola vez)
+            if not raw_guardado and isinstance(subrows, list) and len(subrows) > 0:
+                try:
+                    with open("wialon_subrows_raw.json", "w", encoding="utf-8") as f:
+                        json.dump(subrows[:3], f, ensure_ascii=False, indent=2)
+                    raw_guardado = True
+                except Exception:
+                    pass
+
             if not isinstance(subrows, list):
                 continue
 
             for sub in subrows:
                 cells = sub.get("c", [])
-                # Celda [1] = Tipo (Parking/Stop/Trip), Celda [-1] = Duración
-                cell_vals = []
-                for c in cells:
-                    if isinstance(c, dict):
-                        cell_vals.append(c.get("t", ""))
-                    else:
-                        cell_vals.append(str(c))
-
+                cell_vals = [c.get("t", "") if isinstance(c, dict) else str(c) for c in cells]
                 tipo = cell_vals[1] if len(cell_vals) > 1 else ""
-                duracion = cell_vals[-1] if cell_vals else ""
 
-                if "parking" in tipo.lower():
-                    total_parking_min += self._parse_duration_to_minutes(duracion)
+                # ═══════════════════════════════════════════════════════════
+                # ✅ FIX PRINCIPAL: detectar "Estacionamiento" en español
+                #    y también variantes como Parking / Stop / Detención
+                # ═══════════════════════════════════════════════════════════
+                tipo_lower = tipo.lower().strip()
+                es_estacionamiento = (
+                    "parking" in tipo_lower
+                    or "estacionam" in tipo_lower   # estacionamiento, estacionados
+                    or "estaciona" in tipo_lower
+                    or "deten" in tipo_lower        # detención, detenido
+                    or tipo_lower == "stop"
+                )
 
-        return total_parking_min
+                if not es_estacionamiento:
+                    continue
+
+                # ═══════════════════════════════════════════════════════════
+                # ✅ EXPANDIR EVENTOS INDIVIDUALES (NIVEL 3 "r")
+                # Si sub contiene "r" (lista de sub-eventos de estacionamiento),
+                # procesar CADA evento por separado. De lo contrario, usar sub.
+                # ═══════════════════════════════════════════════════════════
+                items_to_process = sub.get("r", [])
+                if not isinstance(items_to_process, list) or len(items_to_process) == 0:
+                    items_to_process = [sub]
+
+                for item in items_to_process:
+                    item_cells = item.get("c", [])
+                    item_vals = []
+                    item_lat = None
+                    item_lon = None
+
+                    for c in item_cells:
+                        if isinstance(c, dict):
+                            t = c.get("t", "")
+                            item_vals.append(t)
+
+                            # ── EXTRACCIÓN EXHAUSTIVA DE COORDENADAS ──
+                            candidates_lat = []
+                            candidates_lon = []
+                            for key in ("y", "lat", "latitude"):
+                                if key in c and c[key]:
+                                    try: candidates_lat.append(float(c[key]))
+                                    except: pass
+                            for key in ("x", "lon", "lng", "longitude"):
+                                if key in c and c[key]:
+                                    try: candidates_lon.append(float(c[key]))
+                                    except: pass
+
+                            nested_pos = c.get("pos") or c.get("p") or c.get("position")
+                            if isinstance(nested_pos, dict):
+                                for k in ("y", "lat"):
+                                    if k in nested_pos and nested_pos[k]:
+                                        try: candidates_lat.append(float(nested_pos[k]))
+                                        except: pass
+                                for k in ("x", "lon", "lng"):
+                                    if k in nested_pos and nested_pos[k]:
+                                        try: candidates_lon.append(float(nested_pos[k]))
+                                        except: pass
+
+                            if candidates_lat and candidates_lon:
+                                item_lat = candidates_lat[0]
+                                item_lon = candidates_lon[0]
+                        else:
+                            item_vals.append(str(c))
+
+                    duracion = item_vals[-1] if item_vals else ""
+                    dur_segundos = self._parse_duration_to_seconds(duracion)
+                    dur_min = self._parse_duration_to_minutes(duracion)
+                    total_sin_filtro += dur_min
+
+                    # ═══════════════════════════════════════════════════════════
+                    # ✅ FILTRO: SOLO eventos > 31 segundos
+                    #    (30s o menos → 0 minutos efectivos, se descarta)
+                    # ═══════════════════════════════════════════════════════════
+                    if dur_segundos <= self.AP_MIN_EVENT_SECONDS:
+                        evt = {
+                            "duracion_min": round(dur_min, 2),
+                            "duracion_seg": dur_segundos,
+                            "zona": None,
+                            "geocerca": None,
+                            "lat": None,
+                            "lon": None,
+                            "tiene_gps": False,
+                            "incluido": False,
+                            "motivo_exclusion": f"Duración ≤ {self.AP_MIN_EVENT_SECONDS}s",
+                            "minutos_redondeados": 0,
+                        }
+                        eventos_detalle.append(evt)
+                        continue
+
+                    # ── Fallback: coordenadas desde Plus Code / regex
+                    if item_lat is None or item_lon is None:
+                        for val in item_vals:
+                            m = re.search(r'(-?\d+\.\d+)\s*[,;\s]+\s*(-?\d+\.\d+)', str(val))
+                            if m:
+                                try:
+                                    a, b = float(m.group(1)), float(m.group(2))
+                                    if -6 < a < -3 and -83 < b < -80:
+                                        item_lat, item_lon = a, b
+                                    elif -6 < b < -3 and -83 < a < -80:
+                                        item_lat, item_lon = b, a
+                                    break
+                                except ValueError:
+                                    pass
+
+                    # ── GEOCERCA + FALLBACK ──────────────────────────────────
+                    tiene_gps = (item_lat is not None and item_lon is not None)
+                    dentro, zona_name, gf_name = False, None, None
+
+                    if tiene_gps:
+                        dentro, zona_name, gf_name = self._is_inside_allowed_geofence(item_lat, item_lon)
+                    else:
+                        # 🔴 FALLBACK: SIN COORDENADAS → INCLUIR evento
+                        dentro = True
+                        zona_name = "DESCONOCIDA"
+                        gf_name = "Sin GPS"
+
+                    # ═══════════════════════════════════════════════════════════
+                    # ✅ REDONDEO INDIVIDUAL × 5 min (cada evento por separado)
+                    # ═══════════════════════════════════════════════════════════
+                    minutos_redondeados = 0
+                    if dentro:
+                        minutos_redondeados = int(dur_min / self.AP_ROUND_BLOCK_MINUTES) * self.AP_ROUND_BLOCK_MINUTES
+                        if minutos_redondeados > 0:
+                            total_parking_min += minutos_redondeados
+                            zonas_acumulado[zona_name] = zonas_acumulado.get(zona_name, 0.0) + minutos_redondeados
+
+                    evt = {
+                        "duracion_min": round(dur_min, 2),
+                        "duracion_seg": dur_segundos,
+                        "zona": zona_name,
+                        "geocerca": gf_name,
+                        "lat": item_lat,
+                        "lon": item_lon,
+                        "tiene_gps": tiene_gps,
+                        "incluido": dentro and minutos_redondeados > 0,
+                        "motivo_exclusion": None if (dentro and minutos_redondeados > 0) else (
+                            "Fuera de geocerca" if not dentro else "Redondeo a 0 min"
+                        ),
+                        "minutos_redondeados": minutos_redondeados,
+                    }
+                    eventos_detalle.append(evt)
+
+        return total_parking_min, eventos_detalle, zonas_acumulado, total_sin_filtro
 
     def get_daily_parking_ap(self, wialon_names, timezone_offset=None):
         """
         Calcula el A.P. (Auxilio Público) para cada unidad basado en
         cronologías de estacionamiento del reporte INFORME DE PRODUCCION DIARIO.
 
-        Lógica: A.P. = Total estacionamiento (minutos) - 45 minutos.
+        Lógica actualizada:
+          1. Por CADA evento Parking, extraer coordenada y verificar si está
+             dentro de las geocercas NORTE / CENTRO / SUR / ENACE.
+          2. Sumar solo los minutos en zonas permitidas → parking_min.
+          3. Redondear a bloques de 5 min → parking_rounded.
+          4. Aplicar descuento 45 min → ap_min = max(0, parking_rounded - 45).
 
         Args:
             wialon_names: lista de nombres de unidad tal como aparecen en Wialon.
             timezone_offset: offset horario (default -5 para Perú).
 
         Returns:
-            dict {nombre_wialon: {"parking_min": float, "ap_min": int}}
+            dict {nombre_wialon: {
+                "parking_min": float,
+                "parking_rounded": int,
+                "ap_min": int,
+                "zonas": {str: float},
+                "eventos": list
+            }}
         """
         if not self.sid and not self.login():
             return {}
@@ -462,16 +790,23 @@ class WialonAPI:
         normalize = lambda s: " ".join(s.split()).upper()
         norm_targets = {normalize(n): n for n in wialon_names}
 
-        debug_info = [f"Consulta A.P. - {now.strftime('%Y-%m-%d %H:%M:%S')}"]
+        debug_info = [
+            f"╔══════════════════════════════════════════════════╗",
+            f"║   CONSULTA A.P. CON FILTRO DE GEOCERCAS         ║",
+            f"╠══════════════════════════════════════════════════╣",
+            f"║ Fecha : {now.strftime('%Y-%m-%d %H:%M:%S')}",
+            f"║ Rango : 00:00 – 23:59 hora local",
+            f"║ Descuento: {self.AP_DISCOUNT_MINUTES} min",
+            f"║ Redondeo : bloques de {self.AP_ROUND_BLOCK_MINUTES} min",
+            f"╚══════════════════════════════════════════════════╝"
+        ]
 
-        # Verificar / descubrir IDs de la plantilla
         resource_id = self.REPORT_RESOURCE_ID
         template_id = self.REPORT_TEMPLATE_ID
+        ap_data = {}
 
         try:
-            # Buscar las unidades correspondientes
             all_units = self._get_all_units()
-            ap_data = {}
 
             for item in all_units:
                 name = item.get("nm", "")
@@ -482,17 +817,21 @@ class WialonAPI:
 
                 orig_name = norm_targets[norm_name]
                 unit_id = item.get("id")
-                debug_info.append(f"\n--- {name} (ID: {unit_id}) ---")
+                debug_info.append(f"\n{'─'*54}")
+                debug_info.append(f"  🚗 UNIDAD: {name}  (ID: {unit_id})")
+                debug_info.append(f"  {'─'*52}")
 
                 try:
-                    # Limpiar y ejecutar reporte
                     self._cleanup_report()
                     result = self._exec_report(resource_id, template_id, unit_id, t_from, t_to)
 
                     tables = result.get("reportResult", {}).get("tables", [])
                     if not tables:
-                        debug_info.append("  Sin tablas en reporte")
-                        ap_data[orig_name] = {"parking_min": 0, "ap_min": 0}
+                        debug_info.append("  ⚠️  Sin tablas en reporte → A.P. = 0")
+                        ap_data[orig_name] = {
+                            "parking_min": 0, "parking_rounded": 0,
+                            "ap_min": 0, "zonas": {}, "eventos": []
+                        }
                         continue
 
                     # Buscar tabla CRONOLOGIAS
@@ -503,35 +842,127 @@ class WialonAPI:
                             break
 
                     if chrono_idx is None:
-                        debug_info.append("  No se encontró tabla CRONOLOGIAS")
-                        ap_data[orig_name] = {"parking_min": 0, "ap_min": 0}
+                        debug_info.append("  ⚠️  No se encontró tabla CRONOLOGIAS → A.P. = 0")
+                        ap_data[orig_name] = {
+                            "parking_min": 0, "parking_rounded": 0,
+                            "ap_min": 0, "zonas": {}, "eventos": []
+                        }
                         continue
 
-                    # Extraer minutos de estacionamiento
-                    parking_min = self._get_parking_minutes_from_report(chrono_idx, tables)
-                    ap_min = max(0, int(parking_min - self.AP_DISCOUNT_MINUTES))
+                    # Extraer minutos FILTRADOS por geocerca
+                    parking_min, eventos, zonas, total_sin_filtro = self._get_parking_minutes_from_report(
+                        chrono_idx, tables
+                    )
+
+                    # ── Estadística por zona ──
+                    total_eventos = len(eventos)
+                    eventos_ok = sum(1 for e in eventos if e["incluido"])
+                    eventos_sin_gps = sum(1 for e in eventos if not e.get("tiene_gps", False))
+                    eventos_cortos = sum(1 for e in eventos if (e.get("motivo_exclusion") or "").startswith("Duración"))
+                    eventos_fuera_zona = sum(1 for e in eventos if e.get("motivo_exclusion") == "Fuera de geocerca")
+
+                    debug_info.append(f"  📊 Eventos Estacionamiento totales: {total_eventos}")
+                    debug_info.append(f"  ⏱️  Total SIN filtro          : {total_sin_filtro:.2f} min (bruto, sin reglas)")
+                    debug_info.append(f"  ⏭️  Eventos descartados (<=31s): {eventos_cortos}")
+                    debug_info.append(f"  🚫 Eventos fuera de geocerca  : {eventos_fuera_zona}")
+                    debug_info.append(f"  ✅ Eventos que SÍ se suman    : {eventos_ok}")
+                    debug_info.append(f"  📍 Eventos SIN coordenadas   : {eventos_sin_gps} (incluidos via fallback)")
+                    if zonas:
+                        for z, mins in sorted(zonas.items()):
+                            debug_info.append(f"     ▸ Zona [{z}]: {int(mins)} min (suma de redondeos individuales)")
+
+                    # ══════════════════════════════════════════════════════════
+                    # NUEVA LÓGICA (sin descuento):
+                    #   parking_min      = ya es la SUMA de redondeos individuales
+                    #   parking_rounded  = idem (no hay segundo redondeo, se mantiene
+                    #                       el nombre para compatibilidad con controller)
+                    #   ap_min           = TOTAL FINAL (SIN descuento)
+                    # ══════════════════════════════════════════════════════════
+                    parking_rounded = int(parking_min)
+                    ap_min = parking_rounded  # ✅ Sin descuento
+
+                    debug_info.append(f"")
+                    debug_info.append(f"  ┌{'─'*52}")
+                    debug_info.append(f"  │ CÁLCULO FINAL (SIN DESCUENTO)")
+                    debug_info.append(f"  ├{'─'*52}")
+                    debug_info.append(f"  │  TOTAL (suma redondeos individuales × 5min)  = {parking_min:.0f} min")
+                    debug_info.append(f"  │  Sin descuento (pedido usuario)              = − 0 min")
+                    debug_info.append(f"  ├{'─'*52}")
+                    debug_info.append(f"  │  🎯  A.P. FINAL = {ap_min} min")
+                    debug_info.append(f"  └{'─'*52}")
+
+                    # Detalle de cada evento (primeros 20 en log)
+                    debug_info.append(f"")
+                    debug_info.append(f"  ┌{'─'*62}")
+                    debug_info.append(f"  │ Detalle de eventos (primeros 20)")
+                    debug_info.append(f"  │ {'#':>3}  {'Duración':<10}  {'Seg':>5}  {'RD×5':>5}  {'Estado':<14}  Zona / Motivo")
+                    debug_info.append(f"  └{'─'*62}")
+                    for idx_e, evt in enumerate(eventos[:20], start=1):
+                        dur_str = f"{evt['duracion_min']:.1f}min"
+                        seg = evt.get("duracion_seg", 0)
+                        rd = evt.get("minutos_redondeados", 0)
+                        if evt["incluido"]:
+                            mark = "✅ SUMA"
+                            info_zona = evt["zona"] or "—"
+                        else:
+                            motivo = evt.get("motivo_exclusion") or ""
+                            if motivo.startswith("Duración"):
+                                mark = "⏭️  CORTO"
+                                info_zona = motivo
+                            elif motivo == "Fuera de geocerca":
+                                mark = "🚫 FUERA"
+                                info_zona = motivo
+                            else:
+                                mark = "❌ DESCARTADO"
+                                info_zona = motivo
+                        debug_info.append(
+                            f"  {idx_e:>3}  {dur_str:<10}  {seg:>5}  {rd:>5}  {mark:<14}  {info_zona}"
+                        )
+                    if len(eventos) > 20:
+                        debug_info.append(f"  ... (+{len(eventos)-20} eventos más)")
 
                     ap_data[orig_name] = {
-                        "parking_min": round(parking_min, 1),
-                        "ap_min": ap_min
+                        "parking_min": round(parking_min, 2),
+                        "parking_rounded": parking_rounded,
+                        "ap_min": ap_min,
+                        "zonas": {z: round(m, 2) for z, m in zonas.items()},
+                        "eventos": eventos,
+                        "total_sin_filtro": round(total_sin_filtro, 2)
                     }
-                    debug_info.append(f"  Parking: {parking_min:.1f} min | A.P. = {ap_min} min")
 
                 except Exception as e:
-                    debug_info.append(f"  Error: {e}")
-                    self.logger.error(f"Error procesando {name}: {e}")
+                    debug_info.append(f"  ❌ Error procesando unidad: {e}")
+                    self.logger.error(f"Error procesando AP unidad {name}: {e}")
+                    ap_data[orig_name] = {
+                        "parking_min": 0, "parking_rounded": 0,
+                        "ap_min": 0, "zonas": {}, "eventos": []
+                    }
 
-            # Guardar log
+            # ── Guardar log de depuración ──
             try:
                 with open("wialon_ap_debug.log", "w", encoding="utf-8") as f:
                     f.write("\n".join(debug_info))
-            except Exception:
-                pass
+                    f.write("\n\n═══════════════════════════════════════════════════════════════\n")
+                    f.write("RESUMEN POR UNIDAD\n")
+                    f.write("═══════════════════════════════════════════════════════════════\n")
+                    f.write(f"  {'UNIDAD':<30} {'SIN FILTRO':>10} {'SUMADO':>8} {'RD×5':>5} {'AP':>4}  ZONAS\n")
+                    f.write(f"  {'─'*30} {'─'*10} {'─'*8} {'─'*5} {'─'*4}  {'─'*30}\n")
+                    for nm, d in ap_data.items():
+                        zonas_str = ", ".join(f"{z}={v:.0f}" for z, v in d["zonas"].items()) or "—"
+                        sf = d.get("total_sin_filtro", d["parking_min"])
+                        f.write(f"  {nm:<30} {sf:>9.1f}  {d['parking_min']:>7.1f}  {d['parking_rounded']:>4d}  {d['ap_min']:>3d}  {zonas_str}\n")
+            except Exception as e:
+                self.logger.warning(f"No se pudo escribir wialon_ap_debug.log: {e}")
 
             return ap_data
 
         except Exception as e:
             self.logger.error(f"Error en get_daily_parking_ap: {e}")
+            try:
+                with open("wialon_ap_debug.log", "a", encoding="utf-8") as f:
+                    f.write(f"\n\n!!! EXCEPCIÓN GENERAL: {e}\n")
+            except Exception:
+                pass
             return {}
 
     def get_address(self, lat, lon):

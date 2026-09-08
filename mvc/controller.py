@@ -1144,17 +1144,8 @@ class OptimizedController:
             self.view.show_message("Error", f"Error abriendo megáfono: {str(e)}", "error")
 
     def open_wialon(self):
-        """Abre directamente la URL de Wialon Hosting."""
-        def open_link():
-            try:
-                url = self.model.WIALON_CONFIG.get("url_monitor", "https://hosting.wialon.us/?lang=es")
-                webbrowser.open(url)
-                self.view.root.after(0, lambda: self.view.update_status("🌍 Wialon abierto", "green"))
-            except Exception as e:
-                self.view.root.after(0, lambda: self.view.show_message(
-                    "Error", f"No se pudo abrir Wialon: {str(e)}", "error"))
-        
-        self.thread_pool.submit(open_link)
+        """Abre la ventana emergente con opciones de Wialon (URL o KM tiempo real)."""
+        self.view.mostrar_opciones_wialon()
 
     def open_visor_tactico(self):
         """Abre la URL del Visor Táctico."""
@@ -1170,20 +1161,27 @@ class OptimizedController:
         self.thread_pool.submit(open_link)
 
     def abrir_url_wialon(self):
-        """Abre la URL de monitoreo de Wialon."""
+        """Abre la URL de monitoreo web de Wialon."""
         url = self.model.WIALON_CONFIG.get("url_monitor", "https://hosting.wialon.us/?lang=es")
         webbrowser.open(url)
-        self.view.update_status("🌍 Wialon abierto", "green")
+        self.view.update_status("🌍 Wialon Web abierto", "green")
 
     def consultar_km_wialon(self):
-        """Consulta KM recorrido + A.P. (estacionamiento) desde Wialon para unidades seleccionadas."""
+        """Consulta KM recorrido en tiempo real desde Wialon para unidades seleccionadas con descuento de 4 a 5 km."""
         if not self.editing_mode:
-            self.view.show_message("⚠️ Advertencia", "🖱️ Debes activar '✏️ EDITAR' antes de consultar Wialon.", "warning")
-            return
+            self.editar_datos()
 
         units_data = self.view.get_unit_selection_data()
         if not units_data:
-            self.view.show_message("⚠️ Advertencia", "No hay unidades seleccionadas.", "warning")
+            # Si no hay unidades seleccionadas con checkbox, marcar automáticamente todas las visibles
+            for fila in self.view.fila_widgets_data:
+                if fila['alias'] in self.view.unidades_mostradas:
+                    fila['var_chk'].set(True)
+            self.actualizar_contadores()
+            units_data = self.view.get_unit_selection_data()
+
+        if not units_data:
+            self.view.show_message("⚠️ Advertencia", "No hay unidades disponibles para consultar.", "warning")
             return
 
         def ejecutar_consulta():
@@ -1206,11 +1204,23 @@ class OptimizedController:
 
             for unit in units_data:
                 alias_original = unit['alias']
-                wialon_name = self.model.WIALON_MAPPING.get(alias_original) or limpiar_alias(alias_original)
+                wialon_name = self.model.WIALON_MAPPING.get(alias_original)
+                if not wialon_name:
+                    # Coincidencia por placa (ej: EUI-621)
+                    match_placa = re.search(r'(EUI-\d+)', alias_original)
+                    if match_placa:
+                        placa = match_placa.group(1).upper()
+                        for k, v in self.model.WIALON_MAPPING.items():
+                            if placa in v:
+                                wialon_name = v
+                                break
+                if not wialon_name:
+                    wialon_name = limpiar_alias(alias_original)
+
                 unidades_a_consultar.append(wialon_name)
                 mapping_inverso[wialon_name] = alias_original
 
-            # ── PASO 1: KM recorrido ─────────────────────────────────────
+            # ── PASO 1: KM recorrido en tiempo real ───────────────────────
             data_km = api.get_daily_mileage(unidades_a_consultar)
 
             api.logout()
@@ -1222,6 +1232,16 @@ class OptimizedController:
 
             for wialon_name, alias in mapping_inverso.items():
                 info_km = data_km.get(wialon_name, {})
+                if not info_km:
+                    # Intento de búsqueda alternativa por placa si el nombre exacto varió
+                    import re
+                    m_orig = re.search(r'(EUI-\d+)', alias)
+                    if m_orig:
+                        placa_buscada = m_orig.group(1).upper()
+                        for k_w, v_data in data_km.items():
+                            if placa_buscada in k_w:
+                                info_km = v_data
+                                break
 
                 for fila in self.view.fila_widgets_data:
                     if fila['alias'] == alias and fila['var_chk'].get():
@@ -1230,13 +1250,122 @@ class OptimizedController:
                             exito_km += 1
                         break
 
-            self.view.update_status(f"✅ Wialon: {exito_km} KMs sincronizados", "green")
+            self.view.update_status(f"✅ Wialon: {exito_km} unidades sincronizadas (descuento 4-5 km)", "green")
+            ToastNotification(
+                self.view.root,
+                f"✅ {exito_km} unidades cargadas en tiempo real (descuento 4-5 KM)",
+                duration=3000,
+                style='success'
+            )
 
-        self.view.update_status("📡 Consultando Wialon RM API...", "blue")
+        self.view.update_status("📡 Consultando Wialon API en tiempo real...", "blue")
         self._run_task_async(
             ejecutar_consulta,
             on_success=on_consult_finished,
-            loading_msg="Conectando con Wialon...\nEsto puede tardar unos segundos."
+            loading_msg="Conectando con Wialon en tiempo real...\nCalculando kilometraje..."
+        )
+
+    # ─────────────────────────────────────────────────────────────────
+    # CONSULTA A.P. (Auxilio Público) desde Wialon con geocercas
+    # ─────────────────────────────────────────────────────────────────
+    def consultar_ap_wialon(self):
+        """Consulta A.P. desde Wialon (cronologías de estacionamiento) y
+        aplica filtro de geocercas NORTE / CENTRO / SUR / ENACE."""
+        if not self.editing_mode:
+            self.editar_datos()
+
+        units_data = self.view.get_unit_selection_data()
+        if not units_data:
+            # Si no hay unidades seleccionadas, marcar todas las visibles
+            for fila in self.view.fila_widgets_data:
+                if fila['alias'] in self.view.unidades_mostradas:
+                    fila['var_chk'].set(True)
+            self.actualizar_contadores()
+            units_data = self.view.get_unit_selection_data()
+
+        if not units_data:
+            self.view.show_message("⚠️ Advertencia", "No hay unidades disponibles para consultar.", "warning")
+            return
+
+        def ejecutar_consulta_ap():
+            import re
+            token = self.model.WIALON_CONFIG.get("token")
+            if not token:
+                raise ValueError("Token de Wialon no encontrado en config.json")
+
+            api = WialonAPI(token)
+
+            def limpiar_alias(a):
+                limpio = re.sub(r'^[^\w0-9]+', '', a).strip()
+                return " ".join(limpio.split()).upper()
+
+            unidades_a_consultar = []
+            mapping_inverso = {}
+
+            for unit in units_data:
+                alias_original = unit['alias']
+                wialon_name = self.model.WIALON_MAPPING.get(alias_original)
+                if not wialon_name:
+                    match_placa = re.search(r'(EUI-\d+)', alias_original)
+                    if match_placa:
+                        placa = match_placa.group(1).upper()
+                        for k, v in self.model.WIALON_MAPPING.items():
+                            if placa in v:
+                                wialon_name = v
+                                break
+                if not wialon_name:
+                    wialon_name = limpiar_alias(alias_original)
+
+                unidades_a_consultar.append(wialon_name)
+                mapping_inverso[wialon_name] = alias_original
+
+            data_ap = api.get_daily_parking_ap(unidades_a_consultar)
+            api.logout()
+            return data_ap, mapping_inverso
+
+        def on_ap_finished(result):
+            data_ap, mapping_inverso = result
+            exito_ap = 0
+
+            for wialon_name, alias in mapping_inverso.items():
+                info_ap = data_ap.get(wialon_name, {})
+                if not info_ap:
+                    import re
+                    m_orig = re.search(r'(EUI-\d+)', alias)
+                    if m_orig:
+                        placa_buscada = m_orig.group(1).upper()
+                        for k_w, v_data in data_ap.items():
+                            if placa_buscada in k_w:
+                                info_ap = v_data
+                                break
+
+                for fila in self.view.fila_widgets_data:
+                    if fila['alias'] == alias and fila['var_chk'].get():
+                        if info_ap:
+                            self._actualizar_ap_wialon(fila, info_ap)
+                            exito_ap += 1
+                        break
+
+            self.view.update_status(
+                f"✅ Wialon A.P.: {exito_ap} unidades calculadas (geocercas + descuento 45 min)",
+                "green"
+            )
+            ToastNotification(
+                self.view.root,
+                f"✅ {exito_ap} unidades procesadas | A.P. con geocercas (NORTE/CENTRO/SUR/ENACE)",
+                duration=3500,
+                style='success'
+            )
+
+        self.view.update_status("📡 Consultando A.P. en Wialon (cronologías + geocercas)...", "blue")
+        self._run_task_async(
+            ejecutar_consulta_ap,
+            on_success=on_ap_finished,
+            loading_msg=(
+                "Conectando con Wialon...\n"
+                "Analizando cronologías de estacionamiento...\n"
+                "Filtrando por geocercas (NORTE/CENTRO/SUR/ENACE)..."
+            )
         )
 
     def _actualizar_campos_wialon(self, fila_widgets, data_info):
@@ -1244,30 +1373,75 @@ class OptimizedController:
         self._actualizar_km_wialon(fila_widgets, data_info)
 
     def _actualizar_km_wialon(self, fila_widgets, data_info):
-        """Actualiza el campo KM y JURISDICCION desde datos de Wialon."""
-        valor_km = data_info.get("km", 0)
-        juris = data_info.get("jurisdiccion", "SECTORIAL")
+        """Actualiza exclusivamente el campo KM (con descuento de 4 a 5 km) desde datos de Wialon."""
+        import random
+        try:
+            valor_km = float(data_info.get("km", 0.0))
+        except (ValueError, TypeError):
+            valor_km = 0.0
+
+        # Aplicar descuento de 4 a 5 kilómetros (si tiene kilometraje recorrido)
+        if valor_km > 0:
+            descuento = random.randint(4, 5)
+            km_final = max(0, int(valor_km - descuento))
+        else:
+            km_final = 0
 
         entry_km = fila_widgets['entry_km']
-        entry_km.delete(0, tk.END)
-        entry_km.insert(0, str(int(valor_km)))
+        estado_previo = entry_km.cget('state')
+        if estado_previo == tk.DISABLED:
+            entry_km.config(state=tk.NORMAL)
 
-        fila_widgets['var_jurisdiccion'].set(juris)
+        entry_km.delete(0, tk.END)
+        entry_km.insert(0, str(km_final))
+
+        if estado_previo == tk.DISABLED and not self.editing_mode:
+            entry_km.config(state=tk.DISABLED)
+
         entry_km.event_generate('<KeyRelease>')
 
     def _actualizar_ap_wialon(self, fila_widgets, data_ap):
-        """Actualiza el campo A.P. con el valor calculado desde cronologías de estacionamiento."""
+        """Actualiza el campo A.P. y la ZONA con valores calculados desde Wialon.
+
+        data_ap = {parking_min, parking_rounded, ap_min, zonas, eventos}
+        """
         ap_min = data_ap.get("ap_min", 0)
         parking_min = data_ap.get("parking_min", 0)
+        parking_rounded = data_ap.get("parking_rounded", 0)
+        zonas = data_ap.get("zonas", {}) or {}
 
+        # ── Actualizar campo A.P. ──
         entry_ap = fila_widgets['entry_ap']
+        estado_previo = entry_ap.cget('state')
+        if estado_previo == tk.DISABLED:
+            entry_ap.config(state=tk.NORMAL)
+
         entry_ap.delete(0, tk.END)
         entry_ap.insert(0, str(ap_min))
 
-        # Disparar validación de observaciones
+        if estado_previo == tk.DISABLED and not self.editing_mode:
+            entry_ap.config(state=tk.DISABLED)
+
         entry_ap.event_generate('<KeyRelease>')
 
-        # Actualizar label de observación A.P. si existe
+        # ── Actualizar ZONA / JURISDICCIÓN (zona con más minutos) ──
+        if zonas:
+            zona_predominante = max(zonas.items(), key=lambda kv: kv[1])[0]
+            # Mapear nombres de zonas internos a los valores del sistema
+            mapping_zona = {
+                "NORTE": "NORTE",
+                "CENTRO": "CENTRO",
+                "SUR": "SUR",
+                "ENACE": "ENACE",
+            }
+            valor_zona = mapping_zona.get(zona_predominante, zona_predominante)
+
+            if 'var_zona' in fila_widgets and fila_widgets['var_zona'] is not None:
+                fila_widgets['var_zona'].set(valor_zona)
+            if 'var_jurisdiccion' in fila_widgets and fila_widgets['var_jurisdiccion'] is not None:
+                fila_widgets['var_jurisdiccion'].set(valor_zona)
+
+        # ── Refresh observaciones A.P. ──
         try:
             lbl_obs_ap = fila_widgets.get('lbl_obs_ap')
             lbl_obs_km = fila_widgets.get('lbl_obs_km')
@@ -1279,6 +1453,12 @@ class OptimizedController:
                     entry_km, entry_ap, entry_po,
                     lbl_obs_km, lbl_obs_ap, lbl_obs_po
                 )
+        except Exception:
+            pass
+
+        # Forzar refresco del resaltado de la fila
+        try:
+            self.view.update_row_highlighting(fila_widgets)
         except Exception:
             pass
 

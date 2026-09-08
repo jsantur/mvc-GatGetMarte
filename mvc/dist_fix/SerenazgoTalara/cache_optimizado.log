@@ -1,0 +1,73 @@
+2026-09-08 02:54:41,973 - report_ocurrencias - INFO - LanguageTool no disponible, usando pyspellchecker como corrector local
+2026-09-08 02:54:42,274 - __main__ - INFO - 🚀 Iniciando Sistema de Monitoreo SERENAZGO v2.0
+2026-09-08 02:54:42,274 - __main__ - INFO - ✅ Verificación de instancia única completada
+2026-09-08 02:54:42,275 - __main__ - INFO - 📁 Directorios de trabajo creados/verificados
+2026-09-08 02:54:42,275 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist_fix\SerenazgoTalara
+2026-09-08 02:54:42,275 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist_fix\SerenazgoTalara
+2026-09-08 02:54:42,275 - __main__ - WARNING - ⚠️ No se encontró el logo 'serenazgo_logo.png' en las ubicaciones esperadas
+2026-09-08 02:54:42,287 - __main__ - INFO - 🖼️ Logo placeholder creado: REPORT\serenazgo_logo.png
+2026-09-08 02:54:42,287 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist_fix\SerenazgoTalara
+2026-09-08 02:54:42,287 - __main__ - INFO - 📊 Verificando archivo Excel: D:\mvc\dist_fix\SerenazgoTalara\unidades_registro.xlsx
+2026-09-08 02:54:42,287 - __main__ - WARNING - ⚠️ Archivo Excel no encontrado: D:\mvc\dist_fix\SerenazgoTalara\unidades_registro.xlsx
+2026-09-08 02:54:42,287 - __main__ - INFO - 🔄 Creando archivo Excel...
+2026-09-08 02:54:42,287 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist_fix\SerenazgoTalara
+2026-09-08 02:54:42,305 - __main__ - INFO - ✅ Archivo Excel creado exitosamente: D:\mvc\dist_fix\SerenazgoTalara\unidades_registro.xlsx
+2026-09-08 02:54:42,313 - __main__ - INFO - ✅ Archivo Excel verificado con todas las columnas correctas
+2026-09-08 02:54:42,427 - cache - INFO - Thread de limpieza automática iniciado (intervalo: 900s)
+2026-09-08 02:54:42,427 - cache - INFO - CacheManager inicializado con config: {'max_memory_size': 2000, 'max_memory_mb': 400, 'max_disk_mb': 2000, 'compression_threshold': 512, 'cleanup_interval': 900, 'max_threads': 6, 'enable_compression': True, 'enable_metrics': True, 'cache_version': '2.0'}
+2026-09-08 02:54:42,427 - __main__ - INFO - 💾 Sistema de caché inicializado con configuración optimizada
+2026-09-08 02:54:42,427 - __main__ - INFO - 🧹 Sistema de limpieza automática registrado
+2026-09-08 02:54:42,500 - __main__ - INFO - 🖥️ Ventana configurada en pantalla completa
+2026-09-08 02:54:42,500 - __main__ - INFO - 🏗️ Inicializando componentes...
+2026-09-08 02:54:42,618 - __main__ - INFO - 📊 Modelo inicializado
+2026-09-08 02:54:42,636 - __main__ - INFO - 🖥️ Vista inicializada
+2026-09-08 02:54:42,659 - __main__ - INFO - 🎮 Controlador inicializado
+2026-09-08 02:54:43,144 - __main__ - INFO - 🔗 Componentes conectados
+2026-09-08 02:54:43,144 - SistemaNotificaciones - INFO - Sistema de notificaciones inicializado
+2026-09-08 02:54:43,144 - SistemaNotificaciones - INFO - Iniciando sistema de notificaciones
+2026-09-08 02:54:43,315 - SistemaNotificaciones - INFO - Notificación inicial mostrada (Toast)
+2026-09-08 02:54:43,316 - SistemaNotificaciones - INFO - Iniciando verificación periódica de hora
+2026-09-08 02:54:43,316 - SistemaNotificaciones - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-08 02:54:43,316 - __main__ - INFO - ✅ Aplicación iniciada exitosamente
+2026-09-08 02:54:43,316 - __main__ - INFO - 🖥️ Interfaz en pantalla completa disponible
+2026-09-08 02:54:43,316 - __main__ - INFO - ⌨️ Presione F1 para ver atajos de teclado
+2026-09-08 02:54:43,560 - __main__ - INFO - ⏰ Inicialización retardada completada
+2026-09-08 02:54:52,373 - __main__ - INFO - 🔚 Cerrando Sistema de Monitoreo SERENAZGO
+2026-09-08 02:54:52,374 - __main__ - INFO - 🧹 Iniciando limpieza al cerrar...
+2026-09-08 02:54:52,374 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist_fix\SerenazgoTalara
+2026-09-08 02:54:52,374 - __main__ - INFO - 🧹 Archivos temporales limpiados
+2026-09-08 02:54:52,477 - __main__ - INFO - ✅ Limpieza completada exitosamente
+2026-09-08 02:57:03,480 - report_ocurrencias - INFO - LanguageTool no disponible, usando pyspellchecker como corrector local
+2026-09-08 02:57:03,740 - __main__ - INFO - 🚀 Iniciando Sistema de Monitoreo SERENAZGO v2.0
+2026-09-08 02:57:03,741 - __main__ - INFO - ✅ Verificación de instancia única completada
+2026-09-08 02:57:03,741 - __main__ - INFO - 📁 Directorios de trabajo creados/verificados
+2026-09-08 02:57:03,741 - __main__ - INFO - 🖼️ Logo ya existe en la carpeta REPORT
+2026-09-08 02:57:03,741 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist_fix\SerenazgoTalara
+2026-09-08 02:57:03,741 - __main__ - INFO - 📊 Verificando archivo Excel: D:\mvc\dist_fix\SerenazgoTalara\unidades_registro.xlsx
+2026-09-08 02:57:03,741 - __main__ - INFO - ✅ Archivo Excel encontrado
+2026-09-08 02:57:03,741 - __main__ - INFO - ✅ Archivo Excel tiene permisos de escritura
+2026-09-08 02:57:03,741 - __main__ - INFO - 📏 Tamaño: 5013 bytes
+2026-09-08 02:57:03,741 - __main__ - INFO - 🕰️ Última modificación: 2026-09-08 02:54:42.304953
+2026-09-08 02:57:03,742 - cache - INFO - Thread de limpieza automática iniciado (intervalo: 900s)
+2026-09-08 02:57:03,742 - cache - INFO - CacheManager inicializado con config: {'max_memory_size': 2000, 'max_memory_mb': 400, 'max_disk_mb': 2000, 'compression_threshold': 512, 'cleanup_interval': 900, 'max_threads': 6, 'enable_compression': True, 'enable_metrics': True, 'cache_version': '2.0'}
+2026-09-08 02:57:03,742 - __main__ - INFO - 💾 Sistema de caché inicializado con configuración optimizada
+2026-09-08 02:57:03,742 - __main__ - INFO - 🧹 Sistema de limpieza automática registrado
+2026-09-08 02:57:03,803 - __main__ - INFO - 🖥️ Ventana configurada en pantalla completa
+2026-09-08 02:57:03,803 - __main__ - INFO - 🏗️ Inicializando componentes...
+2026-09-08 02:57:03,815 - __main__ - INFO - 📊 Modelo inicializado
+2026-09-08 02:57:03,844 - __main__ - INFO - 🖥️ Vista inicializada
+2026-09-08 02:57:03,867 - __main__ - INFO - 🎮 Controlador inicializado
+2026-09-08 02:57:04,240 - __main__ - INFO - 🔗 Componentes conectados
+2026-09-08 02:57:04,240 - SistemaNotificaciones - INFO - Sistema de notificaciones inicializado
+2026-09-08 02:57:04,240 - SistemaNotificaciones - INFO - Iniciando sistema de notificaciones
+2026-09-08 02:57:04,241 - SistemaNotificaciones - INFO - Iniciando verificación periódica de hora
+2026-09-08 02:57:04,241 - SistemaNotificaciones - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-08 02:57:04,241 - __main__ - INFO - ✅ Aplicación iniciada exitosamente
+2026-09-08 02:57:04,241 - __main__ - INFO - 🖥️ Interfaz en pantalla completa disponible
+2026-09-08 02:57:04,241 - __main__ - INFO - ⌨️ Presione F1 para ver atajos de teclado
+2026-09-08 02:57:04,495 - __main__ - INFO - ⏰ Inicialización retardada completada
+2026-09-08 02:59:48,904 - __main__ - INFO - 🔚 Cerrando Sistema de Monitoreo SERENAZGO
+2026-09-08 02:59:48,906 - __main__ - INFO - 🧹 Iniciando limpieza al cerrar...
+2026-09-08 02:59:48,906 - __main__ - INFO - 📦 Ejecutándose desde ejecutable: D:\mvc\dist_fix\SerenazgoTalara
+2026-09-08 02:59:48,906 - __main__ - INFO - 🧹 Archivos temporales limpiados
+2026-09-08 02:59:49,011 - __main__ - INFO - ✅ Limpieza completada exitosamente

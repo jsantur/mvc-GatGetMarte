@@ -105,7 +105,7 @@ a = Analysis(
     hooksconfig={},
     runtime_hooks=[],
     excludes=['matplotlib', 'numpy.random._examples', 'scipy', 'tkinter.test', 
-              'unittest', 'pydoc', 'pdb', 'doctest', 'language_tool_python'],  # Excluir LanguageTool (muy pesado)
+              'pydoc', 'pdb', 'doctest', 'language_tool_python'],  # Excluir LanguageTool (muy pesado)
     noarchive=False,
     optimize=1,  # Optimización básica
 )

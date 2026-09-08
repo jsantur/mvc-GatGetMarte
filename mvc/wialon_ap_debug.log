@@ -1,40 +1,42 @@
-Consulta A.P. - 2026-04-10 14:47:38
+╔══════════════════════════════════════════════════╗
+║   CONSULTA A.P. CON FILTRO DE GEOCERCAS         ║
+╠══════════════════════════════════════════════════╣
+║ Fecha : 2026-09-08 04:38:32
+║ Rango : 00:00 – 23:59 hora local
+║ Descuento: 0 min
+║ Redondeo : bloques de 5 min
+╚══════════════════════════════════════════════════╝
 
---- 1  EUI-621 (ID: 402191563) ---
-  Parking: 885.0 min | A.P. = 840 min
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 10  EUI-647  (ID: 402191562)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 2
+  ⏱️  Total SIN filtro          : 187.58 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 2
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+     ▸ Zona [ENACE]: 185 min (suma de redondeos individuales)
 
---- 2  EUI-682 (ID: 402191188) ---
-  Parking: 585.2 min | A.P. = 540 min
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 185 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 185 min
+  └────────────────────────────────────────────────────
 
---- 3  EUI-683 (ID: 402191564) ---
-  Parking: 880.0 min | A.P. = 835 min
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+    1  181.3min    10878    180  ✅ SUMA          ENACE
+    2  6.3min        377      5  ✅ SUMA          ENACE
 
---- 4  EUI-646 (ID: 402191155) ---
-  Parking: 674.8 min | A.P. = 629 min
-
---- 5  EUI-685 (ID: 402191183) ---
-  Parking: 745.5 min | A.P. = 700 min
-
---- 6  EUI-686 (ID: 402191300) ---
-  Parking: 787.8 min | A.P. = 742 min
-
---- 7  EUI-679 (ID: 402191378) ---
-  Parking: 720.1 min | A.P. = 675 min
-
---- 8  EUI-680 (ID: 402191308) ---
-  Parking: 516.0 min | A.P. = 470 min
-
---- 9  EUI-645 (ID: 402190601) ---
-  Parking: 607.9 min | A.P. = 562 min
-
---- 10  EUI-647 (ID: 402191562) ---
-  Parking: 625.7 min | A.P. = 580 min
-
---- 11  EUI-668 (ID: 402190862) ---
-  Parking: 652.7 min | A.P. = 607 min
-
---- 12  EUI-670 (ID: 402191163) ---
-  Parking: 885.0 min | A.P. = 840 min
-
---- 13  EUI-671 (ID: 402191561) ---
-  Sin tablas en reporte
+═══════════════════════════════════════════════════════════════
+RESUMEN POR UNIDAD
+═══════════════════════════════════════════════════════════════
+  UNIDAD                         SIN FILTRO   SUMADO  RD×5   AP  ZONAS
+  ────────────────────────────── ────────── ──────── ───── ────  ──────────────────────────────
+  10  EUI-647                        187.6    185.0   185  185  ENACE=185

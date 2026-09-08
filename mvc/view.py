@@ -634,8 +634,13 @@ Manual actualizado al 05 de Abril de 2026."""
         menubar.add_cascade(label="🌐 ENLACES", menu=menu_enlaces)
         
         menu_enlaces.add_command(
-            label="🌍 Wialon", 
-            command=self.controller.open_wialon,
+            label="📏 Cargar KM Wialon (Tiempo Real)", 
+            command=self.controller.consultar_km_wialon,
+            accelerator="Ctrl+G"
+        )
+        menu_enlaces.add_command(
+            label="🌍 Wialon Web (Monitor)", 
+            command=self.controller.abrir_url_wialon,
             accelerator="Ctrl+Shift+G"
         )
         
@@ -1310,10 +1315,10 @@ Manual actualizado al 05 de Abril de 2026."""
         links_frame.pack(side=tk.LEFT, padx=10)
         
         btn_geo = ttk.Button(links_frame, text="🌍 Wialon",
-                            command=self.controller.open_wialon,
+                            command=self.mostrar_opciones_wialon,
                             style='Wialon.TButton')
         btn_geo.pack(side=tk.LEFT, padx=3)
-        self.create_tooltip(btn_geo, "📍 hosting.wialon.us")
+        self.create_tooltip(btn_geo, "🛰️ Opciones Wialon (URL / KM Tiempo Real)")
         
         btn_sipcop = ttk.Button(links_frame, text="🗺️ SIPCOP-M",
                             command=self.controller.open_sipcop,
@@ -2639,52 +2644,78 @@ Manual actualizado al 05 de Abril de 2026."""
         """Muestra una ventana emergente premium con opciones para Wialon."""
         dialog = tk.Toplevel(self.root)
         dialog.title("Opciones Wialon")
-        dialog.geometry("420x320")
-        dialog.resizable(False, False)
+        dialog.geometry("650x470")
+        dialog.minsize(580, 430)
+        dialog.resizable(True, True)
         dialog.transient(self.root)
-        dialog.grab_set()
+        dialog.configure(bg='white')
+        try:
+            dialog.grab_set()
+        except Exception:
+            pass
         
-        # Centrar ventana
         dialog.update_idletasks()
-        width = dialog.winfo_width()
-        height = dialog.winfo_height()
-        x = (dialog.winfo_screenwidth() // 2) - (width // 2)
-        y = (dialog.winfo_screenheight() // 2) - (height // 2)
-        dialog.geometry(f'+{x}+{y}')
+        screen_w = dialog.winfo_screenwidth()
+        screen_h = dialog.winfo_screenheight()
+        win_w, win_h = 650, 470
+        x = (screen_w // 2) - (win_w // 2)
+        y = (screen_h // 2) - (win_h // 2)
+        dialog.geometry(f'{win_w}x{win_h}+{x}+{y}')
         
-        main_frame = tk.Frame(dialog, bg='white', padx=20, pady=20)
+        main_frame = tk.Frame(dialog, bg='white', padx=30, pady=24)
         main_frame.pack(fill=tk.BOTH, expand=True)
         
         tk.Label(main_frame, text="🛰️ Gestión de Wialon", 
-                 font=('Segoe UI', 14, 'bold'), bg='white', fg='#2c3e50').pack(pady=(0, 4))
+                 font=('Segoe UI', 16, 'bold'), bg='white', fg='#2c3e50').pack(pady=(0, 6))
         
         tk.Label(main_frame, text="Seleccione una acción para las unidades:", 
-                 font=('Segoe UI', 10), bg='white', fg='#7f8c8d').pack(pady=(0, 14))
+                 font=('Segoe UI', 11), bg='white', fg='#7f8c8d').pack(pady=(0, 18))
         
         btn_frame = tk.Frame(main_frame, bg='white')
         btn_frame.pack(fill=tk.X)
         
-        # Botón para abrir URL
-        btn_url = ttk.Button(btn_frame, text="🌐 WIALON WEB (Monitor)", 
+        btn_url = ttk.Button(btn_frame, text="🌐 WIALON URL  —  Abrir Monitor", 
                             command=lambda: [dialog.destroy(), self.controller.abrir_url_wialon()],
                             style='Accent.TButton')
-        btn_url.pack(fill=tk.X, pady=5, ipady=5)
+        btn_url.pack(fill=tk.X, pady=8, ipady=8)
         
-        # Botón para obtener KM + A.P. (fusionado)
-        btn_km_ap = ttk.Button(btn_frame, text="📏 Wialon KM (Tiempo Real)", 
+        btn_km_ap = ttk.Button(btn_frame, text="📏 WIALON KM  —  Tiempo Real (descuento 4-5 km)", 
                            command=lambda: [dialog.destroy(), self.controller.consultar_km_wialon()],
                            style='Success.TButton')
-        btn_km_ap.pack(fill=tk.X, pady=5, ipady=5)
+        btn_km_ap.pack(fill=tk.X, pady=8, ipady=8)
         
-        # Botón cerrar (Personalizado: Rojo claro con letras blancas)
-        btn_cerrar = tk.Button(btn_frame, text="CERRAR VENTANA", 
-                              command=dialog.destroy,
-                              bg='#ff6b6b', fg='white', 
-                              font=('Segoe UI', 10, 'bold'),
-                              relief='flat', cursor='hand2',
-                              activebackground='#ff5252',
-                              activeforeground='white')
-        btn_cerrar.pack(fill=tk.X, pady=(15, 0), ipady=6)
+        btn_ap = ttk.Button(
+            btn_frame,
+            text="📌 WIALON A.P.  —  Geocercas NORTE / CENTRO / SUR / ENACE",
+            command=lambda: [dialog.destroy(), self.controller.consultar_ap_wialon()],
+            style='Accent.TButton'
+        )
+        btn_ap.pack(fill=tk.X, pady=8, ipady=8)
+        
+        self.create_tooltip(
+            btn_ap,
+            "Cálculo de Auxilio Público (A.P.)\n"
+            "────────────────────────────\n"
+            "• Extrae cronologías de estacionamiento del reporte\n"
+            "• Suma SOLO minutos dentro de geocercas permitidas\n"
+            "• Redondea a bloques de 5 minutos\n"
+            "• Aplica descuento de 45 min por unidad"
+        )
+        
+        tk.Frame(btn_frame, height=2, bg='#ecf0f1').pack(fill=tk.X, pady=(18, 12))
+        
+        btn_cerrar = tk.Button(
+            btn_frame, text="✕  CERRAR VENTANA", 
+            command=dialog.destroy,
+            bg='#e74c3c', fg='white', 
+            font=('Segoe UI', 11, 'bold'),
+            relief='flat', cursor='hand2',
+            activebackground='#c0392b',
+            activeforeground='white',
+            bd=0,
+            padx=16, pady=4
+        )
+        btn_cerrar.pack(fill=tk.X, pady=(6, 0), ipady=8)
 
 
 

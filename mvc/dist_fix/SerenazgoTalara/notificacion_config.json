@@ -1,0 +1,7 @@
+{
+  "notificacion_inicial_mostrada": true,
+  "ultimo_recordatorio": null,
+  "sms_enabled": false,
+  "sms_api_key": "",
+  "intervalo_minutos": 1
+}
