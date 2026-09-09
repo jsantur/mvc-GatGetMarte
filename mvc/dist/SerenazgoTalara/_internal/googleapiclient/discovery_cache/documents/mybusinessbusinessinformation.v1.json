@@ -166,7 +166,7 @@
 "type": "string"
 },
 "parent": {
-"description": "Required. The name of the account to fetch locations from. * **Specific Account ID**: If the account is of type `AccountType.PERSONAL`, the response returns only locations directly owned by that account. For all other types (e.g., `AccountType.LOCATION_GROUP`), it returns all accessible locations. * **Wildcard (`-`)**: Using `accounts/-` identifies the authenticated user. This scope defaults to `AccountType.PERSONAL` but includes both directly and indirectly owned locations (e.g., those accessible via member groups).",
+"description": "Required. The name of the account to fetch locations from. If the parent Account is of AccountType PERSONAL, only Locations that are directly owned by the Account are returned, otherwise it will return all accessible locations from the Account, either directly or indirectly.",
 "location": "path",
 "pattern": "^accounts/[^/]+$",
 "required": true,
@@ -198,12 +198,12 @@
 "parameterOrder": [],
 "parameters": {
 "categoryName": {
-"description": "Optional. The primary category stable ID to find available attributes. Must be of the format `categories/{category_id}` (e.g., `categories/gcid:restaurant`). Required if `parent` is not set and `show_all` is false.",
+"description": "The primary category stable ID to find available attributes. Must be of the format categories/{category_id}.",
 "location": "query",
 "type": "string"
 },
 "languageCode": {
-"description": "Optional. The BCP 47 code of language to get attribute display names in. If this language is not available, they will be provided in English.",
+"description": "The BCP 47 code of language to get attribute display names in. If this language is not available, they will be provided in English.",
 "location": "query",
 "type": "string"
 },
@@ -219,17 +219,17 @@
 "type": "string"
 },
 "parent": {
-"description": "Optional. Resource name of the location to look up available attributes. If this field is set, `category_name`, `region_code`, `language_code` and `show_all` are not required and must not be set. Format: `locations/{location_id}` (e.g., `locations/1234567890`).",
+"description": "Resource name of the location to look up available attributes. If this field is set, category_name, region_code, language_code and show_all are not required and must not be set.",
 "location": "query",
 "type": "string"
 },
 "regionCode": {
-"description": "Optional. The ISO 3166-1 alpha-2 country code to find available attributes. Required if `parent` is not set.",
+"description": "The ISO 3166-1 alpha-2 country code to find available attributes.",
 "location": "query",
 "type": "string"
 },
 "showAll": {
-"description": "Optional. If set to true, metadata for all available attributes are returned, disregarding `parent` and `category_name` fields. `language_code` and `region_code` are required when `show_all` is set to true.",
+"description": "Metadata for all available attributes are returned when this field is set to true, disregarding parent and category_name fields. language_code and region_code are required when show_all is set to true.",
 "location": "query",
 "type": "boolean"
 }
@@ -437,7 +437,7 @@
 }
 },
 "get": {
-"description": "Returns the specified location as last set by the merchant. It may not reflect updates from Google or user-generated content that are live on Google Maps.",
+"description": "Returns the specified location.",
 "flatPath": "v1/locations/{locationsId}",
 "httpMethod": "GET",
 "id": "mybusinessbusinessinformation.locations.get",
@@ -465,7 +465,7 @@
 }
 },
 "getAttributes": {
-"description": "Retrieves attributes for a location as last set by the merchant. It may not reflect updates from Google or user-generated content that are live on Google Maps.",
+"description": "Looks up all the attributes set for a given location.",
 "flatPath": "v1/locations/{locationsId}/attributes",
 "httpMethod": "GET",
 "id": "mybusinessbusinessinformation.locations.getAttributes",
@@ -487,7 +487,7 @@
 }
 },
 "getGoogleUpdated": {
-"description": "Returns the specified location as it appears live on Google Maps and Search. This consumer-facing view may have been updated by Google or user-generated content and may differ from the merchant's version. The returned GoogleUpdatedLocation contains masks that indicate which fields differ from the merchant's information.",
+"description": "Gets the Google-updated version of the specified location.",
 "flatPath": "v1/locations/{locationsId}:getGoogleUpdated",
 "httpMethod": "GET",
 "id": "mybusinessbusinessinformation.locations.getGoogleUpdated",
@@ -586,7 +586,7 @@
 "attributes": {
 "methods": {
 "getGoogleUpdated": {
-"description": "Retrieves attributes for a location as they appear live on Google Maps and Search. This consumer-facing view may have been updated by Google or user-generated content and may differ from the merchant's version.",
+"description": "Gets the Google-updated version of the specified location.",
 "flatPath": "v1/locations/{locationsId}/attributes:getGoogleUpdated",
 "httpMethod": "GET",
 "id": "mybusinessbusinessinformation.locations.attributes.getGoogleUpdated",
@@ -612,7 +612,7 @@
 }
 }
 },
-"revision": "20260826",
+"revision": "20250319",
 "rootUrl": "https://mybusinessbusinessinformation.googleapis.com/",
 "schemas": {
 "AdWordsLocationExtensions": {
@@ -922,7 +922,7 @@
 "type": "object"
 },
 "FreeFormServiceItem": {
-"description": "Represents a free-form service offered by the merchant. These are services that are not exposed as part of our structure service data. The merchant manually enters the names for such services using a geomerchant surface.",
+"description": "Represents a free-form service offered by the merchant. These are services that are not exposed as part of our structure service data. The merchant manually enters the names for of such services via a geomerchant surface.",
 "id": "FreeFormServiceItem",
 "properties": {
 "category": {
@@ -931,7 +931,7 @@
 },
 "label": {
 "$ref": "Label",
-"description": "Required. Language-tagged labels for the item. We recommend that item names be 140 characters or less, and descriptions 250 characters or less. This field should only be set if the input is a custom service item. Standardized service types should be updated using service_type_id."
+"description": "Required. Language-tagged labels for the item. We recommend that item names be 140 characters or less, and descriptions 250 characters or less. This field should only be set if the input is a custom service item. Standardized service types should be updated via service_type_id."
 }
 },
 "type": "object"
@@ -956,11 +956,11 @@
 "type": "object"
 },
 "GoogleUpdatedLocation": {
-"description": "Represents the view of a location as it appears to consumers, which includes updates that are currently serving on Google Maps and Search.",
+"description": "Represents a location that was modified by Google.",
 "id": "GoogleUpdatedLocation",
 "properties": {
 "diffMask": {
-"description": "The fields where the values in the view as it appears to consumers are different than the merchant's information. To accept these changes, patch the location. To reject, patch with your preferred values.",
+"description": "The fields that Google updated.",
 "format": "google-fieldmask",
 "type": "string"
 },
@@ -969,7 +969,7 @@
 "description": "The Google-updated version of this location."
 },
 "pendingMask": {
-"description": "The fields where the merchant has provided an update that is currently in flight and hasn't yet been published to Maps and Search. This mask only tracks the status of the merchant's own edits, not external changes.",
+"description": "The fields that have pending edits that haven't yet been pushed to Maps and Search.",
 "format": "google-fieldmask",
 "type": "string"
 }
@@ -1124,7 +1124,7 @@
 },
 "profile": {
 "$ref": "Profile",
-"description": "Optional. Describes your business in your own voice and shares with users the unique story of your business and offerings. This field is required for all categories except lodging categories (e.g., hotels, motels, inns)."
+"description": "Optional. Describes your business in your own voice and shares with users the unique story of your business and offerings. This field is required for all categories except lodging categories (e.g. hotels, motels, inns)."
 },
 "regularHours": {
 "$ref": "BusinessHours",
@@ -1214,7 +1214,7 @@
 "type": "string"
 },
 "hasGoogleUpdated": {
-"description": "Output only. Indicates whether the place ID associated with this location has updates that need to be updated or rejected by the client. If this boolean is set, you should call the `getGoogleUpdated` method to look up information that's needs to be verified.",
+"description": "Output only. Indicates whether the place ID associated with this location has updates that need to be updated or rejected by the client. If this boolean is set, you should call the `getGoogleUpdated` method to lookup information that's needs to be verified.",
 "readOnly": true,
 "type": "boolean"
 },
@@ -1225,11 +1225,6 @@
 },
 "hasVoiceOfMerchant": {
 "description": "Output only. Indicates if the listing has Voice of Merchant. If this boolean is false, you should call the locations.getVoiceOfMerchantState API to get details as to why they do not have Voice of Merchant.",
-"readOnly": true,
-"type": "boolean"
-},
-"isParticularlyPersonalPlace": {
-"description": "Output only.",
 "readOnly": true,
 "type": "boolean"
 },
@@ -1392,7 +1387,7 @@
 "type": "object"
 },
 "PostalAddress": {
-"description": "Represents a postal address, such as for postal delivery or payments addresses. With a postal address, a postal service can deliver items to a premise, P.O. box, or similar. A postal address is not intended to model geographical locations like roads, towns, or mountains. In typical usage, an address would be created by user input or from importing existing data, depending on the type of process. Advice on address input or editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput. - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, see: https://support.google.com/business/answer/6397478.",
+"description": "Represents a postal address (for example, for postal delivery or payments addresses). Given a postal address, a postal service can deliver items to a premise, P.O. box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage, an address would be created by user input or from importing existing data, depending on the type of process. Advice on address input or editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput. - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, see: https://support.google.com/business/answer/6397478.",
 "id": "PostalAddress",
 "properties": {
 "addressLines": {
@@ -1500,7 +1495,7 @@
 "enumDescriptions": [
 "Type unspecified.",
 "This represents a relation between 2 locations which share one physical area, same brand/upper management/organization, but with different key attributes like store hours or phone numbers. For example, Costco Pharmacy is a department in Costco Wholesale.",
-"This represents the cases where 2 locations are co-located in the same physical location, but from different companies (e.g., Starbucks in a Safeway, shops in a mall)."
+"This represents the cases where 2 locations are co-located in the same physical location, but from different companies (e.g. Starbucks in a Safeway, shops in a mall)."
 ],
 "type": "string"
 }
@@ -1548,7 +1543,7 @@
 "properties": {
 "location": {
 "$ref": "Location",
-"description": "Location to search for. If provided, will find locations which match the provided location details, which must include a value for the title."
+"description": "Location to search for. If provided, will find locations which match the provided location details."
 },
 "pageSize": {
 "description": "The number of matches to return. The default value is 3, with a maximum of 10. Note that latency may increase if more are requested. There is no pagination.",
@@ -1754,7 +1749,7 @@
 },
 "closeTime": {
 "$ref": "TimeOfDay",
-"description": "Required. Valid values are 00:00-24:00, where 24:00 represents midnight at the end of the specified day field. Note: In Proto3 JSON mapping, default zero values (00:00) are omitted, producing `{}` for close_time."
+"description": "Required. Valid values are 00:00-24:00, where 24:00 represents midnight at the end of the specified day field."
 },
 "openDay": {
 "description": "Required. Indicates the day of the week this period starts on.",
@@ -1782,7 +1777,7 @@
 },
 "openTime": {
 "$ref": "TimeOfDay",
-"description": "Required. Valid values are 00:00-24:00, where 24:00 represents midnight at the end of the specified day field. Note: In Proto3 JSON mapping, default zero values (00:00) are omitted, producing `{}` for open_time."
+"description": "Required. Valid values are 00:00-24:00, where 24:00 represents midnight at the end of the specified day field."
 }
 },
 "type": "object"

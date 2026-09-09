@@ -14,7 +14,7 @@
 "canonicalName": "Merchant",
 "description": "Programmatically manage your Merchant Center Accounts.",
 "discoveryVersion": "v1",
-"documentationLink": "https://developers.google.com/merchant/api",
+"documentationLink": "https://developers.devsite.corp.google.com/merchant/api",
 "fullyEncodeReservedExpansion": true,
 "icons": {
 "x16": "http://www.google.com/images/icons/product/search-16.gif",
@@ -268,7 +268,7 @@
 "type": "string"
 },
 "updateMask": {
-"description": "Required. The list of data source fields to be updated. Fields specified in the update mask without a value specified in the body will be deleted from the data source. Providing special \"*\" value for full data source replacement is not supported. For example, If you insert `updateMask=displayName` in the request, it will only update the `displayName` leaving all other fields untouched.",
+"description": "Required. The list of data source fields to be updated. Fields specified in the update mask without a value specified in the body will be deleted from the data source. Providing special \"*\" value for full data source replacement is not supported.",
 "format": "google-fieldmask",
 "location": "query",
 "type": "string"
@@ -321,7 +321,7 @@
 }
 }
 },
-"revision": "20260719",
+"revision": "20250507",
 "rootUrl": "https://merchantapi.googleapis.com/",
 "schemas": {
 "DataSource": {
@@ -356,7 +356,7 @@
 "Represents data sources for which the data is primarily provided through the API.",
 "Represents data sources for which the data is primarily provided through file input. Data can still be provided through the API.",
 "The data source for products added directly in Merchant Center. This type of data source can not be created or updated through this API, only by Merchant Center UI. This type of data source is read only.",
-"This is also known as [Automated feeds](https://support.google.com/merchants/answer/12158480) used to automatically build your product data. This type of data source can be enabled or disabled through the Accounts sub-API."
+"This is also known as [Automated feeds](https://support.google.com/merchants/answer/12158480) used to automatically build your product data. This type of data source can be enabled or disabled through the Accounts bundle."
 ],
 "readOnly": true,
 "type": "string"
@@ -401,8 +401,7 @@
 "id": "DataSourceReference",
 "properties": {
 "primaryDataSourceName": {
-"deprecated": true,
-"description": "Optional. Deprecated: Use `self` instead to reference the primary data source. The name of the primary data source. Format: `accounts/{account}/dataSources/{datasource}`",
+"description": "Optional. The name of the primary data source. Format: `accounts/{account}/dataSources/{datasource}`",
 "type": "string"
 },
 "self": {
@@ -421,7 +420,7 @@
 "id": "DefaultRule",
 "properties": {
 "takeFromDataSources": {
-"description": "Required. The list of data sources linked in the [default rule](https://support.google.com/merchants/answer/7450276). This list is ordered by the default rule priority of joining the data. It might include none or multiple references to `self` and supplemental data sources. The list must not be empty. To link the data source to the default rule, you need to add a new reference to this list (in sequential order). To unlink the data source from the default rule, you need to remove the given reference from this list. Changing the order of this list will result in changing the priority of data sources in the default rule. For example, providing the following list: [`1001`, `self`] will take attribute values from supplemental data source `1001`, and fallback to `self` if the attribute is not set in `1001`. Warning: The update (patch) and create call replaces the entire default rule setup. It doesn't work as an addition or append. If `self` is missing from the list of `take_from_data_sources`, the API will ignore attributes from the primary data source itself.",
+"description": "Required. The list of data sources linked in the [default rule](https://support.google.com/merchants/answer/7450276). This list is ordered by the default rule priority of joining the data. It might include none or multiple references to `self` and supplemental data sources. The list must not be empty. To link the data source to the default rule, you need to add a new reference to this list (in sequential order). To unlink the data source from the default rule, you need to remove the given reference from this list. Changing the order of this list will result in changing the priority of data sources in the default rule. For example, providing the following list: [`1001`, `self`] will take attribute values from supplemental data source `1001`, and fallback to `self` if the attribute is not set in `1001`.",
 "items": {
 "$ref": "DataSourceReference"
 },
@@ -593,7 +592,7 @@
 "File input type unspecified.",
 "The file is uploaded through SFTP, Google Cloud Storage or manually in the Merchant Center.",
 "The file is fetched from the configured fetch_uri.",
-"The file is fetched from Google Sheets specified in the fetch_uri. However, you can't set up `GOOGLE_SHEETS` as a data source through the API. To add `GOOGLE_SHEETS` as a data source through the Merchant Center, see [Add products to Merchant Center](https://support.google.com/merchants/answer/12158053)."
+"The file is fetched from Google Sheets specified in the fetch_uri."
 ],
 "readOnly": true,
 "type": "string"
@@ -738,7 +737,7 @@
 "type": "object"
 },
 "LocalInventoryDataSource": {
-"description": "The local inventory data source type is only available for file inputs and can't be used to create API local inventory data sources.",
+"description": "The local inventory data source.",
 "id": "LocalInventoryDataSource",
 "properties": {
 "contentLanguage": {
@@ -746,7 +745,7 @@
 "type": "string"
 },
 "feedLabel": {
-"description": "Required. Immutable. The feed label of the offers to which the local inventory is provided. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-).",
+"description": "Required. Immutable. The feed label of the offers to which the local inventory is provided. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-). See also [migration to feed labels](https://developers.google.com/shopping-content/guides/products/feed-labels).",
 "type": "string"
 }
 },
@@ -791,7 +790,7 @@
 },
 "defaultRule": {
 "$ref": "DefaultRule",
-"description": "Optional. Default rule management of the data source. If set, the linked data sources will be replaced. Warning: The update (patch) and create call replaces the entire default rule setup. It doesn't work as an addition or append. If `self` is missing from the list of `take_from_data_sources`, the API will ignore attributes from the primary data source itself."
+"description": "Optional. Default rule management of the data source. If set, the linked data sources will be replaced."
 },
 "destinations": {
 "description": "Optional. A list of destinations describing where products of the data source can be shown. When retrieving the data source, the list contains all the destinations that can be used for the data source, including the ones that are disabled for the data source but enabled for the account. Only destinations that are enabled on the account, for example through program participation, can be enabled on the data source. If unset, during creation, the destinations will be inherited based on the account level program participation. If set, during creation or update, the data source will be set only for the specified destinations. Updating this field requires at least one destination.",
@@ -801,7 +800,7 @@
 "type": "array"
 },
 "feedLabel": {
-"description": "Optional. Immutable. The feed label that is specified on the data source level. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-). For more information about feed label, see [Create a primary data source for products](https://developers.google.com/merchant/api/guides/data-sources/api-sources#create-primary-data-source). `feedLabel` and `contentLanguage` must be either both set or unset for data sources with product content type. They must be set for data sources with a file input. If set, the data source will only accept products matching this combination. If unset, the data source will accept products without that restriction.",
+"description": "Optional. Immutable. The feed label that is specified on the data source level. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-). See also [migration to feed labels](https://developers.google.com/shopping-content/guides/products/feed-labels). `feedLabel` and `contentLanguage` must be either both set or unset for data sources with product content type. They must be set for data sources with a file input. If set, the data source will only accept products matching this combination. If unset, the data source will accept products without that restriction.",
 "type": "string"
 }
 },
@@ -836,7 +835,6 @@
 "LOCAL_INVENTORY_ADS",
 "VEHICLE_INVENTORY_ADS",
 "FREE_LISTINGS",
-"FREE_LISTINGS_UCP_CHECKOUT",
 "FREE_LOCAL_LISTINGS",
 "FREE_LOCAL_VEHICLE_LISTINGS",
 "YOUTUBE_AFFILIATE",
@@ -866,7 +864,6 @@ false,
 false,
 false,
 false,
-false,
 false
 ],
 "enumDescriptions": [
@@ -880,7 +877,6 @@ false
 "[Local inventory ads](https://support.google.com/merchants/answer/3271956).",
 "[Vehicle inventory ads](https://support.google.com/merchants/answer/11544533).",
 "[Free product listings](https://support.google.com/merchants/answer/9199328).",
-"[Free product listings on UCP checkout](https://developers.google.com/merchant/ucp).",
 "[Free local product listings](https://support.google.com/merchants/answer/9825611).",
 "[Free local vehicle listings](https://support.google.com/merchants/answer/11544533).",
 "[Youtube Affiliate](https://support.google.com/youtube/answer/13376398).",
@@ -935,7 +931,7 @@ false
 "type": "string"
 },
 "expirationTime": {
-"description": "Optional. The product expiration time. This field will not be set if the notification is sent for a product deletion event.",
+"description": "Optional. The product expiration time. This field will not bet set if the notification is sent for a product deletion event.",
 "format": "google-datetime",
 "type": "string"
 },
@@ -955,13 +951,11 @@ false
 "description": "The resource that changed, in this case it will always be `Product`.",
 "enum": [
 "RESOURCE_UNSPECIFIED",
-"PRODUCT",
-"ACCOUNT_SERVICE"
+"PRODUCT"
 ],
 "enumDescriptions": [
 "Unspecified resource",
-"Resource type : product",
-"Account service"
+"Resource type : product"
 ],
 "type": "string"
 }
@@ -984,6 +978,7 @@ false
 "type": "object"
 },
 "RegionalInventoryDataSource": {
+"description": "The regional inventory data source.",
 "id": "RegionalInventoryDataSource",
 "properties": {
 "contentLanguage": {
@@ -991,14 +986,14 @@ false
 "type": "string"
 },
 "feedLabel": {
-"description": "Required. Immutable. The feed label of the offers to which the regional inventory is provided. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-).",
+"description": "Required. Immutable. The feed label of the offers to which the regional inventory is provided. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-). See also [migration to feed labels](https://developers.google.com/shopping-content/guides/products/feed-labels).",
 "type": "string"
 }
 },
 "type": "object"
 },
 "SupplementalProductDataSource": {
-"description": "The [supplemental data source](https://developers.google.com/merchant/api/guides/data-sources/api-sources#link-supplemental-data-source) for local and online products. After creation,you should make sure to link the supplemental product data source into one or more primary product data sources.",
+"description": "The supplemental data source for local and online products. After creation, you should make sure to link the supplemental product data source into one or more primary product data sources.",
 "id": "SupplementalProductDataSource",
 "properties": {
 "contentLanguage": {
@@ -1006,7 +1001,7 @@ false
 "type": "string"
 },
 "feedLabel": {
-"description": "Optional. Immutable. The feed label that is specified on the data source level. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-). `feedLabel` and `contentLanguage` must be either both set or unset for data sources with product content type. They must be set for data sources with a file input. The fields must be unset for data sources without file input. If set, the data source will only accept products matching this combination. If unset, the data source will accept produts without that restriction.",
+"description": "Optional. Immutable. The feed label that is specified on the data source level. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-). See also [migration to feed labels](https://developers.google.com/shopping-content/guides/products/feed-labels). `feedLabel` and `contentLanguage` must be either both set or unset for data sources with product content type. They must be set for data sources with a file input. The fields must be unset for data sources without file input. If set, the data source will only accept products matching this combination. If unset, the data source will accept produts without that restriction.",
 "type": "string"
 },
 "referencingPrimaryDataSources": {

@@ -2,12 +2,6 @@
 "auth": {
 "oauth2": {
 "scopes": {
-"https://www.googleapis.com/auth/apikeys": {
-"description": "See, edit, configure, and delete your Google Cloud API Keys data and see the email address for your Google Account"
-},
-"https://www.googleapis.com/auth/apikeys.readonly": {
-"description": "See your Google Cloud API Keys data and the email address of your Google Account"
-},
 "https://www.googleapis.com/auth/cloud-platform": {
 "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
 },
@@ -134,8 +128,6 @@
 "$ref": "V2LookupKeyResponse"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
-"https://www.googleapis.com/auth/apikeys.readonly",
 "https://www.googleapis.com/auth/cloud-platform",
 "https://www.googleapis.com/auth/cloud-platform.read-only"
 ]
@@ -166,8 +158,6 @@
 "$ref": "Operation"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
-"https://www.googleapis.com/auth/apikeys.readonly",
 "https://www.googleapis.com/auth/cloud-platform",
 "https://www.googleapis.com/auth/cloud-platform.read-only"
 ]
@@ -195,7 +185,7 @@
 "type": "string"
 },
 "parent": {
-"description": "Required. The project in which the API key is created. The parent field must be in format of \"projects//locations/global\".",
+"description": "Required. The project in which the API key is created.",
 "location": "path",
 "pattern": "^projects/[^/]+/locations/[^/]+$",
 "required": true,
@@ -210,7 +200,6 @@
 "$ref": "Operation"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
 "https://www.googleapis.com/auth/cloud-platform"
 ]
 },
@@ -223,21 +212,6 @@
 "name"
 ],
 "parameters": {
-"checkExistingUsage": {
-"description": "Optional. Defines the behavior for checking existing usage when deleting a key.",
-"enum": [
-"CHECK_EXISTING_USAGE_UNSPECIFIED",
-"SKIP",
-"CHECK"
-],
-"enumDescriptions": [
-"When unset, the default behavior is used, which is SKIP.",
-"If set, skip checking existing usage when deleting a key.",
-"If set, existing usage is checked when deleting the key. If the key has usage in the last 7 days, the request returns a FAILED_PRECONDITION error."
-],
-"location": "query",
-"type": "string"
-},
 "etag": {
 "description": "Optional. The etag known to the client for the expected state of the key. This is to be used for optimistic concurrency.",
 "location": "query",
@@ -256,7 +230,6 @@
 "$ref": "Operation"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
 "https://www.googleapis.com/auth/cloud-platform"
 ]
 },
@@ -282,8 +255,6 @@
 "$ref": "V2Key"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
-"https://www.googleapis.com/auth/apikeys.readonly",
 "https://www.googleapis.com/auth/cloud-platform",
 "https://www.googleapis.com/auth/cloud-platform.read-only"
 ]
@@ -310,8 +281,6 @@
 "$ref": "V2GetKeyStringResponse"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
-"https://www.googleapis.com/auth/apikeys.readonly",
 "https://www.googleapis.com/auth/cloud-platform",
 "https://www.googleapis.com/auth/cloud-platform.read-only"
 ]
@@ -337,7 +306,7 @@
 "type": "string"
 },
 "parent": {
-"description": "Required. Lists all API keys associated with this project. The parent field must be in format of \"projects//locations/global\".",
+"description": "Required. Lists all API keys associated with this project.",
 "location": "path",
 "pattern": "^projects/[^/]+/locations/[^/]+$",
 "required": true,
@@ -354,8 +323,6 @@
 "$ref": "V2ListKeysResponse"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
-"https://www.googleapis.com/auth/apikeys.readonly",
 "https://www.googleapis.com/auth/cloud-platform",
 "https://www.googleapis.com/auth/cloud-platform.read-only"
 ]
@@ -369,23 +336,8 @@
 "name"
 ],
 "parameters": {
-"checkExistingUsage": {
-"description": "Optional. Defines the behavior for checking existing usage when updating a key.",
-"enum": [
-"CHECK_EXISTING_USAGE_UNSPECIFIED",
-"SKIP",
-"CHECK"
-],
-"enumDescriptions": [
-"When unset, the default behavior is used, which is SKIP.",
-"If set, skip checking existing usage when updating a key.",
-"If set, existing usage is checked when updating the key. If the key has usage in the last 7 days, the request returns a FAILED_PRECONDITION error."
-],
-"location": "query",
-"type": "string"
-},
 "name": {
-"description": "Identifier. The resource name of the key. The `name` has the form: `projects//locations/global/keys/`. For example: `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value for location is `global`.",
+"description": "Output only. The resource name of the key. The `name` has the form: `projects//locations/global/keys/`. For example: `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value for location is `global`.",
 "location": "path",
 "pattern": "^projects/[^/]+/locations/[^/]+/keys/[^/]+$",
 "required": true,
@@ -406,7 +358,6 @@
 "$ref": "Operation"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
 "https://www.googleapis.com/auth/cloud-platform"
 ]
 },
@@ -435,7 +386,6 @@
 "$ref": "Operation"
 },
 "scopes": [
-"https://www.googleapis.com/auth/apikeys",
 "https://www.googleapis.com/auth/cloud-platform"
 ]
 }
@@ -446,7 +396,7 @@
 }
 }
 },
-"revision": "20260818",
+"revision": "20241016",
 "rootUrl": "https://apikeys.googleapis.com/",
 "schemas": {
 "Operation": {
@@ -625,7 +575,8 @@
 "type": "string"
 },
 "etag": {
-"description": "A checksum computed by the server based on the current value of the Key resource. This may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. See https://google.aip.dev/154.",
+"description": "Output only. A checksum computed by the server based on the current value of the Key resource. This may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. See https://google.aip.dev/154.",
+"readOnly": true,
 "type": "string"
 },
 "keyString": {
@@ -634,7 +585,8 @@
 "type": "string"
 },
 "name": {
-"description": "Identifier. The resource name of the key. The `name` has the form: `projects//locations/global/keys/`. For example: `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value for location is `global`.",
+"description": "Output only. The resource name of the key. The `name` has the form: `projects//locations/global/keys/`. For example: `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value for location is `global`.",
+"readOnly": true,
 "type": "string"
 },
 "restrictions": {

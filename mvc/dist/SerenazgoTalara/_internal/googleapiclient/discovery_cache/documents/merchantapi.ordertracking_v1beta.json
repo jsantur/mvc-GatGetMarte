@@ -14,7 +14,7 @@
 "canonicalName": "Merchant",
 "description": "Programmatically manage your Merchant Center Accounts.",
 "discoveryVersion": "v1",
-"documentationLink": "https://developers.google.com/merchant/api",
+"documentationLink": "https://developers.devsite.corp.google.com/merchant/api",
 "fullyEncodeReservedExpansion": true,
 "icons": {
 "x16": "http://www.google.com/images/icons/product/search-16.gif",
@@ -107,13 +107,13 @@
 "resources": {
 "accounts": {
 "resources": {
-"orderTrackingSignals": {
+"ordertrackingsignals": {
 "methods": {
 "create": {
 "description": "Creates new order tracking signal.",
-"flatPath": "ordertracking/v1beta/accounts/{accountsId}/orderTrackingSignals",
+"flatPath": "ordertracking/v1beta/accounts/{accountsId}/ordertrackingsignals",
 "httpMethod": "POST",
-"id": "merchantapi.accounts.orderTrackingSignals.create",
+"id": "merchantapi.accounts.ordertrackingsignals.create",
 "parameterOrder": [
 "parent"
 ],
@@ -131,7 +131,7 @@
 "type": "string"
 }
 },
-"path": "ordertracking/v1beta/{+parent}/orderTrackingSignals",
+"path": "ordertracking/v1beta/{+parent}/ordertrackingsignals",
 "request": {
 "$ref": "OrderTrackingSignal"
 },
@@ -147,7 +147,7 @@
 }
 }
 },
-"revision": "20260527",
+"revision": "20250505",
 "rootUrl": "https://merchantapi.googleapis.com/",
 "schemas": {
 "DateTime": {
@@ -210,16 +210,8 @@
 "type": "string"
 },
 "gtin": {
-"deprecated": true,
 "description": "Optional. The Global Trade Item Number.",
 "type": "string"
-},
-"gtins": {
-"description": "Optional. The Global Trade Item Numbers.",
-"items": {
-"type": "string"
-},
-"type": "array"
 },
 "lineItemId": {
 "description": "Required. The ID for this line item.",
@@ -349,7 +341,6 @@
 "LOCAL_INVENTORY_ADS",
 "VEHICLE_INVENTORY_ADS",
 "FREE_LISTINGS",
-"FREE_LISTINGS_UCP_CHECKOUT",
 "FREE_LOCAL_LISTINGS",
 "FREE_LOCAL_VEHICLE_LISTINGS",
 "YOUTUBE_AFFILIATE",
@@ -379,7 +370,6 @@ false,
 false,
 false,
 false,
-false,
 false
 ],
 "enumDescriptions": [
@@ -393,7 +383,6 @@ false
 "[Local inventory ads](https://support.google.com/merchants/answer/3271956).",
 "[Vehicle inventory ads](https://support.google.com/merchants/answer/11544533).",
 "[Free product listings](https://support.google.com/merchants/answer/9199328).",
-"[Free product listings on UCP checkout](https://developers.google.com/merchant/ucp).",
 "[Free local product listings](https://support.google.com/merchants/answer/9825611).",
 "[Free local vehicle listings](https://support.google.com/merchants/answer/11544533).",
 "[Youtube Affiliate](https://support.google.com/youtube/answer/13376398).",
@@ -442,7 +431,7 @@ false
 "type": "string"
 },
 "expirationTime": {
-"description": "Optional. The product expiration time. This field will not be set if the notification is sent for a product deletion event.",
+"description": "Optional. The product expiration time. This field will not bet set if the notification is sent for a product deletion event.",
 "format": "google-datetime",
 "type": "string"
 },
@@ -462,13 +451,11 @@ false
 "description": "The resource that changed, in this case it will always be `Product`.",
 "enum": [
 "RESOURCE_UNSPECIFIED",
-"PRODUCT",
-"ACCOUNT_SERVICE"
+"PRODUCT"
 ],
 "enumDescriptions": [
 "Unspecified resource",
-"Resource type : product",
-"Account service"
+"Resource type : product"
 ],
 "type": "string"
 }

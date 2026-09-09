@@ -1966,35 +1966,9 @@
 }
 }
 }
-},
-"v3": {
-"methods": {
-"fetchResourceSemantics": {
-"description": "Returns the semantics associated with the specified resource.",
-"flatPath": "v3:fetchResourceSemantics",
-"httpMethod": "GET",
-"id": "cloudresourcemanager.fetchResourceSemantics",
-"parameterOrder": [],
-"parameters": {
-"fullResourceName": {
-"description": "Required. The full resource name of the GCP resource to retrieve semantics for. Examples: \"//compute.googleapis.com/projects/123/zones/us-central1-a/instances/my-instance\" \"//storage.googleapis.com/projects/_/buckets/my_bucket\"",
-"location": "query",
-"type": "string"
 }
 },
-"path": "v3:fetchResourceSemantics",
-"response": {
-"$ref": "FetchResourceSemanticsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform",
-"https://www.googleapis.com/auth/cloud-platform.read-only"
-]
-}
-}
-}
-},
-"revision": "20260715",
+"revision": "20250522",
 "rootUrl": "https://cloudresourcemanager.googleapis.com/",
 "schemas": {
 "AuditConfig": {
@@ -2319,24 +2293,6 @@
 },
 "type": "object"
 },
-"FetchResourceSemanticsResponse": {
-"description": "Response message for FetchResourceSemantics.",
-"id": "FetchResourceSemanticsResponse",
-"properties": {
-"fullResourceName": {
-"description": "The full resource name for which semantics are returned. Examples: \"//compute.googleapis.com/projects/123/zones/us-central1-a/instances/my-instance\" \"//storage.googleapis.com/projects/_/buckets/my_bucket\"",
-"type": "string"
-},
-"semantics": {
-"additionalProperties": {
-"type": "string"
-},
-"description": "Map of resource semantics (e.g., `\"ENVIRONMENT\": \"PRODUCTION\"`).",
-"type": "object"
-}
-},
-"type": "object"
-},
 "Folder": {
 "description": "A folder in an organization's resource hierarchy, used to organize that organization's resources.",
 "id": "Folder",
@@ -2463,8 +2419,7 @@
 "CYCLE_INTRODUCED_VIOLATION",
 "FOLDER_BEING_MOVED_VIOLATION",
 "FOLDER_TO_DELETE_NON_EMPTY_VIOLATION",
-"DELETED_FOLDER_HEIGHT_VIOLATION",
-"FOLDER_TO_DELETE_CONFIGURED_CAPABILITY_VIOLATION"
+"DELETED_FOLDER_HEIGHT_VIOLATION"
 ],
 "enumDescriptions": [
 "The error type was unrecognized or unspecified.",
@@ -2476,8 +2431,7 @@
 "The attempted action would introduce cycle in resource path.",
 "The attempted action would move a folder that is already being moved.",
 "The folder the caller is trying to delete contains active resources.",
-"The attempted action would violate the max deleted folder depth constraint.",
-"The folder being deleted has a configured capability."
+"The attempted action would violate the max deleted folder depth constraint."
 ],
 "type": "string"
 }
@@ -2673,7 +2627,7 @@
 "id": "ListTagValuesResponse",
 "properties": {
 "nextPageToken": {
-"description": "A pagination token returned from a previous call to `ListTagValues` that indicates from where listing should continue.",
+"description": "A pagination token returned from a previous call to `ListTagValues` that indicates from where listing should continue. This is currently not used, but the server may at any point start supplying a valid token.",
 "type": "string"
 },
 "tagValues": {
@@ -2862,14 +2816,6 @@
 "description": "A project is a high-level Google Cloud entity. It is a container for ACLs, APIs, App Engine Apps, VMs, and other Google Cloud Platform resources.",
 "id": "Project",
 "properties": {
-"configuredCapabilities": {
-"description": "Output only. If this project is a Management Project, list of capabilities configured on the parent folder. Note, presence of any capability implies that this is a Management Project. Example: `folders/123/capabilities/app-management`. OUTPUT ONLY.",
-"items": {
-"type": "string"
-},
-"readOnly": true,
-"type": "array"
-},
 "createTime": {
 "description": "Output only. Creation time.",
 "format": "google-datetime",
@@ -3060,11 +3006,11 @@
 "type": "object"
 },
 "TagBinding": {
-"description": "A TagBinding represents a connection between a TagValue and a cloud resource. When a TagBinding is created, the TagValue is applied to all the descendants of the Google Cloud resource.",
+"description": "A TagBinding represents a connection between a TagValue and a cloud resource Once a TagBinding is created, the TagValue is applied to all the descendants of the Google Cloud resource.",
 "id": "TagBinding",
 "properties": {
 "name": {
-"description": "Output only. The name of the TagBinding. This is a String of the form: `tagBindings/{full-resource-name}/{tag-value-name}` (e.g. `tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagValues/456`) or `tagBindings/{full-resource-name}/{tag-key-name}` (e.g. `tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagKeys/123`).",
+"description": "Output only. The name of the TagBinding. This is a String of the form: `tagBindings/{full-resource-name}/{tag-value-name}` (e.g. `tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagValues/456`).",
 "readOnly": true,
 "type": "string"
 },
@@ -3143,10 +3089,6 @@
 "description": "A TagKey, used to group a set of TagValues.",
 "id": "TagKey",
 "properties": {
-"allowedValuesRegex": {
-"description": "Optional. Regular expression constraint for freeform tag values. If present, it implicitly allows freeform values (constrained by the regex).",
-"type": "string"
-},
 "createTime": {
 "description": "Output only. Creation time.",
 "format": "google-datetime",

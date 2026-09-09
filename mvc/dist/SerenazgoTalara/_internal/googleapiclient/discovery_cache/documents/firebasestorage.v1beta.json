@@ -325,7 +325,7 @@
 }
 }
 },
-"revision": "20260717",
+"revision": "20241218",
 "rootUrl": "https://firebasestorage.googleapis.com/",
 "schemas": {
 "AddFirebaseRequest": {
@@ -356,11 +356,11 @@
 "readOnly": true
 },
 "location": {
-"description": "Required. Immutable. Location of the default bucket.",
+"description": "Immutable. Location of the default bucket.",
 "type": "string"
 },
 "name": {
-"description": "Identifier. Resource name of the default bucket.",
+"description": "Resource name of the default bucket.",
 "type": "string"
 },
 "storageClass": {

@@ -173,7 +173,7 @@
 ]
 },
 "generateEnterpriseUpgradeUrl": {
-"description": "Generates an enterprise upgrade URL to upgrade an existing managed Google Play Accounts enterprise to a managed Google domain. See the guide (https://developers.google.com/android/management/upgrade-an-enterprise) for more details.",
+"description": "Generates an enterprise upgrade URL to upgrade an existing managed Google Play Accounts enterprise to a managed Google domain.Note: This feature is not generally available.",
 "flatPath": "v1/enterprises/{enterprisesId}:generateEnterpriseUpgradeUrl",
 "httpMethod": "POST",
 "id": "androidmanagement.enterprises.generateEnterpriseUpgradeUrl",
@@ -370,7 +370,7 @@
 "This value is ignored.",
 "Preserve the factory reset protection data on the device.",
 "Additionally wipe the device's external storage (such as SD cards).",
-"For company-owned devices, this removes all eSIMs from the device when the device is wiped. In personally-owned devices, this will remove managed eSIMs (eSIMs which are added via the ADD_ESIM command) on the devices and no personally owned eSIMs will be removed. For devices running on Android 16 or higher, managed eSIMs are always wiped when work profile is removed for personally-owned devices, whether this flag is provided or not."
+"For company-owned devices, this removes all eSIMs from the device when the device is wiped. In personally-owned devices, this will remove managed eSIMs (eSIMs which are added via the ADD_ESIM command) on the devices and no personally owned eSIMs will be removed."
 ],
 "location": "query",
 "repeated": true,
@@ -453,7 +453,7 @@
 ],
 "parameters": {
 "pageSize": {
-"description": "The requested page size. If unspecified, at most 10 devices will be returned. The maximum value is 100; values above 100 will be coerced to 100. The limits can change over time.",
+"description": "The requested page size. The actual page size may be fixed to a min or max value.",
 "format": "int32",
 "location": "query",
 "type": "integer"
@@ -598,11 +598,6 @@
 "description": "The standard list page token.",
 "location": "query",
 "type": "string"
-},
-"returnPartialSuccess": {
-"description": "When set to true, operations that are reachable are returned as normal, and those that are unreachable are returned in the ListOperationsResponse.unreachable field.This can only be true when reading across collections. For example, when parent is set to \"projects/example/locations/-\".This field is not supported by default and will result in an UNIMPLEMENTED error if set unless explicitly documented otherwise in service or product specific documentation.",
-"location": "query",
-"type": "boolean"
 }
 },
 "path": "v1/{+name}",
@@ -916,34 +911,6 @@
 "https://www.googleapis.com/auth/androidmanagement"
 ]
 },
-"modifyPolicyApplications": {
-"description": "Updates or creates applications in a policy.",
-"flatPath": "v1/enterprises/{enterprisesId}/policies/{policiesId}:modifyPolicyApplications",
-"httpMethod": "POST",
-"id": "androidmanagement.enterprises.policies.modifyPolicyApplications",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. The name of the Policy containing the ApplicationPolicy objects to be updated, in the form enterprises/{enterpriseId}/policies/{policyId}.",
-"location": "path",
-"pattern": "^enterprises/[^/]+/policies/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}:modifyPolicyApplications",
-"request": {
-"$ref": "ModifyPolicyApplicationsRequest"
-},
-"response": {
-"$ref": "ModifyPolicyApplicationsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/androidmanagement"
-]
-},
 "patch": {
 "description": "Updates or creates a policy.",
 "flatPath": "v1/enterprises/{enterprisesId}/policies/{policiesId}",
@@ -973,34 +940,6 @@
 },
 "response": {
 "$ref": "Policy"
-},
-"scopes": [
-"https://www.googleapis.com/auth/androidmanagement"
-]
-},
-"removePolicyApplications": {
-"description": "Removes applications in a policy.",
-"flatPath": "v1/enterprises/{enterprisesId}/policies/{policiesId}:removePolicyApplications",
-"httpMethod": "POST",
-"id": "androidmanagement.enterprises.policies.removePolicyApplications",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. The name of the policy containing the ApplicationPolicy objects to be removed, in the form enterprises/{enterpriseId}/policies/{policyId}.",
-"location": "path",
-"pattern": "^enterprises/[^/]+/policies/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}:removePolicyApplications",
-"request": {
-"$ref": "RemovePolicyApplicationsRequest"
-},
-"response": {
-"$ref": "RemovePolicyApplicationsResponse"
 },
 "scopes": [
 "https://www.googleapis.com/auth/androidmanagement"
@@ -1265,7 +1204,7 @@
 }
 }
 },
-"revision": "20260826",
+"revision": "20250529",
 "rootUrl": "https://androidmanagement.googleapis.com/",
 "schemas": {
 "AdbShellCommandEvent": {
@@ -1339,13 +1278,13 @@
 "enumDescriptions": [
 "Unspecified. Defaults to CONTENT_PROTECTION_DISABLED.",
 "Content protection is disabled and the user cannot change this.",
-"Content protection is enabled and the user cannot change this.Supported on Android 15 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 15.",
-"Content protection is not controlled by the policy. The user is allowed to choose the behavior of content protection.Supported on Android 15 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 15."
+"Content protection is enabled and the user cannot change this.Supported on Android 15 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 15.",
+"Content protection is not controlled by the policy. The user is allowed to choose the behavior of content protection.Supported on Android 15 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 15."
 ],
 "type": "string"
 },
 "developerSettings": {
-"description": "Controls access to developer settings: developer options and safe boot. Replaces safeBootDisabled (deprecated) and debuggingFeaturesAllowed (deprecated). On personally-owned devices with a work profile, setting this policy will not disable safe boot. In this case, a NonComplianceDetail with MANAGEMENT_MODE is reported.",
+"description": "Controls access to developer settings: developer options and safe boot. Replaces safeBootDisabled (deprecated) and debuggingFeaturesAllowed (deprecated).",
 "enum": [
 "DEVELOPER_SETTINGS_UNSPECIFIED",
 "DEVELOPER_SETTINGS_DISABLED",
@@ -1373,7 +1312,7 @@
 "type": "string"
 },
 "mtePolicy": {
-"description": "Optional. Controls Memory Tagging Extension (MTE) (https://source.android.com/docs/security/test/memory-safety/arm-mte) on the device. The device needs to be rebooted to apply changes to the MTE policy. On Android 15 and above, a NonComplianceDetail with PENDING is reported if the policy change is pending a device reboot.",
+"description": "Optional. Controls Memory Tagging Extension (MTE) (https://source.android.com/docs/security/test/memory-safety/arm-mte) on the device. The device needs to be rebooted to apply changes to the MTE policy.",
 "enum": [
 "MTE_POLICY_UNSPECIFIED",
 "MTE_USER_CHOICE",
@@ -1383,8 +1322,8 @@
 "enumDescriptions": [
 "Unspecified. Defaults to MTE_USER_CHOICE.",
 "The user can choose to enable or disable MTE on the device if the device supports this.",
-"MTE is enabled on the device and the user is not allowed to change this setting. This can be set on fully managed devices and work profiles on company-owned devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not support MTE.Supported on Android 14 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 14.",
-"MTE is disabled on the device and the user is not allowed to change this setting. This applies only on fully managed devices. In other cases, a NonComplianceDetail with MANAGEMENT_MODE is reported. A NonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not support MTE.Supported on Android 14 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 14."
+"MTE is enabled on the device and the user is not allowed to change this setting. This can be set on fully managed devices and work profiles on company-owned devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A nonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not support MTE.Supported on Android 14 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 14.",
+"MTE is disabled on the device and the user is not allowed to change this setting. This applies only on fully managed devices. In other cases, a nonComplianceDetail with MANAGEMENT_MODE is reported. A nonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not support MTE.Supported on Android 14 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 14."
 ],
 "type": "string"
 },
@@ -1447,7 +1386,7 @@
 "id": "ApnPolicy",
 "properties": {
 "apnSettings": {
-"description": "Optional. APN settings for override APNs. There must not be any conflict between any of APN settings provided, otherwise the policy will be rejected. Two ApnSettings are considered to conflict when all of the following fields match on both: numericOperatorId, apn, proxyAddress, proxyPort, mmsProxyAddress, mmsProxyPort, mmsc, mvnoType, protocol, roamingProtocol. If some of the APN settings result in non-compliance of INVALID_VALUE , they will be ignored. This can be set on fully managed devices on Android 10 and above. This can also be set on work profiles on Android 13 and above and only with ApnSetting's with ENTERPRISE APN type. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 10. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles on Android versions less than 13.",
+"description": "Optional. APN settings for override APNs. There must not be any conflict between any of APN settings provided, otherwise the policy will be rejected. Two ApnSettings are considered to conflict when all of the following fields match on both: numericOperatorId, apn, proxyAddress, proxyPort, mmsProxyAddress, mmsProxyPort, mmsc, mvnoType, protocol, roamingProtocol. If some of the APN settings result in non-compliance of INVALID_VALUE , they will be ignored. This can be set on fully managed devices on Android 10 and above. This can also be set on work profiles on Android 13 and above and only with ApnSetting's with ENTERPRISE APN type. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 10. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles on Android versions less than 13.",
 "items": {
 "$ref": "ApnSetting"
 },
@@ -1463,7 +1402,7 @@
 "enumDescriptions": [
 "Unspecified. Defaults to OVERRIDE_APNS_DISABLED.",
 "Override APNs disabled. Any configured apnSettings are saved on the device, but are disabled and have no effect. Any other APNs on the device remain in use.",
-"Override APNs enabled. Only override APNs are in use, any other APNs are ignored. This can only be set on fully managed devices on Android 10 and above. For work profiles override APNs are enabled via preferentialNetworkServiceSettings and this value cannot be set. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 10. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles."
+"Override APNs enabled. Only override APNs are in use, any other APNs are ignored. This can only be set on fully managed devices on Android 10 and above. For work profiles override APNs are enabled via preferentialNetworkServiceSettings and this value cannot be set. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 10. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles."
 ],
 "type": "string"
 }
@@ -1484,7 +1423,7 @@
 "enumDescriptions": [
 "Unspecified. Defaults to NOT_ALWAYS_ON.",
 "The PDU session brought up by this APN should not be always on.",
-"The PDU session brought up by this APN should always be on. Supported on Android 15 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 15."
+"The PDU session brought up by this APN should always be on. Supported on Android 15 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 15."
 ],
 "type": "string"
 },
@@ -1493,7 +1432,7 @@
 "type": "string"
 },
 "apnTypes": {
-"description": "Required. Usage categories for the APN. Policy will be rejected if this field is empty or contains APN_TYPE_UNSPECIFIED or duplicates. Multiple APN types can be set on fully managed devices. ENTERPRISE is the only allowed APN type on work profiles. A NonComplianceDetail with MANAGEMENT_MODE is reported for any other value on work profiles. APN types that are not supported on the device or management mode will be ignored. If this results in the empty list, the APN setting will be ignored, because apnTypes is a required field. A NonComplianceDetail with INVALID_VALUE is reported if none of the APN types are supported on the device or management mode.",
+"description": "Required. Usage categories for the APN. Policy will be rejected if this field is empty or contains APN_TYPE_UNSPECIFIED or duplicates. Multiple APN types can be set on fully managed devices. ENTERPRISE is the only allowed APN type on work profiles. A nonComplianceDetail with MANAGEMENT_MODE is reported for any other value on work profiles. APN types that are not supported on the device or management mode will be ignored. If this results in the empty list, the APN setting will be ignored, because apnTypes is a required field. A nonComplianceDetail with INVALID_VALUE is reported if none of the APN types are supported on the device or management mode.",
 "items": {
 "enum": [
 "APN_TYPE_UNSPECIFIED",
@@ -1516,22 +1455,22 @@
 ],
 "enumDescriptions": [
 "Unspecified. This value is not used.",
-"APN type for enterprise traffic. Supported on Android 13 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
-"APN type for BIP (Bearer Independent Protocol). This can only be set on fully managed devices on Android 12 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 12. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for CBS (Carrier Branded Services). This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for default data traffic. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for DUN (Dial-up networking) traffic. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for Emergency PDN. This is not an IA apn, but is used for access to carrier services in an emergency call situation. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for accessing the carrier's FOTA (Firmware Over-the-Air) portal, used for over the air updates. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for HiPri (high-priority) traffic. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for IA (Initial Attach) APN. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for IMS (IP Multimedia Subsystem) traffic. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for MCX (Mission Critical Service) where X can be PTT/Video/Data. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for MMS (Multimedia Messaging Service) traffic. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for RCS (Rich Communication Services). This can only be set on fully managed devices on Android 15 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 15. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for SUPL (Secure User Plane Location) assisted GPS. This can only be set on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for VSIM (Virtual SIM) service. This can only be set on fully managed devices on Android 12 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 12. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
-"APN type for XCAP (XML Configuration Access Protocol) traffic. This can only be set on fully managed devices on Android 11 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 11. A NonComplianceDetail with MANAGEMENT_MODE is reported for work profiles."
+"APN type for enterprise traffic. Supported on Android 13 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
+"APN type for BIP (Bearer Independent Protocol). This can only be set on fully managed devices on Android 12 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 12. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for CBS (Carrier Branded Services). This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for default data traffic. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for DUN (Dial-up networking) traffic. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for Emergency PDN. This is not an IA apn, but is used for access to carrier services in an emergency call situation. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for accessing the carrier's FOTA (Firmware Over-the-Air) portal, used for over the air updates. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for HiPri (high-priority) traffic. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for IA (Initial Attach) APN. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for IMS (IP Multimedia Subsystem) traffic. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for MCX (Mission Critical Service) where X can be PTT/Video/Data. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for MMS (Multimedia Messaging Service) traffic. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for RCS (Rich Communication Services). This can only be set on fully managed devices on Android 15 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 15. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for SUPL (Secure User Plane Location) assisted GPS. This can only be set on fully managed devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for VSIM (Virtual SIM) service. This can only be set on fully managed devices on Android 12 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 12. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles.",
+"APN type for XCAP (XML Configuration Access Protocol) traffic. This can only be set on fully managed devices on Android 11 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 11. A nonComplianceDetail with MANAGEMENT_MODE is reported for work profiles."
 ],
 "type": "string"
 },
@@ -1578,12 +1517,12 @@
 "type": "string"
 },
 "mtuV4": {
-"description": "Optional. The default MTU (Maximum Transmission Unit) size in bytes of the IPv4 routes brought up by this APN setting. A value of 0 (default) means not set and negative values are rejected. Supported on Android 13 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
+"description": "Optional. The default MTU (Maximum Transmission Unit) size in bytes of the IPv4 routes brought up by this APN setting. A value of 0 (default) means not set and negative values are rejected. Supported on Android 13 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
 "format": "int32",
 "type": "integer"
 },
 "mtuV6": {
-"description": "Optional. The MTU (Maximum Transmission Unit) size of the IPv6 mobile interface to which the APN connected. A value of 0 (default) means not set and negative values are rejected. Supported on Android 13 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
+"description": "Optional. The MTU (Maximum Transmission Unit) size of the IPv6 mobile interface to which the APN connected. A value of 0 (default) means not set and negative values are rejected. Supported on Android 13 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
 "format": "int32",
 "type": "integer"
 },
@@ -2087,19 +2026,13 @@
 "description": "Optional. Whether the app is allowed to act as a credential provider on Android 14 and above.",
 "enum": [
 "CREDENTIAL_PROVIDER_POLICY_UNSPECIFIED",
-"CREDENTIAL_PROVIDER_ALLOWED",
-"CREDENTIAL_PROVIDER_DISALLOWED"
+"CREDENTIAL_PROVIDER_ALLOWED"
 ],
 "enumDescriptions": [
 "Unspecified. The behaviour is governed by credentialProviderPolicyDefault.",
-"App is allowed to act as a credential provider.",
-"App is not allowed to act as a credential provider."
+"App is allowed to act as a credential provider."
 ],
 "type": "string"
-},
-"customAppConfig": {
-"$ref": "CustomAppConfig",
-"description": "Optional. Configuration for this custom app.install_type must be set to CUSTOM for this to be set."
 },
 "defaultPermissionPolicy": {
 "description": "The default policy for all permissions requested by the app. If specified, this overrides the policy-level default_permission_policy which applies to all apps. It does not override the permission_grants which applies to all apps.",
@@ -2154,8 +2087,7 @@
 },
 "extensionConfig": {
 "$ref": "ExtensionConfig",
-"deprecated": true,
-"description": "Configuration to enable this app as an extension app, with the capability of interacting with Android Device Policy offline.This field can be set for at most one app. If there is any app with COMPANION_APP role, this field cannot be set.The signing key certificate fingerprint of the app on the device must match one of the entries in ApplicationPolicy.signingKeyCerts or ExtensionConfig.signingKeyFingerprintsSha256 (deprecated) or the signing key certificate fingerprints obtained from Play Store for the app to be able to communicate with Android Device Policy. If the app is not on Play Store and if ApplicationPolicy.signingKeyCerts and ExtensionConfig.signingKeyFingerprintsSha256 (deprecated) are not set, a NonComplianceDetail with INVALID_VALUE is reported."
+"description": "Configuration to enable this app as an extension app, with the capability of interacting with Android Device Policy offline.This field can be set for at most one app."
 },
 "installConstraint": {
 "description": "Optional. The constraints for installing the app. You can specify a maximum of one InstallConstraint. Multiple constraints are rejected.",
@@ -2178,18 +2110,7 @@
 "BLOCKED",
 "AVAILABLE",
 "REQUIRED_FOR_SETUP",
-"KIOSK",
-"CUSTOM"
-],
-"enumDeprecated": [
-false,
-false,
-false,
-false,
-false,
-false,
-true,
-false
+"KIOSK"
 ],
 "enumDescriptions": [
 "Unspecified. Defaults to AVAILABLE.",
@@ -2198,8 +2119,7 @@ false
 "The app is blocked and can't be installed. If the app was installed under a previous policy, it will be uninstalled. This also blocks its instant app functionality.",
 "The app is available to install.",
 "The app is automatically installed and can't be removed by the user and will prevent setup from completion until installation is complete.",
-"The app is automatically installed in kiosk mode: it's set as the preferred home intent and whitelisted for lock task mode. Device setup won't complete until the app is installed. After installation, users won't be able to remove the app. You can only set this installType for one app per policy. When this is present in the policy, status bar will be automatically disabled.On Android 11 and above, when an app has this install type, the user control is disallowed for all apps. The IT admin can set userControlSettings to USER_CONTROL_ALLOWED to allow user control for specific apps.If there is any app with KIOSK role, then this install type cannot be set for any app.",
-"The app can only be installed and updated via AMAPI SDK command (https://developers.google.com/android/management/extensibility-sdk-integration).Note: This only affects fully managed devices. Play related fields minimumVersionCode, accessibleTrackIds, autoUpdateMode, installConstraint and installPriority cannot be set for the app. The app isn't available in the Play Store. The app installed on the device has applicationSource set to CUSTOM. When the current installType is CUSTOM, the signing key certificate fingerprint of the existing custom app on the device must match one of the entries in ApplicationPolicy.signingKeyCerts . Otherwise, a NonComplianceDetail with APP_SIGNING_CERT_MISMATCH is reported. Changing the installType from CUSTOM to another value must match the playstore version of the application signing key certificate fingerprint. Otherwise a NonComplianceDetail with APP_SIGNING_CERT_MISMATCH is reported. Changing the installType to CUSTOM uninstalls the existing app if its signing key certificate fingerprint of the installed app doesn't match the one from the ApplicationPolicy.signingKeyCerts . Removing the app from applications doesn't uninstall the existing app if it conforms to playStoreMode. See also customAppConfig. This is different from the Google Play Custom App Publishing (https://developers.google.com/android/work/play/custom-app-api/get-started) feature."
+"The app is automatically installed in kiosk mode: it's set as the preferred home intent and whitelisted for lock task mode. Device setup won't complete until the app is installed. After installation, users won't be able to remove the app. You can only set this installType for one app per policy. When this is present in the policy, status bar will be automatically disabled."
 ],
 "type": "string"
 },
@@ -2213,7 +2133,7 @@ false
 "description": "Properties of the object.",
 "type": "any"
 },
-"description": "Managed configuration applied to the app. The format for the configuration is dictated by the ManagedProperty values supported by the app. Each field name in the managed configuration must match the key field of the ManagedProperty. The field value must be compatible with the type of the ManagedProperty: *type* *JSON value* BOOL true or false STRING string INTEGER number CHOICE string MULTISELECT array of strings HIDDEN string BUNDLE_ARRAY array of objects Note: string values cannot be longer than 65535 characters.",
+"description": "Managed configuration applied to the app. The format for the configuration is dictated by the ManagedProperty values supported by the app. Each field name in the managed configuration must match the key field of the ManagedProperty. The field value must be compatible with the type of the ManagedProperty: *type* *JSON value* BOOL true or false STRING string INTEGER number CHOICE string MULTISELECT array of strings HIDDEN string BUNDLE_ARRAY array of objects ",
 "type": "object"
 },
 "managedConfigurationTemplate": {
@@ -2258,31 +2178,17 @@ false
 ],
 "type": "string"
 },
-"roles": {
-"description": "Optional. Roles the app has.Apps having certain roles can be exempted from power and background execution restrictions, suspension and hibernation on Android 14 and above. The user control can also be disallowed for apps with certain roles on Android 11 and above. Refer to the documentation of each RoleType for more details.The app is notified about the roles that are set for it if the app has a notification receiver service with . The app is notified whenever its roles are updated or after the app is installed when it has nonempty list of roles. The app can use this notification to bootstrap itself after the installation. See Integrate with the AMAPI SDK (https://developers.google.com/android/management/sdk-integration) and Manage app roles (https://developers.google.com/android/management/app-roles) guides for more details on the requirements for the service.For the exemptions to be applied and the app to be notified about the roles, the signing key certificate fingerprint of the app on the device must match one of the signing key certificate fingerprints obtained from Play Store or one of the entries in ApplicationPolicy.signingKeyCerts. Otherwise, a NonComplianceDetail with APP_SIGNING_CERT_MISMATCH is reported.There must not be duplicate roles with the same roleType. Multiple apps cannot hold a role with the same roleType. A role with type ROLE_TYPE_UNSPECIFIED is not allowed.",
-"items": {
-"$ref": "Role"
-},
-"type": "array"
-},
-"signingKeyCerts": {
-"description": "Optional. Signing key certificates of the app.This field is required in the following cases: The app has installType set to CUSTOM (i.e. a custom app). The app has roles set to a nonempty list and the app does not exist on the Play Store. The app has extensionConfig set (i.e. an extension app) but ExtensionConfig.signingKeyFingerprintsSha256 (deprecated) is not set and the app does not exist on the Play Store.If this field is not set for a custom app, the policy is rejected. If it is not set when required for a non-custom app, a NonComplianceDetail with INVALID_VALUE is reported.For other cases, this field is optional and the signing key certificates obtained from Play Store are used.See following policy settings to see how this field is used: choosePrivateKeyRules ApplicationPolicy.InstallType.CUSTOM ApplicationPolicy.extensionConfig ApplicationPolicy.roles",
-"items": {
-"$ref": "ApplicationSigningKeyCert"
-},
-"type": "array"
-},
 "userControlSettings": {
-"description": "Optional. Specifies whether user control is permitted for the app. User control includes user actions like force-stopping and clearing app data. Certain types of apps have special treatment, see USER_CONTROL_SETTINGS_UNSPECIFIED and USER_CONTROL_ALLOWED for more details.",
+"description": "Optional. Specifies whether user control is permitted for the app. User control includes user actions like force-stopping and clearing app data. Supported on Android 11 and above.",
 "enum": [
 "USER_CONTROL_SETTINGS_UNSPECIFIED",
 "USER_CONTROL_ALLOWED",
 "USER_CONTROL_DISALLOWED"
 ],
 "enumDescriptions": [
-"Uses the default behaviour of the app to determine if user control is allowed or disallowed. User control is allowed by default for most apps but disallowed for following types of apps: extension apps (see extensionConfig for more details) kiosk apps (see KIOSK install type for more details) apps with roles set to a nonempty list other critical system apps",
-"User control is allowed for the app. Kiosk apps can use this to allow user control. For extension apps (see extensionConfig for more details), user control is disallowed even if this value is set.For apps with roles set to a nonempty list (except roles containing only KIOSK role), this value cannot be set.For kiosk apps (see KIOSK install type and KIOSK role type for more details), this value can be used to allow user control.",
-"User control is disallowed for the app. This is supported on Android 11 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 11."
+"Uses the default behaviour of the app to determine if user control is allowed or disallowed. For most apps, user control is allowed by default, but for some critical apps such as companion apps (extensionConfig set to true), kiosk apps and other critical system apps, user control is disallowed.",
+"User control is allowed for the app. Kiosk apps can use this to allow user control.",
+"User control is disallowed for the app. API_LEVEL is reported if the Android version is less than 11."
 ],
 "type": "string"
 },
@@ -2303,22 +2209,6 @@ false
 },
 "type": "object"
 },
-"ApplicationPolicyChange": {
-"description": "A change to be made to a single ApplicationPolicy object.",
-"id": "ApplicationPolicyChange",
-"properties": {
-"application": {
-"$ref": "ApplicationPolicy",
-"description": "If ApplicationPolicy.packageName matches an existing ApplicationPolicy object within the Policy being modified, then that object will be updated. Otherwise, it will be added to the end of the Policy.applications."
-},
-"updateMask": {
-"description": "The field mask indicating the fields to update. If omitted, all modifiable fields are updated.",
-"format": "google-fieldmask",
-"type": "string"
-}
-},
-"type": "object"
-},
 "ApplicationReport": {
 "description": "Information reported about an installed app.",
 "id": "ApplicationReport",
@@ -2329,15 +2219,13 @@ false
 "APPLICATION_SOURCE_UNSPECIFIED",
 "SYSTEM_APP_FACTORY_VERSION",
 "SYSTEM_APP_UPDATED_VERSION",
-"INSTALLED_FROM_PLAY_STORE",
-"CUSTOM"
+"INSTALLED_FROM_PLAY_STORE"
 ],
 "enumDescriptions": [
 "The app was sideloaded from an unspecified source.",
 "This is a system app from the device's factory image.",
 "This is an updated system app.",
-"The app was installed from the Google Play Store.",
-"The app was installed using the AMAPI SDK command (https://developers.google.com/android/management/extensibility-sdk-integration). See also: CUSTOM"
+"The app was installed from the Google Play Store."
 ],
 "type": "string"
 },
@@ -2372,19 +2260,10 @@ false
 "type": "string"
 },
 "signingKeyCertFingerprints": {
-"deprecated": true,
-"description": "Deprecated. Use signingKeyCerts instead. The SHA-1 hash of each android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the app package. Each byte of each hash value is represented as a two-digit hexadecimal number.",
+"description": "The SHA-1 hash of each android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the app package. Each byte of each hash value is represented as a two-digit hexadecimal number.",
 "items": {
 "type": "string"
 },
-"type": "array"
-},
-"signingKeyCerts": {
-"description": "Output only. Signing key certificates of the app.",
-"items": {
-"$ref": "ApplicationSigningKeyCert"
-},
-"readOnly": true,
 "type": "array"
 },
 "state": {
@@ -2438,18 +2317,6 @@ false
 },
 "type": "object"
 },
-"ApplicationSigningKeyCert": {
-"description": "The application signing key certificate.",
-"id": "ApplicationSigningKeyCert",
-"properties": {
-"signingKeyCertFingerprintSha256": {
-"description": "Required. The SHA-256 hash value of the signing key certificate of the app. This must be a valid SHA-256 hash value, i.e. 32 bytes.",
-"format": "byte",
-"type": "string"
-}
-},
-"type": "object"
-},
 "BackupServiceToggledEvent": {
 "description": "An admin has enabled or disabled backup service.",
 "id": "BackupServiceToggledEvent",
@@ -2472,8 +2339,8 @@ false
 ],
 "enumDescriptions": [
 "No value is set",
-"Backup service is disabled",
-"Backup service is enabled"
+"Backup service is enabled",
+"Backup service is disabled"
 ],
 "type": "string"
 }
@@ -2589,7 +2456,7 @@ false
 "id": "ChoosePrivateKeyRule",
 "properties": {
 "packageNames": {
-"description": "The package names to which this rule applies. The signing key certificate fingerprint of the app is verified against the signing key certificate fingerprints provided by Play Store and ApplicationPolicy.signingKeyCerts . If no package names are specified, then the alias is provided to all apps that call KeyChain.choosePrivateKeyAlias (https://developer.android.com/reference/android/security/KeyChain#choosePrivateKeyAlias%28android.app.Activity,%20android.security.KeyChainAliasCallback,%20java.lang.String[],%20java.security.Principal[],%20java.lang.String,%20int,%20java.lang.String%29) or any overloads (but not without calling KeyChain.choosePrivateKeyAlias, even on Android 11 and above). Any app with the same Android UID as a package specified here will have access when they call KeyChain.choosePrivateKeyAlias.",
+"description": "The package names to which this rule applies. The hash of the signing certificate for each app is verified against the hash provided by Play. If no package names are specified, then the alias is provided to all apps that call KeyChain.choosePrivateKeyAlias (https://developer.android.com/reference/android/security/KeyChain#choosePrivateKeyAlias%28android.app.Activity,%20android.security.KeyChainAliasCallback,%20java.lang.String[],%20java.security.Principal[],%20java.lang.String,%20int,%20java.lang.String%29) or any overloads (but not without calling KeyChain.choosePrivateKeyAlias, even on Android 11 and above). Any app with the same Android UID as a package specified here will have access when they call KeyChain.choosePrivateKeyAlias.",
 "items": {
 "type": "string"
 },
@@ -2753,32 +2620,26 @@ false
 "STOP_LOST_MODE",
 "ADD_ESIM",
 "REMOVE_ESIM",
-"REQUEST_DEVICE_INFO",
-"WIPE"
+"REQUEST_DEVICE_INFO"
 ],
 "enumDescriptions": [
 "This value is disallowed.",
-"Lock the device, as if the lock screen timeout had expired. For a work profile, if there is a separate work profile lock, this only locks the work profile, with one exception: on work profiles on an organization-owned device running Android 8, 9, or 10, this locks the entire device.",
+"Lock the device, as if the lock screen timeout had expired.",
 "Reset the user's password.",
 "Reboot the device. Only supported on fully managed devices running Android 7.0 (API level 24) or higher.",
 "Removes the work profile and all policies from a company-owned Android 8.0+ device, relinquishing the device for personal use. Apps and data associated with the personal profile(s) are preserved. The device will be deleted from the server after it acknowledges the command.",
 "Clears the application data of specified apps. This is supported on Android 9 and above. Note that an application can store data outside of its application data, for example in external storage or in a user dictionary. See also clear_apps_data_params.",
 "Puts the device into lost mode. Only supported on fully managed devices or organization-owned devices with a managed profile. See also start_lost_mode_params.",
 "Takes the device out of lost mode. Only supported on fully managed devices or organization-owned devices with a managed profile. See also stop_lost_mode_params.",
-"Adds an eSIM profile to the device. This is supported on Android 15 and above. See also addEsimParams. To remove an eSIM profile, use the REMOVE_ESIM command. To determine what happens to the eSIM profile when a device is wiped, set wipeDataFlags in the policy. Note: To provision multiple eSIMs on a single device, it is recommended to introduce a delay of a few minutes between successive executions of the command.",
+"Adds an eSIM profile to the device. This is supported on Android 15 and above. See also addEsimParams.",
 "Removes an eSIM profile from the device. This is supported on Android 15 and above. See also removeEsimParams.",
-"Request information related to the device.",
-"Wipes the device, via a factory reset for a company owned device, or by deleting the work profile for a personally owned device with work profile. The wipe only occurs once the device acknowledges the command. The command can be cancelled before then."
+"Request information related to the device."
 ],
 "type": "string"
 },
 "userName": {
 "description": "The resource name of the user that owns the device in the form enterprises/{enterpriseId}/users/{userId}. This is automatically generated by the server based on the device the command is sent to.",
 "type": "string"
-},
-"wipeParams": {
-"$ref": "WipeParams",
-"description": "Optional. Parameters for the WIPE command to wipe the device. If this is set, then it is suggested that type should not be set. In this case, the server automatically sets it to WIPE. It is also acceptable to explicitly set type to WIPE."
 }
 },
 "type": "object"
@@ -2927,63 +2788,10 @@ false
 },
 "type": "object"
 },
-"CrossDevicePolicies": {
-"description": "Policies controlling cross-device communication.",
-"id": "CrossDevicePolicies",
-"properties": {
-"nearbyAppStreaming": {
-"description": "Optional. Manages video streaming of apps on the device for fully managed devices or in the work profile for devices with work profiles to nearby devices. This is supported on Android 13 and above.",
-"enum": [
-"NEARBY_APP_STREAMING_UNSPECIFIED",
-"NEARBY_APP_STREAMING_USER_CHOICE",
-"NEARBY_APP_STREAMING_DISABLED",
-"NEARBY_APP_STREAMING_USER_CHOICE_SAME_MANAGED_ACCOUNT"
-],
-"enumDescriptions": [
-"Unspecified. Defaults to NEARBY_APP_STREAMING_USER_CHOICE_SAME_MANAGED_ACCOUNT.",
-"The user is allowed to choose whether to stream apps to nearby devices.",
-"Disables app streaming to nearby devices.",
-"The user is allowed to choose whether to stream apps to other nearby devices which are signed in with the same authenticated managed account."
-],
-"type": "string"
-},
-"nearbyNotificationStreaming": {
-"description": "Optional. Manages streaming of notifications from apps on the device for fully managed devices or in the work profile for devices with work profiles to nearby devices. This is supported on Android 13 and above.",
-"enum": [
-"NEARBY_NOTIFICATION_STREAMING_UNSPECIFIED",
-"NEARBY_NOTIFICATION_STREAMING_USER_CHOICE",
-"NEARBY_NOTIFICATION_STREAMING_DISABLED",
-"NEARBY_NOTIFICATION_STREAMING_USER_CHOICE_SAME_MANAGED_ACCOUNT"
-],
-"enumDescriptions": [
-"Unspecified. Defaults to NEARBY_NOTIFICATION_STREAMING_USER_CHOICE_SAME_MANAGED_ACCOUNT.",
-"The user is allowed to choose whether to stream notifications to nearby devices.",
-"Disables notification streaming to nearby devices.",
-"The user is allowed to choose whether to stream notifications to other nearby devices which are signed in with the same authenticated managed account."
-],
-"type": "string"
-}
-},
-"type": "object"
-},
 "CrossProfilePolicies": {
-"description": "Controls the data from the work profile that can be accessed from the personal profile and vice versa. A NonComplianceDetail with MANAGEMENT_MODE is reported if the device does not have a work profile.",
+"description": "Controls the data from the work profile that can be accessed from the personal profile and vice versa. A nonComplianceDetail with MANAGEMENT_MODE is reported if the device does not have a work profile.",
 "id": "CrossProfilePolicies",
 "properties": {
-"crossProfileAppFunctions": {
-"description": "Optional. Controls whether personal profile apps can invoke app functions exposed by apps in the work profile.",
-"enum": [
-"CROSS_PROFILE_APP_FUNCTIONS_UNSPECIFIED",
-"CROSS_PROFILE_APP_FUNCTIONS_DISALLOWED",
-"CROSS_PROFILE_APP_FUNCTIONS_ALLOWED"
-],
-"enumDescriptions": [
-"Unspecified. If appFunctions is set to APP_FUNCTIONS_ALLOWED, defaults to CROSS_PROFILE_APP_FUNCTIONS_ALLOWED. If appFunctions is set to APP_FUNCTIONS_DISALLOWED, defaults to CROSS_PROFILE_APP_FUNCTIONS_DISALLOWED.",
-"Personal profile apps are not allowed to invoke app functions exposed by apps in the work profile.",
-"Personal profile apps can invoke app functions exposed by apps in the work profile. If this is set, appFunctions must not be set to APP_FUNCTIONS_DISALLOWED, otherwise the policy will be rejected."
-],
-"type": "string"
-},
 "crossProfileCopyPaste": {
 "description": "Whether text copied from one profile (personal or work) can be pasted in the other profile.",
 "enum": [
@@ -3016,7 +2824,7 @@ false
 },
 "exemptionsToShowWorkContactsInPersonalProfile": {
 "$ref": "PackageNameList",
-"description": "List of apps which are excluded from the ShowWorkContactsInPersonalProfile setting. For this to be set, ShowWorkContactsInPersonalProfile must be set to one of the following values: SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED. In this case, these exemptions act as a blocklist. SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED. In this case, these exemptions act as an allowlist. SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED_EXCEPT_SYSTEM. In this case, these exemptions act as an allowlist, in addition to the already allowlisted system apps.Supported on Android 14 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 14."
+"description": "List of apps which are excluded from the ShowWorkContactsInPersonalProfile setting. For this to be set, ShowWorkContactsInPersonalProfile must be set to one of the following values: SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED. In this case, these exemptions act as a blocklist. SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED. In this case, these exemptions act as an allowlist. SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED_EXCEPT_SYSTEM. In this case, these exemptions act as an allowlist, in addition to the already allowlisted system apps.Supported on Android 14 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 14."
 },
 "showWorkContactsInPersonalProfile": {
 "description": "Whether personal apps can access contacts stored in the work profile.See also exemptions_to_show_work_contacts_in_personal_profile.",
@@ -3028,9 +2836,9 @@ false
 ],
 "enumDescriptions": [
 "Unspecified. Defaults to SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED.When this is set, exemptions_to_show_work_contacts_in_personal_profile must not be set.",
-"Prevents personal apps from accessing work profile contacts and looking up work contacts.When this is set, personal apps specified in exemptions_to_show_work_contacts_in_personal_profile are allowlisted and can access work profile contacts directly.Supported on Android 7.0 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 7.0.",
-"Default. Allows apps in the personal profile to access work profile contacts including contact searches and incoming calls.When this is set, personal apps specified in exemptions_to_show_work_contacts_in_personal_profile are blocklisted and can not access work profile contacts directly.Supported on Android 7.0 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 7.0.",
-"Prevents most personal apps from accessing work profile contacts including contact searches and incoming calls, except for the OEM default Dialer, Messages, and Contacts apps. Neither user-configured Dialer, Messages, and Contacts apps, nor any other system or play installed apps, will be able to query work contacts directly.When this is set, personal apps specified in exemptions_to_show_work_contacts_in_personal_profile are allowlisted and can access work profile contacts.Supported on Android 14 and above. If this is set on a device with Android version less than 14, the behaviour falls back to SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED and a NonComplianceDetail with API_LEVEL is reported."
+"Prevents personal apps from accessing work profile contacts and looking up work contacts.When this is set, personal apps specified in exemptions_to_show_work_contacts_in_personal_profile are allowlisted and can access work profile contacts directly.Supported on Android 7.0 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 7.0.",
+"Default. Allows apps in the personal profile to access work profile contacts including contact searches and incoming calls.When this is set, personal apps specified in exemptions_to_show_work_contacts_in_personal_profile are blocklisted and can not access work profile contacts directly.Supported on Android 7.0 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 7.0.",
+"Prevents most personal apps from accessing work profile contacts including contact searches and incoming calls, except for the OEM default Dialer, Messages, and Contacts apps. Neither user-configured Dialer, Messages, and Contacts apps, nor any other system or play installed apps, will be able to query work contacts directly.When this is set, personal apps specified in exemptions_to_show_work_contacts_in_personal_profile are allowlisted and can access work profile contacts.Supported on Android 14 and above. If this is set on a device with Android version less than 14, the behaviour falls back to SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED and a nonComplianceDetail with API_LEVEL is reported."
 ],
 "type": "string"
 },
@@ -3062,27 +2870,6 @@ false
 },
 "type": "object"
 },
-"CustomAppConfig": {
-"description": "Configuration for a custom app.",
-"id": "CustomAppConfig",
-"properties": {
-"userUninstallSettings": {
-"description": "Optional. User uninstall settings of the custom app.",
-"enum": [
-"USER_UNINSTALL_SETTINGS_UNSPECIFIED",
-"DISALLOW_UNINSTALL_BY_USER",
-"ALLOW_UNINSTALL_BY_USER"
-],
-"enumDescriptions": [
-"Unspecified. Defaults to DISALLOW_UNINSTALL_BY_USER.",
-"User is not allowed to uninstall the custom app.",
-"User is allowed to uninstall the custom app."
-],
-"type": "string"
-}
-},
-"type": "object"
-},
 "Date": {
 "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: A full date, with non-zero year, month, and day values. A month and day, with a zero year (for example, an anniversary). A year on its own, with a zero month and a zero day. A year and month, with a zero day (for example, a credit card expiration date).Related types: google.type.TimeOfDay google.type.DateTime google.protobuf.Timestamp",
 "id": "Date",
@@ -3105,178 +2892,6 @@ false
 },
 "type": "object"
 },
-"DefaultApplication": {
-"description": "Information about the application to be set as the default.",
-"id": "DefaultApplication",
-"properties": {
-"packageName": {
-"description": "Required. The package name that should be set as the default application. The policy is rejected if the package name is invalid.",
-"type": "string"
-}
-},
-"type": "object"
-},
-"DefaultApplicationContext": {
-"description": "Additional context for non-compliance related to default application settings.",
-"id": "DefaultApplicationContext",
-"properties": {
-"defaultApplicationScope": {
-"description": "Output only. The scope of non-compliant default application setting.",
-"enum": [
-"DEFAULT_APPLICATION_SCOPE_UNSPECIFIED",
-"SCOPE_FULLY_MANAGED",
-"SCOPE_WORK_PROFILE",
-"SCOPE_PERSONAL_PROFILE"
-],
-"enumDescriptions": [
-"Unspecified. This value must not be used.",
-"Sets the application as the default on fully managed devices.",
-"Sets the application as the work profile default.Only supported for DEFAULT_BROWSER, DEFAULT_CALL_REDIRECTION, DEFAULT_CALL_SCREENING, DEFAULT_DIALER and DEFAULT_WALLET.",
-"Sets the application as the personal profile default on company-owned devices with a work profile. Only pre-installed system apps can be set as the default.Only supported for DEFAULT_BROWSER, DEFAULT_DIALER, DEFAULT_SMS and DEFAULT_WALLET."
-],
-"readOnly": true,
-"type": "string"
-}
-},
-"type": "object"
-},
-"DefaultApplicationInfo": {
-"description": "The default application information for a specific DefaultApplicationType.",
-"id": "DefaultApplicationInfo",
-"properties": {
-"defaultApplicationSettingAttempts": {
-"description": "Output only. Details on the default application setting attempts, in the same order as listed in defaultApplications.",
-"items": {
-"$ref": "DefaultApplicationSettingAttempt"
-},
-"readOnly": true,
-"type": "array"
-},
-"defaultApplicationType": {
-"description": "Output only. The default application type.",
-"enum": [
-"DEFAULT_APPLICATION_TYPE_UNSPECIFIED",
-"DEFAULT_ASSISTANT",
-"DEFAULT_BROWSER",
-"DEFAULT_CALL_REDIRECTION",
-"DEFAULT_CALL_SCREENING",
-"DEFAULT_DIALER",
-"DEFAULT_HOME",
-"DEFAULT_SMS",
-"DEFAULT_WALLET"
-],
-"enumDescriptions": [
-"Unspecified. This value must not be used.",
-"The assistant app type. This app type is only allowed to be set for SCOPE_FULLY_MANAGED.Supported on fully managed devices on Android 16 and above. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The browser app type.Supported on Android 16 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The call redirection app type. This app type cannot be set for SCOPE_PERSONAL_PROFILE.Supported on Android 16 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The call screening app type. This app type cannot be set for SCOPE_PERSONAL_PROFILE.Supported on Android 16 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The dialer app type.Supported on fully managed devices on Android 14 and 15. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 14.Supported on all management modes on Android 16 and above.",
-"The home app type. This app type is only allowed to be set for SCOPE_FULLY_MANAGED.Supported on fully managed devices on Android 16 and above. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The SMS app type. This app type cannot be set for SCOPE_WORK_PROFILE.Supported on company-owned devices on Android 16 and above. A NonComplianceDetail with MANAGEMENT_MODE is reported for personally-owned devices. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The wallet app type. The default application of this type applies across profiles.On a company-owned device with a work profile, admins can set the scope to SCOPE_PERSONAL_PROFILE to set a personal profile pre-installed system app as the default, or to SCOPE_WORK_PROFILE to set a work profile app as the default. It is not allowed to specify both scopes at the same time.Due to a known issue, the user may be able to change the default wallet even when this is set on a fully managed device.Supported on company-owned devices on Android 16 and above. A NonComplianceDetail with MANAGEMENT_MODE is reported for personally-owned devices. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16."
-],
-"readOnly": true,
-"type": "string"
-},
-"packageName": {
-"description": "Output only. The package name of the current default application.",
-"readOnly": true,
-"type": "string"
-}
-},
-"type": "object"
-},
-"DefaultApplicationSetting": {
-"description": "The default application setting for a DefaultApplicationType.",
-"id": "DefaultApplicationSetting",
-"properties": {
-"defaultApplicationScopes": {
-"description": "Required. The scopes to which the policy should be applied. This list must not be empty or contain duplicates.A NonComplianceDetail with MANAGEMENT_MODE reason and DEFAULT_APPLICATION_SETTING_UNSUPPORTED_SCOPES specific reason is reported if none of the specified scopes can be applied to the management mode (e.g. a fully managed device receives a policy with only SCOPE_PERSONAL_PROFILE in the list).",
-"items": {
-"enum": [
-"DEFAULT_APPLICATION_SCOPE_UNSPECIFIED",
-"SCOPE_FULLY_MANAGED",
-"SCOPE_WORK_PROFILE",
-"SCOPE_PERSONAL_PROFILE"
-],
-"enumDescriptions": [
-"Unspecified. This value must not be used.",
-"Sets the application as the default on fully managed devices.",
-"Sets the application as the work profile default.Only supported for DEFAULT_BROWSER, DEFAULT_CALL_REDIRECTION, DEFAULT_CALL_SCREENING, DEFAULT_DIALER and DEFAULT_WALLET.",
-"Sets the application as the personal profile default on company-owned devices with a work profile. Only pre-installed system apps can be set as the default.Only supported for DEFAULT_BROWSER, DEFAULT_DIALER, DEFAULT_SMS and DEFAULT_WALLET."
-],
-"type": "string"
-},
-"type": "array"
-},
-"defaultApplicationType": {
-"description": "Required. The app type to set the default application.",
-"enum": [
-"DEFAULT_APPLICATION_TYPE_UNSPECIFIED",
-"DEFAULT_ASSISTANT",
-"DEFAULT_BROWSER",
-"DEFAULT_CALL_REDIRECTION",
-"DEFAULT_CALL_SCREENING",
-"DEFAULT_DIALER",
-"DEFAULT_HOME",
-"DEFAULT_SMS",
-"DEFAULT_WALLET"
-],
-"enumDescriptions": [
-"Unspecified. This value must not be used.",
-"The assistant app type. This app type is only allowed to be set for SCOPE_FULLY_MANAGED.Supported on fully managed devices on Android 16 and above. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The browser app type.Supported on Android 16 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The call redirection app type. This app type cannot be set for SCOPE_PERSONAL_PROFILE.Supported on Android 16 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The call screening app type. This app type cannot be set for SCOPE_PERSONAL_PROFILE.Supported on Android 16 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The dialer app type.Supported on fully managed devices on Android 14 and 15. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 14.Supported on all management modes on Android 16 and above.",
-"The home app type. This app type is only allowed to be set for SCOPE_FULLY_MANAGED.Supported on fully managed devices on Android 16 and above. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The SMS app type. This app type cannot be set for SCOPE_WORK_PROFILE.Supported on company-owned devices on Android 16 and above. A NonComplianceDetail with MANAGEMENT_MODE is reported for personally-owned devices. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16.",
-"The wallet app type. The default application of this type applies across profiles.On a company-owned device with a work profile, admins can set the scope to SCOPE_PERSONAL_PROFILE to set a personal profile pre-installed system app as the default, or to SCOPE_WORK_PROFILE to set a work profile app as the default. It is not allowed to specify both scopes at the same time.Due to a known issue, the user may be able to change the default wallet even when this is set on a fully managed device.Supported on company-owned devices on Android 16 and above. A NonComplianceDetail with MANAGEMENT_MODE is reported for personally-owned devices. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 16."
-],
-"type": "string"
-},
-"defaultApplications": {
-"description": "Required. The list of applications that can be set as the default app for a given type. This list must not be empty or contain duplicates. The first app in the list that is installed and qualified for the defaultApplicationType (e.g. SMS app for DEFAULT_SMS) is set as the default app. The signing key certificate fingerprint of the app on the device must also match one of the signing key certificate fingerprints obtained from Play Store or one of the entries in ApplicationPolicy.signingKeyCerts in order to be set as the default.If the defaultApplicationScopes contains SCOPE_FULLY_MANAGED or SCOPE_WORK_PROFILE, the app must have an entry in applications with installType set to a value other than BLOCKED.A NonComplianceDetail with APP_NOT_INSTALLED reason and DEFAULT_APPLICATION_SETTING_FAILED_FOR_SCOPE specific reason is reported if none of the apps in the list are installed. A NonComplianceDetail with INVALID_VALUE reason and DEFAULT_APPLICATION_SETTING_FAILED_FOR_SCOPE specific reason is reported if at least one app is installed but the policy fails to apply due to other reasons (e.g. the app is not of the right type).When applying to SCOPE_PERSONAL_PROFILE on a company-owned device with a work profile, only pre-installed system apps can be set as the default. A NonComplianceDetail with INVALID_VALUE reason and DEFAULT_APPLICATION_SETTING_FAILED_FOR_SCOPE specific reason is reported if the policy fails to apply to the personal profile.",
-"items": {
-"$ref": "DefaultApplication"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
-"DefaultApplicationSettingAttempt": {
-"description": "Details on a default application setting attempt.",
-"id": "DefaultApplicationSettingAttempt",
-"properties": {
-"attemptOutcome": {
-"description": "Output only. The outcome of setting the app as the default.",
-"enum": [
-"ATTEMPT_OUTCOME_UNSPECIFIED",
-"SUCCESS",
-"APP_NOT_INSTALLED",
-"APP_SIGNING_CERT_MISMATCH",
-"OTHER_FAILURE"
-],
-"enumDescriptions": [
-"Attempt outcome is unspecified. This is not used.",
-"App is successfully set as the default.",
-"Attempt failed as the app is not installed.",
-"Attempt failed as the signing key certificate fingerprint of the app from Play Store or from ApplicationPolicy.signingKeyCerts does not match the one on the device.",
-"Attempt failed due to other reasons."
-],
-"readOnly": true,
-"type": "string"
-},
-"packageName": {
-"description": "Output only. The package name of the attempted application.",
-"readOnly": true,
-"type": "string"
-}
-},
-"type": "object"
-},
 "Device": {
 "description": "A device owned by an enterprise. Unless otherwise noted, all fields are read-only and can't be modified by enterprises.devices.patch.",
 "id": "Device",
@@ -3294,7 +2909,7 @@ false
 "type": "array"
 },
 "appliedPasswordPolicies": {
-"description": "The password requirements currently applied to the device. This field exists because the applied requirements may be slightly different from those specified in passwordPolicies in some cases. Note that this field does not provide information about password compliance. For non-compliance information, see nonComplianceDetails. NonComplianceDetail.fieldPath, is set based on passwordPolicies, not based on this field.",
+"description": "The password requirements currently applied to the device. The applied requirements may be slightly different from those specified in passwordPolicies in some cases. fieldPath is set based on passwordPolicies.",
 "items": {
 "$ref": "PasswordRequirements"
 },
@@ -3336,14 +2951,6 @@ false
 "commonCriteriaModeInfo": {
 "$ref": "CommonCriteriaModeInfo",
 "description": "Information about Common Criteria Mode\u2014security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC).This information is only available if statusReportingSettings.commonCriteriaModeEnabled is true in the device's policy the device is company-owned."
-},
-"defaultApplicationInfo": {
-"description": "Output only. The default application information for the DefaultApplicationType. This information is only available if defaultApplicationInfoReportingEnabled is true in the device's policy. Available on Android 16 and above.All app types are reported on fully managed devices. DEFAULT_BROWSER, DEFAULT_CALL_REDIRECTION, DEFAULT_CALL_SCREENING and DEFAULT_DIALER types are reported for the work profiles on company-owned devices with a work profile and personally-owned devices. DEFAULT_WALLET is also reported for company-owned devices with a work profile, but will only include work profile information.",
-"items": {
-"$ref": "DefaultApplicationInfo"
-},
-"readOnly": true,
-"type": "array"
 },
 "deviceSettings": {
 "$ref": "DeviceSettings",
@@ -3564,18 +3171,14 @@ false
 "enumDescriptions": [
 "Unspecified. Defaults to ALLOW_CONFIGURING_WIFI unless wifiConfigDisabled is set to true. If wifiConfigDisabled is set to true, this is equivalent to DISALLOW_CONFIGURING_WIFI.",
 "The user is allowed to configure Wi-Fi. wifiConfigDisabled is ignored.",
-"Adding new Wi-Fi configurations is disallowed. The user is only able to switch between already configured networks. Supported on Android 13 and above, on fully managed devices and work profiles on company-owned devices. If the setting is not supported, ALLOW_CONFIGURING_WIFI is set. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13. wifiConfigDisabled is ignored.",
+"Adding new Wi-Fi configurations is disallowed. The user is only able to switch between already configured networks. Supported on Android 13 and above, on fully managed devices and work profiles on company-owned devices. If the setting is not supported, ALLOW_CONFIGURING_WIFI is set. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13. wifiConfigDisabled is ignored.",
 "Disallows configuring Wi-Fi networks. The setting wifiConfigDisabled is ignored when this value is set. Supported on fully managed devices and work profile on company-owned devices, on all supported API levels. For fully managed devices, setting this removes all configured networks and retains only the networks configured using openNetworkConfiguration policy. For work profiles on company-owned devices, existing configured networks are not affected and the user is not allowed to add, remove, or modify Wi-Fi networks. Note: If a network connection can't be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled)."
 ],
 "type": "string"
 },
 "preferentialNetworkServiceSettings": {
 "$ref": "PreferentialNetworkServiceSettings",
-"description": "Optional. Preferential network service configuration. Setting this field will override preferentialNetworkService. This can be set on both work profiles and fully managed devices on Android 13 and above. See 5G network slicing (https://developers.google.com/android/management/5g-network-slicing) guide for more details."
-},
-"privateDnsSettings": {
-"$ref": "PrivateDnsSettings",
-"description": "Optional. The global private DNS settings."
+"description": "Optional. Preferential network service configuration. Setting this field will override preferentialNetworkService. This can be set on both work profiles and fully managed devices on Android 13 and above."
 },
 "tetheringSettings": {
 "description": "Controls tethering settings. Based on the value set, the user is partially or fully disallowed from using different forms of tethering.",
@@ -3588,7 +3191,7 @@ false
 "enumDescriptions": [
 "Unspecified. Defaults to ALLOW_ALL_TETHERING unless tetheringConfigDisabled is set to true. If tetheringConfigDisabled is set to true, this is equivalent to DISALLOW_ALL_TETHERING.",
 "Allows configuration and use of all forms of tethering. tetheringConfigDisabled is ignored.",
-"Disallows the user from using Wi-Fi tethering. Supported on company owned devices running Android 13 and above. If the setting is not supported, ALLOW_ALL_TETHERING will be set. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13. tetheringConfigDisabled is ignored.",
+"Disallows the user from using Wi-Fi tethering. Supported on company owned devices running Android 13 and above. If the setting is not supported, ALLOW_ALL_TETHERING will be set. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13. tetheringConfigDisabled is ignored.",
 "Disallows all forms of tethering. Supported on fully managed devices and work profile on company-owned devices, on all supported android versions. The setting tetheringConfigDisabled is ignored."
 ],
 "type": "string"
@@ -3605,7 +3208,7 @@ false
 "Unspecified. Defaults to DISALLOW_USB_FILE_TRANSFER.",
 "All types of USB data transfers are allowed. usbFileTransferDisabled is ignored.",
 "Transferring files over USB is disallowed. Other types of USB data connections, such as mouse and keyboard connection, are allowed. usbFileTransferDisabled is ignored.",
-"When set, all types of USB data transfers are prohibited. Supported for devices running Android 12 or above with USB HAL 1.3 or above. If the setting is not supported, DISALLOW_USB_FILE_TRANSFER will be set. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 12. A NonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not have USB HAL 1.3 or above. usbFileTransferDisabled is ignored."
+"When set, all types of USB data transfers are prohibited. Supported for devices running Android 12 or above with USB HAL 1.3 or above. If the setting is not supported, DISALLOW_USB_FILE_TRANSFER will be set. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 12. A nonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not have USB HAL 1.3 or above. usbFileTransferDisabled is ignored."
 ],
 "type": "string"
 },
@@ -3619,7 +3222,7 @@ false
 "enumDescriptions": [
 "Unspecified. Defaults to ALLOW_WIFI_DIRECT",
 "The user is allowed to use Wi-Fi direct.",
-"The user is not allowed to use Wi-Fi direct. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13."
+"The user is not allowed to use Wi-Fi direct. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13."
 ],
 "type": "string"
 },
@@ -3639,7 +3242,7 @@ false
 "id": "DeviceRadioState",
 "properties": {
 "airplaneModeState": {
-"description": "Optional. Controls whether airplane mode can be toggled by the user or not.",
+"description": "Controls whether airplane mode can be toggled by the user or not.",
 "enum": [
 "AIRPLANE_MODE_STATE_UNSPECIFIED",
 "AIRPLANE_MODE_USER_CHOICE",
@@ -3648,12 +3251,12 @@ false
 "enumDescriptions": [
 "Unspecified. Defaults to AIRPLANE_MODE_USER_CHOICE.",
 "The user is allowed to toggle airplane mode on or off.",
-"Airplane mode is disabled. The user is not allowed to toggle airplane mode on. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 9."
+"Airplane mode is disabled. The user is not allowed to toggle airplane mode on. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 9."
 ],
 "type": "string"
 },
 "cellularTwoGState": {
-"description": "Optional. Controls whether cellular 2G setting can be toggled by the user or not.",
+"description": "Controls whether cellular 2G setting can be toggled by the user or not.",
 "enum": [
 "CELLULAR_TWO_G_STATE_UNSPECIFIED",
 "CELLULAR_TWO_G_USER_CHOICE",
@@ -3662,12 +3265,12 @@ false
 "enumDescriptions": [
 "Unspecified. Defaults to CELLULAR_TWO_G_USER_CHOICE.",
 "The user is allowed to toggle cellular 2G on or off.",
-"Cellular 2G is disabled. The user is not allowed to toggle cellular 2G on via settings. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 14."
+"Cellular 2G is disabled. The user is not allowed to toggle cellular 2G on via settings. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 14."
 ],
 "type": "string"
 },
 "minimumWifiSecurityLevel": {
-"description": "Optional. The minimum required security level of Wi-Fi networks that the device can connect to.",
+"description": "The minimum required security level of Wi-Fi networks that the device can connect to.",
 "enum": [
 "MINIMUM_WIFI_SECURITY_LEVEL_UNSPECIFIED",
 "OPEN_NETWORK_SECURITY",
@@ -3678,14 +3281,14 @@ false
 "enumDescriptions": [
 "Defaults to OPEN_NETWORK_SECURITY, which means the device will be able to connect to all types of Wi-Fi networks.",
 "The device will be able to connect to all types of Wi-Fi networks.",
-"A personal network such as WEP, WPA2-PSK is the minimum required security. The device will not be able to connect to open wifi networks. This is stricter than OPEN_NETWORK_SECURITY. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
-"An enterprise EAP network is the minimum required security level. The device will not be able to connect to Wi-Fi network below this security level. This is stricter than PERSONAL_NETWORK_SECURITY. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
-"A 192-bit enterprise network is the minimum required security level. The device will not be able to connect to Wi-Fi network below this security level. This is stricter than ENTERPRISE_NETWORK_SECURITY. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13."
+"A personal network such as WEP, WPA2-PSK is the minimum required security. The device will not be able to connect to open wifi networks. This is stricter than OPEN_NETWORK_SECURITY. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
+"An enterprise EAP network is the minimum required security level. The device will not be able to connect to Wi-Fi network below this security level. This is stricter than PERSONAL_NETWORK_SECURITY. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
+"A 192-bit enterprise network is the minimum required security level. The device will not be able to connect to Wi-Fi network below this security level. This is stricter than ENTERPRISE_NETWORK_SECURITY. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13."
 ],
 "type": "string"
 },
 "ultraWidebandState": {
-"description": "Optional. Controls the state of the ultra wideband setting and whether the user can toggle it on or off.",
+"description": "Controls the state of the ultra wideband setting and whether the user can toggle it on or off.",
 "enum": [
 "ULTRA_WIDEBAND_STATE_UNSPECIFIED",
 "ULTRA_WIDEBAND_USER_CHOICE",
@@ -3694,26 +3297,12 @@ false
 "enumDescriptions": [
 "Unspecified. Defaults to ULTRA_WIDEBAND_USER_CHOICE.",
 "The user is allowed to toggle ultra wideband on or off.",
-"Ultra wideband is disabled. The user is not allowed to toggle ultra wideband on via settings. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 14."
-],
-"type": "string"
-},
-"userInitiatedAddEsimSettings": {
-"description": "Optional. Controls whether the user is allowed to add eSIM profiles.",
-"enum": [
-"USER_INITIATED_ADD_ESIM_SETTINGS_UNSPECIFIED",
-"USER_INITIATED_ADD_ESIM_ALLOWED",
-"USER_INITIATED_ADD_ESIM_DISALLOWED"
-],
-"enumDescriptions": [
-"Unspecified. Defaults to USER_INITIATED_ADD_ESIM_ALLOWED.",
-"The user is allowed to add eSIM profiles.",
-"Supported only on company-owned devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for personally-owned devices."
+"Ultra wideband is disabled. The user is not allowed to toggle ultra wideband on via settings. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 14."
 ],
 "type": "string"
 },
 "wifiState": {
-"description": "Optional. Controls current state of Wi-Fi and if user can change its state.",
+"description": "Controls current state of Wi-Fi and if user can change its state.",
 "enum": [
 "WIFI_STATE_UNSPECIFIED",
 "WIFI_STATE_USER_CHOICE",
@@ -3723,8 +3312,8 @@ false
 "enumDescriptions": [
 "Unspecified. Defaults to WIFI_STATE_USER_CHOICE",
 "User is allowed to enable/disable Wi-Fi.",
-"Wi-Fi is on and the user is not allowed to turn it off. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
-"Wi-Fi is off and the user is not allowed to turn it on. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 13."
+"Wi-Fi is on and the user is not allowed to turn it off. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13.",
+"Wi-Fi is off and the user is not allowed to turn it on. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 13."
 ],
 "type": "string"
 }
@@ -3969,10 +3558,6 @@ false
 "description": "The expiration time of the token. This is a read-only field generated by the server.",
 "format": "google-datetime",
 "type": "string"
-},
-"googleAuthenticationOptions": {
-"$ref": "GoogleAuthenticationOptions",
-"description": "Optional. Options related to Google authentication during the enrollment."
 },
 "name": {
 "description": "The name of the enrollment token, which is generated by the server during creation, in the form enterprises/{enterpriseId}/enrollmentTokens/{enrollmentTokenId}.",
@@ -4233,13 +3818,11 @@ false
 "id": "ExtensionConfig",
 "properties": {
 "notificationReceiver": {
-"deprecated": true,
-"description": "Fully qualified class name of the receiver service class for Android Device Policy to notify the extension app of any local command status updates. The service must be exported in the extension app's AndroidManifest.xml and extend NotificationReceiverService (https://developers.google.com/android/management/reference/amapi/com/google/android/managementapi/notification/NotificationReceiverService) (see Integrate with the AMAPI SDK (https://developers.google.com/android/management/sdk-integration) guide for more details).",
+"description": "Fully qualified class name of the receiver service class for Android Device Policy to notify the extension app of any local command status updates.",
 "type": "string"
 },
 "signingKeyFingerprintsSha256": {
-"deprecated": true,
-"description": "Hex-encoded SHA-256 hashes of the signing key certificates of the extension app. Only hexadecimal string representations of 64 characters are valid.The signing key certificate fingerprints are always obtained from the Play Store and this field is used to provide additional signing key certificate fingerprints. However, if the application is not available on the Play Store, this field needs to be set. A NonComplianceDetail with INVALID_VALUE is reported if this field is not set when the application is not available on the Play Store.The signing key certificate fingerprint of the extension app on the device must match one of the signing key certificate fingerprints obtained from the Play Store or the ones provided in this field for the app to be able to communicate with Android Device Policy.In production use cases, it is recommended to leave this empty.",
+"description": "Hex-encoded SHA-256 hash of the signing certificate of the extension app. Only hexadecimal string representations of 64 characters are valid.If not specified, the signature for the corresponding package name is obtained from the Play Store instead.If this list is empty, the signature of the extension app on the device must match the signature obtained from the Play Store for the app to be able to communicate with Android Device Policy.If this list is not empty, the signature of the extension app on the device must match one of the entries in this list for the app to be able to communicate with Android Device Policy.In production use cases, it is recommended to leave this empty.",
 "items": {
 "type": "string"
 },
@@ -4329,37 +3912,12 @@ false
 },
 "type": "object"
 },
-"GoogleAuthenticationOptions": {
-"description": "Options for Google authentication during the enrollment.When triggering the enrollment with a SigninDetail, these options are enforced after the user completes third-party sign-in and an EnrollmentToken is created. If this token's authentication_requirement is set to REQUIRED, these options interact with the SigninDetail.googleAuthenticationOptions that initiated the flow in the following ways: - If the user skipped Google sign-in earlier (permitted by SigninDetail.googleAuthenticationOptions), an error will occur and the user will be prompted to sign in again. - If required_account_email is set on this token and the user signed in with a different email earlier, an error will occur and the user will be asked to sign in again with the correct account.",
-"id": "GoogleAuthenticationOptions",
-"properties": {
-"authenticationRequirement": {
-"description": "Optional. Specifies whether user should authenticate with Google during enrollment. If this is set to any value other than AUTHENTICATION_REQUIREMENT_UNSPECIFIED, the enterprise-level setting googleAuthenticationSettings is ignored for devices enrolled with this token.",
-"enum": [
-"AUTHENTICATION_REQUIREMENT_UNSPECIFIED",
-"OPTIONAL",
-"REQUIRED"
-],
-"enumDescriptions": [
-"The setting googleAuthenticationSettings for the enterprise that this enrollment token belongs to is used to determine whether the user needs to authenticate with Google during enrollment.",
-"Google authentication is optional for the user. This means the user can choose to skip Google authentication during enrollment.",
-"Google authentication is required for the user. This means the user must authenticate with a Google account to proceed."
-],
-"type": "string"
-},
-"requiredAccountEmail": {
-"description": "Optional. Specifies the managed Google account that the user must use during enrollment. This field can only be set if AuthenticationRequirement is set to REQUIRED.",
-"type": "string"
-}
-},
-"type": "object"
-},
 "GoogleAuthenticationSettings": {
 "description": "Contains settings for Google-provided user authentication.",
 "id": "GoogleAuthenticationSettings",
 "properties": {
 "googleAuthenticationRequired": {
-"description": "Output only. Whether users need to be authenticated by Google during the enrollment process. IT admin can specify if Google authentication is enabled for the enterprise for knowledge worker devices. This value can be set only via the Google Admin Console. Google authentication can be used with signin_url In the case where Google authentication is required and a signin_url is specified, Google authentication will be launched before signin_url. This value is overridden by EnrollmentToken.googleAuthenticationOptions and SigninDetail.googleAuthenticationOptions, if they are set.",
+"description": "Output only. Whether users need to be authenticated by Google during the enrollment process. IT admin can specify if Google authentication is enabled for the enterprise for knowledge worker devices. This value can be set only via the Google Admin Console. Google authentication can be used with signin_url In the case where Google authentication is required and a signin_url is specified, Google authentication will be launched before signin_url.",
 "enum": [
 "GOOGLE_AUTHENTICATION_REQUIRED_UNSPECIFIED",
 "NOT_REQUIRED",
@@ -4462,7 +4020,7 @@ false
 "type": "string"
 },
 "serialNumber": {
-"description": "The device serial number. However, for personally-owned devices running Android 12 and above, this is the same as the enterpriseSpecificId.",
+"description": "The device serial number.",
 "type": "string"
 },
 "skinShutdownTemperatures": {
@@ -5022,13 +4580,6 @@ false
 "$ref": "Operation"
 },
 "type": "array"
-},
-"unreachable": {
-"description": "Unordered list. Unreachable resources. Populated when the request sets ListOperationsRequest.return_partial_success and reads across collections. For example, when attempting to list all resources across all supported locations.",
-"items": {
-"type": "string"
-},
-"type": "array"
 }
 },
 "type": "object"
@@ -5138,7 +4689,7 @@ false
 "type": "object"
 },
 "templateId": {
-"description": "The ID of the managed configurations template. This value must be a numeric string containing exactly one or more digits (for example, \"123456\").",
+"description": "The ID of the managed configurations template.",
 "type": "string"
 }
 },
@@ -5376,31 +4927,6 @@ false
 },
 "type": "object"
 },
-"ModifyPolicyApplicationsRequest": {
-"description": "Request to update or create ApplicationPolicy objects in the given Policy.",
-"id": "ModifyPolicyApplicationsRequest",
-"properties": {
-"changes": {
-"description": "Required. The changes to be made to the ApplicationPolicy objects. There must be at least one ApplicationPolicyChange.",
-"items": {
-"$ref": "ApplicationPolicyChange"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
-"ModifyPolicyApplicationsResponse": {
-"description": "Response to a request to update or create ApplicationPolicy objects in the given policy.",
-"id": "ModifyPolicyApplicationsResponse",
-"properties": {
-"policy": {
-"$ref": "Policy",
-"description": "The updated policy."
-}
-},
-"type": "object"
-},
 "NetworkInfo": {
 "description": "Device network info.",
 "id": "NetworkInfo",
@@ -5419,7 +4945,7 @@ false
 "type": "string"
 },
 "telephonyInfos": {
-"description": "Provides telephony information associated with each SIM card on the device. Only supported on fully managed devices starting from Android 6.",
+"description": "Provides telephony information associated with each SIM card on the device. Only supported on fully managed devices starting from Android API level 23.",
 "items": {
 "$ref": "TelephonyInfo"
 },
@@ -5493,7 +5019,6 @@ false
 "APP_INCOMPATIBLE",
 "APP_NOT_UPDATED",
 "DEVICE_INCOMPATIBLE",
-"APP_SIGNING_CERT_MISMATCH",
 "PROJECT_NOT_PERMITTED"
 ],
 "enumDescriptions": [
@@ -5509,7 +5034,6 @@ false
 "The setting can't be applied to the app because the app doesn't support it, for example because its target SDK version is not high enough.",
 "The app is installed, but it hasn't been updated to the minimum version code specified by policy.",
 "The device is incompatible with the policy requirements.",
-"The app's signing certificate does not match the setting value.",
 "The Google Cloud Platform project used to manage the device is not permitted to use this policy."
 ],
 "type": "string"
@@ -5540,10 +5064,7 @@ false
 "ONC_WIFI_KEY_PAIR_ALIAS_NOT_CORRESPONDING_TO_EXISTING_KEY",
 "PERMISSIBLE_USAGE_RESTRICTION",
 "REQUIRED_ACCOUNT_NOT_IN_ENTERPRISE",
-"NEW_ACCOUNT_NOT_IN_ENTERPRISE",
-"DEFAULT_APPLICATION_SETTING_UNSUPPORTED_SCOPES",
-"DEFAULT_APPLICATION_SETTING_FAILED_FOR_SCOPE",
-"PRIVATE_DNS_HOST_NOT_SERVING"
+"NEW_ACCOUNT_NOT_IN_ENTERPRISE"
 ],
 "enumDescriptions": [
 "Specific non-compliance reason is not specified. Fields in specific_non_compliance_context are not set.",
@@ -5557,10 +5078,7 @@ false
 "Key pair alias specified via ClientCertKeyPairAlias (https://chromium.googlesource.com/chromium/src/+/main/components/onc/docs/onc_spec.md#eap-type) field in openNetworkConfiguration does not correspond to an existing key installed on the device. nonComplianceReason is set to INVALID_VALUE.",
 "This policy setting is restricted and cannot be set for this Google Cloud Platform project. More details (including how to enable usage of this policy setting) are available in the Permissible Usage policy (https://developers.google.com/android/management/permissible-usage). nonComplianceReason is set to PROJECT_NOT_PERMITTED.",
 "Work account required by the workAccountSetupConfig policy setting is not part of the enterprise anymore. nonComplianceReason is set to USER_ACTION.",
-"Work account added by the user is not part of the enterprise. nonComplianceReason is set to USER_ACTION.",
-"The default application setting is applied to the scopes that are not supported by the management mode, even if the management mode itself is supported for the app type (e.g., a policy with DEFAULT_BROWSER app type and SCOPE_PERSONAL_PROFILE list sent to a fully managed device results in the scopes being inapplicable for the management mode). If the management mode is not supported for the app type, a NonComplianceDetail with MANAGEMENT_MODE is reported, without a specificNonComplianceReason.nonComplianceReason is set to MANAGEMENT_MODE.",
-"The default application setting failed to apply for a specific scope. defaultApplicationContext is set. nonComplianceReason is set to INVALID_VALUE or APP_NOT_INSTALLED.",
-"The specified host for private DNS is a valid hostname but was found to not be a private DNS server. nonComplianceReason is set to INVALID_VALUE."
+"Work account added by the user is not part of the enterprise. nonComplianceReason is set to USER_ACTION."
 ],
 "type": "string"
 }
@@ -5587,7 +5105,6 @@ false
 "APP_INCOMPATIBLE",
 "APP_NOT_UPDATED",
 "DEVICE_INCOMPATIBLE",
-"APP_SIGNING_CERT_MISMATCH",
 "PROJECT_NOT_PERMITTED"
 ],
 "enumDescriptions": [
@@ -5603,7 +5120,6 @@ false
 "The setting can't be applied to the app because the app doesn't support it, for example because its target SDK version is not high enough.",
 "The app is installed, but it hasn't been updated to the minimum version code specified by policy.",
 "The device is incompatible with the policy requirements.",
-"The app's signing certificate does not match the setting value.",
 "The Google Cloud Platform project used to manage the device is not permitted to use this policy."
 ],
 "type": "string"
@@ -6072,7 +5588,7 @@ false
 "type": "string"
 },
 "screenCaptureDisabled": {
-"description": "If true, screen capture is disabled for all users. This also blocks Circle to Search (https://support.google.com/android/answer/14508957).",
+"description": "If true, screen capture is disabled for all users.",
 "type": "boolean"
 }
 },
@@ -6141,20 +5657,6 @@ false
 ],
 "type": "string"
 },
-"appFunctions": {
-"description": "Optional. Controls whether apps on the device for fully managed devices or in the work profile for devices with work profiles are allowed to expose app functions.",
-"enum": [
-"APP_FUNCTIONS_UNSPECIFIED",
-"APP_FUNCTIONS_DISALLOWED",
-"APP_FUNCTIONS_ALLOWED"
-],
-"enumDescriptions": [
-"Unspecified. Defaults to APP_FUNCTIONS_ALLOWED.",
-"Apps on the device for fully managed devices or in the work profile for devices with work profiles are not allowed to expose app functions. If this is set, crossProfileAppFunctions must not be set to CROSS_PROFILE_APP_FUNCTIONS_ALLOWED, otherwise the policy will be rejected.",
-"Apps on the device for fully managed devices or in the work profile for devices with work profiles are allowed to expose app functions."
-],
-"type": "string"
-},
 "applications": {
 "description": "Policy applied to apps. This can have at most 3,000 elements.",
 "items": {
@@ -6171,7 +5673,7 @@ false
 ],
 "enumDescriptions": [
 "Unspecified. Defaults to ASSIST_CONTENT_ALLOWED.",
-"Assist content is blocked from being sent to a privileged app.Supported on Android 15 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 15.",
+"Assist content is blocked from being sent to a privileged app.Supported on Android 15 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 15.",
 "Assist content is allowed to be sent to a privileged app.Supported on Android 15 and above."
 ],
 "type": "string"
@@ -6195,23 +5697,9 @@ false
 "description": "Whether auto time is required, which prevents the user from manually setting the date and time. If autoDateAndTimeZone is set, this field is ignored.",
 "type": "boolean"
 },
-"autofillPolicy": {
-"description": "Optional. The policy for the autofill service.",
-"enum": [
-"AUTOFILL_POLICY_UNSPECIFIED",
-"AUTOFILL_USER_CHOICE",
-"AUTOFILL_DISABLED"
-],
-"enumDescriptions": [
-"Defaults to AUTOFILL_USER_CHOICE.",
-"The user can choose and use an autofill service.",
-"Autofill is disabled and the user is not allowed to change this setting. This is supported only on Android 8 and above."
-],
-"type": "string"
-},
 "blockApplicationsEnabled": {
 "deprecated": true,
-"description": "This field has no effect.",
+"description": "Whether applications other than the ones configured in applications are blocked from being installed. When set, applications that were installed under a previous policy but no longer appear in the policy are automatically uninstalled.",
 "type": "boolean"
 },
 "bluetoothConfigDisabled": {
@@ -6271,28 +5759,22 @@ false
 "type": "boolean"
 },
 "credentialProviderPolicyDefault": {
-"description": "Optional. Controls which apps are allowed to act as credential providers on Android 14 and above. These apps store credentials, see this (https://developer.android.com/training/sign-in/passkeys) and this (https://developer.android.com/reference/androidx/credentials/CredentialManager) for details. See also credentialProviderPolicy.",
+"description": "Controls which apps are allowed to act as credential providers on Android 14 and above. These apps store credentials, see this (https://developer.android.com/training/sign-in/passkeys) and this (https://developer.android.com/reference/androidx/credentials/CredentialManager) for details. See also credentialProviderPolicy.",
 "enum": [
 "CREDENTIAL_PROVIDER_POLICY_DEFAULT_UNSPECIFIED",
 "CREDENTIAL_PROVIDER_DEFAULT_DISALLOWED",
-"CREDENTIAL_PROVIDER_DEFAULT_DISALLOWED_EXCEPT_SYSTEM",
-"CREDENTIAL_PROVIDER_DEFAULT_ALLOWED"
+"CREDENTIAL_PROVIDER_DEFAULT_DISALLOWED_EXCEPT_SYSTEM"
 ],
 "enumDescriptions": [
 "Unspecified. Defaults to CREDENTIAL_PROVIDER_DEFAULT_DISALLOWED.",
 "Apps with credentialProviderPolicy unspecified are not allowed to act as a credential provider.",
-"Apps with credentialProviderPolicy unspecified are not allowed to act as a credential provider except for the OEM default credential providers. OEM default credential providers are always allowed to act as credential providers.",
-"Apps with credentialProviderPolicy unspecified are allowed to act as a credential provider."
+"Apps with credentialProviderPolicy unspecified are not allowed to act as a credential provider except for the OEM default credential providers. OEM default credential providers are always allowed to act as credential providers."
 ],
 "type": "string"
 },
 "credentialsConfigDisabled": {
 "description": "Whether configuring user credentials is disabled.",
 "type": "boolean"
-},
-"crossDevicePolicies": {
-"$ref": "CrossDevicePolicies",
-"description": "Optional. Policies controlling cross-device communication."
 },
 "crossProfilePolicies": {
 "$ref": "CrossProfilePolicies",
@@ -6306,13 +5788,6 @@ false
 "deprecated": true,
 "description": "Whether the user is allowed to enable debugging features.",
 "type": "boolean"
-},
-"defaultApplicationSettings": {
-"description": "Optional. The default application setting for supported types. If the default application is successfully set for at least one app type on a profile, users are prevented from changing any default applications on that profile.Only one DefaultApplicationSetting is allowed for each DefaultApplicationType.Warning: Do not configure this and persistent_preferred_activities for the same intent domain, such as web browsing. Setting both for the same intent domain can lead to unpredictable behavior.See Default application settings (https://developers.google.com/android/management/default-application-settings) guide for more details.",
-"items": {
-"$ref": "DefaultApplicationSetting"
-},
-"type": "array"
 },
 "defaultPermissionPolicy": {
 "description": "The default permission policy for runtime permission requests.",
@@ -6340,7 +5815,7 @@ false
 },
 "deviceRadioState": {
 "$ref": "DeviceRadioState",
-"description": "Optional. Covers controls for radio state such as Wi-Fi, bluetooth, and more."
+"description": "Covers controls for radio state such as Wi-Fi, bluetooth, and more."
 },
 "displaySettings": {
 "$ref": "DisplaySettings",
@@ -6373,8 +5848,8 @@ false
 "ENTERPRISE_DISPLAY_NAME_HIDDEN"
 ],
 "enumDescriptions": [
-"Unspecified. Defaults to ENTERPRISE_DISPLAY_NAME_VISIBLE.",
-"The enterprise display name is visible on the device. Supported on work profiles on Android 7 and above. Supported on fully managed devices on Android 8 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 7. A NonComplianceDetail with MANAGEMENT_MODE is reported on fully managed devices on Android 7.",
+"Unspecified. Defaults to displaying the enterprise name that's set at the time of device setup. In future, this will default to ENTERPRISE_DISPLAY_NAME_VISIBLE.",
+"The enterprise display name is visible on the device. Supported on work profiles on Android 7 and above. Supported on fully managed devices on Android 8 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 7. A nonComplianceDetail with MANAGEMENT_MODE is reported on fully managed devices on Android 7.",
 "The enterprise display name is hidden on the device."
 ],
 "type": "string"
@@ -6479,8 +5954,8 @@ false
 "On Android 8 and below, only the network location provider is enabled. On Android 9 and above, this is equivalent to LOCATION_ENFORCED.",
 "On Android 8 and below, location setting and accuracy are disabled. On Android 9 and above, this is equivalent to LOCATION_DISABLED.",
 "Location setting is not restricted on the device. No specific behavior is set or enforced.",
-"Enable location setting on the device. Important: On Android 11 and above, work profiles on company-owned devices cannot directly enforce enabling of location services. When LOCATION_ENFORCED is set, then a NonComplianceDetail with USER_ACTION is reported. Compliance can only be restored once the user manually turns on location services through the device's Settings application. ",
-"Disable location setting on the device. Important: On Android 11 and above, work profiles on company-owned devices cannot directly enforce disabling of location services. When LOCATION_DISABLED is set, then a nonComplianceDetail with USER_ACTION is reported. Compliance can only be restored once the user manually turns off location services through the device's Settings application. "
+"Enable location setting on the device.",
+"Disable location setting on the device."
 ],
 "type": "string"
 },
@@ -6535,7 +6010,7 @@ false
 "type": "boolean"
 },
 "networkResetDisabled": {
-"description": "Whether resetting network settings is disabled. This applies only on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes.",
+"description": "Whether resetting network settings is disabled.",
 "type": "boolean"
 },
 "oncCertificateProviders": {
@@ -6589,7 +6064,7 @@ false
 "description": "If present, only the input methods provided by packages in this list are permitted. If this field is present, but the list is empty, then only system input methods are permitted."
 },
 "persistentPreferredActivities": {
-"description": "Default intent handler activities.Warning: Do not configure this and default_application_settings for the same intent domain, such as web browsing. Setting both for the same intent domain can lead to unpredictable behavior.",
+"description": "Default intent handler activities.",
 "items": {
 "$ref": "PersistentPreferredActivity"
 },
@@ -6643,7 +6118,7 @@ false
 ],
 "enumDescriptions": [
 "Unspecified. Defaults to PRINTING_ALLOWED.",
-"Printing is disallowed. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 9.",
+"Printing is disallowed. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 9.",
 "Printing is allowed."
 ],
 "type": "string"
@@ -6666,11 +6141,11 @@ false
 "type": "boolean"
 },
 "screenCaptureDisabled": {
-"description": "Whether screen capture is disabled. This also blocks Circle to Search (https://support.google.com/android/answer/14508957).",
+"description": "Whether screen capture is disabled.",
 "type": "boolean"
 },
 "setUserIconDisabled": {
-"description": "Whether changing the user icon is disabled. This applies only on devices running Android 7 and above.",
+"description": "Whether changing the user icon is disabled. The setting has effect only on fully managed devices.",
 "type": "boolean"
 },
 "setWallpaperDisabled": {
@@ -6685,7 +6160,7 @@ false
 "type": "array"
 },
 "shareLocationDisabled": {
-"description": "Whether location sharing is disabled.",
+"description": "Whether location sharing is disabled. share_location_disabled is supported for both fully managed devices and personally owned work profiles.",
 "type": "boolean"
 },
 "shortSupportMessage": {
@@ -6788,7 +6263,7 @@ false
 ],
 "enumDescriptions": [
 "This value must not be used.",
-"For company-owned devices, setting this in wipeDataFlags will remove all eSIMs on the device when wipe is triggered due to any reason. On personally-owned devices, this will remove only managed eSIMs on the device (eSIMs which are added via the ADD_ESIM command). This is supported on devices running Android 15 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 15. For devices running on Android 16 or higher, managed eSIMs are always wiped when work profile is removed for personally-owned devices, whether this flag is provided or not."
+"For company-owned devices, setting this in wipeDataFlags will remove all eSIMs on the device when wipe is triggered due to any reason. On personally-owned devices, this will remove only managed eSIMs on the device. (eSIMs which are added via the ADD_ESIM command). This is supported on devices running Android 15 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 15."
 ],
 "type": "string"
 },
@@ -6919,7 +6394,7 @@ false
 "enumDescriptions": [
 "Unspecified. Defaults to NON_MATCHING_NETWORKS_ALLOWED.",
 "Apps this configuration applies to are allowed to use networks other than the preferential service.",
-"Apps this configuration applies to are disallowed from using other networks than the preferential service. This can be set on Android 14 and above. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 14. If this is set, fallbackToDefaultConnection must be set to FALLBACK_TO_DEFAULT_CONNECTION_DISALLOWED, the policy will be rejected otherwise."
+"Apps this configuration applies to are disallowed from using other networks than the preferential service. This can be set on Android 14 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 14. If this is set, fallbackToDefaultConnection must be set to FALLBACK_TO_DEFAULT_CONNECTION_DISALLOWED, the policy will be rejected otherwise."
 ],
 "type": "string"
 },
@@ -6980,33 +6455,6 @@ false
 "$ref": "PreferentialNetworkServiceConfig"
 },
 "type": "array"
-}
-},
-"type": "object"
-},
-"PrivateDnsSettings": {
-"description": "Controls the device's private DNS settings.",
-"id": "PrivateDnsSettings",
-"properties": {
-"privateDnsHost": {
-"description": "Optional. The hostname of the DNS server. This must be set if and only if private_dns_mode is set to PRIVATE_DNS_SPECIFIED_HOST. Supported on Android 10 and above on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported on other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 10. A NonComplianceDetail with PENDING is reported if the device is not connected to a network. A NonComplianceDetail with nonComplianceReason INVALID_VALUE and specificNonComplianceReason PRIVATE_DNS_HOST_NOT_SERVING is reported if the specified host is not a DNS server or not supported on Android. A NonComplianceDetail with INVALID_VALUE is reported if applying this setting fails for any other reason.",
-"type": "string"
-},
-"privateDnsMode": {
-"description": "Optional. The configuration mode for device's global private DNS settings. If this is set to PRIVATE_DNS_SPECIFIED_HOST, then private_dns_host must be set.",
-"enum": [
-"PRIVATE_DNS_MODE_UNSPECIFIED",
-"PRIVATE_DNS_USER_CHOICE",
-"PRIVATE_DNS_AUTOMATIC",
-"PRIVATE_DNS_SPECIFIED_HOST"
-],
-"enumDescriptions": [
-"Unspecified. Defaults to PRIVATE_DNS_USER_CHOICE.",
-"The user is allowed to configure private DNS.",
-"Automatic private DNS mode. The device tries to use the network-provided DNS server over an encrypted connection before resorting to cleartext. The user is not allowed to modify this setting. Supported on Android 10 and above on fully managed devices and work profiles on company-owned devices. A NonComplianceDetail with MANAGEMENT_MODE is reported on other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 10. A NonComplianceDetail with INVALID_VALUE is reported if setting this fails for any other reason.Note: For work profiles on company-owned devices, setting this mode prevents the user from changing the setting, but the active private DNS setting is not modified. A NonComplianceDetail with MANAGEMENT_MODE is reported in this case.",
-"The device only uses the DNS server specified in private_dns_host. The user is not allowed to modify this setting. If this is set, then private_dns_host must be set. Supported on Android 10 and above on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported on other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 10."
-],
-"type": "string"
 }
 },
 "type": "object"
@@ -7142,31 +6590,6 @@ false
 },
 "type": "object"
 },
-"RemovePolicyApplicationsRequest": {
-"description": "Request to remove ApplicationPolicy objects in the given policy.",
-"id": "RemovePolicyApplicationsRequest",
-"properties": {
-"packageNames": {
-"description": "Required. Package names to be removed. Entries that are not found are ignored. There must be at least one entry in package_names.",
-"items": {
-"type": "string"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
-"RemovePolicyApplicationsResponse": {
-"description": "Response to a request to remove ApplicationPolicy objects in the given policy.",
-"id": "RemovePolicyApplicationsResponse",
-"properties": {
-"policy": {
-"$ref": "Policy",
-"description": "The updated policy after ApplicationPolicy objects have been removed."
-}
-},
-"type": "object"
-},
 "RequestDeviceInfoParams": {
 "description": "Parameters associated with the REQUEST_DEVICE_INFO command to get device related information.",
 "id": "RequestDeviceInfoParams",
@@ -7211,31 +6634,6 @@ false
 "The requested device info is not supported on this device, e.g. eSIM is not supported on the device."
 ],
 "readOnly": true,
-"type": "string"
-}
-},
-"type": "object"
-},
-"Role": {
-"description": "Role an app can have.",
-"id": "Role",
-"properties": {
-"roleType": {
-"description": "Required. The type of the role an app can have.",
-"enum": [
-"ROLE_TYPE_UNSPECIFIED",
-"COMPANION_APP",
-"KIOSK",
-"MOBILE_THREAT_DEFENSE_ENDPOINT_DETECTION_RESPONSE",
-"SYSTEM_HEALTH_MONITORING"
-],
-"enumDescriptions": [
-"The role type is unspecified. This value must not be used.",
-"The role type for companion apps. This role enables the app as a companion app with the capability of interacting with Android Device Policy offline. This is the recommended way to configure an app as a companion app. For legacy way, see extensionConfig.On Android 14 and above, the app with this role is exempted from power and background execution restrictions, suspension and hibernation. On Android 11 and above, the user control is disallowed for the app with this role. userControlSettings cannot be set to USER_CONTROL_ALLOWED for the app with this role.Android Device Policy notifies the companion app of any local command status updates if the app has a service with . See Integrate with the AMAPI SDK (https://developers.google.com/android/management/sdk-integration) guide for more details on the requirements for the service.",
-"The role type for kiosk apps. An app can have this role only if it has installType set to REQUIRED_FOR_SETUP or CUSTOM. Before adding this role to an app with CUSTOM install type, the app must already be installed on the device.The app having this role type is set as the preferred home intent and allowlisted for lock task mode. When there is an app with this role type, status bar will be automatically disabled.This is preferable to setting installType to KIOSK.On Android 11 and above, when an app has this role, the user control is disallowed for all apps. The IT admin can set userControlSettings to USER_CONTROL_ALLOWED to allow user control for specific apps.",
-"The role type for Mobile Threat Defense (MTD) / Endpoint Detection & Response (EDR) apps.On Android 14 and above, the app with this role is exempted from power and background execution restrictions, suspension and hibernation. On Android 11 and above, the user control is disallowed and userControlSettings cannot be set to USER_CONTROL_ALLOWED for the app with this role.",
-"The role type for system health monitoring apps.On Android 14 and above, the app with this role is exempted from power and background execution restrictions, suspension and hibernation. On Android 11 and above, the user control is disallowed and userControlSettings cannot be set to USER_CONTROL_ALLOWED for the app with this role."
-],
 "type": "string"
 }
 },
@@ -7378,10 +6776,6 @@ false
 ],
 "type": "string"
 },
-"googleAuthenticationOptions": {
-"$ref": "SigninDetailGoogleAuthenticationOptions",
-"description": "Optional. Options related to Google authentication during the enrollment."
-},
 "qrCode": {
 "description": "A JSON string whose UTF-8 representation can be used to generate a QR code to enroll a device with this enrollment token. To enroll a device using NFC, the NFC record must contain a serialized java.util.Properties representation of the properties in the JSON. This is a read-only field generated by the server.",
 "type": "string"
@@ -7396,27 +6790,6 @@ false
 },
 "tokenTag": {
 "description": "An EMM-specified metadata to distinguish between instances of SigninDetail.",
-"type": "string"
-}
-},
-"type": "object"
-},
-"SigninDetailGoogleAuthenticationOptions": {
-"description": "Options for Google authentication during the enrollment.These options control whether the Google authentication screen is shown, and whether it can be skipped, at the start of the sign-in flow. More requirements can be enforced by EnrollmentToken.googleAuthenticationOptions on the EnrollmentToken that is created later.",
-"id": "SigninDetailGoogleAuthenticationOptions",
-"properties": {
-"authenticationRequirement": {
-"description": "Optional. Specifies whether user should authenticate with Google during enrollment. If this is set to any value other than AUTHENTICATION_REQUIREMENT_UNSPECIFIED, the enterprise-level setting googleAuthenticationSettings is ignored for devices enrolled with this sign-in detail.",
-"enum": [
-"AUTHENTICATION_REQUIREMENT_UNSPECIFIED",
-"OPTIONAL",
-"REQUIRED"
-],
-"enumDescriptions": [
-"The setting googleAuthenticationSettings for the enterprise that this sign-in detail belongs to is used to determine whether the user needs to authenticate with Google during enrollment.",
-"Google authentication is optional for the user. This means the user can choose to skip Google authentication during enrollment.",
-"Google authentication is required for the user. This means the user must authenticate with a Google account to proceed."
-],
 "type": "string"
 }
 },
@@ -7494,11 +6867,6 @@ false
 "description": "Additional context for SpecificNonComplianceReason.",
 "id": "SpecificNonComplianceContext",
 "properties": {
-"defaultApplicationContext": {
-"$ref": "DefaultApplicationContext",
-"description": "Output only. Additional context for non-compliance related to default application settings. See DEFAULT_APPLICATION_SETTING_FAILED_FOR_SCOPE.",
-"readOnly": true
-},
 "oncWifiContext": {
 "$ref": "OncWifiContext",
 "description": "Additional context for non-compliance related to Wi-Fi configuration. See ONC_WIFI_INVALID_VALUE and ONC_WIFI_API_LEVEL"
@@ -7603,10 +6971,6 @@ false
 },
 "commonCriteriaModeEnabled": {
 "description": "Whether Common Criteria Mode reporting is enabled. This is supported only on company-owned devices.",
-"type": "boolean"
-},
-"defaultApplicationInfoReportingEnabled": {
-"description": "Optional. Whether defaultApplicationInfo reporting is enabled.",
 "type": "boolean"
 },
 "deviceSettingsEnabled": {
@@ -7763,11 +7127,11 @@ false
 "type": "object"
 },
 "TelephonyInfo": {
-"description": "Telephony information associated with a given SIM card on the device. This is supported for all SIM cards on fully managed devices on Android 6 and above. In addition, this is supported for admin-added eSIMs on all devices for Android 15 and above.",
+"description": "Telephony information associated with a given SIM card on the device. Only supported on fully managed devices starting from Android API level 23.",
 "id": "TelephonyInfo",
 "properties": {
 "activationState": {
-"description": "Output only. Activation state of the SIM card on the device. This is applicable for eSIMs only. This is supported on all devices for Android 15 and above. This is always ACTIVATION_STATE_UNSPECIFIED for physical SIMs and for devices below Android 15.",
+"description": "Output only. Activation state of the SIM card on the device. This is applicable for eSIMs only. This is supported on all devices for API level 35 and above. This is always ACTIVATION_STATE_UNSPECIFIED for physical SIMs and for devices below API level 35.",
 "enum": [
 "ACTIVATION_STATE_UNSPECIFIED",
 "ACTIVATED",
@@ -7786,7 +7150,7 @@ false
 "type": "string"
 },
 "configMode": {
-"description": "Output only. The configuration mode of the SIM card on the device. This is applicable for eSIMs only. This is supported on all devices for Android 15 and above. This is always CONFIG_MODE_UNSPECIFIED for physical SIMs and for devices below Android 15.",
+"description": "Output only. The configuration mode of the SIM card on the device. This is applicable for eSIMs only. This is supported on all devices for API level 35 and above. This is always CONFIG_MODE_UNSPECIFIED for physical SIMs and for devices below API level 35.",
 "enum": [
 "CONFIG_MODE_UNSPECIFIED",
 "ADMIN_CONFIGURED",
@@ -7841,8 +7205,8 @@ false
 ],
 "enumDescriptions": [
 "This value is not used.",
-"Enable logging of on-device security events, such as when the device password is incorrectly entered or removable storage is mounted. See UsageLogEvent for a complete description of the logged security events. Supported for fully managed devices on Android 7 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged. Can be overridden by the application delegated scope SECURITY_LOGS",
-"Enable logging of on-device network events, such as DNS lookups and TCP connections. See UsageLogEvent for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged. Can be overridden by the application delegated scope NETWORK_ACTIVITY_LOGS"
+"Enable logging of on-device security events, like when the device password is incorrectly entered or removable storage is mounted. See UsageLogEvent for a complete description of the logged security events. Supported for fully managed devices on Android 7 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged. Can be overridden by the application delegated scope SECURITY_LOGS",
+"Enable logging of on-device network events, like DNS lookups and TCP connections. See UsageLogEvent for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged. Can be overridden by the application delegated scope NETWORK_ACTIVITY_LOGS"
 ],
 "type": "string"
 },
@@ -7858,8 +7222,8 @@ false
 ],
 "enumDescriptions": [
 "This value is not used.",
-"Enable logging of on-device security events, such as when the device password is incorrectly entered or removable storage is mounted. See UsageLogEvent for a complete description of the logged security events. Supported for fully managed devices on Android 7 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged. Can be overridden by the application delegated scope SECURITY_LOGS",
-"Enable logging of on-device network events, such as DNS lookups and TCP connections. See UsageLogEvent for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged. Can be overridden by the application delegated scope NETWORK_ACTIVITY_LOGS"
+"Enable logging of on-device security events, like when the device password is incorrectly entered or removable storage is mounted. See UsageLogEvent for a complete description of the logged security events. Supported for fully managed devices on Android 7 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged. Can be overridden by the application delegated scope SECURITY_LOGS",
+"Enable logging of on-device network events, like DNS lookups and TCP connections. See UsageLogEvent for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged. Can be overridden by the application delegated scope NETWORK_ACTIVITY_LOGS"
 ],
 "type": "string"
 },
@@ -8262,9 +7626,9 @@ false
 ],
 "enumDescriptions": [
 "Unspecified. Defaults to WIFI_ROAMING_DEFAULT.",
-"Wi-Fi roaming is disabled. Supported on Android 15 and above on fully managed devices and work profiles on company-owned devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 15.",
+"Wi-Fi roaming is disabled. Supported on Android 15 and above on fully managed devices and work profiles on company-owned devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 15.",
 "Default Wi-Fi roaming mode of the device.",
-"Aggressive roaming mode which allows quicker Wi-Fi roaming. Supported on Android 15 and above on fully managed devices and work profiles on company-owned devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 15. A NonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not support aggressive roaming mode."
+"Aggressive roaming mode which allows quicker Wi-Fi roaming. Supported on Android 15 and above on fully managed devices and work profiles on company-owned devices. A nonComplianceDetail with MANAGEMENT_MODE is reported for other management modes. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 15. A nonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not support aggressive roaming mode."
 ],
 "type": "string"
 },
@@ -8305,7 +7669,7 @@ false
 "type": "string"
 },
 "wifiSsids": {
-"description": "Optional. List of Wi-Fi SSIDs that should be applied in the policy. This field must be non-empty when WifiSsidPolicyType is set to WIFI_SSID_ALLOWLIST. If this is set to a non-empty list, then a NonComplianceDetail detail with API_LEVEL is reported if the Android version is less than 13 and a NonComplianceDetail with MANAGEMENT_MODE is reported for non-company-owned devices.",
+"description": "Optional. List of Wi-Fi SSIDs that should be applied in the policy. This field must be non-empty when WifiSsidPolicyType is set to WIFI_SSID_ALLOWLIST. If this is set to a non-empty list, then a nonComplianceDetail detail with API_LEVEL is reported if the Android version is less than 13 and a nonComplianceDetail with MANAGEMENT_MODE is reported for non-company-owned devices.",
 "items": {
 "$ref": "WifiSsid"
 },
@@ -8319,7 +7683,7 @@ false
 "id": "WipeAction",
 "properties": {
 "preserveFrp": {
-"description": "Whether the factory-reset protection data is preserved on the device. This setting applies to fully managed devices and work profiles on company-owned devices.",
+"description": "Whether the factory-reset protection data is preserved on the device. This setting doesn\u2019t apply to work profiles.",
 "type": "boolean"
 },
 "wipeAfterDays": {
@@ -8334,36 +7698,6 @@ false
 "description": "The work profile or company-owned device failed to wipe when requested. This could be user initiated or admin initiated e.g. delete was received. Intentionally empty.",
 "id": "WipeFailureEvent",
 "properties": {},
-"type": "object"
-},
-"WipeParams": {
-"description": "Parameters associated with the WIPE command to wipe the device.",
-"id": "WipeParams",
-"properties": {
-"wipeDataFlags": {
-"description": "Optional. Flags to determine what data to wipe.",
-"items": {
-"enum": [
-"WIPE_DATA_FLAG_UNSPECIFIED",
-"PRESERVE_RESET_PROTECTION_DATA",
-"WIPE_EXTERNAL_STORAGE",
-"WIPE_ESIMS"
-],
-"enumDescriptions": [
-"This value is ignored.",
-"Preserve the factory reset protection data on the device.",
-"Additionally wipe the device's external storage (such as SD cards).",
-"For company-owned devices, this removes all eSIMs from the device when the device is wiped. In personally-owned devices, this will remove managed eSIMs (eSIMs which are added via the ADD_ESIM command) on the devices and no personally owned eSIMs will be removed. For devices running on Android 16 or higher, managed eSIMs are always wiped when work profile is removed for personally-owned devices, whether this flag is provided or not."
-],
-"type": "string"
-},
-"type": "array"
-},
-"wipeReason": {
-"$ref": "UserFacingMessage",
-"description": "Optional. A short message displayed to the user before wiping the work profile on personal devices. This has no effect on company owned devices. The maximum message length is 200 characters."
-}
-},
 "type": "object"
 },
 "WorkAccountSetupConfig": {
@@ -8385,7 +7719,7 @@ false
 "type": "string"
 },
 "requiredAccountEmail": {
-"description": "Optional. The specific google work account email address to be added. This field is only relevant if authenticationType is GOOGLE_AUTHENTICATED. This must be an enterprise account and not a consumer account. Once set and a Google authenticated account is added to the device, changing this field will have no effect, and thus recommended to be set only once. The email address must be all lowercase.",
+"description": "Optional. The specific google work account email address to be added. This field is only relevant if authenticationType is GOOGLE_AUTHENTICATED. This must be an enterprise account and not a consumer account. Once set and a Google authenticated account is added to the device, changing this field will have no effect, and thus recommended to be set only once.",
 "type": "string"
 }
 },

@@ -1,43 +1,38 @@
-Consulta: 2026-09-08 03:47:01
+Consulta: 2026-09-09 01:49:39
 URL: https://hst-api.wialon.us/wialon/ajax.html
 Unidades en Wialon: 13
 
 --- 1  EUI-621 (ID: 402191563) ---
-  Mensajes GPS hoy: 270
-  📍 Última Pos: -4.5945016, -81.25231 -> T.ALTA
-  ✅ KM hoy: 8.13 | Juris: T.ALTA
+  Mensajes GPS hoy: 256
+  📍 Última Pos: -4.5834, -81.1936616 -> T.ALTA
+  ✅ KM hoy: 9.73 | Juris: T.ALTA
 
 --- 2  EUI-682 (ID: 402191188) ---
-  Mensajes GPS hoy: 632
-  📍 Última Pos: -4.58491, -81.2561083 -> T.ALTA
-  ✅ KM hoy: 16.6 | Juris: T.ALTA
+  Mensajes GPS hoy: 380
+  📍 Última Pos: -4.5921333, -81.2599233 -> T.ALTA
+  ✅ KM hoy: 10.53 | Juris: T.ALTA
 
 --- 4  EUI-646 (ID: 402191155) ---
-  Mensajes GPS hoy: 493
-  📍 Última Pos: -4.5927433, -81.1744583 -> T.ALTA
-  ✅ KM hoy: 9.18 | Juris: T.ALTA
+  Mensajes GPS hoy: 409
+  📍 Última Pos: -4.5763383, -81.2675716 -> SECTORIAL
+  ✅ KM hoy: 12.07 | Juris: SECTORIAL
 
 --- 5  EUI-685 (ID: 402191183) ---
-  Mensajes GPS hoy: 526
-  📍 Última Pos: -4.5823933, -81.2680466 -> SECTORIAL
-  ✅ KM hoy: 21.26 | Juris: SECTORIAL
+  Mensajes GPS hoy: 249
+  📍 Última Pos: -4.58651, -81.27268 -> SECTORIAL
+  ✅ KM hoy: 8.85 | Juris: SECTORIAL
 
 --- 7  EUI-679 (ID: 402191378) ---
-  Mensajes GPS hoy: 530
-  📍 Última Pos: -4.5731616, -81.26786 -> SECTORIAL
-  ✅ KM hoy: 14.7 | Juris: SECTORIAL
+  Mensajes GPS hoy: 271
+  📍 Última Pos: -4.5542216, -81.2766599 -> SECTORIAL
+  ✅ KM hoy: 6.03 | Juris: SECTORIAL
 
 --- 8  EUI-680 (ID: 402191308) ---
-  Mensajes GPS hoy: 400
-  📍 Última Pos: -4.5729616, -81.2723133 -> SECTORIAL
-  ✅ KM hoy: 18.69 | Juris: SECTORIAL
+  Mensajes GPS hoy: 120
+  📍 Última Pos: -4.5923116, -81.2588983 -> T.ALTA
+  ✅ KM hoy: 4.15 | Juris: T.ALTA
 
---- 10  EUI-647 (ID: 402191562) ---
-  Mensajes GPS hoy: 409
-  📍 Última Pos: -4.5851383, -81.1849666 -> T.ALTA
-  ✅ KM hoy: 10.32 | Juris: T.ALTA
-
---- 11  EUI-668 (ID: 402190862) ---
-  Mensajes GPS hoy: 769
-  📍 Última Pos: -4.5865633, -81.27201 -> SECTORIAL
-  ✅ KM hoy: 26.07 | Juris: SECTORIAL
+--- 9  EUI-645 (ID: 402190601) ---
+  Mensajes GPS hoy: 257
+  📍 Última Pos: -4.5792733, -81.1921933 -> T.ALTA
+  ✅ KM hoy: 15.85 | Juris: T.ALTA

@@ -129,8 +129,7 @@
 "BEST_PRACTICES",
 "PERFORMANCE",
 "PWA",
-"SEO",
-"AGENTIC_BROWSING"
+"SEO"
 ],
 "enumDeprecated": [
 false,
@@ -138,7 +137,6 @@ false,
 false,
 false,
 true,
-false,
 false
 ],
 "enumDescriptions": [
@@ -147,8 +145,7 @@ false
 "Best Practices, category pertaining to a website's conformance to web best practice.",
 "Performance, category pertaining to a website's performance.",
 "Progressive Web App (PWA), category pertaining to a website's ability to be run as a PWA. This is deprecated in Lighthouse's 12.0 release.",
-"Search Engine Optimization (SEO), category pertaining to a website's ability to be indexed by search engines.",
-"Agentic Browsing, category pertaining to a website's ability to be rendered by an agentic browsing system."
+"Search Engine Optimization (SEO), category pertaining to a website's ability to be indexed by search engines."
 ],
 "location": "query",
 "repeated": true,
@@ -204,7 +201,7 @@ false
 }
 }
 },
-"revision": "20260629",
+"revision": "20240829",
 "rootUrl": "https://pagespeedonline.googleapis.com/",
 "schemas": {
 "AuditRefs": {
@@ -267,10 +264,6 @@ false
 "accessibility": {
 "$ref": "LighthouseCategoryV5",
 "description": "The accessibility category, containing all accessibility related audits."
-},
-"agentic-browsing": {
-"$ref": "LighthouseCategoryV5",
-"description": "The agentic browsing category, containing all agentic browsing related audits."
 },
 "best-practices": {
 "$ref": "LighthouseCategoryV5",
@@ -481,20 +474,6 @@ false
 "$ref": "AuditRefs"
 },
 "type": "array"
-},
-"categoryScoreDisplayMode": {
-"description": "Optional. How the category score should be displayed (e.g. as a fraction).",
-"enum": [
-"CATEGORY_SCORE_DISPLAY_MODE_UNSPECIFIED",
-"GAUGE",
-"FRACTION"
-],
-"enumDescriptions": [
-"Default UNDEFINED category.",
-"Display the score as a standard circular gauge (default)",
-"Display the score as a fraction, e.g. \"3/5\""
-],
-"type": "string"
 },
 "description": {
 "description": "A more detailed description of the category and its importance.",

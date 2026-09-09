@@ -14,7 +14,7 @@
 "canonicalName": "Area Insights",
 "description": "Places Aggregate API.",
 "discoveryVersion": "v1",
-"documentationLink": "https://developers.google.com/maps/documentation/places-aggregate/overview",
+"documentationLink": "https://g3doc.corp.google.com/geo/platform/area_insights/README.md?cl=head",
 "fullyEncodeReservedExpansion": true,
 "icons": {
 "x16": "http://www.google.com/images/icons/product/search-16.gif",
@@ -128,7 +128,7 @@
 }
 }
 },
-"revision": "20250622",
+"revision": "20250521",
 "rootUrl": "https://areainsights.googleapis.com/",
 "schemas": {
 "Circle": {

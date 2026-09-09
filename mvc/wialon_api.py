@@ -225,20 +225,31 @@ class WialonAPI:
 
                     if not messages:
                         unit_logs.append("  ⚠️ Sin mensajes para hoy")
-                        return orig_name, {"km": 0.0, "jurisdiccion": "SECTORIAL"}, unit_logs
+                        return orig_name, {"km": 0.0, "jurisdiccion": "SECTORIAL", "last_lat": None, "last_lon": None}, unit_logs
 
                     km_hoy = self._calc_km_from_messages(messages)
 
                     # Obtener última posición para jurisdicción
                     juris = "SECTORIAL"
-                    last_valid_msg = next((m for m in reversed(messages) if m.get("pos")), None)
-                    if last_valid_msg:
-                        pos = last_valid_msg.get("pos")
-                        juris = _get_jurisdiction(pos.get("y"), pos.get("x"))
-                        unit_logs.append(f"  📍 Última Pos: {pos.get('y')}, {pos.get('x')} -> {juris}")
+                    last_lat = None
+                    last_lon = None
+                    pos = item.get("pos")
+                    if pos:
+                        last_lat = pos.get("y")
+                        last_lon = pos.get("x")
+                    else:
+                        last_valid_msg = next((m for m in reversed(messages) if m.get("pos")), None)
+                        if last_valid_msg:
+                            pos = last_valid_msg.get("pos")
+                            last_lat = pos.get("y")
+                            last_lon = pos.get("x")
+                    
+                    if last_lat is not None and last_lon is not None:
+                        juris = _get_jurisdiction(last_lat, last_lon)
+                        unit_logs.append(f"  📍 Última Pos: {last_lat}, {last_lon} -> {juris}")
 
                     unit_logs.append(f"  ✅ KM hoy: {km_hoy} | Juris: {juris}")
-                    return orig_name, {"km": km_hoy, "jurisdiccion": juris}, unit_logs
+                    return orig_name, {"km": km_hoy, "jurisdiccion": juris, "last_lat": last_lat, "last_lon": last_lon}, unit_logs
 
                 except Exception as e:
                     unit_logs.append(f"  ❌ Error calculando KM: {e}")

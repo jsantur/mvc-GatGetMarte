@@ -108,80 +108,6 @@
 "organizations": {
 "resources": {
 "locations": {
-"methods": {
-"get": {
-"description": "Gets information about a location.",
-"flatPath": "v1/organizations/{organizationsId}/locations/{locationsId}",
-"httpMethod": "GET",
-"id": "networksecurity.organizations.locations.get",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Resource name for the location.",
-"location": "path",
-"pattern": "^organizations/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "Location"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"list": {
-"description": "Lists information about the supported locations for this service. This method lists locations based on the resource scope provided in the ListLocationsRequest.name field: * **Global locations**: If `name` is empty, the method lists the public locations available to all projects. * **Project-specific locations**: If `name` follows the format `projects/{project}`, the method lists locations visible to that specific project. This includes public, private, or other project-specific locations enabled for the project. For gRPC and client library implementations, the resource name is passed as the `name` field. For direct service calls, the resource name is incorporated into the request path based on the specific service implementation and version.",
-"flatPath": "v1/organizations/{organizationsId}/locations",
-"httpMethod": "GET",
-"id": "networksecurity.organizations.locations.list",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"extraLocationTypes": {
-"description": "Optional. Do not use this field unless explicitly documented otherwise. This is primarily for internal usage.",
-"location": "query",
-"repeated": true,
-"type": "string"
-},
-"filter": {
-"description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
-"location": "query",
-"type": "string"
-},
-"name": {
-"description": "The resource that owns the locations collection, if applicable.",
-"location": "path",
-"pattern": "^organizations/[^/]+$",
-"required": true,
-"type": "string"
-},
-"pageSize": {
-"description": "The maximum number of results to return. If not set, the service selects a default.",
-"format": "int32",
-"location": "query",
-"type": "integer"
-},
-"pageToken": {
-"description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}/locations",
-"response": {
-"$ref": "ListLocationsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-}
-},
 "resources": {
 "addressGroups": {
 "methods": {
@@ -477,41 +403,13 @@
 "scopes": [
 "https://www.googleapis.com/auth/cloud-platform"
 ]
-},
-"testIamPermissions": {
-"description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
-"flatPath": "v1/organizations/{organizationsId}/locations/{locationsId}/addressGroups/{addressGroupsId}:testIamPermissions",
-"httpMethod": "POST",
-"id": "networksecurity.organizations.locations.addressGroups.testIamPermissions",
-"parameterOrder": [
-"resource"
-],
-"parameters": {
-"resource": {
-"description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
-"location": "path",
-"pattern": "^organizations/[^/]+/locations/[^/]+/addressGroups/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+resource}:testIamPermissions",
-"request": {
-"$ref": "GoogleIamV1TestIamPermissionsRequest"
-},
-"response": {
-"$ref": "GoogleIamV1TestIamPermissionsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
 }
 }
 },
 "firewallEndpoints": {
 "methods": {
 "create": {
-"description": "Creates a new FirewallEndpoint in a given organization and location.",
+"description": "Creates a new FirewallEndpoint in a given project and location.",
 "flatPath": "v1/organizations/{organizationsId}/locations/{locationsId}/firewallEndpoints",
 "httpMethod": "POST",
 "id": "networksecurity.organizations.locations.firewallEndpoints.create",
@@ -535,11 +433,6 @@
 "description": "Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).",
 "location": "query",
 "type": "string"
-},
-"validateOnly": {
-"description": "Optional. If set, validate the request and preview the endpoint, but do not actually create it.",
-"location": "query",
-"type": "boolean"
 }
 },
 "path": "v1/{+parent}/firewallEndpoints",
@@ -554,7 +447,7 @@
 ]
 },
 "delete": {
-"description": "Deletes a single org Endpoint.",
+"description": "Deletes a single Endpoint.",
 "flatPath": "v1/organizations/{organizationsId}/locations/{locationsId}/firewallEndpoints/{firewallEndpointsId}",
 "httpMethod": "DELETE",
 "id": "networksecurity.organizations.locations.firewallEndpoints.delete",
@@ -584,7 +477,7 @@
 ]
 },
 "get": {
-"description": "Gets details of a single org Endpoint.",
+"description": "Gets details of a single Endpoint.",
 "flatPath": "v1/organizations/{organizationsId}/locations/{locationsId}/firewallEndpoints/{firewallEndpointsId}",
 "httpMethod": "GET",
 "id": "networksecurity.organizations.locations.firewallEndpoints.get",
@@ -609,7 +502,7 @@
 ]
 },
 "list": {
-"description": "Lists FirewallEndpoints in a given organization and location.",
+"description": "Lists FirewallEndpoints in a given project and location.",
 "flatPath": "v1/organizations/{organizationsId}/locations/{locationsId}/firewallEndpoints",
 "httpMethod": "GET",
 "id": "networksecurity.organizations.locations.firewallEndpoints.list",
@@ -655,7 +548,7 @@
 ]
 },
 "patch": {
-"description": "Update a single org Endpoint.",
+"description": "Update a single Endpoint.",
 "flatPath": "v1/organizations/{organizationsId}/locations/{locationsId}/firewallEndpoints/{firewallEndpointsId}",
 "httpMethod": "PATCH",
 "id": "networksecurity.organizations.locations.firewallEndpoints.patch",
@@ -664,7 +557,7 @@
 ],
 "parameters": {
 "name": {
-"description": "Immutable. Identifier. Name of resource.",
+"description": "Immutable. Identifier. name of resource",
 "location": "path",
 "pattern": "^organizations/[^/]+/locations/[^/]+/firewallEndpoints/[^/]+$",
 "required": true,
@@ -806,11 +699,6 @@
 "description": "The standard list page token.",
 "location": "query",
 "type": "string"
-},
-"returnPartialSuccess": {
-"description": "When set to `true`, operations that are reachable are returned as normal, and those that are unreachable are returned in the ListOperationsResponse.unreachable field. This can only be `true` when reading across collections. For example, when `parent` is set to `\"projects/example/locations/-\"`. This field is not supported by default and will result in an `UNIMPLEMENTED` error if set unless explicitly documented otherwise in service or product specific documentation.",
-"location": "query",
-"type": "boolean"
 }
 },
 "path": "v1/{+name}/operations",
@@ -923,13 +811,13 @@
 ],
 "parameters": {
 "pageSize": {
-"description": "Optional. Maximum number of SecurityProfileGroups to return per call.",
+"description": "Maximum number of SecurityProfileGroups to return per call.",
 "format": "int32",
 "location": "query",
 "type": "integer"
 },
 "pageToken": {
-"description": "Optional. The value returned by the last `ListSecurityProfileGroupsResponse` Indicates that this is a continuation of a prior `ListSecurityProfileGroups` call, and that the system should return the next page of data.",
+"description": "The value returned by the last `ListSecurityProfileGroupsResponse` Indicates that this is a continuation of a prior `ListSecurityProfileGroups` call, and that the system should return the next page of data.",
 "location": "query",
 "type": "string"
 },
@@ -1085,13 +973,13 @@
 ],
 "parameters": {
 "pageSize": {
-"description": "Optional. Maximum number of SecurityProfiles to return per call.",
+"description": "Maximum number of SecurityProfiles to return per call.",
 "format": "int32",
 "location": "query",
 "type": "integer"
 },
 "pageToken": {
-"description": "Optional. The value returned by the last `ListSecurityProfilesResponse` Indicates that this is a continuation of a prior `ListSecurityProfiles` call, and that the system should return the next page of data.",
+"description": "The value returned by the last `ListSecurityProfilesResponse` Indicates that this is a continuation of a prior `ListSecurityProfiles` call, and that the system should return the next page of data.",
 "location": "query",
 "type": "string"
 },
@@ -1181,7 +1069,7 @@
 ]
 },
 "list": {
-"description": "Lists information about the supported locations for this service. This method lists locations based on the resource scope provided in the ListLocationsRequest.name field: * **Global locations**: If `name` is empty, the method lists the public locations available to all projects. * **Project-specific locations**: If `name` follows the format `projects/{project}`, the method lists locations visible to that specific project. This includes public, private, or other project-specific locations enabled for the project. For gRPC and client library implementations, the resource name is passed as the `name` field. For direct service calls, the resource name is incorporated into the request path based on the specific service implementation and version.",
+"description": "Lists information about the supported locations for this service.",
 "flatPath": "v1/projects/{projectsId}/locations",
 "httpMethod": "GET",
 "id": "networksecurity.projects.locations.list",
@@ -1190,7 +1078,7 @@
 ],
 "parameters": {
 "extraLocationTypes": {
-"description": "Optional. Do not use this field unless explicitly documented otherwise. This is primarily for internal usage.",
+"description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
 "location": "query",
 "repeated": true,
 "type": "string"
@@ -2126,168 +2014,6 @@
 }
 }
 },
-"backendAuthenticationConfigs": {
-"methods": {
-"create": {
-"description": "Creates a new BackendAuthenticationConfig in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/backendAuthenticationConfigs",
-"httpMethod": "POST",
-"id": "networksecurity.projects.locations.backendAuthenticationConfigs.create",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"backendAuthenticationConfigId": {
-"description": "Required. Short name of the BackendAuthenticationConfig resource to be created. This value should be 1-63 characters long, containing only letters, numbers, hyphens, and underscores, and should not start with a number. E.g. \"backend-auth-config\".",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. The parent resource of the BackendAuthenticationConfig. Must be in the format `projects/*/locations/{location}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/backendAuthenticationConfigs",
-"request": {
-"$ref": "BackendAuthenticationConfig"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"delete": {
-"description": "Deletes a single BackendAuthenticationConfig to BackendAuthenticationConfig.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/backendAuthenticationConfigs/{backendAuthenticationConfigsId}",
-"httpMethod": "DELETE",
-"id": "networksecurity.projects.locations.backendAuthenticationConfigs.delete",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"etag": {
-"description": "Optional. Etag of the resource. If this is provided, it must match the server's etag.",
-"location": "query",
-"type": "string"
-},
-"name": {
-"description": "Required. A name of the BackendAuthenticationConfig to delete. Must be in the format `projects/*/locations/{location}/backendAuthenticationConfigs/*`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/backendAuthenticationConfigs/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"get": {
-"description": "Gets details of a single BackendAuthenticationConfig to BackendAuthenticationConfig.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/backendAuthenticationConfigs/{backendAuthenticationConfigsId}",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.backendAuthenticationConfigs.get",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. A name of the BackendAuthenticationConfig to get. Must be in the format `projects/*/locations/{location}/backendAuthenticationConfigs/*`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/backendAuthenticationConfigs/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "BackendAuthenticationConfig"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"list": {
-"description": "Lists BackendAuthenticationConfigs in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/backendAuthenticationConfigs",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.backendAuthenticationConfigs.list",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"pageSize": {
-"description": "Maximum number of BackendAuthenticationConfigs to return per call.",
-"format": "int32",
-"location": "query",
-"type": "integer"
-},
-"pageToken": {
-"description": "The value returned by the last `ListBackendAuthenticationConfigsResponse` Indicates that this is a continuation of a prior `ListBackendAuthenticationConfigs` call, and that the system should return the next page of data.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. The project and location from which the BackendAuthenticationConfigs should be listed, specified in the format `projects/*/locations/{location}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/backendAuthenticationConfigs",
-"response": {
-"$ref": "ListBackendAuthenticationConfigsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"patch": {
-"description": "Updates the parameters of a single BackendAuthenticationConfig to BackendAuthenticationConfig.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/backendAuthenticationConfigs/{backendAuthenticationConfigsId}",
-"httpMethod": "PATCH",
-"id": "networksecurity.projects.locations.backendAuthenticationConfigs.patch",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the BackendAuthenticationConfig resource. It matches the pattern `projects/*/locations/{location}/backendAuthenticationConfigs/{backend_authentication_config}`",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/backendAuthenticationConfigs/[^/]+$",
-"required": true,
-"type": "string"
-},
-"updateMask": {
-"description": "Optional. Field mask is used to specify the fields to be overwritten in the BackendAuthenticationConfig resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask then all fields will be overwritten.",
-"format": "google-fieldmask",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"request": {
-"$ref": "BackendAuthenticationConfig"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-}
-}
-},
 "clientTlsPolicies": {
 "methods": {
 "create": {
@@ -2450,7 +2176,7 @@
 ],
 "parameters": {
 "name": {
-"description": "Required. Name of the ClientTlsPolicy resource. It matches the pattern `projects/{project}/locations/{location}/clientTlsPolicies/{client_tls_policy}`",
+"description": "Required. Name of the ClientTlsPolicy resource. It matches the pattern `projects/*/locations/{location}/clientTlsPolicies/{client_tls_policy}`",
 "location": "path",
 "pattern": "^projects/[^/]+/locations/[^/]+/clientTlsPolicies/[^/]+$",
 "required": true,
@@ -2525,163 +2251,6 @@
 },
 "response": {
 "$ref": "GoogleIamV1TestIamPermissionsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-}
-}
-},
-"dnsThreatDetectors": {
-"methods": {
-"create": {
-"description": "Creates a new DnsThreatDetector in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/dnsThreatDetectors",
-"httpMethod": "POST",
-"id": "networksecurity.projects.locations.dnsThreatDetectors.create",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"dnsThreatDetectorId": {
-"description": "Optional. The ID of the requesting DnsThreatDetector object. If this field is not supplied, the service generates an identifier.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. The value for the parent of the DnsThreatDetector resource.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/dnsThreatDetectors",
-"request": {
-"$ref": "DnsThreatDetector"
-},
-"response": {
-"$ref": "DnsThreatDetector"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"delete": {
-"description": "Deletes a single DnsThreatDetector.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/dnsThreatDetectors/{dnsThreatDetectorsId}",
-"httpMethod": "DELETE",
-"id": "networksecurity.projects.locations.dnsThreatDetectors.delete",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the DnsThreatDetector resource.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/dnsThreatDetectors/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "Empty"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"get": {
-"description": "Gets the details of a single DnsThreatDetector.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/dnsThreatDetectors/{dnsThreatDetectorsId}",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.dnsThreatDetectors.get",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the DnsThreatDetector resource.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/dnsThreatDetectors/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "DnsThreatDetector"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"list": {
-"description": "Lists DnsThreatDetectors in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/dnsThreatDetectors",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.dnsThreatDetectors.list",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"pageSize": {
-"description": "Optional. The requested page size. The server may return fewer items than requested. If unspecified, the server picks an appropriate default.",
-"format": "int32",
-"location": "query",
-"type": "integer"
-},
-"pageToken": {
-"description": "Optional. A page token received from a previous `ListDnsThreatDetectorsRequest` call. Provide this to retrieve the subsequent page.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. The parent value for `ListDnsThreatDetectorsRequest`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/dnsThreatDetectors",
-"response": {
-"$ref": "ListDnsThreatDetectorsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"patch": {
-"description": "Updates a single DnsThreatDetector.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/dnsThreatDetectors/{dnsThreatDetectorsId}",
-"httpMethod": "PATCH",
-"id": "networksecurity.projects.locations.dnsThreatDetectors.patch",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Immutable. Identifier. Name of the DnsThreatDetector resource.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/dnsThreatDetectors/[^/]+$",
-"required": true,
-"type": "string"
-},
-"updateMask": {
-"description": "Optional. The field mask is used to specify the fields to be overwritten in the DnsThreatDetector resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the mask is not provided then all fields present in the request will be overwritten.",
-"format": "google-fieldmask",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"request": {
-"$ref": "DnsThreatDetector"
-},
-"response": {
-"$ref": "DnsThreatDetector"
 },
 "scopes": [
 "https://www.googleapis.com/auth/cloud-platform"
@@ -2861,193 +2430,6 @@
 "path": "v1/{+name}",
 "request": {
 "$ref": "FirewallEndpointAssociation"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-}
-}
-},
-"firewallEndpoints": {
-"methods": {
-"create": {
-"description": "Creates a new FirewallEndpoint in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/firewallEndpoints",
-"httpMethod": "POST",
-"id": "networksecurity.projects.locations.firewallEndpoints.create",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"firewallEndpointId": {
-"description": "Required. Id of the requesting object. If auto-generating Id server-side, remove this field and firewall_endpoint_id from the method_signature of Create RPC.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. Value for parent.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-},
-"requestId": {
-"description": "Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).",
-"location": "query",
-"type": "string"
-},
-"validateOnly": {
-"description": "Optional. If set, validate the request and preview the endpoint, but do not actually create it.",
-"location": "query",
-"type": "boolean"
-}
-},
-"path": "v1/{+parent}/firewallEndpoints",
-"request": {
-"$ref": "FirewallEndpoint"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"delete": {
-"description": "Deletes a single project Endpoint.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/firewallEndpoints/{firewallEndpointsId}",
-"httpMethod": "DELETE",
-"id": "networksecurity.projects.locations.firewallEndpoints.delete",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the resource",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/firewallEndpoints/[^/]+$",
-"required": true,
-"type": "string"
-},
-"requestId": {
-"description": "Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"get": {
-"description": "Gets details of a single project Endpoint.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/firewallEndpoints/{firewallEndpointsId}",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.firewallEndpoints.get",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the resource",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/firewallEndpoints/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "FirewallEndpoint"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"list": {
-"description": "Lists FirewallEndpoints in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/firewallEndpoints",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.firewallEndpoints.list",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"filter": {
-"description": "Optional. Filtering results",
-"location": "query",
-"type": "string"
-},
-"orderBy": {
-"description": "Hint for how to order the results",
-"location": "query",
-"type": "string"
-},
-"pageSize": {
-"description": "Optional. Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.",
-"format": "int32",
-"location": "query",
-"type": "integer"
-},
-"pageToken": {
-"description": "A token identifying a page of results the server should return.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. Parent value for ListEndpointsRequest",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/firewallEndpoints",
-"response": {
-"$ref": "ListFirewallEndpointsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"patch": {
-"description": "Update a single project Endpoint.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/firewallEndpoints/{firewallEndpointsId}",
-"httpMethod": "PATCH",
-"id": "networksecurity.projects.locations.firewallEndpoints.patch",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Immutable. Identifier. Name of resource.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/firewallEndpoints/[^/]+$",
-"required": true,
-"type": "string"
-},
-"requestId": {
-"description": "Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).",
-"location": "query",
-"type": "string"
-},
-"updateMask": {
-"description": "Required. Field mask is used to specify the fields to be overwritten in the Endpoint resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask then all fields will be overwritten.",
-"format": "google-fieldmask",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"request": {
-"$ref": "FirewallEndpoint"
 },
 "response": {
 "$ref": "Operation"
@@ -4941,626 +4323,11 @@
 "description": "The standard list page token.",
 "location": "query",
 "type": "string"
-},
-"returnPartialSuccess": {
-"description": "When set to `true`, operations that are reachable are returned as normal, and those that are unreachable are returned in the ListOperationsResponse.unreachable field. This can only be `true` when reading across collections. For example, when `parent` is set to `\"projects/example/locations/-\"`. This field is not supported by default and will result in an `UNIMPLEMENTED` error if set unless explicitly documented otherwise in service or product specific documentation.",
-"location": "query",
-"type": "boolean"
 }
 },
 "path": "v1/{+name}/operations",
 "response": {
 "$ref": "ListOperationsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-}
-}
-},
-"sacAttachments": {
-"methods": {
-"create": {
-"description": "Creates a new SACAttachment in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/sacAttachments",
-"httpMethod": "POST",
-"id": "networksecurity.projects.locations.sacAttachments.create",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"parent": {
-"description": "Required. The parent, in the form `projects/{project}/locations/{location}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-},
-"requestId": {
-"description": "Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).",
-"location": "query",
-"type": "string"
-},
-"sacAttachmentId": {
-"description": "Required. ID of the created attachment. The ID must be 1-63 characters long, and comply with RFC1035. Specifically, it must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+parent}/sacAttachments",
-"request": {
-"$ref": "SACAttachment"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"delete": {
-"description": "Deletes the specified attachment.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/sacAttachments/{sacAttachmentsId}",
-"httpMethod": "DELETE",
-"id": "networksecurity.projects.locations.sacAttachments.delete",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the resource, in the form `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/sacAttachments/[^/]+$",
-"required": true,
-"type": "string"
-},
-"requestId": {
-"description": "Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"get": {
-"description": "Returns the specified attachment.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/sacAttachments/{sacAttachmentsId}",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.sacAttachments.get",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the resource, in the form `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/sacAttachments/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "SACAttachment"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"list": {
-"description": "Lists SACAttachments in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/sacAttachments",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.sacAttachments.list",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"filter": {
-"description": "Optional. An expression that filters the list of results.",
-"location": "query",
-"type": "string"
-},
-"orderBy": {
-"description": "Optional. Sort the results by a certain order.",
-"location": "query",
-"type": "string"
-},
-"pageSize": {
-"description": "Optional. Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.",
-"format": "int32",
-"location": "query",
-"type": "integer"
-},
-"pageToken": {
-"description": "Optional. A token identifying a page of results the server should return.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. The parent, in the form `projects/{project}/locations/{location}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/sacAttachments",
-"response": {
-"$ref": "ListSACAttachmentsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-}
-}
-},
-"sacRealms": {
-"methods": {
-"create": {
-"description": "Creates a new SACRealm in a given project.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/sacRealms",
-"httpMethod": "POST",
-"id": "networksecurity.projects.locations.sacRealms.create",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"parent": {
-"description": "Required. The parent, in the form `projects/{project}/locations/global`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-},
-"requestId": {
-"description": "Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).",
-"location": "query",
-"type": "string"
-},
-"sacRealmId": {
-"description": "Required. ID of the created realm. The ID must be 1-63 characters long, and comply with RFC1035. Specifically, it must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+parent}/sacRealms",
-"request": {
-"$ref": "SACRealm"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"delete": {
-"description": "Deletes the specified realm.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/sacRealms/{sacRealmsId}",
-"httpMethod": "DELETE",
-"id": "networksecurity.projects.locations.sacRealms.delete",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the resource, in the form `projects/{project}/locations/global/sacRealms/{sacRealm}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/sacRealms/[^/]+$",
-"required": true,
-"type": "string"
-},
-"requestId": {
-"description": "Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"get": {
-"description": "Returns the specified realm.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/sacRealms/{sacRealmsId}",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.sacRealms.get",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. Name of the resource, in the form `projects/{project}/locations/global/sacRealms/{sacRealm}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/sacRealms/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "SACRealm"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"list": {
-"description": "Lists SACRealms in a given project.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/sacRealms",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.sacRealms.list",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"filter": {
-"description": "Optional. An expression that filters the list of results.",
-"location": "query",
-"type": "string"
-},
-"orderBy": {
-"description": "Optional. Sort the results by a certain order.",
-"location": "query",
-"type": "string"
-},
-"pageSize": {
-"description": "Optional. Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.",
-"format": "int32",
-"location": "query",
-"type": "integer"
-},
-"pageToken": {
-"description": "Optional. A token identifying a page of results the server should return.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. The parent, in the form `projects/{project}/locations/global`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/sacRealms",
-"response": {
-"$ref": "ListSACRealmsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-}
-}
-},
-"securityProfileGroups": {
-"methods": {
-"create": {
-"description": "Creates a new SecurityProfileGroup in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfileGroups",
-"httpMethod": "POST",
-"id": "networksecurity.projects.locations.securityProfileGroups.create",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"parent": {
-"description": "Required. The parent resource of the SecurityProfileGroup. Must be in the format `projects|organizations/*/locations/{location}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-},
-"securityProfileGroupId": {
-"description": "Required. Short name of the SecurityProfileGroup resource to be created. This value should be 1-63 characters long, containing only letters, numbers, hyphens, and underscores, and should not start with a number. E.g. \"security_profile_group1\".",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+parent}/securityProfileGroups",
-"request": {
-"$ref": "SecurityProfileGroup"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"delete": {
-"description": "Deletes a single SecurityProfileGroup.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfileGroups/{securityProfileGroupsId}",
-"httpMethod": "DELETE",
-"id": "networksecurity.projects.locations.securityProfileGroups.delete",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"etag": {
-"description": "Optional. If client provided etag is out of date, delete will return FAILED_PRECONDITION error.",
-"location": "query",
-"type": "string"
-},
-"name": {
-"description": "Required. A name of the SecurityProfileGroup to delete. Must be in the format `projects|organizations/*/locations/{location}/securityProfileGroups/{security_profile_group}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/securityProfileGroups/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"get": {
-"description": "Gets details of a single SecurityProfileGroup.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfileGroups/{securityProfileGroupsId}",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.securityProfileGroups.get",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. A name of the SecurityProfileGroup to get. Must be in the format `projects|organizations/*/locations/{location}/securityProfileGroups/{security_profile_group}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/securityProfileGroups/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "SecurityProfileGroup"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"list": {
-"description": "Lists SecurityProfileGroups in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfileGroups",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.securityProfileGroups.list",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"pageSize": {
-"description": "Optional. Maximum number of SecurityProfileGroups to return per call.",
-"format": "int32",
-"location": "query",
-"type": "integer"
-},
-"pageToken": {
-"description": "Optional. The value returned by the last `ListSecurityProfileGroupsResponse` Indicates that this is a continuation of a prior `ListSecurityProfileGroups` call, and that the system should return the next page of data.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. The project or organization and location from which the SecurityProfileGroups should be listed, specified in the format `projects|organizations/*/locations/{location}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/securityProfileGroups",
-"response": {
-"$ref": "ListSecurityProfileGroupsResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"patch": {
-"description": "Updates the parameters of a single SecurityProfileGroup.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfileGroups/{securityProfileGroupsId}",
-"httpMethod": "PATCH",
-"id": "networksecurity.projects.locations.securityProfileGroups.patch",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Immutable. Identifier. Name of the SecurityProfileGroup resource. It matches pattern `projects|organizations/*/locations/{location}/securityProfileGroups/{security_profile_group}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/securityProfileGroups/[^/]+$",
-"required": true,
-"type": "string"
-},
-"updateMask": {
-"description": "Required. Field mask is used to specify the fields to be overwritten in the SecurityProfileGroup resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask.",
-"format": "google-fieldmask",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"request": {
-"$ref": "SecurityProfileGroup"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-}
-}
-},
-"securityProfiles": {
-"methods": {
-"create": {
-"description": "Creates a new SecurityProfile in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfiles",
-"httpMethod": "POST",
-"id": "networksecurity.projects.locations.securityProfiles.create",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"parent": {
-"description": "Required. The parent resource of the SecurityProfile. Must be in the format `projects|organizations/*/locations/{location}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-},
-"securityProfileId": {
-"description": "Required. Short name of the SecurityProfile resource to be created. This value should be 1-63 characters long, containing only letters, numbers, hyphens, and underscores, and should not start with a number. E.g. \"security_profile1\".",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+parent}/securityProfiles",
-"request": {
-"$ref": "SecurityProfile"
-},
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"delete": {
-"description": "Deletes a single SecurityProfile.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfiles/{securityProfilesId}",
-"httpMethod": "DELETE",
-"id": "networksecurity.projects.locations.securityProfiles.delete",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"etag": {
-"description": "Optional. If client provided etag is out of date, delete will return FAILED_PRECONDITION error.",
-"location": "query",
-"type": "string"
-},
-"name": {
-"description": "Required. A name of the SecurityProfile to delete. Must be in the format `projects|organizations/*/locations/{location}/securityProfiles/{security_profile_id}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/securityProfiles/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "Operation"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"get": {
-"description": "Gets details of a single SecurityProfile.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfiles/{securityProfilesId}",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.securityProfiles.get",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Required. A name of the SecurityProfile to get. Must be in the format `projects|organizations/*/locations/{location}/securityProfiles/{security_profile_id}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/securityProfiles/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"response": {
-"$ref": "SecurityProfile"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"list": {
-"description": "Lists SecurityProfiles in a given project and location.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfiles",
-"httpMethod": "GET",
-"id": "networksecurity.projects.locations.securityProfiles.list",
-"parameterOrder": [
-"parent"
-],
-"parameters": {
-"pageSize": {
-"description": "Optional. Maximum number of SecurityProfiles to return per call.",
-"format": "int32",
-"location": "query",
-"type": "integer"
-},
-"pageToken": {
-"description": "Optional. The value returned by the last `ListSecurityProfilesResponse` Indicates that this is a continuation of a prior `ListSecurityProfiles` call, and that the system should return the next page of data.",
-"location": "query",
-"type": "string"
-},
-"parent": {
-"description": "Required. The project or organization and location from which the SecurityProfiles should be listed, specified in the format `projects|organizations/*/locations/{location}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+$",
-"required": true,
-"type": "string"
-}
-},
-"path": "v1/{+parent}/securityProfiles",
-"response": {
-"$ref": "ListSecurityProfilesResponse"
-},
-"scopes": [
-"https://www.googleapis.com/auth/cloud-platform"
-]
-},
-"patch": {
-"description": "Updates the parameters of a single SecurityProfile.",
-"flatPath": "v1/projects/{projectsId}/locations/{locationsId}/securityProfiles/{securityProfilesId}",
-"httpMethod": "PATCH",
-"id": "networksecurity.projects.locations.securityProfiles.patch",
-"parameterOrder": [
-"name"
-],
-"parameters": {
-"name": {
-"description": "Immutable. Identifier. Name of the SecurityProfile resource. It matches pattern `projects|organizations/*/locations/{location}/securityProfiles/{security_profile}`.",
-"location": "path",
-"pattern": "^projects/[^/]+/locations/[^/]+/securityProfiles/[^/]+$",
-"required": true,
-"type": "string"
-},
-"updateMask": {
-"description": "Required. Field mask is used to specify the fields to be overwritten in the SecurityProfile resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask.",
-"format": "google-fieldmask",
-"location": "query",
-"type": "string"
-}
-},
-"path": "v1/{+name}",
-"request": {
-"$ref": "SecurityProfile"
-},
-"response": {
-"$ref": "Operation"
 },
 "scopes": [
 "https://www.googleapis.com/auth/cloud-platform"
@@ -6141,7 +4908,7 @@
 }
 }
 },
-"revision": "20260824",
+"revision": "20250514",
 "rootUrl": "https://networksecurity.googleapis.com/",
 "schemas": {
 "AddAddressGroupItemsRequest": {
@@ -6353,20 +5120,18 @@
 "id": "AuthzPolicy",
 "properties": {
 "action": {
-"description": "Required. Can be one of `ALLOW`, `DENY`, `CUSTOM`, `DENY_BY_DEFAULT`. When the action is `CUSTOM`, `customProvider` must be specified. When the action is `ALLOW`, only requests matching the policy will be allowed. When the action is `DENY`, only requests matching the policy will be denied. When the action is `DENY_BY_DEFAULT`, no `http_rules` or `network_rules` can be specified. When a request arrives, the policies are evaluated in the following order: 1. If there is a `CUSTOM` policy that matches the request, the `CUSTOM` policy is evaluated using the custom authorization providers and the request is denied if the provider rejects the request. 2. If there are any `DENY` policies that match the request, the request is denied. 3. If any of the `ALLOW` policies match the request, the request is allowed. 4. If a `DENY_BY_DEFAULT` policy is applied to the resource, the request is denied (unless it was explicitly allowed by a `CUSTOM` or `ALLOW` policy). 5. Else, the request is allowed by default if no other policies are configured.",
+"description": "Required. Can be one of `ALLOW`, `DENY`, `CUSTOM`. When the action is `CUSTOM`, `customProvider` must be specified. When the action is `ALLOW`, only requests matching the policy will be allowed. When the action is `DENY`, only requests matching the policy will be denied. When a request arrives, the policies are evaluated in the following order: 1. If there is a `CUSTOM` policy that matches the request, the `CUSTOM` policy is evaluated using the custom authorization providers and the request is denied if the provider rejects the request. 2. If there are any `DENY` policies that match the request, the request is denied. 3. If there are no `ALLOW` policies for the resource or if any of the `ALLOW` policies match the request, the request is allowed. 4. Else the request is denied by default if none of the configured AuthzPolicies with `ALLOW` action match the request.",
 "enum": [
 "AUTHZ_ACTION_UNSPECIFIED",
 "ALLOW",
 "DENY",
-"CUSTOM",
-"DENY_BY_DEFAULT"
+"CUSTOM"
 ],
 "enumDescriptions": [
 "Unspecified action.",
 "Allow request to pass through to the backend.",
 "Deny the request and return a HTTP 404 to the client.",
-"Delegate the authorization decision to an external authorization engine.",
-"Establishes a secure-by-default posture by denying any request not explicitly matched by any `ALLOW`, `DENY`, or `CUSTOM` policy. This action serves as a universal fallback: if no other policies match or are configured, the request is denied."
+"Delegate the authorization decision to an external authorization engine."
 ],
 "type": "string"
 },
@@ -6400,27 +5165,6 @@
 },
 "name": {
 "description": "Required. Identifier. Name of the `AuthzPolicy` resource in the following format: `projects/{project}/locations/{location}/authzPolicies/{authz_policy}`.",
-"type": "string"
-},
-"networkRules": {
-"description": "Optional. A list of authorization network rules to match against the incoming request. A policy match occurs when at least one network rule matches the request. At least one network rule is required for Allow or Deny Action if no HTTP rules are provided. Network rules are mutually exclusive with HTTP rules. Limited to 5 rules.",
-"items": {
-"$ref": "AuthzPolicyAuthzRule"
-},
-"type": "array"
-},
-"policyProfile": {
-"description": "Optional. Immutable. Defines the type of authorization being performed. If not specified, `REQUEST_AUTHZ` is applied. This field cannot be changed once AuthzPolicy is created.",
-"enum": [
-"POLICY_PROFILE_UNSPECIFIED",
-"REQUEST_AUTHZ",
-"CONTENT_AUTHZ"
-],
-"enumDescriptions": [
-"Unspecified policy profile.",
-"Applies to request authorization. `CUSTOM` authorization policies with Authz extensions will be allowed with `EXT_AUTHZ_GRPC` or `EXT_PROC_GRPC` protocols. Extensions are invoked only for request header events.",
-"Applies to content security, sanitization, etc. Only `CUSTOM` action is allowed in this policy profile. AuthzExtensions in the custom provider must support `EXT_PROC_GRPC` protocol only and be capable of receiving all `EXT_PROC_GRPC` events (REQUEST_HEADERS, REQUEST_BODY, REQUEST_TRAILERS, RESPONSE_HEADERS, RESPONSE_BODY, RESPONSE_TRAILERS) with `FULL_DUPLEX_STREAMED` body send mode."
-],
 "type": "string"
 },
 "target": {
@@ -6480,22 +5224,8 @@
 "description": "Describes the properties of a single source.",
 "id": "AuthzPolicyAuthzRuleFromRequestSource",
 "properties": {
-"ipBlocks": {
-"description": "Optional. A list of IP addresses or IP address ranges to match against the source IP address of the request. Limited to 10 ip_blocks per Authorization Policy",
-"items": {
-"$ref": "AuthzPolicyAuthzRuleIpBlock"
-},
-"type": "array"
-},
-"principals": {
-"description": "Optional. A list of identities derived from the client's certificate. This field will not match on a request unless frontend mutual TLS is enabled for the forwarding rule or Gateway and the client certificate has been successfully validated by mTLS. Each identity is a string whose value is matched against a list of URI SANs, DNS Name SANs, or the common name in the client's certificate. A match happens when any principal matches with the rule. Limited to 50 principals per Authorization Policy for regional internal Application Load Balancers, regional external Application Load Balancers, cross-region internal Application Load Balancers, and Cloud Service Mesh while 25 principals per Authorization Policy for global external Application Load Balancers.",
-"items": {
-"$ref": "AuthzPolicyAuthzRulePrincipal"
-},
-"type": "array"
-},
 "resources": {
-"description": "Optional. A list of resources to match against the resource of the source VM of a request. Limited to 10 resources per Authorization Policy.",
+"description": "Optional. A list of resources to match against the resource of the source VM of a request. Limited to 5 resources.",
 "items": {
 "$ref": "AuthzPolicyAuthzRuleRequestResource"
 },
@@ -6515,49 +5245,6 @@
 "value": {
 "$ref": "AuthzPolicyAuthzRuleStringMatch",
 "description": "Optional. Specifies how the header match will be performed."
-}
-},
-"type": "object"
-},
-"AuthzPolicyAuthzRuleIpBlock": {
-"description": "Represents a range of IP Addresses.",
-"id": "AuthzPolicyAuthzRuleIpBlock",
-"properties": {
-"length": {
-"description": "Required. The length of the address range.",
-"format": "int32",
-"type": "integer"
-},
-"prefix": {
-"description": "Required. The address prefix.",
-"type": "string"
-}
-},
-"type": "object"
-},
-"AuthzPolicyAuthzRulePrincipal": {
-"description": "Describes the properties of a principal to be matched against.",
-"id": "AuthzPolicyAuthzRulePrincipal",
-"properties": {
-"principal": {
-"$ref": "AuthzPolicyAuthzRuleStringMatch",
-"description": "Required. A non-empty string whose value is matched against the principal value based on the principal_selector. Only exact match can be applied for CLIENT_CERT_URI_SAN, CLIENT_CERT_DNS_NAME_SAN, CLIENT_CERT_COMMON_NAME selectors."
-},
-"principalSelector": {
-"description": "Optional. An enum to decide what principal value the principal rule will match against. If not specified, the PrincipalSelector is CLIENT_CERT_URI_SAN.",
-"enum": [
-"PRINCIPAL_SELECTOR_UNSPECIFIED",
-"CLIENT_CERT_URI_SAN",
-"CLIENT_CERT_DNS_NAME_SAN",
-"CLIENT_CERT_COMMON_NAME"
-],
-"enumDescriptions": [
-"Unspecified principal selector. It will be treated as CLIENT_CERT_URI_SAN by default.",
-"The principal rule is matched against a list of URI SANs in the validated client's certificate. A match happens when there is any exact URI SAN value match. This is the default principal selector.",
-"The principal rule is matched against a list of DNS Name SANs in the validated client's certificate. A match happens when there is any exact DNS Name SAN value match. This is only applicable for Application Load Balancers except for classic Global External Application load balancer. CLIENT_CERT_DNS_NAME_SAN is not supported for INTERNAL_SELF_MANAGED load balancing scheme.",
-"The principal rule is matched against the common name in the client's certificate. Authorization against multiple common names in the client certificate is not supported. Requests with multiple common names in the client certificate will be rejected if CLIENT_CERT_COMMON_NAME is set as the principal selector. A match happens when there is an exact common name value match. This is only applicable for Application Load Balancers and not for Classic Application Load Balancer. CLIENT_CERT_COMMON_NAME is not supported for INTERNAL_SELF_MANAGED load balancing scheme."
-],
-"type": "string"
 }
 },
 "type": "object"
@@ -6582,7 +5269,7 @@
 "id": "AuthzPolicyAuthzRuleRequestResourceTagValueIdSet",
 "properties": {
 "ids": {
-"description": "Required. A list of resource tag value permanent IDs to match against the resource manager tags value associated with the source VM of a request. The match follows AND semantics which means all the ids must match. Limited to 5 ids in the Tag value id set.",
+"description": "Required. A list of resource tag value permanent IDs to match against the resource manager tags value associated with the source VM of a request. The match follows AND semantics which means all the ids must match. Limited to 5 matches.",
 "items": {
 "format": "int64",
 "type": "string"
@@ -6649,32 +5336,21 @@
 "description": "Optional. A list of headers to match against in http header."
 },
 "hosts": {
-"description": "Optional. A list of HTTP Hosts to match against. The match can be one of exact, prefix, suffix, or contains (substring match). Matches are always case sensitive unless the ignoreCase is set. Limited to 10 hosts per Authorization Policy.",
+"description": "Optional. A list of HTTP Hosts to match against. The match can be one of exact, prefix, suffix, or contains (substring match). Matches are always case sensitive unless the ignoreCase is set. Limited to 5 matches.",
 "items": {
 "$ref": "AuthzPolicyAuthzRuleStringMatch"
 },
 "type": "array"
 },
-"mcp": {
-"$ref": "AuthzPolicyAuthzRuleToRequestOperationMCP",
-"description": "Optional. Defines the MCP protocol attributes to match on. If the MCP payload in the request body cannot be successfully parsed, the request will be denied. This field can be set only for AuthzPolicies targeting AgentGateway resources."
-},
 "methods": {
-"description": "Optional. A list of HTTP methods to match against. Each entry must be a valid HTTP method name (GET, PUT, POST, HEAD, PATCH, DELETE, OPTIONS). It only allows exact match and is always case sensitive. Limited to 10 methods per Authorization Policy.",
+"description": "Optional. A list of HTTP methods to match against. Each entry must be a valid HTTP method name (GET, PUT, POST, HEAD, PATCH, DELETE, OPTIONS). It only allows exact match and is always case sensitive.",
 "items": {
 "type": "string"
 },
 "type": "array"
 },
 "paths": {
-"description": "Optional. A list of paths to match against. The match can be one of exact, prefix, suffix, or contains (substring match). Matches are always case sensitive unless the ignoreCase is set. Limited to 10 paths per Authorization Policy. Note that this path match includes the query parameters. For gRPC services, this should be a fully-qualified name of the form /package.service/method.",
-"items": {
-"$ref": "AuthzPolicyAuthzRuleStringMatch"
-},
-"type": "array"
-},
-"snis": {
-"description": "Optional. A list of SNIs to match against. The match can be one of exact, prefix, suffix, or contains (substring match). If there is no SNI (i.e. plaintext HTTP traffic), the request will be denied. Matches are always case sensitive unless the ignoreCase is set. Limited to 10 SNIs per Authorization Policy.",
+"description": "Optional. A list of paths to match against. The match can be one of exact, prefix, suffix, or contains (substring match). Matches are always case sensitive unless the ignoreCase is set. Limited to 5 matches. Note that this path match includes the query parameters. For gRPC services, this should be a fully-qualified name of the form /package.service/method.",
 "items": {
 "$ref": "AuthzPolicyAuthzRuleStringMatch"
 },
@@ -6688,55 +5364,9 @@
 "id": "AuthzPolicyAuthzRuleToRequestOperationHeaderSet",
 "properties": {
 "headers": {
-"description": "Required. A list of headers to match against in http header. The match can be one of exact, prefix, suffix, or contains (substring match). The match follows AND semantics which means all the headers must match. Matches are always case sensitive unless the ignoreCase is set. Limited to 10 headers per Authorization Policy.",
+"description": "Required. A list of headers to match against in http header. The match can be one of exact, prefix, suffix, or contains (substring match). The match follows AND semantics which means all the headers must match. Matches are always case sensitive unless the ignoreCase is set. Limited to 5 matches.",
 "items": {
 "$ref": "AuthzPolicyAuthzRuleHeaderMatch"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
-"AuthzPolicyAuthzRuleToRequestOperationMCP": {
-"description": "Describes a set of MCP protocol attributes to match against for a given MCP request.",
-"id": "AuthzPolicyAuthzRuleToRequestOperationMCP",
-"properties": {
-"baseProtocolMethodsOption": {
-"description": "Optional. If specified, matches on the MCP protocol\u2019s non-access specific methods namely: * initialize * completion/ * logging/ * notifications/ * ping Defaults to SKIP_BASE_PROTOCOL_METHODS if not specified.",
-"enum": [
-"BASE_PROTOCOL_METHODS_OPTION_UNSPECIFIED",
-"SKIP_BASE_PROTOCOL_METHODS",
-"MATCH_BASE_PROTOCOL_METHODS"
-],
-"enumDescriptions": [
-"Unspecified option. Defaults to SKIP_BASE_PROTOCOL_METHODS.",
-"Skip matching on the base MCP protocol methods.",
-"Match on the base MCP protocol methods."
-],
-"type": "string"
-},
-"methods": {
-"description": "Optional. A list of MCP methods and associated parameters to match on. It is recommended to use this field to match on tools, prompts and resource accesses while setting the baseProtocolMethodsOption to MATCH_BASE_PROTOCOL_METHODS to match on all the other MCP protocol methods. Limited to 10 MCP methods per Authorization Policy.",
-"items": {
-"$ref": "AuthzPolicyAuthzRuleToRequestOperationMCPMethod"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
-"AuthzPolicyAuthzRuleToRequestOperationMCPMethod": {
-"description": "Describes a set of MCP methods to match against.",
-"id": "AuthzPolicyAuthzRuleToRequestOperationMCPMethod",
-"properties": {
-"name": {
-"description": "Required. The MCP method to match against. Allowed values include: 1. `tools`, `prompts`, `resources` - these will match against all sub methods under the respective methods. 2. `prompts/list`, `tools/list`, `resources/list`, `resources/templates/list` 3. `prompts/get`, `tools/call`, `resources/subscribe`, `resources/unsubscribe`, `resources/read` Params cannot be specified for categories 1 and 2.",
-"type": "string"
-},
-"params": {
-"description": "Optional. A list of MCP method parameters to match against. The match can be one of exact, prefix, suffix, or contains (substring match). Matches are always case sensitive unless the ignoreCase is set. Limited to 10 MCP method parameters per Authorization Policy.",
-"items": {
-"$ref": "AuthzPolicyAuthzRuleStringMatch"
 },
 "type": "array"
 }
@@ -6783,7 +5413,7 @@
 "id": "AuthzPolicyTarget",
 "properties": {
 "loadBalancingScheme": {
-"description": "Optional. All gateways and forwarding rules referenced by this policy and extensions must share the same load balancing scheme. Required only when targeting forwarding rules. If targeting Secure Web Proxy, this field must be `INTERNAL_MANAGED` or not specified. Must not be specified when targeting Agent Gateway. Supported values include `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer to [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service).",
+"description": "Required. All gateways and forwarding rules referenced by this policy and extensions must share the same load balancing scheme. Supported values: `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer to [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service).",
 "enum": [
 "LOAD_BALANCING_SCHEME_UNSPECIFIED",
 "INTERNAL_MANAGED",
@@ -6799,72 +5429,11 @@
 "type": "string"
 },
 "resources": {
-"description": "Required. A list of references to the Forwarding Rules, Secure Web Proxy Gateways, or Agent Gateways on which this policy will be applied.",
+"description": "Required. A list of references to the Forwarding Rules on which this policy will be applied.",
 "items": {
 "type": "string"
 },
 "type": "array"
-}
-},
-"type": "object"
-},
-"BackendAuthenticationConfig": {
-"description": "BackendAuthenticationConfig message groups the TrustConfig together with other settings that control how the load balancer authenticates, and expresses its identity to, the backend: * `trustConfig` is the attached TrustConfig. * `wellKnownRoots` indicates whether the load balance should trust backend server certificates that are issued by public certificate authorities, in addition to certificates trusted by the TrustConfig. * `clientCertificate` is a client certificate that the load balancer uses to express its identity to the backend, if the connection to the backend uses mTLS. You can attach the BackendAuthenticationConfig to the load balancer's BackendService directly determining how that BackendService negotiates TLS.",
-"id": "BackendAuthenticationConfig",
-"properties": {
-"clientCertificate": {
-"description": "Optional. A reference to a certificatemanager.googleapis.com.Certificate resource. This is a relative resource path following the form \"projects/{project}/locations/{location}/certificates/{certificate}\". Used by a BackendService to negotiate mTLS when the backend connection uses TLS and the backend requests a client certificate. Must have a CLIENT_AUTH scope.",
-"type": "string"
-},
-"createTime": {
-"description": "Output only. The timestamp when the resource was created.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-},
-"description": {
-"description": "Optional. Free-text description of the resource.",
-"type": "string"
-},
-"etag": {
-"description": "Output only. Etag of the resource.",
-"readOnly": true,
-"type": "string"
-},
-"labels": {
-"additionalProperties": {
-"type": "string"
-},
-"description": "Set of label tags associated with the resource.",
-"type": "object"
-},
-"name": {
-"description": "Required. Name of the BackendAuthenticationConfig resource. It matches the pattern `projects/*/locations/{location}/backendAuthenticationConfigs/{backend_authentication_config}`",
-"type": "string"
-},
-"trustConfig": {
-"description": "Optional. A reference to a TrustConfig resource from the certificatemanager.googleapis.com namespace. This is a relative resource path following the form \"projects/{project}/locations/{location}/trustConfigs/{trust_config}\". A BackendService uses the chain of trust represented by this TrustConfig, if specified, to validate the server certificates presented by the backend. Required unless wellKnownRoots is set to PUBLIC_ROOTS.",
-"type": "string"
-},
-"updateTime": {
-"description": "Output only. The timestamp when the resource was updated.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-},
-"wellKnownRoots": {
-"description": "Well known roots to use for server certificate validation.",
-"enum": [
-"WELL_KNOWN_ROOTS_UNSPECIFIED",
-"NONE",
-"PUBLIC_ROOTS"
-],
-"enumDescriptions": [
-"Equivalent to NONE.",
-"The BackendService will only validate server certificates against roots specified in TrustConfig.",
-"The BackendService uses a set of well-known public roots, in addition to any roots specified in the trustConfig field, when validating the server certificates presented by the backend. Validation with these roots is only considered when the TlsSettings.sni field in the BackendService is set. The well-known roots are a set of root CAs managed by Google. CAs in this set can be added or removed without notice."
-],
-"type": "string"
 }
 },
 "type": "object"
@@ -6912,7 +5481,7 @@
 "type": "object"
 },
 "name": {
-"description": "Required. Name of the ClientTlsPolicy resource. It matches the pattern `projects/{project}/locations/{location}/clientTlsPolicies/{client_tls_policy}`",
+"description": "Required. Name of the ClientTlsPolicy resource. It matches the pattern `projects/*/locations/{location}/clientTlsPolicies/{client_tls_policy}`",
 "type": "string"
 },
 "serverValidationCa": {
@@ -6966,7 +5535,7 @@
 "id": "CustomMirroringProfile",
 "properties": {
 "mirroringEndpointGroup": {
-"description": "Required. Immutable. The target MirroringEndpointGroup. When a mirroring rule with this security profile attached matches a packet, a replica will be mirrored to the location-local target in this group.",
+"description": "Required. The target MirroringEndpointGroup. When a mirroring rule with this security profile attached matches a packet, a replica will be mirrored to the location-local target in this group.",
 "type": "string"
 }
 },
@@ -7005,55 +5574,6 @@
 },
 "type": "object"
 },
-"DnsThreatDetector": {
-"description": "A DNS threat detector sends DNS query logs to a _provider_ that then analyzes the logs to identify threat events in the DNS queries. By default, all VPC networks in your projects are included. You can exclude specific networks by supplying `excluded_networks`.",
-"id": "DnsThreatDetector",
-"properties": {
-"createTime": {
-"description": "Output only. Create time stamp.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-},
-"excludedNetworks": {
-"description": "Optional. A list of network resource names which aren't monitored by this DnsThreatDetector. Example: `projects/PROJECT_ID/global/networks/NETWORK_NAME`.",
-"items": {
-"type": "string"
-},
-"type": "array"
-},
-"labels": {
-"additionalProperties": {
-"type": "string"
-},
-"description": "Optional. Any labels associated with the DnsThreatDetector, listed as key value pairs.",
-"type": "object"
-},
-"name": {
-"description": "Immutable. Identifier. Name of the DnsThreatDetector resource.",
-"type": "string"
-},
-"provider": {
-"description": "Required. The provider used for DNS threat analysis.",
-"enum": [
-"PROVIDER_UNSPECIFIED",
-"INFOBLOX"
-],
-"enumDescriptions": [
-"An unspecified provider.",
-"The Infoblox DNS threat detector provider."
-],
-"type": "string"
-},
-"updateTime": {
-"description": "Output only. Update time stamp.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-}
-},
-"type": "object"
-},
 "Empty": {
 "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
 "id": "Empty",
@@ -7084,12 +5604,12 @@
 "type": "object"
 },
 "FirewallEndpoint": {
-"description": "Message describing Endpoint object.",
+"description": "Message describing Endpoint object",
 "id": "FirewallEndpoint",
 "properties": {
 "associatedNetworks": {
 "deprecated": true,
-"description": "Output only. Deprecated: List of networks that are associated with this endpoint in the local zone. This is a projection of the FirewallEndpointAssociations pointing at this endpoint. A network will only appear in this list after traffic routing is fully configured. Format: projects/{project}/global/networks/{name}.",
+"description": "Output only. List of networks that are associated with this endpoint in the local zone. This is a projection of the FirewallEndpointAssociations pointing at this endpoint. A network will only appear in this list after traffic routing is fully configured. Format: projects/{project}/global/networks/{name}.",
 "items": {
 "type": "string"
 },
@@ -7105,11 +5625,11 @@
 "type": "array"
 },
 "billingProjectId": {
-"description": "Optional. Project to charge for the deployed firewall endpoint. This field must be specified when creating the endpoint in the organization scope, and should be omitted otherwise.",
+"description": "Required. Project to bill on endpoint uptime usage.",
 "type": "string"
 },
 "createTime": {
-"description": "Output only. Create time stamp.",
+"description": "Output only. Create time stamp",
 "format": "google-datetime",
 "readOnly": true,
 "type": "string"
@@ -7117,10 +5637,6 @@
 "description": {
 "description": "Optional. Description of the firewall endpoint. Max length 2048 characters.",
 "type": "string"
-},
-"endpointSettings": {
-"$ref": "FirewallEndpointEndpointSettings",
-"description": "Optional. Settings for the endpoint."
 },
 "labels": {
 "additionalProperties": {
@@ -7130,7 +5646,7 @@
 "type": "object"
 },
 "name": {
-"description": "Immutable. Identifier. Name of resource.",
+"description": "Immutable. Identifier. name of resource",
 "type": "string"
 },
 "reconciling": {
@@ -7261,17 +5777,6 @@
 "description": "Output only. The VPC network associated. Format: projects/{project}/global/networks/{name}.",
 "readOnly": true,
 "type": "string"
-}
-},
-"type": "object"
-},
-"FirewallEndpointEndpointSettings": {
-"description": "Settings for the endpoint.",
-"id": "FirewallEndpointEndpointSettings",
-"properties": {
-"jumboFramesEnabled": {
-"description": "Optional. Immutable. Indicates whether Jumbo Frames are enabled. Default value is false.",
-"type": "boolean"
 }
 },
 "type": "object"
@@ -7878,12 +6383,6 @@
 "description": "Required. Immutable. The VPC network that is associated. for example: `projects/123456789/global/networks/my-network`. See https://google.aip.dev/124.",
 "type": "string"
 },
-"networkCookie": {
-"description": "Output only. Identifier used by the data-path. See the NSI GENEVE format for more details: https://docs.cloud.google.com/network-security-integration/docs/understand-geneve#network_id",
-"format": "uint32",
-"readOnly": true,
-"type": "integer"
-},
 "reconciling": {
 "description": "Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This part of the normal operation (e.g. adding a new location to the target deployment group). See https://google.aip.dev/128.",
 "readOnly": true,
@@ -8141,31 +6640,6 @@
 },
 "type": "object"
 },
-"ListBackendAuthenticationConfigsResponse": {
-"description": "Response returned by the ListBackendAuthenticationConfigs method.",
-"id": "ListBackendAuthenticationConfigsResponse",
-"properties": {
-"backendAuthenticationConfigs": {
-"description": "List of BackendAuthenticationConfig resources.",
-"items": {
-"$ref": "BackendAuthenticationConfig"
-},
-"type": "array"
-},
-"nextPageToken": {
-"description": "If there might be more results than those appearing in this response, then `next_page_token` is included. To get the next set of results, call this method again using the value of `next_page_token` as `page_token`.",
-"type": "string"
-},
-"unreachable": {
-"description": "Locations that could not be reached.",
-"items": {
-"type": "string"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
 "ListClientTlsPoliciesResponse": {
 "description": "Response returned by the ListClientTlsPolicies method.",
 "id": "ListClientTlsPoliciesResponse",
@@ -8180,31 +6654,6 @@
 "nextPageToken": {
 "description": "If there might be more results than those appearing in this response, then `next_page_token` is included. To get the next set of results, call this method again using the value of `next_page_token` as `page_token`.",
 "type": "string"
-}
-},
-"type": "object"
-},
-"ListDnsThreatDetectorsResponse": {
-"description": "The response message to requesting a list of DnsThreatDetectors.",
-"id": "ListDnsThreatDetectorsResponse",
-"properties": {
-"dnsThreatDetectors": {
-"description": "The list of DnsThreatDetector resources.",
-"items": {
-"$ref": "DnsThreatDetector"
-},
-"type": "array"
-},
-"nextPageToken": {
-"description": "A token, which can be sent as `page_token`, to retrieve the next page.",
-"type": "string"
-},
-"unreachable": {
-"description": "Unordered list. Unreachable `DnsThreatDetector` resources.",
-"items": {
-"type": "string"
-},
-"type": "array"
 }
 },
 "type": "object"
@@ -8440,7 +6889,7 @@
 "type": "string"
 },
 "unreachable": {
-"description": "Unordered list. Locations that could not be reached. See https://google.aip.dev/217 for more details.",
+"description": "Locations that could not be reached.",
 "items": {
 "type": "string"
 },
@@ -8497,63 +6946,6 @@
 "description": "A list of operations that matches the specified filter in the request.",
 "items": {
 "$ref": "Operation"
-},
-"type": "array"
-},
-"unreachable": {
-"description": "Unordered list. Unreachable resources. Populated when the request sets `ListOperationsRequest.return_partial_success` and reads across collections. For example, when attempting to list all resources across all supported locations.",
-"items": {
-"type": "string"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
-"ListSACAttachmentsResponse": {
-"description": "Response for `ListSACAttachments` method.",
-"id": "ListSACAttachmentsResponse",
-"properties": {
-"nextPageToken": {
-"description": "A token identifying a page of results the server should return.",
-"type": "string"
-},
-"sacAttachments": {
-"description": "The list of SACAttachments.",
-"items": {
-"$ref": "SACAttachment"
-},
-"type": "array"
-},
-"unreachable": {
-"description": "Locations that could not be reached.",
-"items": {
-"type": "string"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
-"ListSACRealmsResponse": {
-"description": "Response for `ListSACRealms` method.",
-"id": "ListSACRealmsResponse",
-"properties": {
-"nextPageToken": {
-"description": "A token identifying a page of results the server should return.",
-"type": "string"
-},
-"sacRealms": {
-"description": "The list of SACRealms.",
-"items": {
-"$ref": "SACRealm"
-},
-"type": "array"
-},
-"unreachable": {
-"description": "Locations that could not be reached.",
-"items": {
-"type": "string"
 },
 "type": "array"
 }
@@ -8870,15 +7262,13 @@
 "STATE_UNSPECIFIED",
 "ACTIVE",
 "CREATING",
-"DELETING",
-"CLOSED"
+"DELETING"
 ],
 "enumDescriptions": [
 "State not set (this is not a valid state).",
 "The deployment group is ready.",
 "The deployment group is being created.",
-"The deployment group is being deleted.",
-"The deployment group is being wiped out (project deleted)."
+"The deployment group is being deleted."
 ],
 "readOnly": true,
 "type": "string"
@@ -9010,18 +7400,6 @@
 "readOnly": true,
 "type": "string"
 },
-"type": {
-"description": "Immutable. The type of the endpoint group. If left unspecified, defaults to DIRECT.",
-"enum": [
-"TYPE_UNSPECIFIED",
-"DIRECT"
-],
-"enumDescriptions": [
-"Not set.",
-"An endpoint group that sends packets to a single deployment group."
-],
-"type": "string"
-},
 "updateTime": {
 "description": "Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.",
 "format": "google-datetime",
@@ -9076,12 +7454,6 @@
 "network": {
 "description": "Immutable. The VPC network that is associated. for example: `projects/123456789/global/networks/my-network`. See https://google.aip.dev/124.",
 "type": "string"
-},
-"networkCookie": {
-"description": "Output only. Identifier used by the data-path. See the NSI GENEVE format for more details: https://docs.cloud.google.com/network-security-integration/docs/understand-geneve#network_id",
-"format": "uint32",
-"readOnly": true,
-"type": "integer"
 },
 "reconciling": {
 "description": "Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This part of the normal operation (e.g. adding a new location to the target deployment group). See https://google.aip.dev/128.",
@@ -9352,145 +7724,6 @@
 },
 "type": "object"
 },
-"SACAttachment": {
-"description": "Represents a Secure Access Connect (SAC) attachment resource. A Secure Access Connect attachment enables NCC Gateway to process traffic with an SSE product.",
-"id": "SACAttachment",
-"properties": {
-"createTime": {
-"description": "Output only. Timestamp when the attachment was created.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-},
-"labels": {
-"additionalProperties": {
-"type": "string"
-},
-"description": "Optional. Optional list of labels applied to the resource.",
-"type": "object"
-},
-"name": {
-"description": "Identifier. Resource name, in the form `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`.",
-"type": "string"
-},
-"nccGateway": {
-"description": "Required. NCC Gateway associated with the attachment. This can be input as an ID or a full resource name. The output always has the form `projects/{project_number}/locations/{location}/spokes/{ncc_gateway}`.",
-"type": "string"
-},
-"sacRealm": {
-"description": "Required. SAC Realm which owns the attachment. This can be input as an ID or a full resource name. The output always has the form `projects/{project_number}/locations/{location}/sacRealms/{sac_realm}`.",
-"type": "string"
-},
-"state": {
-"description": "Output only. State of the attachment.",
-"enum": [
-"STATE_UNSPECIFIED",
-"PENDING_PARTNER_ATTACHMENT",
-"PARTNER_ATTACHED",
-"PARTNER_DETACHED"
-],
-"enumDescriptions": [
-"No state specified. This should not be used.",
-"Has never been attached to a partner.",
-"Currently attached to a partner.",
-"Was once attached to a partner but has been detached."
-],
-"readOnly": true,
-"type": "string"
-},
-"updateTime": {
-"description": "Output only. Timestamp when the attachment was last updated.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-}
-},
-"type": "object"
-},
-"SACRealm": {
-"description": "Represents a Secure Access Connect (SAC) realm resource. A Secure Access Connect realm establishes a connection between your Google Cloud project and an SSE service.",
-"id": "SACRealm",
-"properties": {
-"createTime": {
-"description": "Output only. Timestamp when the realm was created.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-},
-"labels": {
-"additionalProperties": {
-"type": "string"
-},
-"description": "Optional. Optional list of labels applied to the resource.",
-"type": "object"
-},
-"name": {
-"description": "Identifier. Resource name, in the form `projects/{project}/locations/global/sacRealms/{sacRealm}`.",
-"type": "string"
-},
-"pairingKey": {
-"$ref": "SACRealmPairingKey",
-"description": "Output only. Key to be shared with SSE service provider during pairing.",
-"readOnly": true
-},
-"securityService": {
-"description": "Immutable. SSE service provider associated with the realm.",
-"enum": [
-"SECURITY_SERVICE_UNSPECIFIED",
-"PALO_ALTO_PRISMA_ACCESS"
-],
-"enumDescriptions": [
-"The default value. This value is used if the state is omitted.",
-"[Palo Alto Networks Prisma Access](https://www.paloaltonetworks.com/sase/access)."
-],
-"type": "string"
-},
-"state": {
-"description": "Output only. State of the realm.",
-"enum": [
-"STATE_UNSPECIFIED",
-"PENDING_PARTNER_ATTACHMENT",
-"PARTNER_ATTACHED",
-"PARTNER_DETACHED",
-"KEY_EXPIRED"
-],
-"enumDescriptions": [
-"No state specified. This should not be used.",
-"Has never been attached to a partner. Used only for Prisma Access.",
-"Currently attached to a partner.",
-"Was once attached to a partner but has been detached.",
-"Is not attached to a partner and has an expired pairing key. Used only for Prisma Access."
-],
-"readOnly": true,
-"type": "string"
-},
-"updateTime": {
-"description": "Output only. Timestamp when the realm was last updated.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-}
-},
-"type": "object"
-},
-"SACRealmPairingKey": {
-"description": "Key to be shared with SSE service provider to establish global handshake.",
-"id": "SACRealmPairingKey",
-"properties": {
-"expireTime": {
-"description": "Output only. Timestamp in UTC of when this resource is considered expired. It expires 7 days after creation.",
-"format": "google-datetime",
-"readOnly": true,
-"type": "string"
-},
-"key": {
-"description": "Output only. Key value.",
-"readOnly": true,
-"type": "string"
-}
-},
-"type": "object"
-},
 "SecurityProfile": {
 "description": "SecurityProfile is a resource that defines the behavior for one of many ProfileTypes.",
 "id": "SecurityProfile",
@@ -9539,15 +7772,13 @@
 "PROFILE_TYPE_UNSPECIFIED",
 "THREAT_PREVENTION",
 "CUSTOM_MIRRORING",
-"CUSTOM_INTERCEPT",
-"URL_FILTERING"
+"CUSTOM_INTERCEPT"
 ],
 "enumDescriptions": [
 "Profile type not specified.",
 "Profile type for threat prevention.",
 "Profile type for packet mirroring v2",
-"Profile type for TPPI.",
-"Profile type for URL filtering."
+"Profile type for TPPI."
 ],
 "type": "string"
 },
@@ -9556,10 +7787,6 @@
 "format": "google-datetime",
 "readOnly": true,
 "type": "string"
-},
-"urlFilteringProfile": {
-"$ref": "UrlFilteringProfile",
-"description": "The URL filtering configuration for the SecurityProfile."
 }
 },
 "type": "object"
@@ -9583,7 +7810,7 @@
 "type": "string"
 },
 "dataPathId": {
-"description": "Output only. Identifier used by the data-path. Unique within `{container, location}`.",
+"description": "Output only. Identifier used by the data-path. Unique within {container, location}.",
 "format": "uint64",
 "readOnly": true,
 "type": "string"
@@ -9616,10 +7843,6 @@
 "description": "Output only. Last resource update timestamp.",
 "format": "google-datetime",
 "readOnly": true,
-"type": "string"
-},
-"urlFilteringProfile": {
-"description": "Optional. Reference to a SecurityProfile with the UrlFiltering configuration.",
 "type": "string"
 }
 },
@@ -9850,20 +8073,6 @@
 "description": "Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form \"projects/{project}/locations/{location}/caPools/{ca_pool}\".",
 "type": "string"
 },
-"certificateIssuanceMode": {
-"description": "Optional. The mode used to issue certificates (local CA signing vs direct leaf).",
-"enum": [
-"CERTIFICATE_ISSUANCE_MODE_UNSPECIFIED",
-"DIRECT_LEAF_PROVISIONING",
-"LOCAL_INTERMEDIATE_CA_SIGNING"
-],
-"enumDescriptions": [
-"Unspecified default mode.",
-"Fallback: Direct Private CA leaf certificate provisioning.",
-"High-speed Local Intermediate CA signing."
-],
-"type": "string"
-},
 "createTime": {
 "description": "Output only. The timestamp when the resource was created.",
 "format": "google-datetime",
@@ -9934,53 +8143,6 @@
 "format": "google-datetime",
 "readOnly": true,
 "type": "string"
-}
-},
-"type": "object"
-},
-"UrlFilter": {
-"description": "A URL filter defines an action to take for some URL match.",
-"id": "UrlFilter",
-"properties": {
-"filteringAction": {
-"description": "Required. The action taken when this filter is applied.",
-"enum": [
-"URL_FILTERING_ACTION_UNSPECIFIED",
-"ALLOW",
-"DENY"
-],
-"enumDescriptions": [
-"Filtering action not specified.",
-"The connection matching this filter will be allowed to transmit.",
-"The connection matching this filter will be dropped."
-],
-"type": "string"
-},
-"priority": {
-"description": "Required. The priority of this filter within the URL Filtering Profile. Lower integers indicate higher priorities. The priority of a filter must be unique within a URL Filtering Profile.",
-"format": "int32",
-"type": "integer"
-},
-"urls": {
-"description": "Required. The list of strings that a URL must match with for this filter to be applied.",
-"items": {
-"type": "string"
-},
-"type": "array"
-}
-},
-"type": "object"
-},
-"UrlFilteringProfile": {
-"description": "UrlFilteringProfile defines filters based on URL.",
-"id": "UrlFilteringProfile",
-"properties": {
-"urlFilters": {
-"description": "Optional. The list of filtering configs in which each config defines an action to take for some URL match.",
-"items": {
-"$ref": "UrlFilter"
-},
-"type": "array"
 }
 },
 "type": "object"

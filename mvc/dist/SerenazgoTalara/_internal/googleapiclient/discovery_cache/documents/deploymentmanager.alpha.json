@@ -1676,7 +1676,7 @@
 }
 }
 },
-"revision": "20260312",
+"revision": "20250403",
 "rootUrl": "https://deploymentmanager.googleapis.com/",
 "schemas": {
 "AsyncOptions": {
@@ -2251,46 +2251,6 @@
 },
 "type": "object"
 },
-"FirewallPolicyRuleOperationMetadata": {
-"id": "FirewallPolicyRuleOperationMetadata",
-"properties": {
-"allocatedPriority": {
-"description": "The priority allocated for the firewall policy rule if query parameters specified minPriority/maxPriority.",
-"format": "int32",
-"type": "integer"
-}
-},
-"type": "object"
-},
-"GetVersionOperationMetadata": {
-"id": "GetVersionOperationMetadata",
-"properties": {
-"inlineSbomInfo": {
-"$ref": "GetVersionOperationMetadataSbomInfo"
-}
-},
-"type": "object"
-},
-"GetVersionOperationMetadataSbomInfo": {
-"id": "GetVersionOperationMetadataSbomInfo",
-"properties": {
-"currentComponentVersions": {
-"additionalProperties": {
-"type": "string"
-},
-"description": "SBOM versions currently applied to the resource. The key is the component name and the value is the version.",
-"type": "object"
-},
-"targetComponentVersions": {
-"additionalProperties": {
-"type": "string"
-},
-"description": "SBOM versions scheduled for the next maintenance. The key is the component name and the value is the version.",
-"type": "object"
-}
-},
-"type": "object"
-},
 "GlobalSetPolicyRequest": {
 "id": "GlobalSetPolicyRequest",
 "properties": {
@@ -2311,7 +2271,6 @@
 "description": "REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them."
 },
 "updateMask": {
-"description": "Update mask for the policy.",
 "format": "google-fieldmask",
 "type": "string"
 }
@@ -2554,11 +2513,10 @@
 "items": {
 "properties": {
 "arguments": {
-"description": "Output only. [Output Only] Optional error details WARNING: DO NOT MAKE VISIBLE This is for internal use-only (like componentization) (thus the visibility \"none\") and in case of public exposure it is strongly recommended to follow pattern of: https://aip.dev/193 and expose as details field.",
+"description": "[Output Only] Optional error details WARNING: DO NOT MAKE VISIBLE This is for internal use-only (like componentization) (thus the visibility \"none\") and in case of public exposure it is strongly recommended to follow pattern of: https://aip.dev/193 and expose as details field.",
 "items": {
 "type": "string"
 },
-"readOnly": true,
 "type": "array"
 },
 "code": {
@@ -2566,8 +2524,7 @@
 "type": "string"
 },
 "debugInfo": {
-"$ref": "DebugInfo",
-"readOnly": true
+"$ref": "DebugInfo"
 },
 "errorDetails": {
 "description": "[Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.",
@@ -2606,12 +2563,6 @@
 },
 "type": "object"
 },
-"firewallPolicyRuleOperationMetadata": {
-"$ref": "FirewallPolicyRuleOperationMetadata"
-},
-"getVersionOperationMetadata": {
-"$ref": "GetVersionOperationMetadata"
-},
 "httpErrorMessage": {
 "description": "[Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.",
 "type": "string"
@@ -2635,8 +2586,7 @@
 },
 "kind": {
 "default": "compute#operation",
-"description": "Output only. [Output Only] Type of the resource. Always `compute#operation` for Operation resources.",
-"readOnly": true,
+"description": "[Output Only] Type of the resource. Always `compute#operation` for Operation resources.",
 "type": "string"
 },
 "name": {
@@ -2644,8 +2594,7 @@
 "type": "string"
 },
 "operationGroupId": {
-"description": "Output only. [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.",
-"readOnly": true,
+"description": "[Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.",
 "type": "string"
 },
 "operationType": {
@@ -2666,8 +2615,7 @@
 "type": "string"
 },
 "selfLinkWithId": {
-"description": "Output only. [Output Only] Server-defined URL for this resource with the resource id.",
-"readOnly": true,
+"description": "[Output Only] Server-defined URL for this resource with the resource id.",
 "type": "string"
 },
 "setAutoscalerLinkOperationMetadata": {
@@ -2676,8 +2624,7 @@
 },
 "setCommonInstanceMetadataOperationMetadata": {
 "$ref": "SetCommonInstanceMetadataOperationMetadata",
-"description": "Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.",
-"readOnly": true
+"description": "[Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state."
 },
 "startTime": {
 "description": "[Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.",
@@ -2756,12 +2703,11 @@
 "QUOTA_INFO_UNAVAILABLE",
 "RESOURCE_USES_GLOBAL_DNS",
 "RATE_LIMIT_EXCEEDED",
-"UPCOMING_MAINTENANCES_UNAVAILABLE",
+"RESERVED_ENTRY_135",
 "RESERVED_ENTRY_136",
 "RESERVED_ENTRY_139",
 "RESERVED_ENTRY_141",
-"RESERVED_ENTRY_142",
-"RESERVED_ENTRY_143"
+"RESERVED_ENTRY_142"
 ],
 "enumDeprecated": [
 false,
@@ -2780,7 +2726,6 @@ false,
 false,
 false,
 true,
-false,
 false,
 false,
 false,
@@ -2842,7 +2787,6 @@ false
 "Quota information is not available to client requests (e.g: regions.list).",
 "Indicates that a VM is using global DNS. Can also be used to indicate that a resource has attributes that could result in the creation of a VM that uses global DNS.",
 "Resource can't be retrieved due to api quota exceeded.",
-"Upcoming maintenance schedule is unavailable for the resource.",
 "Reserved entries for quickly adding new warnings without breaking dependent clients.",
 "",
 "",
@@ -3147,12 +3091,11 @@ false
 "QUOTA_INFO_UNAVAILABLE",
 "RESOURCE_USES_GLOBAL_DNS",
 "RATE_LIMIT_EXCEEDED",
-"UPCOMING_MAINTENANCES_UNAVAILABLE",
+"RESERVED_ENTRY_135",
 "RESERVED_ENTRY_136",
 "RESERVED_ENTRY_139",
 "RESERVED_ENTRY_141",
-"RESERVED_ENTRY_142",
-"RESERVED_ENTRY_143"
+"RESERVED_ENTRY_142"
 ],
 "enumDeprecated": [
 false,
@@ -3171,7 +3114,6 @@ false,
 false,
 false,
 true,
-false,
 false,
 false,
 false,
@@ -3233,7 +3175,6 @@ false
 "Quota information is not available to client requests (e.g: regions.list).",
 "Indicates that a VM is using global DNS. Can also be used to indicate that a resource has attributes that could result in the creation of a VM that uses global DNS.",
 "Resource can't be retrieved due to api quota exceeded.",
-"Upcoming maintenance schedule is unavailable for the resource.",
 "Reserved entries for quickly adding new warnings without breaking dependent clients.",
 "",
 "",
@@ -3301,11 +3242,10 @@ false
 "items": {
 "properties": {
 "arguments": {
-"description": "Output only. [Output Only] Optional error details WARNING: DO NOT MAKE VISIBLE This is for internal use-only (like componentization) (thus the visibility \"none\") and in case of public exposure it is strongly recommended to follow pattern of: https://aip.dev/193 and expose as details field.",
+"description": "[Output Only] Optional error details WARNING: DO NOT MAKE VISIBLE This is for internal use-only (like componentization) (thus the visibility \"none\") and in case of public exposure it is strongly recommended to follow pattern of: https://aip.dev/193 and expose as details field.",
 "items": {
 "type": "string"
 },
-"readOnly": true,
 "type": "array"
 },
 "code": {
@@ -3313,8 +3253,7 @@ false
 "type": "string"
 },
 "debugInfo": {
-"$ref": "DebugInfo",
-"readOnly": true
+"$ref": "DebugInfo"
 },
 "errorDetails": {
 "description": "[Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.",
@@ -3464,12 +3403,11 @@ false
 "QUOTA_INFO_UNAVAILABLE",
 "RESOURCE_USES_GLOBAL_DNS",
 "RATE_LIMIT_EXCEEDED",
-"UPCOMING_MAINTENANCES_UNAVAILABLE",
+"RESERVED_ENTRY_135",
 "RESERVED_ENTRY_136",
 "RESERVED_ENTRY_139",
 "RESERVED_ENTRY_141",
-"RESERVED_ENTRY_142",
-"RESERVED_ENTRY_143"
+"RESERVED_ENTRY_142"
 ],
 "enumDeprecated": [
 false,
@@ -3488,7 +3426,6 @@ false,
 false,
 false,
 true,
-false,
 false,
 false,
 false,
@@ -3550,7 +3487,6 @@ false
 "Quota information is not available to client requests (e.g: regions.list).",
 "Indicates that a VM is using global DNS. Can also be used to indicate that a resource has attributes that could result in the creation of a VM that uses global DNS.",
 "Resource can't be retrieved due to api quota exceeded.",
-"Upcoming maintenance schedule is unavailable for the resource.",
 "Reserved entries for quickly adding new warnings without breaking dependent clients.",
 "",
 "",
@@ -3627,14 +3563,6 @@ false
 "type": "string"
 },
 "type": "array"
-},
-"zoneToIgmIds": {
-"additionalProperties": {
-"format": "int64",
-"type": "string"
-},
-"description": "Map of zone to an ID of the zonal IGM belonging to the RMIG.",
-"type": "object"
 }
 },
 "type": "object"

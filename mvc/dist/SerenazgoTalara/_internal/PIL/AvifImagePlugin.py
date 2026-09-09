@@ -4,7 +4,7 @@ import os
 from io import BytesIO
 from typing import IO
 
-from . import ExifTags, Image, ImageFile, ImageSequence
+from . import ExifTags, Image, ImageFile
 
 try:
     from . import _avif
@@ -16,6 +16,7 @@ except ImportError:
 # Decoder options as module globals, until there is a way to pass parameters
 # to Image.open (see https://github.com/python-pillow/Pillow/issues/569)
 DECODE_CODEC_CHOICE = "auto"
+# Decoding is only affected by this for libavif **0.8.4** or greater.
 DEFAULT_MAX_THREADS = 0
 
 
@@ -77,8 +78,6 @@ class AvifImageFile(ImageFile.ImageFile):
         ):
             msg = "Invalid opening codec"
             raise ValueError(msg)
-
-        assert self.fp is not None
         self._decoder = _avif.AvifDecoder(
             self.fp.read(),
             DECODE_CODEC_CHOICE,
@@ -153,12 +152,9 @@ def _save(
     else:
         append_images = []
 
-    grayscale_modes = {"1", "L", "I", "I;16", "I;16L", "I;16B", "I;16N", "F"}
-    grayscale = all(
-        frame.mode in grayscale_modes
-        for ims in [im] + append_images
-        for frame in ImageSequence.Iterator(ims)
-    )
+    total = 0
+    for ims in [im] + append_images:
+        total += getattr(ims, "n_frames", 1)
 
     quality = info.get("quality", 75)
     if not isinstance(quality, int) or quality < 0 or quality > 100:
@@ -166,7 +162,7 @@ def _save(
         raise ValueError(msg)
 
     duration = info.get("duration", 0)
-    subsampling = info.get("subsampling", "4:0:0" if grayscale else "4:2:0")
+    subsampling = info.get("subsampling", "4:2:0")
     speed = info.get("speed", 6)
     max_threads = info.get("max_threads", _get_default_max_threads())
     codec = info.get("codec", "auto")
@@ -239,20 +235,21 @@ def _save(
     frame_idx = 0
     frame_duration = 0
     cur_idx = im.tell()
-    is_single_frame = not append_images and not getattr(im, "is_animated", False)
+    is_single_frame = total == 1
     try:
         for ims in [im] + append_images:
-            for frame in ImageSequence.Iterator(ims):
+            # Get number of frames in this image
+            nfr = getattr(ims, "n_frames", 1)
+
+            for idx in range(nfr):
+                ims.seek(idx)
+
                 # Make sure image mode is supported
-                rawmode = frame.mode
-                if ims.mode not in {"L", "RGB", "RGBA"}:
-                    if ims.has_transparency_data:
-                        rawmode = "RGBA"
-                    elif ims.mode in grayscale_modes:
-                        rawmode = "L"
-                    else:
-                        rawmode = "RGB"
-                    frame = frame.convert(rawmode)
+                frame = ims
+                rawmode = ims.mode
+                if ims.mode not in {"RGB", "RGBA"}:
+                    rawmode = "RGBA" if ims.has_transparency_data else "RGB"
+                    frame = ims.convert(rawmode)
 
                 # Update frame duration
                 if isinstance(duration, (list, tuple)):

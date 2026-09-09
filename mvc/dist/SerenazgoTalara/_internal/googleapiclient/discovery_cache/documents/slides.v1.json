@@ -284,15 +284,13 @@
 "THUMBNAIL_SIZE_UNSPECIFIED",
 "LARGE",
 "MEDIUM",
-"SMALL",
-"WIDTH2000_PX"
+"SMALL"
 ],
 "enumDescriptions": [
 "The default thumbnail image size. The unspecified thumbnail size implies that the server chooses the size of the image in a way that might vary in the future.",
 "The thumbnail image width of 1600px.",
 "The thumbnail image width of 800px.",
-"The thumbnail image width of 200px.",
-"The thumbnail image width of 2000px."
+"The thumbnail image width of 200px."
 ],
 "location": "query",
 "type": "string"
@@ -315,7 +313,7 @@
 }
 }
 },
-"revision": "20260408",
+"revision": "20250401",
 "rootUrl": "https://slides.googleapis.com/",
 "schemas": {
 "AffineTransform": {
