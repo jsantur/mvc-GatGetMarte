@@ -634,7 +634,7 @@ Manual actualizado al 05 de Abril de 2026."""
         menubar.add_cascade(label="🌐 ENLACES", menu=menu_enlaces)
         
         menu_enlaces.add_command(
-            label="📏 Cargar KM Wialon (Tiempo Real)", 
+            label="📏 Cargar KM + Zona Wialon (Tiempo Real)", 
             command=self.controller.consultar_km_wialon,
             accelerator="Ctrl+G"
         )
@@ -2679,28 +2679,28 @@ Manual actualizado al 05 de Abril de 2026."""
                             style='Accent.TButton')
         btn_url.pack(fill=tk.X, pady=8, ipady=8)
         
-        btn_km_ap = ttk.Button(btn_frame, text="📏 WIALON KM  —  Tiempo Real (descuento 4-5 km)", 
+        btn_km_ap = ttk.Button(btn_frame, text="📏 WIALON KM  —  Tiempo Real + Zona", 
                            command=lambda: [dialog.destroy(), self.controller.consultar_km_wialon()],
                            style='Success.TButton')
         btn_km_ap.pack(fill=tk.X, pady=8, ipady=8)
         
-        btn_ap = ttk.Button(
-            btn_frame,
-            text="📌 WIALON A.P.  —  Geocercas NORTE / CENTRO / SUR / ENACE",
-            command=lambda: [dialog.destroy(), self.controller.consultar_ap_wialon()],
-            style='Accent.TButton'
-        )
-        btn_ap.pack(fill=tk.X, pady=8, ipady=8)
-        
-        self.create_tooltip(
-            btn_ap,
-            "Cálculo de Auxilio Público (A.P.)\n"
-            "────────────────────────────\n"
-            "• Extrae cronologías de estacionamiento del reporte\n"
-            "• Suma SOLO minutos dentro de geocercas permitidas\n"
-            "• Redondea a bloques de 5 minutos\n"
-            "• Aplica descuento de 45 min por unidad"
-        )
+        # btn_ap = ttk.Button(
+        #     btn_frame,
+        #     text="📌 WIALON A.P.  —  Geocercas NORTE / CENTRO / SUR / ENACE",
+        #     command=lambda: [dialog.destroy(), self.controller.consultar_ap_wialon()],
+        #     style='Accent.TButton'
+        # )
+        # btn_ap.pack(fill=tk.X, pady=8, ipady=8)
+        # 
+        # self.create_tooltip(
+        #     btn_ap,
+        #     "Cálculo de Auxilio Público (A.P.)\n"
+        #     "────────────────────────────\n"
+        #     "• Extrae cronologías de estacionamiento del reporte\n"
+        #     "• Suma SOLO minutos dentro de geocercas permitidas\n"
+        #     "• Redondea a bloques de 5 minutos\n"
+        #     "• Aplica descuento de 45 min por unidad"
+        # )
         
         tk.Frame(btn_frame, height=2, bg='#ecf0f1').pack(fill=tk.X, pady=(18, 12))
         

@@ -351,14 +351,14 @@ class OptimizedModel:
     def _validar_km(self, km: str) -> Tuple[str, str]:
         """Valida campo KM según nuevos requisitos."""
         if not km or not km.strip():
-            return ("⚠️ 90 KM requerido", "#E6CEA1")
+            return ("⚠️ 100 KM requerido", "#E6CEA1")
         
         try:
             km_int = int(km)
             if km_int < 0:
                 return ("❌ KM no puede ser negativo", "red")
             
-            objetivo_km = 90
+            objetivo_km = 100
             if km_int >= objetivo_km:
                 # Solo mostrar excedente si supera los 100 KM
                 if km_int > 100:

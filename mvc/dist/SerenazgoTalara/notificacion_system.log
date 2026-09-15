@@ -7,3 +7,299 @@
 2026-09-09 01:56:18,158 - INFO - Iniciando sistema de notificaciones
 2026-09-09 01:56:18,158 - INFO - Iniciando verificación periódica de hora
 2026-09-09 01:56:18,158 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-09 04:53:14,455 - INFO - Sistema de notificaciones inicializado
+2026-09-09 04:53:14,455 - INFO - Iniciando sistema de notificaciones
+2026-09-09 04:53:14,456 - INFO - Iniciando verificación periódica de hora
+2026-09-09 04:53:14,456 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-09 05:00:00,460 - INFO - Mostrando notificación de reporte para turno NOCHE a las 05:00
+2026-09-09 05:00:04,451 - INFO - Usuario seleccionó NO en la notificación
+2026-09-09 05:00:04,462 - INFO - Usuario seleccionó NO o no respondió
+2026-09-09 22:22:46,075 - INFO - Sistema de notificaciones inicializado
+2026-09-09 22:22:46,082 - INFO - Iniciando sistema de notificaciones
+2026-09-09 22:22:46,083 - INFO - Iniciando verificación periódica de hora
+2026-09-09 22:22:46,083 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-10 00:00:00,133 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:00
+2026-09-10 00:00:31,019 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-10 00:00:31,029 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 00:30:00,051 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:30
+2026-09-10 00:30:30,076 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-10 00:30:30,081 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 01:00:00,102 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:00
+2026-09-10 01:00:01,920 - INFO - Usuario seleccionó NO en la notificación
+2026-09-10 01:00:01,929 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 01:30:00,946 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2026-09-10 01:30:30,967 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-10 01:30:30,973 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 02:00:00,996 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:00
+2026-09-10 02:00:03,679 - INFO - Usuario seleccionó NO en la notificación
+2026-09-10 02:00:03,687 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 02:30:00,705 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2026-09-10 02:30:08,159 - INFO - Usuario seleccionó NO en la notificación
+2026-09-10 02:30:08,167 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 03:00:00,184 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:00
+2026-09-10 03:00:30,193 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-10 03:00:30,195 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 03:30:00,209 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:30
+2026-09-10 03:30:02,037 - INFO - Usuario seleccionó NO en la notificación
+2026-09-10 03:30:02,044 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 04:00:00,060 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:00
+2026-09-10 04:00:02,213 - INFO - Usuario seleccionó NO en la notificación
+2026-09-10 04:00:02,219 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 04:30:00,234 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:30
+2026-09-10 04:30:30,252 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-10 04:30:30,256 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 05:00:00,273 - INFO - Mostrando notificación de reporte para turno NOCHE a las 05:00
+2026-09-10 05:00:02,076 - INFO - Usuario seleccionó NO en la notificación
+2026-09-10 05:00:02,082 - INFO - Usuario seleccionó NO o no respondió
+2026-09-10 22:10:03,364 - INFO - Sistema de notificaciones inicializado
+2026-09-10 22:10:03,375 - INFO - Iniciando sistema de notificaciones
+2026-09-10 22:10:03,375 - INFO - Iniciando verificación periódica de hora
+2026-09-10 22:10:03,375 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-11 00:00:00,439 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:00
+2026-09-11 00:00:09,921 - INFO - Usuario seleccionó NO en la notificación
+2026-09-11 00:00:09,932 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 00:30:00,954 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:30
+2026-09-11 00:30:30,977 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 00:30:30,981 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 01:00:00,998 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:00
+2026-09-11 01:00:31,073 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 01:00:31,077 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 01:30:00,094 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2026-09-11 01:30:30,111 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 01:30:30,117 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 02:00:00,135 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:00
+2026-09-11 02:00:30,153 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 02:00:30,157 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 02:30:00,174 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2026-09-11 02:30:30,195 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 02:30:30,198 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 03:00:00,214 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:00
+2026-09-11 03:00:23,089 - INFO - Usuario seleccionó NO en la notificación
+2026-09-11 03:00:23,097 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 03:30:00,114 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:30
+2026-09-11 03:30:30,137 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 03:30:30,144 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 04:00:00,162 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:00
+2026-09-11 04:00:30,186 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 04:00:30,190 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 04:30:00,230 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:30
+2026-09-11 04:30:30,259 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 04:30:30,263 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 05:00:00,278 - INFO - Mostrando notificación de reporte para turno NOCHE a las 05:00
+2026-09-11 05:00:30,300 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 05:00:30,305 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 06:17:46,584 - INFO - Sistema de notificaciones inicializado
+2026-09-11 06:17:46,588 - INFO - Iniciando sistema de notificaciones
+2026-09-11 06:17:46,589 - INFO - Iniciando verificación periódica de hora
+2026-09-11 06:17:46,589 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-11 08:00:00,746 - INFO - Mostrando notificación de reporte para turno DÍA a las 08:00
+2026-09-11 08:00:31,467 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 08:00:31,471 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 09:00:00,506 - INFO - Mostrando notificación de reporte para turno DÍA a las 09:00
+2026-09-11 09:00:30,524 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 09:00:30,527 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 10:00:00,564 - INFO - Mostrando notificación de reporte para turno DÍA a las 10:00
+2026-09-11 10:00:30,584 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 10:00:30,588 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 11:00:00,622 - INFO - Mostrando notificación de reporte para turno DÍA a las 11:00
+2026-09-11 11:00:07,131 - INFO - Usuario seleccionó NO en la notificación
+2026-09-11 11:00:07,138 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 12:00:00,171 - INFO - Mostrando notificación de reporte para turno DÍA a las 12:00
+2026-09-11 12:00:30,192 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-11 12:00:30,196 - INFO - Usuario seleccionó NO o no respondió
+2026-09-11 22:27:59,647 - INFO - Sistema de notificaciones inicializado
+2026-09-11 22:27:59,656 - INFO - Iniciando sistema de notificaciones
+2026-09-11 22:27:59,657 - INFO - Iniciando verificación periódica de hora
+2026-09-11 22:27:59,657 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-12 00:00:00,729 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:00
+2026-09-12 00:00:24,302 - INFO - Usuario seleccionó NO en la notificación
+2026-09-12 00:00:24,314 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 00:30:00,350 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:30
+2026-09-12 00:30:04,723 - INFO - Usuario seleccionó NO en la notificación
+2026-09-12 00:30:04,731 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 01:00:00,755 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:00
+2026-09-12 01:00:30,782 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-12 01:00:30,788 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 01:30:00,371 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2026-09-12 01:30:02,761 - INFO - Usuario seleccionó NO en la notificación
+2026-09-12 01:30:02,789 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 02:00:00,809 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:00
+2026-09-12 02:00:30,821 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-12 02:00:30,824 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 02:30:00,845 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2026-09-12 02:30:30,862 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-12 02:30:30,865 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 03:00:00,883 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:00
+2026-09-12 03:00:30,897 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-12 03:00:30,901 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 03:30:00,920 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:30
+2026-09-12 03:30:30,935 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-12 03:30:30,939 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 04:00:00,957 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:00
+2026-09-12 04:00:09,722 - INFO - Usuario seleccionó NO en la notificación
+2026-09-12 04:00:09,746 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 04:30:00,763 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:30
+2026-09-12 04:30:30,787 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-12 04:30:30,794 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 05:00:00,812 - INFO - Mostrando notificación de reporte para turno NOCHE a las 05:00
+2026-09-12 05:00:30,823 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-12 05:00:30,828 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 06:11:38,242 - INFO - Sistema de notificaciones inicializado
+2026-09-12 06:11:38,246 - INFO - Iniciando sistema de notificaciones
+2026-09-12 06:11:38,251 - INFO - Iniciando verificación periódica de hora
+2026-09-12 06:11:38,251 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-12 08:00:00,333 - INFO - Mostrando notificación de reporte para turno DÍA a las 08:00
+2026-09-12 08:00:03,207 - INFO - Usuario seleccionó NO en la notificación
+2026-09-12 08:00:03,214 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 09:00:00,262 - INFO - Mostrando notificación de reporte para turno DÍA a las 09:00
+2026-09-12 09:00:12,161 - INFO - Usuario seleccionó NO en la notificación
+2026-09-12 09:00:12,174 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 10:00:00,237 - INFO - Mostrando notificación de reporte para turno DÍA a las 10:00
+2026-09-12 10:00:11,283 - INFO - Usuario seleccionó NO en la notificación
+2026-09-12 10:00:11,294 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 11:00:00,385 - INFO - Mostrando notificación de reporte para turno DÍA a las 11:00
+2026-09-12 11:00:30,426 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-12 11:00:30,445 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 12:00:00,500 - INFO - Mostrando notificación de reporte para turno DÍA a las 12:00
+2026-09-12 12:00:24,260 - INFO - Usuario seleccionó NO en la notificación
+2026-09-12 12:00:24,273 - INFO - Usuario seleccionó NO o no respondió
+2026-09-12 22:13:52,843 - INFO - Sistema de notificaciones inicializado
+2026-09-12 22:13:52,849 - INFO - Iniciando sistema de notificaciones
+2026-09-12 22:13:52,850 - INFO - Iniciando verificación periódica de hora
+2026-09-12 22:13:52,850 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-13 00:00:00,908 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:00
+2026-09-13 00:00:31,300 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 00:00:31,305 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 00:30:00,325 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:30
+2026-09-13 00:30:01,763 - INFO - Usuario seleccionó NO en la notificación
+2026-09-13 00:30:01,771 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 01:00:00,787 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:00
+2026-09-13 01:00:30,803 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 01:00:30,809 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 01:30:00,825 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2026-09-13 01:30:30,846 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 01:30:30,850 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 02:00:00,868 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:00
+2026-09-13 02:00:30,885 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 02:00:30,888 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 02:30:00,905 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2026-09-13 02:30:30,925 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 02:30:30,928 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 03:00:00,941 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:00
+2026-09-13 03:00:30,958 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 03:00:30,961 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 03:30:00,980 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:30
+2026-09-13 03:30:30,997 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 03:30:31,002 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 04:00:00,023 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:00
+2026-09-13 04:00:09,450 - INFO - Usuario seleccionó NO en la notificación
+2026-09-13 04:00:09,459 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 04:30:00,476 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:30
+2026-09-13 04:30:30,487 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 04:30:30,491 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 05:00:00,028 - INFO - Mostrando notificación de reporte para turno NOCHE a las 05:00
+2026-09-13 05:00:09,729 - INFO - Usuario seleccionó NO en la notificación
+2026-09-13 05:00:09,736 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 06:18:23,917 - INFO - Sistema de notificaciones inicializado
+2026-09-13 06:18:23,923 - INFO - Iniciando sistema de notificaciones
+2026-09-13 06:18:23,924 - INFO - Iniciando verificación periódica de hora
+2026-09-13 06:18:23,924 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-13 08:00:01,008 - INFO - Mostrando notificación de reporte para turno DÍA a las 08:00
+2026-09-13 08:00:31,665 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 08:00:31,674 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 09:00:00,758 - INFO - Mostrando notificación de reporte para turno DÍA a las 09:00
+2026-09-13 09:00:04,156 - INFO - Usuario seleccionó NO en la notificación
+2026-09-13 09:00:04,167 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 10:00:00,214 - INFO - Mostrando notificación de reporte para turno DÍA a las 10:00
+2026-09-13 10:00:30,243 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 10:00:30,247 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 11:00:00,303 - INFO - Mostrando notificación de reporte para turno DÍA a las 11:00
+2026-09-13 11:00:30,354 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 11:00:30,359 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 12:00:00,404 - INFO - Mostrando notificación de reporte para turno DÍA a las 12:00
+2026-09-13 12:00:30,479 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-13 12:00:30,491 - INFO - Usuario seleccionó NO o no respondió
+2026-09-13 13:26:49,941 - INFO - Sistema de notificaciones inicializado
+2026-09-13 13:26:49,941 - INFO - Iniciando sistema de notificaciones
+2026-09-13 13:26:49,942 - INFO - Iniciando verificación periódica de hora
+2026-09-13 13:26:49,942 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-13 23:01:29,924 - INFO - Sistema de notificaciones inicializado
+2026-09-13 23:01:29,924 - INFO - Iniciando sistema de notificaciones
+2026-09-13 23:01:29,925 - INFO - Iniciando verificación periódica de hora
+2026-09-13 23:01:29,925 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-14 00:00:00,966 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:00
+2026-09-14 00:00:31,087 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 00:00:31,094 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 00:30:00,114 - INFO - Mostrando notificación de reporte para turno NOCHE a las 00:30
+2026-09-14 00:30:30,130 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 00:30:30,134 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 01:00:00,157 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:00
+2026-09-14 01:00:30,183 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 01:00:30,187 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 01:30:00,205 - INFO - Mostrando notificación de reporte para turno NOCHE a las 01:30
+2026-09-14 01:30:30,226 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 01:30:30,231 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 02:00:00,253 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:00
+2026-09-14 02:00:30,285 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 02:00:30,290 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 02:30:00,308 - INFO - Mostrando notificación de reporte para turno NOCHE a las 02:30
+2026-09-14 02:30:03,338 - INFO - Usuario seleccionó NO en la notificación
+2026-09-14 02:30:03,346 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 03:00:00,364 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:00
+2026-09-14 03:00:30,378 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 03:00:30,382 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 03:30:00,398 - INFO - Mostrando notificación de reporte para turno NOCHE a las 03:30
+2026-09-14 03:30:30,421 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 03:30:30,424 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 04:00:00,440 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:00
+2026-09-14 04:00:30,458 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 04:00:30,462 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 04:30:00,478 - INFO - Mostrando notificación de reporte para turno NOCHE a las 04:30
+2026-09-14 04:30:30,502 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 04:30:30,509 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 05:00:00,524 - INFO - Mostrando notificación de reporte para turno NOCHE a las 05:00
+2026-09-14 05:00:05,072 - INFO - Usuario seleccionó NO en la notificación
+2026-09-14 05:00:05,084 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 06:19:41,475 - INFO - Sistema de notificaciones inicializado
+2026-09-14 06:19:41,483 - INFO - Iniciando sistema de notificaciones
+2026-09-14 06:19:41,483 - INFO - Iniciando verificación periódica de hora
+2026-09-14 06:19:41,483 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-14 08:00:00,563 - INFO - Mostrando notificación de reporte para turno DÍA a las 08:00
+2026-09-14 08:00:09,025 - INFO - Usuario seleccionó NO en la notificación
+2026-09-14 08:00:09,039 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 09:00:00,545 - INFO - Mostrando notificación de reporte para turno DÍA a las 09:00
+2026-09-14 09:00:01,963 - INFO - Usuario seleccionó NO en la notificación
+2026-09-14 09:00:01,973 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 10:00:00,194 - INFO - Mostrando notificación de reporte para turno DÍA a las 10:00
+2026-09-14 10:00:13,341 - INFO - Usuario seleccionó NO en la notificación
+2026-09-14 10:00:13,349 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 11:00:00,450 - INFO - Mostrando notificación de reporte para turno DÍA a las 11:00
+2026-09-14 11:00:01,612 - INFO - Usuario seleccionó NO en la notificación
+2026-09-14 11:00:01,617 - INFO - Usuario seleccionó NO o no respondió
+2026-09-14 12:00:00,687 - INFO - Mostrando notificación de reporte para turno DÍA a las 12:00
+2026-09-14 12:00:30,718 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-14 12:00:30,723 - INFO - Usuario seleccionó NO o no respondió
+2026-09-15 06:29:50,750 - INFO - Sistema de notificaciones inicializado
+2026-09-15 06:29:50,763 - INFO - Iniciando sistema de notificaciones
+2026-09-15 06:29:50,763 - INFO - Iniciando verificación periódica de hora
+2026-09-15 06:29:50,764 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-15 08:00:00,851 - INFO - Mostrando notificación de reporte para turno DÍA a las 08:00
+2026-09-15 08:00:31,281 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-15 08:00:31,299 - INFO - Usuario seleccionó NO o no respondió
+2026-09-15 09:00:00,352 - INFO - Mostrando notificación de reporte para turno DÍA a las 09:00
+2026-09-15 09:00:30,385 - INFO - Notificación cerrada automáticamente tras 30 segundos
+2026-09-15 09:00:30,390 - INFO - Usuario seleccionó NO o no respondió
+2026-09-15 10:00:00,514 - INFO - Mostrando notificación de reporte para turno DÍA a las 10:00
+2026-09-15 10:00:07,697 - INFO - Usuario seleccionó NO en la notificación
+2026-09-15 10:00:07,705 - INFO - Usuario seleccionó NO o no respondió
+2026-09-15 11:00:00,754 - INFO - Mostrando notificación de reporte para turno DÍA a las 11:00
+2026-09-15 11:00:06,177 - INFO - Usuario seleccionó NO en la notificación
+2026-09-15 11:00:06,189 - INFO - Usuario seleccionó NO o no respondió
+2026-09-15 11:16:14,777 - INFO - Sistema de notificaciones inicializado
+2026-09-15 11:16:14,789 - INFO - Iniciando sistema de notificaciones
+2026-09-15 11:16:14,791 - INFO - Iniciando verificación periódica de hora
+2026-09-15 11:16:14,791 - INFO - Sistema de notificaciones iniciado correctamente
+2026-09-15 11:33:51,064 - INFO - Sistema de notificaciones inicializado
+2026-09-15 11:33:51,065 - INFO - Iniciando sistema de notificaciones
+2026-09-15 11:33:51,066 - INFO - Iniciando verificación periódica de hora
+2026-09-15 11:33:51,066 - INFO - Sistema de notificaciones iniciado correctamente

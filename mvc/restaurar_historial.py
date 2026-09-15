@@ -150,14 +150,14 @@ def restaurar_historial_excel():
 def calcular_observacion_km(km):
     """Calcula observación para KM."""
     if not km or not str(km).strip():
-        return "⚠️ 90 KM requerido"
+        return "⚠️ 100 KM requerido"
     
     try:
         km_int = int(km)
         if km_int < 0:
             return "❌ KM no puede ser negativo"
         
-        objetivo_km = 90
+        objetivo_km = 100
         if km_int >= objetivo_km:
             if km_int > 100:
                 excedente = km_int - 100

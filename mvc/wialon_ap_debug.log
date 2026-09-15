@@ -1,42 +1,295 @@
 ╔══════════════════════════════════════════════════╗
 ║   CONSULTA A.P. CON FILTRO DE GEOCERCAS         ║
 ╠══════════════════════════════════════════════════╣
-║ Fecha : 2026-09-08 04:38:32
+║ Fecha : 2026-09-09 00:10:30
 ║ Rango : 00:00 – 23:59 hora local
 ║ Descuento: 0 min
 ║ Redondeo : bloques de 5 min
 ╚══════════════════════════════════════════════════╝
 
 ──────────────────────────────────────────────────────
-  🚗 UNIDAD: 10  EUI-647  (ID: 402191562)
+  🚗 UNIDAD: 1  EUI-621  (ID: 402191563)
   ────────────────────────────────────────────────────
-  📊 Eventos Estacionamiento totales: 2
-  ⏱️  Total SIN filtro          : 187.58 min (bruto, sin reglas)
+  📊 Eventos Estacionamiento totales: 1
+  ⏱️  Total SIN filtro          : 0.70 min (bruto, sin reglas)
   ⏭️  Eventos descartados (<=31s): 0
   🚫 Eventos fuera de geocerca  : 0
-  ✅ Eventos que SÍ se suman    : 2
+  ✅ Eventos que SÍ se suman    : 0
   📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
-     ▸ Zona [ENACE]: 185 min (suma de redondeos individuales)
 
   ┌────────────────────────────────────────────────────
   │ CÁLCULO FINAL (SIN DESCUENTO)
   ├────────────────────────────────────────────────────
-  │  TOTAL (suma redondeos individuales × 5min)  = 185 min
+  │  TOTAL (suma redondeos individuales × 5min)  = 0 min
   │  Sin descuento (pedido usuario)              = − 0 min
   ├────────────────────────────────────────────────────
-  │  🎯  A.P. FINAL = 185 min
+  │  🎯  A.P. FINAL = 0 min
   └────────────────────────────────────────────────────
 
   ┌──────────────────────────────────────────────────────────────
   │ Detalle de eventos (primeros 20)
   │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
   └──────────────────────────────────────────────────────────────
-    1  181.3min    10878    180  ✅ SUMA          ENACE
-    2  6.3min        377      5  ✅ SUMA          ENACE
+    1  0.7min         42      0  ❌ DESCARTADO    Redondeo a 0 min
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 2  EUI-682  (ID: 402191188)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 0
+  ⏱️  Total SIN filtro          : 0.00 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 0
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 0 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 0 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 3  EUI-683  (ID: 402191564)
+  ────────────────────────────────────────────────────
+  ⚠️  Sin tablas en reporte → A.P. = 0
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 4  EUI-646  (ID: 402191155)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 1
+  ⏱️  Total SIN filtro          : 1.00 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 0
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 0 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 0 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+    1  1.0min         60      0  ❌ DESCARTADO    Redondeo a 0 min
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 5  EUI-685  (ID: 402191183)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 1
+  ⏱️  Total SIN filtro          : 5.00 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 1
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+     ▸ Zona [CENTRO]: 5 min (suma de redondeos individuales)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 5 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 5 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+    1  5.0min        300      5  ✅ SUMA          CENTRO
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 6  EUI-686  (ID: 402191300)
+  ────────────────────────────────────────────────────
+  ⚠️  Sin tablas en reporte → A.P. = 0
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 7  EUI-679  (ID: 402191378)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 1
+  ⏱️  Total SIN filtro          : 0.03 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 1
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 0
+  📍 Eventos SIN coordenadas   : 1 (incluidos via fallback)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 0 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 0 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+    1  0.0min          2      0  ⏭️  CORTO       Duración ≤ 31s
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 8  EUI-680  (ID: 402191308)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 1
+  ⏱️  Total SIN filtro          : 5.00 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 1
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+     ▸ Zona [CENTRO]: 5 min (suma de redondeos individuales)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 5 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 5 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+    1  5.0min        300      5  ✅ SUMA          CENTRO
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 9  EUI-645  (ID: 402190601)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 0
+  ⏱️  Total SIN filtro          : 0.00 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 0
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 0 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 0 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 10  EUI-647  (ID: 402191562)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 1
+  ⏱️  Total SIN filtro          : 5.00 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 1
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+     ▸ Zona [CENTRO]: 5 min (suma de redondeos individuales)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 5 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 5 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+    1  5.0min        300      5  ✅ SUMA          CENTRO
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 11  EUI-668  (ID: 402190862)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 1
+  ⏱️  Total SIN filtro          : 6.38 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 1
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+     ▸ Zona [CENTRO]: 5 min (suma de redondeos individuales)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 5 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 5 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+    1  6.4min        383      5  ✅ SUMA          CENTRO
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 12  EUI-670  (ID: 402191163)
+  ────────────────────────────────────────────────────
+  📊 Eventos Estacionamiento totales: 1
+  ⏱️  Total SIN filtro          : 5.00 min (bruto, sin reglas)
+  ⏭️  Eventos descartados (<=31s): 0
+  🚫 Eventos fuera de geocerca  : 0
+  ✅ Eventos que SÍ se suman    : 1
+  📍 Eventos SIN coordenadas   : 0 (incluidos via fallback)
+     ▸ Zona [CENTRO]: 5 min (suma de redondeos individuales)
+
+  ┌────────────────────────────────────────────────────
+  │ CÁLCULO FINAL (SIN DESCUENTO)
+  ├────────────────────────────────────────────────────
+  │  TOTAL (suma redondeos individuales × 5min)  = 5 min
+  │  Sin descuento (pedido usuario)              = − 0 min
+  ├────────────────────────────────────────────────────
+  │  🎯  A.P. FINAL = 5 min
+  └────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────
+  │ Detalle de eventos (primeros 20)
+  │   #  Duración      Seg   RD×5  Estado          Zona / Motivo
+  └──────────────────────────────────────────────────────────────
+    1  5.0min        300      5  ✅ SUMA          CENTRO
+
+──────────────────────────────────────────────────────
+  🚗 UNIDAD: 13  EUI-671  (ID: 402191561)
+  ────────────────────────────────────────────────────
+  ⚠️  Sin tablas en reporte → A.P. = 0
 
 ═══════════════════════════════════════════════════════════════
 RESUMEN POR UNIDAD
 ═══════════════════════════════════════════════════════════════
   UNIDAD                         SIN FILTRO   SUMADO  RD×5   AP  ZONAS
   ────────────────────────────── ────────── ──────── ───── ────  ──────────────────────────────
-  10  EUI-647                        187.6    185.0   185  185  ENACE=185
+  1  EUI-621                           0.7      0.0     0    0  —
+  2  EUI-682                           0.0      0.0     0    0  —
+  3  EUI-683                           0.0      0.0     0    0  —
+  4  EUI-646                           1.0      0.0     0    0  —
+  5  EUI-685                           5.0      5.0     5    5  CENTRO=5
+  6  EUI-686                           0.0      0.0     0    0  —
+  7  EUI-679                           0.0      0.0     0    0  —
+  8  EUI-680                           5.0      5.0     5    5  CENTRO=5
+  9  EUI-645                           0.0      0.0     0    0  —
+  10  EUI-647                          5.0      5.0     5    5  CENTRO=5
+  11  EUI-668                          6.4      5.0     5    5  CENTRO=5
+  12  EUI-670                          5.0      5.0     5    5  CENTRO=5
+  13  EUI-671                          0.0      0.0     0    0  —

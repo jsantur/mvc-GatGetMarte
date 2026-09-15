@@ -1223,6 +1223,16 @@ class OptimizedController:
             # ── PASO 1: KM recorrido en tiempo real ───────────────────────
             data_km = api.get_daily_mileage(unidades_a_consultar)
 
+            # ── PASO 2: Determinar ZONA actual de cada vehículo ──────────
+            for wialon_name, info in data_km.items():
+                lat = info.get("last_lat")
+                lon = info.get("last_lon")
+                if lat is not None and lon is not None:
+                    inside, zone_name, _ = api._is_inside_allowed_geofence(lat, lon)
+                    info["zona"] = zone_name if inside else ""
+                else:
+                    info["zona"] = ""
+
             api.logout()
             return data_km, mapping_inverso
 
@@ -1250,10 +1260,10 @@ class OptimizedController:
                             exito_km += 1
                         break
 
-            self.view.update_status(f"✅ Wialon: {exito_km} unidades sincronizadas (descuento 4-5 km)", "green")
+            self.view.update_status(f"✅ Wialon: {exito_km} unidades sincronizadas (KM + Zona en tiempo real)", "green")
             ToastNotification(
                 self.view.root,
-                f"✅ {exito_km} unidades cargadas en tiempo real (descuento 4-5 KM)",
+                f"✅ {exito_km} unidades cargadas en tiempo real (KM + Zona)",
                 duration=3000,
                 style='success'
             )
@@ -1373,19 +1383,14 @@ class OptimizedController:
         self._actualizar_km_wialon(fila_widgets, data_info)
 
     def _actualizar_km_wialon(self, fila_widgets, data_info):
-        """Actualiza exclusivamente el campo KM (con descuento de 4 a 5 km) desde datos de Wialon."""
-        import random
+        """Actualiza el campo KM (sin descuento) y la ZONA desde datos de Wialon en tiempo real."""
         try:
             valor_km = float(data_info.get("km", 0.0))
         except (ValueError, TypeError):
             valor_km = 0.0
 
-        # Aplicar descuento de 4 a 5 kilómetros (si tiene kilometraje recorrido)
-        if valor_km > 0:
-            descuento = random.randint(4, 5)
-            km_final = max(0, int(valor_km - descuento))
-        else:
-            km_final = 0
+        # KM directo sin descuento
+        km_final = max(0, int(valor_km))
 
         entry_km = fila_widgets['entry_km']
         estado_previo = entry_km.cget('state')
@@ -1399,6 +1404,13 @@ class OptimizedController:
             entry_km.config(state=tk.DISABLED)
 
         entry_km.event_generate('<KeyRelease>')
+
+        # ── Actualizar ZONA según última posición GPS ──
+        zona = data_info.get("zona", "")
+        if zona and 'var_zona' in fila_widgets and fila_widgets['var_zona'] is not None:
+            fila_widgets['var_zona'].set(zona)
+        if zona and 'var_jurisdiccion' in fila_widgets and fila_widgets['var_jurisdiccion'] is not None:
+            fila_widgets['var_jurisdiccion'].set(zona)
 
     def _actualizar_ap_wialon(self, fila_widgets, data_ap):
         """Actualiza el campo A.P. y la ZONA con valores calculados desde Wialon.
